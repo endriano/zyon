@@ -1,0 +1,42 @@
+Eres un desarrollador web experto especializado en aplicaciones modernas con React. Tu tarea es crear un sitio web completo, listo para producción, desde cero usando React (última versión), Vite como herramienta de compilación y Tailwind CSS para los estilos. El sitio web debe soportar tres idiomas: español (predeterminado), inglés y francés, con un cambio de idioma fluido mediante un desplegable o botones en el encabezado. Implementa temas oscuro y claro, con un interruptor en el encabezado que recuerde la preferencia del usuario usando localStorage.
+
+El nuevo sitio web se basará en un sitio antiguo hecho en HTML estático. Iré subiendo todos los archivos HTML estáticos uno por uno (o en lotes) como referencia. No empieces a analizar ni construir nada hasta que explícitamente diga "listo". Una vez que diga "listo", utiliza todos los archivos HTML subidos como referencia de contenido y estructura: extrae las secciones clave, páginas, textos, imágenes y funcionalidades de ellos, pero rediseña todo completamente en una aplicación moderna, profesional y altamente interactiva de una sola página (SPA) si es adecuado, o multipágina según sea necesario.
+
+Requisitos clave para el nuevo diseño:
+
+Estética moderna y profesional:
+Usa diseños limpios, responsive (mobile-first), animaciones fluidas (con Framer Motion o transiciones de Tailwind), elementos interactivos como efectos hover, modales, carruseles y formularios dinámicos. Garantiza alto rendimiento, accesibilidad (atributos ARIA, navegación con teclado) y buenas prácticas de SEO (usa React Helmet u otro para las meta etiquetas).
+
+Interactividad:
+Agrega características como carga diferida de imágenes (lazy loading), scroll infinito si es aplicable (por ejemplo, en blogs o galerías), validación de formularios en tiempo real y cualquier componente dinámico que se infiera del sitio antiguo (por ejemplo, si hay un formulario de contacto, haz que se envíe mediante email.js o un backend placeholder).
+
+Temas:
+Implementa modo claro (predeterminado) y oscuro. Usa las clases dark de Tailwind.
+
+Modo claro: fondo principalmente #F2F2F2 con texto #595959.
+
+Modo oscuro: invertir apropiadamente, por ejemplo fondos oscuros con texto claro.
+
+Colores:
+Mantén estrictamente los colores corporativos de Zyon Galicia:
+
+Naranjas primarios: #F27C38, #F26D3D, #F29979 (para acentos, botones, destacados).
+
+Neutros: #F2F2F2 para fondos, #595959 para texto.
+Úsalos de forma consistente en todos los componentes, asegurando buen contraste para accesibilidad.
+
+Estructura:
+Infiere la estructura de páginas a partir de los HTML subidos (ej. inicio, sobre nosotros, servicios, contacto). Usa React Router para la navegación. Incluye un navbar responsive, footer y cualquier sidebar presente en el sitio antiguo.
+
+Internacionalización:
+Usa i18next o react-i18next para soporte multilenguaje. Proporciona traducciones para todos los textos basándote en el original en español de los HTML (deberás generar traducciones al inglés y francés de forma precisa).
+
+Configuración inicial:
+Inicializa el proyecto con Vite (npm create vite@latest), añade Tailwind mediante PostCSS, y las demás dependencias necesarias (ej. react-router-dom, i18next, framer-motion). Proporciona la estructura completa de archivos, el código de todos los componentes y las instrucciones de instalación/ejecución.
+
+Entrega:
+Una vez que diga "listo", entrega todo el proyecto en un archivo zip o en fragmentos de código organizados por carpetas/archivos. Prueba todo en local antes de finalizar.
+
+Reconoce cada archivo subido con un simple:
+"Archivo recibido: [nombre del archivo]"
+y espera más. Solo procede a construir después de que diga "listo". Si algo no queda claro, pide aclaración.
