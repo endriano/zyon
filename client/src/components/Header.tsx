@@ -32,7 +32,11 @@ export function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div 
+            className="flex items-center space-x-3 cursor-pointer transition-transform hover:scale-105"
+            onClick={() => scrollToSection('inicio')}
+            data-testid="header-logo"
+          >
             <div className="w-12 h-12 bg-zyon-orange rounded-lg flex items-center justify-center">
               <Ship className="text-white text-xl" />
             </div>
