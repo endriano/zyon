@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 95%);
+  --foreground: hsl(0, 0%, 35%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 35%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 35%);
+  --primary: hsl(21, 86%, 58%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 35%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 95%);
+  --muted-foreground: hsl(0, 0%, 35%);
+  --accent: hsl(0, 0%, 95%);
+  --accent-foreground: hsl(21, 86%, 58%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 97%);
+  --ring: hsl(21, 86%, 58%);
+  --chart-1: hsl(21, 86%, 58%);
+  --chart-2: hsl(142, 76%, 36%);
+  --chart-3: hsl(45, 93%, 56%);
+  --chart-4: hsl(27, 87%, 67%);
+  --chart-5: hsl(10, 80%, 58%);
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(0, 0%, 35%);
+  --sidebar-primary: hsl(21, 86%, 58%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(0, 0%, 95%);
+  --sidebar-accent-foreground: hsl(21, 86%, 58%);
+  --sidebar-border: hsl(0, 0%, 90%);
+  --sidebar-ring: hsl(21, 86%, 58%);
+  
+  /* Zyon Galicia Custom Colors */
+  --zyon-orange: hsl(21, 86%, 58%);
+  --zyon-orange-dark: hsl(14, 86%, 58%);
+  --zyon-orange-light: hsl(15, 64%, 72%);
+  --zyon-gray: hsl(0, 0%, 35%);
+  --zyon-bg: hsl(0, 0%, 95%);
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(224, 71%, 4%);
+  --foreground: hsl(213, 31%, 91%);
+  --card: hsl(224, 71%, 4%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --popover: hsl(224, 71%, 4%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --primary: hsl(21, 86%, 58%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(213, 31%, 91%);
+  --secondary-foreground: hsl(224, 71%, 4%);
+  --muted: hsl(223, 47%, 11%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --accent: hsl(216, 34%, 17%);
+  --accent-foreground: hsl(21, 86%, 58%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(216, 34%, 17%);
+  --input: hsl(216, 34%, 17%);
+  --ring: hsl(21, 86%, 58%);
+  --chart-1: hsl(21, 86%, 58%);
+  --chart-2: hsl(142, 76%, 36%);
+  --chart-3: hsl(45, 93%, 56%);
+  --chart-4: hsl(27, 87%, 67%);
+  --chart-5: hsl(10, 80%, 58%);
+  --sidebar: hsl(224, 71%, 4%);
+  --sidebar-foreground: hsl(213, 31%, 91%);
+  --sidebar-primary: hsl(21, 86%, 58%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(216, 34%, 17%);
+  --sidebar-accent-foreground: hsl(21, 86%, 58%);
+  --sidebar-border: hsl(216, 34%, 17%);
+  --sidebar-ring: hsl(21, 86%, 58%);
+
+  /* Dark mode Zyon colors */
+  --zyon-orange: hsl(21, 86%, 58%);
+  --zyon-orange-dark: hsl(14, 86%, 58%);
+  --zyon-orange-light: hsl(15, 64%, 72%);
+  --zyon-gray: hsl(213, 31%, 91%);
+  --zyon-bg: hsl(224, 71%, 4%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-zyon-orange {
+    color: var(--zyon-orange);
+  }
+  
+  .text-zyon-orange-dark {
+    color: var(--zyon-orange-dark);
+  }
+  
+  .text-zyon-orange-light {
+    color: var(--zyon-orange-light);
+  }
+  
+  .text-zyon-gray {
+    color: var(--zyon-gray);
+  }
+  
+  .bg-zyon-orange {
+    background-color: var(--zyon-orange);
+  }
+  
+  .bg-zyon-orange-dark {
+    background-color: var(--zyon-orange-dark);
+  }
+  
+  .bg-zyon-orange-light {
+    background-color: var(--zyon-orange-light);
+  }
+  
+  .bg-zyon-gray {
+    background-color: var(--zyon-gray);
+  }
+  
+  .bg-zyon-bg {
+    background-color: var(--zyon-bg);
+  }
+  
+  .border-zyon-orange {
+    border-color: var(--zyon-orange);
+  }
+  
+  .hover\:bg-zyon-orange-dark:hover {
+    background-color: var(--zyon-orange-dark);
+  }
+  
+  .hover\:text-zyon-orange:hover {
+    color: var(--zyon-orange);
+  }
+}
