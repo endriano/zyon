@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,7 @@ export function Header() {
   const { theme, toggleTheme } = useTheme();
   const { currentLanguage, changeLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
 
   const languages = [
     { code: "es", label: "ES", name: "Español" },
@@ -21,10 +21,25 @@ export function Header() {
 
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0];
 
+  const isHomePage = location === '/';
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHomePage) {
+      // Si estamos en el homepage, hacer scroll directo a la sección
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Si estamos en otra página, navegar al homepage y luego hacer scroll
+      setLocation('/');
+      // Usar setTimeout para asegurar que la página se carga antes del scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
     setIsMobileMenuOpen(false);
   };

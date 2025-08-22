@@ -416,9 +416,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:items-start">
             {/* Contact Form */}
-            <div className="bg-zyon-bg dark:bg-gray-900 rounded-2xl p-8">
+            <div className="bg-zyon-bg dark:bg-gray-900 rounded-2xl p-8 h-fit">
               <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
                 {t('contact.form.title')}
               </h3>
@@ -545,7 +545,7 @@ export default function Home() {
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8 h-fit">
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
                   {t('contact.info.title')}
