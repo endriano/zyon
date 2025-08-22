@@ -228,7 +228,11 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <Button className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+              <Button 
+                onClick={() => setLocation('/sobre-nosotros')}
+                className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                data-testid="about-cta"
+              >
                 {t('about.cta')}
               </Button>
             </div>
@@ -238,9 +242,21 @@ export default function Home() {
                 alt="Zyon Galicia boat workshop and marina facilities"
                 className="rounded-xl shadow-xl w-full h-auto"
               />
-              <div className="absolute -bottom-6 -right-6 bg-zyon-orange text-white p-6 rounded-xl shadow-lg">
-                <Anchor className="text-3xl mb-2" />
-                <p className="text-sm font-semibold">Calidad Garantizada</p>
+              
+              {/* Quality Features */}
+              <div className="absolute -bottom-6 -right-6 bg-zyon-orange text-white p-4 rounded-xl shadow-lg">
+                <Anchor className="text-2xl mb-1" />
+                <p className="text-xs font-semibold">Calidad Garantizada</p>
+              </div>
+              
+              <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-800 text-zyon-gray dark:text-white p-4 rounded-xl shadow-lg border-2 border-zyon-orange">
+                <Ship className="text-2xl mb-1 text-zyon-orange" />
+                <p className="text-xs font-semibold">Experiencia Naval</p>
+              </div>
+              
+              <div className="absolute -bottom-6 -left-6 bg-zyon-gray dark:bg-white text-white dark:text-zyon-gray p-4 rounded-xl shadow-lg">
+                <Handshake className="text-2xl mb-1" />
+                <p className="text-xs font-semibold">Servicio Integral</p>
               </div>
             </div>
           </div>

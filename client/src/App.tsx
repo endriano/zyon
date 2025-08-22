@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Layout } from "@/components/Layout";
 import Home from "@/pages/Home";
+import About from "@/pages/About";
 import SpeedBoats from "@/pages/SpeedBoats";
 import WorkBoats from "@/pages/WorkBoats";
 import Pangas from "@/pages/Pangas";
@@ -19,6 +20,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/sobre-nosotros" component={About} />
       <Route path="/lanchas-rapidas" component={SpeedBoats} />
       <Route path="/embarcaciones-trabajo" component={WorkBoats} />
       <Route path="/pangas" component={Pangas} />
