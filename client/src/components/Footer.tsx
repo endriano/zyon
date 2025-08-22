@@ -1,14 +1,20 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Ship } from "lucide-react";
+import { useLocation } from "wouter";
 
 export function Footer() {
   const { t } = useLanguage();
+  const [, setLocation] = useLocation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const navigateToPage = (path: string) => {
+    setLocation(path);
   };
 
   return (
@@ -55,7 +61,7 @@ export function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => scrollToSection('embarcaciones')}
+                  onClick={() => navigateToPage('/embarcaciones-lanchas')}
                   className="text-gray-400 hover:text-zyon-orange transition-colors"
                   data-testid="footer-link-boats"
                 >

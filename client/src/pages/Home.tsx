@@ -13,11 +13,13 @@ import { Gallery } from "@/components/Gallery";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { ChevronDown, Ship, Wrench, LifeBuoy, Tag, Truck, Handshake, ArrowRight, Anchor } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Home() {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [animatedStats, setAnimatedStats] = useState({ boats: 0, years: 0, satisfaction: 0 });
+  const [, setLocation] = useLocation();
 
   // Animated counters
   useEffect(() => {
@@ -302,7 +304,11 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Speedboats */}
-            <div className="group cursor-pointer" data-testid="boat-category-speedboats">
+            <div 
+              className="group cursor-pointer" 
+              data-testid="boat-category-speedboats"
+              onClick={() => setLocation('/lanchas-rapidas')}
+            >
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
@@ -322,7 +328,11 @@ export default function Home() {
             </div>
 
             {/* Workboats */}
-            <div className="group cursor-pointer" data-testid="boat-category-workboats">
+            <div 
+              className="group cursor-pointer" 
+              data-testid="boat-category-workboats"
+              onClick={() => setLocation('/embarcaciones-trabajo')}
+            >
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
@@ -342,7 +352,11 @@ export default function Home() {
             </div>
 
             {/* Pangas */}
-            <div className="group cursor-pointer" data-testid="boat-category-pangas">
+            <div 
+              className="group cursor-pointer" 
+              data-testid="boat-category-pangas"
+              onClick={() => setLocation('/pangas')}
+            >
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
@@ -364,7 +378,10 @@ export default function Home() {
 
           {/* CTA Section */}
           <div className="text-center mt-16">
-            <Button className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <Button 
+              onClick={() => setLocation('/embarcaciones-lanchas')}
+              className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
               {t('boats.cta')}
             </Button>
           </div>
@@ -629,6 +646,27 @@ export default function Home() {
                   >
                     <span>📺</span>
                   </a>
+                </div>
+              </div>
+
+              {/* Google Maps */}
+              <div>
+                <h4 className="font-semibold text-zyon-gray dark:text-white mb-4">
+                  Localización
+                </h4>
+                <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.8234567890123!2d-8.7267!3d42.2328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2f621234567890%3A0x1234567890abcdef!2sPuerto%20Deportivo%20de%20Vigo%2C%20Vigo%2C%20Pontevedra%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890123!5m2!1sen!2ses"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Zyon Galicia"
+                    data-testid="google-maps"
+                    className="w-full h-full"
+                  />
                 </div>
               </div>
             </div>

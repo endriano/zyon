@@ -7,6 +7,10 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Layout } from "@/components/Layout";
 import Home from "@/pages/Home";
+import SpeedBoats from "@/pages/SpeedBoats";
+import WorkBoats from "@/pages/WorkBoats";
+import Pangas from "@/pages/Pangas";
+import AllBoats from "@/pages/AllBoats";
 import NotFound from "@/pages/not-found";
 import "./i18n";
 import { Helmet } from "react-helmet";
@@ -15,6 +19,10 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/lanchas-rapidas" component={SpeedBoats} />
+      <Route path="/embarcaciones-trabajo" component={WorkBoats} />
+      <Route path="/pangas" component={Pangas} />
+      <Route path="/embarcaciones-lanchas" component={AllBoats} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

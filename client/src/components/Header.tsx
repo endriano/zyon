@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Sun, Moon, Menu, ChevronDown, Ship } from "lucide-react";
+import { useLocation } from "wouter";
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
   const { currentLanguage, changeLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [, setLocation] = useLocation();
 
   const languages = [
     { code: "es", label: "ES", name: "Español" },
@@ -24,6 +26,11 @@ export function Header() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false);
+  };
+
+  const navigateToPage = (path: string) => {
+    setLocation(path);
     setIsMobileMenuOpen(false);
   };
 
@@ -63,7 +70,7 @@ export function Header() {
               {t('nav.services')}
             </button>
             <button 
-              onClick={() => scrollToSection('embarcaciones')}
+              onClick={() => navigateToPage('/embarcaciones-lanchas')}
               className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
               data-testid="nav-boats"
             >
@@ -158,7 +165,7 @@ export function Header() {
                     {t('nav.services')}
                   </button>
                   <button 
-                    onClick={() => scrollToSection('embarcaciones')}
+                    onClick={() => navigateToPage('/embarcaciones-lanchas')}
                     className="text-left text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors py-2"
                     data-testid="mobile-nav-boats"
                   >
