@@ -83,8 +83,9 @@ export default function AllBoats() {
                 <div className="relative overflow-hidden rounded-2xl shadow-lg">
                   <img 
                     src={category.image}
-                    alt={category.title}
+                    alt={`${category.title} - ${category.description} - Embarcaciones profesionales Zyon Galicia especializadas en el sector náutico gallego`}
                     className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">

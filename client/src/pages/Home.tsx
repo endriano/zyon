@@ -239,8 +239,9 @@ export default function Home() {
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Zyon Galicia boat workshop and marina facilities"
+                alt="Instalaciones modernas de Zyon Galicia - Taller naval profesional en Puerto Deportivo de Vigo especializado en embarcaciones de calidad"
                 className="rounded-xl shadow-xl w-full h-auto"
+                loading="lazy"
               />
               
               {/* Quality Features */}
@@ -328,8 +329,9 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Speedboat racing through blue waters"
+                  alt="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -352,8 +354,9 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Professional work boat in harbor"
+                  alt="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -376,8 +379,9 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <img 
                   src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Traditional panga boat on coastal waters"
+                  alt="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">

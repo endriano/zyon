@@ -72,8 +72,9 @@ export default function About() {
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Embarcaciones profesionales en el puerto"
+                alt="Historia de Zyon Galicia - Más de 20 años construyendo embarcaciones profesionales de calidad en el sector náutico gallego"
                 className="rounded-2xl shadow-lg"
+                loading="lazy"
               />
               <div className="absolute -bottom-6 -right-6 bg-zyon-orange text-white p-6 rounded-xl shadow-lg">
                 <Ship className="text-3xl mb-2" />

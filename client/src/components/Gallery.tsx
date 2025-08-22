@@ -6,42 +6,42 @@ import { ChevronLeft, ChevronRight, X, Search } from "lucide-react";
 const galleryImages = [
   {
     src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Marina with luxury boats and yachts",
+    alt: "Puerto Deportivo de Vigo - Marina con embarcaciones de lujo y yates donde opera Zyon Galicia",
     category: "marina"
   },
   {
     src: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Speedboat racing through blue waters",
+    alt: "Lancha rápida Zyon Galicia navegando a alta velocidad en aguas gallegas",
     category: "speedboat"
   },
   {
     src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Professional fishing boat at work",
+    alt: "Embarcación de pesca profesional Zyon Galicia trabajando en aguas de Galicia",
     category: "workboat"
   },
   {
     src: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Professional boat workshop and repair facility",
+    alt: "Taller naval profesional Zyon Galicia - Instalaciones de reparación y mantenimiento de embarcaciones",
     category: "workshop"
   },
   {
     src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Harbor at sunset with moored boats",
+    alt: "Puerto de Vigo al atardecer con embarcaciones amarradas - Base de operaciones de Zyon Galicia",
     category: "harbor"
   },
   {
     src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Close-up of boat hull and engine details",
+    alt: "Detalle de casco y motor de embarcación Zyon Galicia - Calidad y precisión en construcción naval",
     category: "detail"
   },
   {
     src: "https://images.unsplash.com/photo-1552832230-52d5c6132cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Professional team working on boat maintenance",
+    alt: "Equipo profesional Zyon Galicia realizando mantenimiento especializado de embarcaciones",
     category: "maintenance"
   },
   {
     src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    alt: "Boats anchored near rocky coastline",
+    alt: "Embarcaciones Zyon Galicia ancladas en costa rocosa gallega - Navegación segura en aguas atlánticas",
     category: "coast"
   }
 ];
