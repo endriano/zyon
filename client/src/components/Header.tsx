@@ -208,7 +208,9 @@ export function Header() {
                         className="w-6 h-4 object-cover rounded-sm"
                       />
                       <div className="flex flex-col">
-                        <span className="text-xs text-gray-500">{lang.name}</span>
+                        <span className="text-xs text-gray-500">
+                          {lang.name}
+                        </span>
                       </div>
                     </DropdownMenuItem>
                   ))}
@@ -256,5 +258,3 @@ export function Header() {
     </>
   );
 }
-
-

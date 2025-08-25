@@ -6,7 +6,8 @@ export const translations = {
         services: "Servicios",
         boats: "Embarcaciones",
         gallery: "Galería",
-        contact: "Contacto"
+        contact: "Contacto",
+        menu: "Menú"
       },
       hero: {
         title: "Embarcaciones",
@@ -138,7 +139,8 @@ export const translations = {
         services: "Services",
         boats: "Boats",
         gallery: "Gallery",
-        contact: "Contact"
+        contact: "Contact",
+        menu: "Menu"
       },
       hero: {
         title: "Professional",
@@ -270,7 +272,8 @@ export const translations = {
         services: "Services",
         boats: "Embarcations",
         gallery: "Galerie",
-        contact: "Contact"
+        contact: "Contact",
+        menu: "Menu"
       },
       hero: {
         title: "Embarcations",
