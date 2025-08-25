@@ -27,8 +27,8 @@ export const translations = {
         title: "Nuestros servicios",
         subtitle: "Ofrecemos soluciones completas para todas sus necesidades náuticas",
         sales: {
-          title: "Venta de Embarcaciones",
-          description: "Amplio catálogo de lanchas rápidas, embarcaciones de trabaj, pangas y lanchas de rescate."
+          title: "Venta de embarcaciones",
+          description: "Amplio catálogo de lanchas rápidas, embarcaciones de trabajo, pangas y lanchas de rescate."
         },
         maintenance: {
           title: "Mantenimiento",
@@ -44,7 +44,7 @@ export const translations = {
         },
       },
       boats: {
-        title: "Nuestras embarcaciones",
+        title: "Nuestros productos",
         subtitle: "Descubre nuestra amplia gama de embarcaciones profesionales",
         speedboats: {
           title: "Lanchas rápidas",
@@ -169,7 +169,7 @@ export const translations = {
         },
       },
       boats: {
-        title: "Our boats",
+        title: "Our products",
         subtitle: "Discover our wide range of professional boats",
         speedboats: {
           title: "Speedboats",
@@ -294,7 +294,7 @@ export const translations = {
         },
       },
       boats: {
-        title: "Nos embarcations",
+        title: "Nos produits",
         subtitle: "Découvrez notre large gamme d'embarcations professionnelles",
         speedboats: {
           title: "Bateaux rapides",

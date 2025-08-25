@@ -168,25 +168,31 @@ export default function Home() {
     },
   ];
 
-  // Función simple y segura
+  // Función general que respeta el tema (para secciones normales)
   const highlightKeywords = (text: string) => {
+    return highlightKeywordsBase(text, "theme"); // "theme" indica usar colores del tema
+  };
+
+  // Función específica para Hero section (texto siempre blanco)
+  const highlightKeywordsHero = (text: string) => {
+    return highlightKeywordsBase(text, "hero"); // "hero" indica mantener blanco
+  };
+
+  // Función base reutilizable
+  const highlightKeywordsBase = (
+    text: string,
+    mode: "hero" | "theme" = "theme",
+  ) => {
     // Palabras a resaltar (case insensitive)
     const keywords = [
-      "especialistas",
       "calidad",
       "experiencia",
       "excepcional",
-      "náutico",
-      "specialists",
-      "quality",
       "experience",
       "exceptional",
-      "nautical",
-      "spécialistes",
       "qualité",
       "expérience",
       "exceptionnel",
-      "nautique",
       "Professionnels",
       "Profesionales",
       "Professional",
@@ -196,10 +202,26 @@ export default function Home() {
       "15",
       "services",
       "servicios",
-      "services",
-      "embarcaciones",
-      "embarcations",
-      "boats",
+      "productos",
+      "products",
+      "produits",
+      "soluciones completas",
+      "Amplio catálogo",
+      "completos",
+      "Consultoría especializada",
+      "Gestión completa",
+      "complete solutions",
+      "Wide catalog",
+      "Complete",
+      "Specialized consultancy",
+      "management",
+      "Large catalogue",
+      "complets",
+      "Conseil spécialisé",
+      "Gestion complète",
+      "Galerie",
+      "Gallery",
+      "Galería",
     ];
 
     // Dividir el texto en palabras manteniendo los espacios y puntuación
@@ -223,8 +245,14 @@ export default function Home() {
           </span>
         );
       } else {
+        // Determinar el color del texto según el modo
+        const textColorClass =
+          mode === "hero"
+            ? "text-white" // Siempre blanco para hero
+            : "text-zyon-gray dark:text-white"; // Respeta el tema para otras secciones
+
         return (
-          <span key={index} className="text-white">
+          <span key={index} className={textColorClass}>
             {part}
           </span>
         );
@@ -259,7 +287,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {highlightKeywords(t("hero.title"))}
+            {highlightKeywordsHero(t("hero.title"))}
           </motion.h1>
 
           <motion.p
@@ -268,7 +296,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {highlightKeywords(t("hero.subtitle"))}
+            {highlightKeywordsHero(t("hero.subtitle"))}
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -506,7 +534,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-gray-600 dark:text-gray-400">
-                    {service.description}
+                    {highlightKeywords(service.description)}
                   </p>
 
                   {/* Línea decorativa que aparece al hacer hover */}
@@ -525,7 +553,7 @@ export default function Home() {
       {/* Boats Categories Section */}
       <section id="embarcaciones" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -533,26 +561,26 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-               {highlightKeywords(t('boats.title'))}
+              {highlightKeywords(t("boats.title"))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('boats.subtitle')}
+              {t("boats.subtitle")}
             </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Speedboats */}
-            <motion.div 
+            <motion.div
               className="group cursor-pointer"
               data-testid="boat-category-speedboats"
-              onClick={() => setLocation('/lanchas-rapidas')}
+              onClick={() => setLocation("/lanchas-rapidas")}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 duration: 0.7,
                 delay: 0.1,
                 type: "spring",
-                stiffness: 100
+                stiffness: 100,
               }}
               viewport={{ once: true }}
               whileHover={{ y: -15 }}
@@ -560,7 +588,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 {/* Imagen con overlay gradient */}
                 <div className="relative h-80">
-                  <motion.img 
+                  <motion.img
                     src={speedboatImage}
                     alt="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
                     className="w-full h-full object-cover"
@@ -572,15 +600,19 @@ export default function Home() {
                 </div>
 
                 {/* Contenido con animación de slide up */}
-                <motion.div 
+                <motion.div
                   className="absolute bottom-0 left-0 right-0 p-6 text-white"
                   initial={{ y: 20, opacity: 0 }}
                   whileHover={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h3 className="text-2xl font-bold mb-2">{t('boats.speedboats.title')}</h3>
-                  <p className="text-sm opacity-90 mb-4">{t('boats.speedboats.description')}</p>
-                  <motion.div 
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t("boats.speedboats.title")}
+                  </h3>
+                  <p className="text-sm opacity-90 mb-4">
+                    {t("boats.speedboats.description")}
+                  </p>
+                  <motion.div
                     className="flex items-center text-zyon-orange font-semibold"
                     whileHover={{ x: 5 }}
                   >
@@ -592,17 +624,17 @@ export default function Home() {
             </motion.div>
 
             {/* Workboats */}
-            <motion.div 
+            <motion.div
               className="group cursor-pointer"
               data-testid="boat-category-workboats"
-              onClick={() => setLocation('/embarcaciones-trabajo')}
+              onClick={() => setLocation("/embarcaciones-trabajo")}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 duration: 0.7,
                 delay: 0.2,
                 type: "spring",
-                stiffness: 100
+                stiffness: 100,
               }}
               viewport={{ once: true }}
               whileHover={{ y: -15 }}
@@ -610,7 +642,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 {/* Imagen con overlay gradient */}
                 <div className="relative h-80">
-                  <motion.img 
+                  <motion.img
                     src={workboatImage}
                     alt="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
                     className="w-full h-full object-cover"
@@ -622,15 +654,19 @@ export default function Home() {
                 </div>
 
                 {/* Contenido con animación de slide up */}
-                <motion.div 
+                <motion.div
                   className="absolute bottom-0 left-0 right-0 p-6 text-white"
                   initial={{ y: 20, opacity: 0 }}
                   whileHover={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h3 className="text-2xl font-bold mb-2">{t('boats.workboats.title')}</h3>
-                  <p className="text-sm opacity-90 mb-4">{t('boats.workboats.description')}</p>
-                  <motion.div 
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t("boats.workboats.title")}
+                  </h3>
+                  <p className="text-sm opacity-90 mb-4">
+                    {t("boats.workboats.description")}
+                  </p>
+                  <motion.div
                     className="flex items-center text-zyon-orange font-semibold"
                     whileHover={{ x: 5 }}
                   >
@@ -642,17 +678,17 @@ export default function Home() {
             </motion.div>
 
             {/* Pangas */}
-            <motion.div 
+            <motion.div
               className="group cursor-pointer"
               data-testid="boat-category-pangas"
-              onClick={() => setLocation('/pangas')}
+              onClick={() => setLocation("/pangas")}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 duration: 0.7,
                 delay: 0.3,
                 type: "spring",
-                stiffness: 100
+                stiffness: 100,
               }}
               viewport={{ once: true }}
               whileHover={{ y: -15 }}
@@ -660,7 +696,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-xl">
                 {/* Imagen con overlay gradient */}
                 <div className="relative h-80">
-                  <motion.img 
+                  <motion.img
                     src={pangaImage}
                     alt="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
                     className="w-full h-full object-cover"
@@ -672,15 +708,19 @@ export default function Home() {
                 </div>
 
                 {/* Contenido con animación de slide up */}
-                <motion.div 
+                <motion.div
                   className="absolute bottom-0 left-0 right-0 p-6 text-white"
                   initial={{ y: 20, opacity: 0 }}
                   whileHover={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h3 className="text-2xl font-bold mb-2">{t('boats.panga.title')}</h3>
-                  <p className="text-sm opacity-90 mb-4">{t('boats.panga.description')}</p>
-                  <motion.div 
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t("boats.panga.title")}
+                  </h3>
+                  <p className="text-sm opacity-90 mb-4">
+                    {t("boats.panga.description")}
+                  </p>
+                  <motion.div
                     className="flex items-center text-zyon-orange font-semibold"
                     whileHover={{ x: 5 }}
                   >
@@ -693,23 +733,24 @@ export default function Home() {
           </div>
 
           {/* CTA Section mejorado */}
-          <motion.div 
+          <motion.div
             className="text-center mt-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <motion.button 
-              onClick={() => setLocation('/embarcaciones-lanchas')}
+            <motion.button
+              onClick={() => setLocation("/embarcaciones-lanchas")}
               className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)"
+                boxShadow:
+                  "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)",
               }}
               whileTap={{ scale: 0.95 }}
             >
-              {t('boats.cta')}
+              {t("boats.cta")}
             </motion.button>
           </motion.div>
         </div>
@@ -720,13 +761,12 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t("gallery.title")}
+              {highlightKeywords(t("gallery.title"))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("gallery.subtitle")}
             </p>
           </div>
-
           <Gallery />
         </div>
       </section>
