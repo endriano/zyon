@@ -11,7 +11,7 @@ export const translations = {
       },
       hero: {
         title: "Embarcaciones",
-        subtitle: "Especialistas en lanchas rápidas, embarcaciones de trabajo y pangas. Calidad, experiencia y servicio excepcional en el sector náutico gallego.",
+        subtitle: "Especialistas en lanchas rápidas, embarcaciones de trabajo y pangas. Calidad, experiencia y servicio excepcional en el sector náutico.",
         cta_primary: "Ver Embarcaciones",
         cta_secondary: "Contactar"
       },
@@ -144,7 +144,7 @@ export const translations = {
       },
       hero: {
         title: "Professional",
-        subtitle: "Specialists in speedboats, workboats and pangas. Quality, experience and exceptional service in the Galician nautical sector.",
+        subtitle: "Specialists in speedboats, workboats and pangas. Quality, experience and exceptional service in the nautical sector.",
         cta_primary: "View Boats",
         cta_secondary: "Contact"
       },
@@ -277,7 +277,7 @@ export const translations = {
       },
       hero: {
         title: "Embarcations",
-        subtitle: "Spécialistes en bateaux rapides, embarcations de travail et pangas. Qualité, expérience et service exceptionnel dans le secteur nautique galicien.",
+        subtitle: "Spécialistes en bateaux rapides, embarcations de travail et pangas. Qualité, expérience et service exceptionnel dans le secteur nautique.",
         cta_primary: "Voir Embarcations",
         cta_secondary: "Contact"
       },

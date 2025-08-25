@@ -6,19 +6,53 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Gallery } from "@/components/Gallery";
-import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
+import {
+  insertContactMessageSchema,
+  type InsertContactMessage,
+} from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { ChevronDown, Ship, Wrench, LifeBuoy, Tag, Truck, Handshake, ArrowRight, Anchor } from "lucide-react";
+import {
+  ChevronDown,
+  Ship,
+  Wrench,
+  LifeBuoy,
+  Tag,
+  Truck,
+  Handshake,
+  ArrowRight,
+  Anchor,
+} from "lucide-react";
 import { useLocation } from "wouter";
+import { motion } from "framer-motion";
+
+// Importar imagen del hero desde assets
+import heroImage from "@/assets/images/hero/hero.webp";
 
 export default function Home() {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const [animatedStats, setAnimatedStats] = useState({ boats: 0, years: 0, satisfaction: 0 });
+  const [animatedStats, setAnimatedStats] = useState({
+    boats: 0,
+    years: 0,
+    satisfaction: 0,
+  });
   const [, setLocation] = useLocation();
 
   // Animated counters
@@ -31,10 +65,10 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
-    const statsSection = document.getElementById('stats');
+    const statsSection = document.getElementById("stats");
     if (statsSection) {
       observer.observe(statsSection);
     }
@@ -46,16 +80,16 @@ export default function Home() {
     const targets = { boats: 200, years: 20, satisfaction: 98 };
     const duration = 2000;
     const steps = 60;
-    
+
     let currentStep = 0;
     const interval = setInterval(() => {
       currentStep++;
       const progress = currentStep / steps;
-      
+
       setAnimatedStats({
         boats: Math.floor(targets.boats * progress),
         years: Math.floor(targets.years * progress),
-        satisfaction: Math.floor(targets.satisfaction * progress)
+        satisfaction: Math.floor(targets.satisfaction * progress),
       });
 
       if (currentStep >= steps) {
@@ -73,8 +107,8 @@ export default function Home() {
       email: "",
       phone: "",
       subject: "",
-      message: ""
-    }
+      message: "",
+    },
   });
 
   const contactMutation = useMutation({
@@ -84,17 +118,17 @@ export default function Home() {
     onSuccess: () => {
       toast({
         title: "Success",
-        description: t('contact.form.success'),
+        description: t("contact.form.success"),
       });
       form.reset();
     },
     onError: () => {
       toast({
         title: "Error",
-        description: t('contact.form.error'),
+        description: t("contact.form.error"),
         variant: "destructive",
       });
-    }
+    },
   });
 
   const onSubmit = (data: InsertContactMessage) => {
@@ -104,90 +138,169 @@ export default function Home() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const services = [
     {
       icon: Ship,
-      title: t('services.sales.title'),
-      description: t('services.sales.description')
+      title: t("services.sales.title"),
+      description: t("services.sales.description"),
     },
     {
       icon: Wrench,
-      title: t('services.maintenance.title'),
-      description: t('services.maintenance.description')
+      title: t("services.maintenance.title"),
+      description: t("services.maintenance.description"),
     },
     {
       icon: LifeBuoy,
-      title: t('services.consulting.title'),
-      description: t('services.consulting.description')
+      title: t("services.consulting.title"),
+      description: t("services.consulting.description"),
     },
     {
       icon: Tag,
-      title: t('services.certifications.title'),
-      description: t('services.certifications.description')
+      title: t("services.certifications.title"),
+      description: t("services.certifications.description"),
     },
     {
       icon: Truck,
-      title: t('services.transport.title'),
-      description: t('services.transport.description')
+      title: t("services.transport.title"),
+      description: t("services.transport.description"),
     },
     {
       icon: Handshake,
-      title: t('services.financing.title'),
-      description: t('services.financing.description')
-    }
+      title: t("services.financing.title"),
+      description: t("services.financing.description"),
+    },
   ];
+
+  // Función simple y segura
+  const highlightKeywords = (text: string) => {
+    // Palabras a resaltar (case insensitive)
+    const keywords = [
+      "especialistas",
+      "calidad",
+      "experiencia",
+      "excepcional",
+      "náutico",
+      "specialists",
+      "quality",
+      "experience",
+      "exceptional",
+      "nautical",
+      "spécialistes",
+      "qualité",
+      "expérience",
+      "exceptionnelle",
+      "nautique",
+    ];
+
+    // Dividir el texto en palabras manteniendo los espacios y puntuación
+    const regex = new RegExp(`(${keywords.join("|")})`, "gi");
+    const parts = text.split(regex);
+
+    return parts.map((part, index) => {
+      if (part === "") return null;
+
+      // Verificar si esta parte es una keyword (case insensitive)
+      const isKeyword = keywords.some(
+        (keyword) =>
+          keyword.toLowerCase() ===
+          part.toLowerCase().replace(/[.,;:!?()]/g, ""),
+      );
+
+      if (isKeyword) {
+        return (
+          <span key={index} className="text-zyon-orange font-bold">
+            {part}
+          </span>
+        );
+      } else {
+        return (
+          <span key={index} className="text-white">
+            {part}
+          </span>
+        );
+      }
+    });
+  };
 
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
-          }}
-        />
-        
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40 dark:bg-black/60" />
-        
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span>{t('hero.title')}</span><br />
-            <span className="text-zyon-orange">Profesionales</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            {t('hero.subtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={() => scrollToSection('embarcaciones')}
-              className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              data-testid="hero-cta-boats"
-            >
-              {t('hero.cta_primary')}
-            </Button>
-            <Button
-              onClick={() => scrollToSection('contacto')}
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-zyon-gray px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
-              data-testid="hero-cta-contact"
-            >
-              {t('hero.cta_secondary')}
-            </Button>
-          </div>
+      <section
+        id="inicio"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        {/* Background Image - Importada desde assets */}
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Zyon Galicia - Embarcaciones Profesionales en Puerto Deportivo de Vigo"
+            className="w-full h-full object-cover"
+          />
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="text-white text-2xl opacity-70" />
+        {/* Overlay mejorado con gradiente para mejor legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70 dark:from-black/60 dark:via-black/70 dark:to-black/90" />
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <motion.h1
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span>{t("hero.title")}</span>
+            <br />
+            <span className="text-zyon-orange">Profesionales</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {highlightKeywords(t("hero.subtitle"))}
+          </motion.p>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <motion.button
+              onClick={() => scrollToSection("embarcaciones")}
+              className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              data-testid="hero-cta-boats"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {t("hero.cta_primary")}
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection("contacto")}
+              className="border-2 border-white text-white hover:bg-white hover:text-zyon-gray px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+              data-testid="hero-cta-contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {t("hero.cta_secondary")}
+            </motion.button>
+          </motion.div>
         </div>
+
+        {/* Scroll Indicator con mejor animación */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ChevronDown className="text-white text-2xl opacity-70" />
+        </motion.div>
       </section>
 
       {/* About Section */}
@@ -196,65 +309,74 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-zyon-gray dark:text-white">
-                {t('about.title')}
+                {t("about.title")}
                 <span className="text-zyon-orange"> en Galicia</span>
               </h2>
               <p className="text-lg mb-6 leading-relaxed">
-                {t('about.description')}
+                {t("about.description")}
               </p>
               <div id="stats" className="grid sm:grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-zyon-orange mb-2" data-testid="stat-boats">
+                  <div
+                    className="text-3xl font-bold text-zyon-orange mb-2"
+                    data-testid="stat-boats"
+                  >
                     {animatedStats.boats}+
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {t('about.stat1')}
+                    {t("about.stat1")}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-zyon-orange mb-2" data-testid="stat-years">
+                  <div
+                    className="text-3xl font-bold text-zyon-orange mb-2"
+                    data-testid="stat-years"
+                  >
                     {animatedStats.years}+
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {t('about.stat2')}
+                    {t("about.stat2")}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-zyon-orange mb-2" data-testid="stat-satisfaction">
+                  <div
+                    className="text-3xl font-bold text-zyon-orange mb-2"
+                    data-testid="stat-satisfaction"
+                  >
                     {animatedStats.satisfaction}%
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {t('about.stat3')}
+                    {t("about.stat3")}
                   </p>
                 </div>
               </div>
-              <Button 
-                onClick={() => setLocation('/sobre-nosotros')}
+              <Button
+                onClick={() => setLocation("/sobre-nosotros")}
                 className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                 data-testid="about-cta"
               >
-                {t('about.cta')}
+                {t("about.cta")}
               </Button>
             </div>
             <div className="relative">
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                 alt="Instalaciones modernas de Zyon Galicia - Taller naval profesional en Puerto Deportivo de Vigo especializado en embarcaciones de calidad"
                 className="rounded-xl shadow-xl w-full h-auto"
                 loading="lazy"
               />
-              
+
               {/* Quality Features */}
               <div className="absolute -bottom-6 -right-6 bg-zyon-orange text-white p-4 rounded-xl shadow-lg">
                 <Anchor className="text-2xl mb-1" />
                 <p className="text-xs font-semibold">Calidad Garantizada</p>
               </div>
-              
+
               <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-800 text-zyon-gray dark:text-white p-4 rounded-xl shadow-lg border-2 border-zyon-orange">
                 <Ship className="text-2xl mb-1 text-zyon-orange" />
                 <p className="text-xs font-semibold">Experiencia Naval</p>
               </div>
-              
+
               <div className="absolute -bottom-6 -left-6 bg-zyon-gray dark:bg-white text-white dark:text-zyon-gray p-4 rounded-xl shadow-lg">
                 <Handshake className="text-2xl mb-1" />
                 <p className="text-xs font-semibold">Servicio Integral</p>
@@ -269,10 +391,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t('services.title')}
+              {t("services.title")}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('services.subtitle')}
+              {t("services.subtitle")}
             </p>
           </div>
 
@@ -280,7 +402,7 @@ export default function Home() {
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div 
+                <div
                   key={index}
                   className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
                   data-testid={`service-${index}`}
@@ -294,8 +416,8 @@ export default function Home() {
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
                     {service.description}
                   </p>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-zyon-orange hover:text-zyon-orange-dark font-semibold inline-flex items-center group-hover:translate-x-1 transition-transform"
                   >
                     Ver más <ArrowRight className="ml-2 w-4 h-4" />
@@ -312,22 +434,22 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t('boats.title')}
+              {t("boats.title")}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('boats.subtitle')}
+              {t("boats.subtitle")}
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Speedboats */}
-            <div 
-              className="group cursor-pointer" 
+            <div
+              className="group cursor-pointer"
               data-testid="boat-category-speedboats"
-              onClick={() => setLocation('/lanchas-rapidas')}
+              onClick={() => setLocation("/lanchas-rapidas")}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -335,8 +457,12 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{t('boats.speedboats.title')}</h3>
-                  <p className="text-sm opacity-90 mb-4">{t('boats.speedboats.description')}</p>
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t("boats.speedboats.title")}
+                  </h3>
+                  <p className="text-sm opacity-90 mb-4">
+                    {t("boats.speedboats.description")}
+                  </p>
                   <div className="flex items-center text-zyon-orange font-semibold">
                     <span className="mr-2">Ver modelos</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
@@ -346,13 +472,13 @@ export default function Home() {
             </div>
 
             {/* Workboats */}
-            <div 
-              className="group cursor-pointer" 
+            <div
+              className="group cursor-pointer"
               data-testid="boat-category-workboats"
-              onClick={() => setLocation('/embarcaciones-trabajo')}
+              onClick={() => setLocation("/embarcaciones-trabajo")}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -360,8 +486,12 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{t('boats.workboats.title')}</h3>
-                  <p className="text-sm opacity-90 mb-4">{t('boats.workboats.description')}</p>
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t("boats.workboats.title")}
+                  </h3>
+                  <p className="text-sm opacity-90 mb-4">
+                    {t("boats.workboats.description")}
+                  </p>
                   <div className="flex items-center text-zyon-orange font-semibold">
                     <span className="mr-2">Ver modelos</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
@@ -371,13 +501,13 @@ export default function Home() {
             </div>
 
             {/* Pangas */}
-            <div 
-              className="group cursor-pointer" 
+            <div
+              className="group cursor-pointer"
               data-testid="boat-category-pangas"
-              onClick={() => setLocation('/pangas')}
+              onClick={() => setLocation("/pangas")}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -385,8 +515,12 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{t('boats.panga.title')}</h3>
-                  <p className="text-sm opacity-90 mb-4">{t('boats.panga.description')}</p>
+                  <h3 className="text-2xl font-bold mb-2">
+                    {t("boats.panga.title")}
+                  </h3>
+                  <p className="text-sm opacity-90 mb-4">
+                    {t("boats.panga.description")}
+                  </p>
                   <div className="flex items-center text-zyon-orange font-semibold">
                     <span className="mr-2">Ver modelos</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
@@ -398,11 +532,11 @@ export default function Home() {
 
           {/* CTA Section */}
           <div className="text-center mt-16">
-            <Button 
-              onClick={() => setLocation('/embarcaciones-lanchas')}
+            <Button
+              onClick={() => setLocation("/embarcaciones-lanchas")}
               className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              {t('boats.cta')}
+              {t("boats.cta")}
             </Button>
           </div>
         </div>
@@ -413,10 +547,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t('gallery.title')}
+              {t("gallery.title")}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('gallery.subtitle')}
+              {t("gallery.subtitle")}
             </p>
           </div>
 
@@ -429,10 +563,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t('contact.title')}
+              {t("contact.title")}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('contact.subtitle')}
+              {t("contact.subtitle")}
             </p>
           </div>
 
@@ -440,22 +574,25 @@ export default function Home() {
             {/* Contact Form */}
             <div className="bg-zyon-bg dark:bg-gray-900 rounded-2xl p-8 h-fit">
               <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
-                {t('contact.form.title')}
+                {t("contact.form.title")}
               </h3>
-              
+
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
                   <div className="grid md:grid-cols-2 gap-6">
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('contact.form.name')} *</FormLabel>
+                          <FormLabel>{t("contact.form.name")} *</FormLabel>
                           <FormControl>
-                            <Input 
-                              placeholder="Tu nombre" 
-                              {...field} 
+                            <Input
+                              placeholder="Tu nombre"
+                              {...field}
                               data-testid="contact-name"
                               className="bg-white dark:bg-gray-800"
                             />
@@ -469,12 +606,12 @@ export default function Home() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('contact.form.email')} *</FormLabel>
+                          <FormLabel>{t("contact.form.email")} *</FormLabel>
                           <FormControl>
-                            <Input 
+                            <Input
                               type="email"
-                              placeholder="tu@email.com" 
-                              {...field} 
+                              placeholder="tu@email.com"
+                              {...field}
                               data-testid="contact-email"
                               className="bg-white dark:bg-gray-800"
                             />
@@ -484,18 +621,18 @@ export default function Home() {
                       )}
                     />
                   </div>
-                  
+
                   <FormField
                     control={form.control}
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('contact.form.phone')}</FormLabel>
+                        <FormLabel>{t("contact.form.phone")}</FormLabel>
                         <FormControl>
-                          <Input 
+                          <Input
                             type="tel"
-                            placeholder="+34 600 000 000" 
-                            {...field} 
+                            placeholder="+34 600 000 000"
+                            {...field}
                             data-testid="contact-phone"
                             className="bg-white dark:bg-gray-800"
                           />
@@ -504,16 +641,19 @@ export default function Home() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('contact.form.subject')} *</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value}>
+                        <FormLabel>{t("contact.form.subject")} *</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          value={field.value}
+                        >
                           <FormControl>
-                            <SelectTrigger 
+                            <SelectTrigger
                               data-testid="contact-subject"
                               className="bg-white dark:bg-gray-800"
                             >
@@ -521,9 +661,15 @@ export default function Home() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="venta">Consulta de venta</SelectItem>
-                            <SelectItem value="mantenimiento">Servicio de mantenimiento</SelectItem>
-                            <SelectItem value="financiacion">Información sobre financiación</SelectItem>
+                            <SelectItem value="venta">
+                              Consulta de venta
+                            </SelectItem>
+                            <SelectItem value="mantenimiento">
+                              Servicio de mantenimiento
+                            </SelectItem>
+                            <SelectItem value="financiacion">
+                              Información sobre financiación
+                            </SelectItem>
                             <SelectItem value="otro">Otro</SelectItem>
                           </SelectContent>
                         </Select>
@@ -531,18 +677,18 @@ export default function Home() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('contact.form.message')} *</FormLabel>
+                        <FormLabel>{t("contact.form.message")} *</FormLabel>
                         <FormControl>
-                          <Textarea 
+                          <Textarea
                             rows={5}
-                            placeholder="Cuéntanos en qué podemos ayudarte..." 
-                            {...field} 
+                            placeholder="Cuéntanos en qué podemos ayudarte..."
+                            {...field}
                             data-testid="contact-message"
                             className="resize-none bg-white dark:bg-gray-800"
                           />
@@ -551,14 +697,16 @@ export default function Home() {
                       </FormItem>
                     )}
                   />
-                  
-                  <Button 
-                    type="submit" 
+
+                  <Button
+                    type="submit"
                     className="w-full bg-zyon-orange hover:bg-zyon-orange-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors"
                     disabled={contactMutation.isPending}
                     data-testid="contact-submit"
                   >
-                    {contactMutation.isPending ? "Enviando..." : t('contact.form.submit')}
+                    {contactMutation.isPending
+                      ? "Enviando..."
+                      : t("contact.form.submit")}
                   </Button>
                 </form>
               </Form>
@@ -568,9 +716,9 @@ export default function Home() {
             <div className="space-y-8 h-fit">
               <div>
                 <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
-                  {t('contact.info.title')}
+                  {t("contact.info.title")}
                 </h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -578,53 +726,65 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t('contact.info.address.title')}
+                        {t("contact.info.address.title")}
                       </h4>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Puerto Deportivo de Vigo<br />
-                        Muelle 3, Local 15<br />
+                        Puerto Deportivo de Vigo
+                        <br />
+                        Muelle 3, Local 15
+                        <br />
                         36202 Vigo, Pontevedra
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-zyon-orange text-xl">📞</span>
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t('contact.info.phone.title')}
+                        {t("contact.info.phone.title")}
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-400">+34 986 123 456</p>
-                      <p className="text-gray-600 dark:text-gray-400">+34 600 123 456</p>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        +34 986 123 456
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        +34 600 123 456
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-zyon-orange text-xl">✉️</span>
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t('contact.info.email.title')}
+                        {t("contact.info.email.title")}
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-400">info@zyongalicia.com</p>
-                      <p className="text-gray-600 dark:text-gray-400">ventas@zyongalicia.com</p>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        info@zyongalicia.com
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        ventas@zyongalicia.com
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-zyon-orange text-xl">🕒</span>
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t('contact.info.hours.title')}
+                        {t("contact.info.hours.title")}
                       </h4>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Lunes - Viernes: 9:00 - 18:00<br />
-                        Sábado: 9:00 - 14:00<br />
+                        Lunes - Viernes: 9:00 - 18:00
+                        <br />
+                        Sábado: 9:00 - 14:00
+                        <br />
                         Domingo: Cerrado
                       </p>
                     </div>
@@ -635,32 +795,32 @@ export default function Home() {
               {/* Social Media */}
               <div>
                 <h4 className="font-semibold text-zyon-gray dark:text-white mb-4">
-                  {t('contact.social.title')}
+                  {t("contact.social.title")}
                 </h4>
                 <div className="flex space-x-4">
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-facebook"
                   >
                     <span>📘</span>
                   </a>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-instagram"
                   >
                     <span>📷</span>
                   </a>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-linkedin"
                   >
                     <span>💼</span>
                   </a>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-youtube"
                   >
