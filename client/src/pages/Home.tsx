@@ -77,7 +77,7 @@ export default function Home() {
   }, []);
 
   const animateCounters = () => {
-    const targets = { boats: 200, years: 20, satisfaction: 98 };
+    const targets = { boats: 50, years: 15, satisfaction: 99 };
     const duration = 2000;
     const steps = 60;
 
@@ -163,16 +163,6 @@ export default function Home() {
       title: t("services.certifications.title"),
       description: t("services.certifications.description"),
     },
-    {
-      icon: Truck,
-      title: t("services.transport.title"),
-      description: t("services.transport.description"),
-    },
-    {
-      icon: Handshake,
-      title: t("services.financing.title"),
-      description: t("services.financing.description"),
-    },
   ];
 
   // Función simple y segura
@@ -197,6 +187,16 @@ export default function Home() {
       "Professionnels",
       "Profesionales",
       "Professional",
+      "navigation",
+      "sailing",
+      "navegando",
+      "15",
+      "services",
+      "servicios",
+      "services",
+      "embarcaciones",
+      "embarcations",
+      "boats",
     ];
 
     // Dividir el texto en palabras manteniendo los espacios y puntuación
@@ -256,7 +256,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-             {highlightKeywords(t("hero.title"))}
+            {highlightKeywords(t("hero.title"))}
           </motion.h1>
 
           <motion.p
@@ -308,81 +308,145 @@ export default function Home() {
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-zyon-gray dark:text-white">
-                {t("about.title")}
-                <span className="text-zyon-orange"> en Galicia</span>
-              </h2>
-              <p className="text-lg mb-6 leading-relaxed">
-                {t("about.description")}
-              </p>
+            {/* Contenido de texto con animaciones */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div>
+                <motion.h2
+                  className="text-3xl md:text-4xl font-bold mb-6 text-zyon-gray dark:text-white"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  {highlightKeywords(t("about.title"))}
+                </motion.h2>
+
+                <motion.p
+                  className="text-lg mb-8 leading-relaxed text-gray-700 dark:text-gray-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  {t("about.description")}
+                </motion.p>
+              </div>
+
+              {/* Estadísticas con animaciones mejoradas */}
               <div id="stats" className="grid sm:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div
-                    className="text-3xl font-bold text-zyon-orange mb-2"
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="text-center bg-zyon-orange/5 dark:bg-zyon-orange/10 rounded-xl p-6 transition-all duration-300"
+                >
+                  <motion.div
+                    className="text-4xl font-bold text-zyon-orange mb-2"
                     data-testid="stat-boats"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                      delay: 0.5,
+                    }}
+                    viewport={{ once: true }}
                   >
                     {animatedStats.boats}+
-                  </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  </motion.div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                     {t("about.stat1")}
                   </p>
-                </div>
-                <div className="text-center">
-                  <div
-                    className="text-3xl font-bold text-zyon-orange mb-2"
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="text-center bg-zyon-orange/5 dark:bg-zyon-orange/10 rounded-xl p-6 transition-all duration-300"
+                >
+                  <motion.div
+                    className="text-4xl font-bold text-zyon-orange mb-2"
                     data-testid="stat-years"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                      delay: 0.7,
+                    }}
+                    viewport={{ once: true }}
                   >
                     {animatedStats.years}+
-                  </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  </motion.div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                     {t("about.stat2")}
                   </p>
-                </div>
-                <div className="text-center">
-                  <div
-                    className="text-3xl font-bold text-zyon-orange mb-2"
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="text-center bg-zyon-orange/5 dark:bg-zyon-orange/10 rounded-xl p-6 transition-all duration-300"
+                >
+                  <motion.div
+                    className="text-4xl font-bold text-zyon-orange mb-2"
                     data-testid="stat-satisfaction"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                      delay: 0.9,
+                    }}
+                    viewport={{ once: true }}
                   >
                     {animatedStats.satisfaction}%
-                  </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  </motion.div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                     {t("about.stat3")}
                   </p>
-                </div>
+                </motion.div>
               </div>
-              <Button
-                onClick={() => setLocation("/sobre-nosotros")}
-                className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                data-testid="about-cta"
+
+              {/* CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                viewport={{ once: true }}
               >
-                {t("about.cta")}
-              </Button>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Instalaciones modernas de Zyon Galicia - Taller naval profesional en Puerto Deportivo de Vigo especializado en embarcaciones de calidad"
-                className="rounded-xl shadow-xl w-full h-auto"
-                loading="lazy"
-              />
-
-              {/* Quality Features */}
-              <div className="absolute -bottom-6 -right-6 bg-zyon-orange text-white p-4 rounded-xl shadow-lg">
-                <Anchor className="text-2xl mb-1" />
-                <p className="text-xs font-semibold">Calidad Garantizada</p>
-              </div>
-
-              <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-800 text-zyon-gray dark:text-white p-4 rounded-xl shadow-lg border-2 border-zyon-orange">
-                <Ship className="text-2xl mb-1 text-zyon-orange" />
-                <p className="text-xs font-semibold">Experiencia Naval</p>
-              </div>
-
-              <div className="absolute -bottom-6 -left-6 bg-zyon-gray dark:bg-white text-white dark:text-zyon-gray p-4 rounded-xl shadow-lg">
-                <Handshake className="text-2xl mb-1" />
-                <p className="text-xs font-semibold">Servicio Integral</p>
-              </div>
-            </div>
+                <motion.button
+                  onClick={() => setLocation("/sobre-nosotros")}
+                  className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                  data-testid="about-cta"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {t("about.cta")}
+                </motion.button>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -390,40 +454,65 @@ export default function Home() {
       {/* Services Section */}
       <section id="servicios" className="py-20 bg-zyon-bg dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t("services.title")}
+              {highlightKeywords(t("services.title"))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("services.subtitle")}
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div
+                <motion.div
                   key={index}
                   className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
                   data-testid={`service-${index}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -10,
+                    scale: 1.02,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  }}
                 >
-                  <div className="w-16 h-16 bg-zyon-orange/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-zyon-orange group-hover:text-white transition-colors">
-                    <IconComponent className="text-zyon-orange text-2xl group-hover:text-white" />
+                  {/* Icono y título alineados horizontalmente */}
+                  <div className="flex items-start space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-zyon-orange group-hover:text-white transition-all duration-300 mt-1">
+                      <IconComponent className="text-zyon-orange text-xl group-hover:text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-zyon-gray dark:text-white self-center">
+                      {service.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-zyon-gray dark:text-white">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+
+                  <p className="text-gray-600 dark:text-gray-400">
                     {service.description}
                   </p>
-                  <a
-                    href="#"
-                    className="text-zyon-orange hover:text-zyon-orange-dark font-semibold inline-flex items-center group-hover:translate-x-1 transition-transform"
-                  >
-                    Ver más <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
-                </div>
+
+                  {/* Línea decorativa que aparece al hacer hover */}
+                  <motion.div
+                    className="mt-4 h-0.5 bg-zyon-orange/0 group-hover:bg-zyon-orange/20 transition-all duration-300"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                  />
+                </motion.div>
               );
             })}
           </div>
@@ -435,7 +524,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t("boats.title")}
+              {highlightKeywords(t("boats.title"))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("boats.subtitle")}
@@ -510,7 +599,7 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
+                  alt="Panga tradicional gallega Zyon Galicia - Embarcacit�n artesanal para pesca costera y navegación tradicional en aguas de Galicia"
                   className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
                 />

@@ -10,25 +10,25 @@ export const translations = {
         menu: "Menú"
       },
       hero: {
-        title: "Embarcaciones Profesionales",
+        title: "Embarcaciones profesionales",
         subtitle: "Especialistas en lanchas rápidas, embarcaciones de trabajo y pangas. Calidad, experiencia y servicio excepcional en el sector náutico.",
-        cta_primary: "Ver Embarcaciones",
+        cta_primary: "Ver embarcaciones",
         cta_secondary: "Contactar"
       },
       about: {
-        title: "Más de 20 años navegando",
-        description: "En Zyon Galicia somos especialistas en embarcaciones profesionales, ofreciendo soluciones náuticas adaptadas a las necesidades de pescadores, empresas marítimas y entusiastas del mar.",
-        stat1: "Embarcaciones Entregadas",
-        stat2: "Años de Experiencia",
-        stat3: "Satisfacción Cliente",
-        cta: "Conocer Más"
+        title: "Más de 15 años navegando",
+        description: "En Zyon Galicia somos especialistas en embarcaciones profesionales, ofreciendo soluciones adaptadas a las necesidades específicas de cada cliente.",
+        stat1: "Embarcaciones entregadas",
+        stat2: "Años de experiencia",
+        stat3: "Satisfacción cliente",
+        cta: "Conocer más"
       },
       services: {
-        title: "Nuestros Servicios",
+        title: "Nuestros servicios",
         subtitle: "Ofrecemos soluciones completas para todas sus necesidades náuticas",
         sales: {
           title: "Venta de Embarcaciones",
-          description: "Amplio catálogo de lanchas rápidas, embarcaciones de trabajo y pangas nuevas y de ocasión."
+          description: "Amplio catálogo de lanchas rápidas, embarcaciones de trabaj, pangas y lanchas de rescate."
         },
         maintenance: {
           title: "Mantenimiento",
@@ -42,31 +42,23 @@ export const translations = {
           title: "Homologaciones",
           description: "Gestión completa de documentación y homologaciones oficiales."
         },
-        transport: {
-          title: "Transporte",
-          description: "Servicio de transporte especializado y seguro para embarcaciones."
-        },
-        financing: {
-          title: "Financiación",
-          description: "Opciones de financiación flexibles adaptadas a cada cliente."
-        }
       },
       boats: {
-        title: "Nuestras Embarcaciones",
+        title: "Nuestras embarcaciones",
         subtitle: "Descubre nuestra amplia gama de embarcaciones profesionales",
         speedboats: {
-          title: "Lanchas Rápidas",
+          title: "Lanchas rápidas",
           description: "Embarcaciones de alta velocidad para transporte rápido y eficiente"
         },
         workboats: {
-          title: "Embarcaciones de Trabajo",
+          title: "Embarcaciones de trabajo",
           description: "Barcos robustos diseñados para pesca profesional y trabajo marítimo"
         },
         panga: {
           title: "Pangas",
           description: "Embarcaciones tradicionales versátiles para pesca costera"
         },
-        cta: "Ver Catálogo Completo"
+        cta: "Ver catálogo completo"
       },
       gallery: {
         title: "Galería",
@@ -82,12 +74,12 @@ export const translations = {
           phone: "Teléfono",
           subject: "Asunto",
           message: "Mensaje",
-          submit: "Enviar Mensaje",
+          submit: "Enviar mensaje",
           success: "Mensaje enviado correctamente. Te contactaremos pronto.",
           error: "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
         },
         info: {
-          title: "Información de Contacto",
+          title: "Información de contacto",
           address: {
             title: "Dirección"
           },
@@ -107,7 +99,7 @@ export const translations = {
       },
       footer: {
         links: {
-          title: "Enlaces Rápidos",
+          title: "Enlaces rápidos",
           home: "Inicio",
           services: "Servicios",
           boats: "Embarcaciones",
@@ -116,7 +108,7 @@ export const translations = {
         },
         services: {
           title: "Servicios",
-          sales: "Venta de Embarcaciones",
+          sales: "Venta de embarcaciones",
           maintenance: "Mantenimiento",
           consulting: "Asesoramiento",
           financing: "Financiación"
@@ -125,8 +117,8 @@ export const translations = {
           title: "Contacto"
         },
         legal: {
-          privacy: "Política de Privacidad",
-          terms: "Términos de Uso",
+          privacy: "Política de privacidad",
+          terms: "Términos de uso",
           cookies: "Cookies"
         }
       }
@@ -143,25 +135,25 @@ export const translations = {
         menu: "Menu"
       },
       hero: {
-        title: "Professional Embarcations",
-        subtitle: "Specialists in speedboats, workboats and pangas. Quality, experience and exceptional service in the nautical sector.",
+        title: "Professional embarcations",
+        subtitle: "At Zyon Galicia we are specialists in professional boats, offering solutions tailored to the specific needs of each client.",
         cta_primary: "View Boats",
         cta_secondary: "Contact"
       },
       about: {
-        title: "More than 20 years sailing",
+        title: "More than 15 years sailing",
         description: "At Zyon Galicia we are specialists in professional boats, offering nautical solutions adapted to the needs of fishermen, maritime companies and sea enthusiasts.",
-        stat1: "Boats Delivered",
-        stat2: "Years of Experience",
-        stat3: "Customer Satisfaction",
-        cta: "Learn More"
+        stat1: "Boats delivered",
+        stat2: "Years of experience",
+        stat3: "Customer satisfaction",
+        cta: "Learn more"
       },
       services: {
-        title: "Our Services",
+        title: "Our services",
         subtitle: "We offer complete solutions for all your nautical needs",
         sales: {
-          title: "Boat Sales",
-          description: "Wide catalog of speedboats, workboats and pangas, new and used."
+          title: "Boat sales",
+          description: "Wide catalog of speedboats, workboats and pangas."
         },
         maintenance: {
           title: "Maintenance",
@@ -175,17 +167,9 @@ export const translations = {
           title: "Certifications",
           description: "Complete management of official documentation and certifications."
         },
-        transport: {
-          title: "Transport",
-          description: "Specialized and safe transport service for boats."
-        },
-        financing: {
-          title: "Financing",
-          description: "Flexible financing options adapted to each customer."
-        }
       },
       boats: {
-        title: "Our Boats",
+        title: "Our boats",
         subtitle: "Discover our wide range of professional boats",
         speedboats: {
           title: "Speedboats",
@@ -215,12 +199,12 @@ export const translations = {
           phone: "Phone",
           subject: "Subject",
           message: "Message",
-          submit: "Send Message",
+          submit: "Send message",
           success: "Message sent successfully. We will contact you soon.",
           error: "Error sending message. Please try again."
         },
         info: {
-          title: "Contact Information",
+          title: "Contact information",
           address: {
             title: "Address"
           },
@@ -240,7 +224,7 @@ export const translations = {
       },
       footer: {
         links: {
-          title: "Quick Links",
+          title: "Quick links",
           home: "Home",
           services: "Services",
           boats: "Boats",
@@ -249,7 +233,7 @@ export const translations = {
         },
         services: {
           title: "Services",
-          sales: "Boat Sales",
+          sales: "Boat sales",
           maintenance: "Maintenance",
           consulting: "Consulting",
           financing: "Financing"
@@ -258,8 +242,8 @@ export const translations = {
           title: "Contact"
         },
         legal: {
-          privacy: "Privacy Policy",
-          terms: "Terms of Use",
+          privacy: "Privacy policy",
+          terms: "Terms of use",
           cookies: "Cookies"
         }
       }
@@ -276,25 +260,25 @@ export const translations = {
         menu: "Menu"
       },
       hero: {
-        title: "Embarquements Professionnels",
+        title: "Embarquements professionnels",
         subtitle: "Spécialistes en bateaux rapides, embarcations de travail et pangas. Qualité, expérience et service exceptionnel dans le secteur nautique.",
-        cta_primary: "Voir Embarcations",
+        cta_primary: "Voir embarcations",
         cta_secondary: "Contact"
       },
       about: {
-        title: "Plus de 20 ans de navigation",
-        description: "Chez Zyon Galicia, nous sommes spécialisés dans les embarcations professionnelles, offrant des solutions nautiques adaptées aux besoins des pêcheurs, des entreprises maritimes et des passionnés de la mer.",
-        stat1: "Embarcations Livrées",
-        stat2: "Années d'Expérience",
-        stat3: "Satisfaction Client",
-        cta: "En Savoir Plus"
+        title: "Plus de 15 ans de navigation",
+        description: "Chez Zyon Galicia, nous sommes spécialistes des bateaux professionnels, proposant des solutions adaptées aux besoins spécifiques de chaque client.",
+        stat1: "Embarcations livrées",
+        stat2: "Années d'expérience",
+        stat3: "Satisfaction client",
+        cta: "En savoir plus"
       },
       services: {
-        title: "Nos Services",
+        title: "Nos services",
         subtitle: "Nous offrons des solutions complètes pour tous vos besoins nautiques",
         sales: {
-          title: "Vente d'Embarcations",
-          description: "Large catalogue de bateaux rapides, embarcations de travail et pangas neufs et d'occasion."
+          title: "Vente d'embarcations",
+          description: "Large catalogue de bateaux rapides, embarcations de travail et pangas."
         },
         maintenance: {
           title: "Maintenance",
@@ -308,31 +292,23 @@ export const translations = {
           title: "Homologations",
           description: "Gestion complète de la documentation et des homologations officielles."
         },
-        transport: {
-          title: "Transport",
-          description: "Service de transport spécialisé et sécurisé pour embarcations."
-        },
-        financing: {
-          title: "Financement",
-          description: "Options de financement flexibles adaptées à chaque client."
-        }
       },
       boats: {
-        title: "Nos Embarcations",
+        title: "Nos embarcations",
         subtitle: "Découvrez notre large gamme d'embarcations professionnelles",
         speedboats: {
-          title: "Bateaux Rapides",
+          title: "Bateaux rapides",
           description: "Embarcations haute vitesse pour transport rapide et efficace"
         },
         workboats: {
-          title: "Embarcations de Travail",
+          title: "Embarcations de travail",
           description: "Bateaux robustes conçus pour la pêche professionnelle et le travail maritime"
         },
         panga: {
           title: "Pangas",
           description: "Embarcations traditionnelles polyvalentes pour la pêche côtière"
         },
-        cta: "Voir Catalogue Complet"
+        cta: "Voir catalogue complet"
       },
       gallery: {
         title: "Galerie",
@@ -348,12 +324,12 @@ export const translations = {
           phone: "Téléphone",
           subject: "Sujet",
           message: "Message",
-          submit: "Envoyer Message",
+          submit: "Envoyer message",
           success: "Message envoyé avec succès. Nous vous contacterons bientôt.",
           error: "Erreur lors de l'envoi du message. Veuillez réessayer."
         },
         info: {
-          title: "Informations de Contact",
+          title: "Informations de contact",
           address: {
             title: "Adresse"
           },
@@ -373,7 +349,7 @@ export const translations = {
       },
       footer: {
         links: {
-          title: "Liens Rapides",
+          title: "Liens rapides",
           home: "Accueil",
           services: "Services",
           boats: "Embarcations",
@@ -382,7 +358,7 @@ export const translations = {
         },
         services: {
           title: "Services",
-          sales: "Vente d'Embarcations",
+          sales: "Vente d'embarcations",
           maintenance: "Maintenance",
           consulting: "Conseil",
           financing: "Financement"
@@ -391,8 +367,8 @@ export const translations = {
           title: "Contact"
         },
         legal: {
-          privacy: "Politique de Confidentialité",
-          terms: "Conditions d'Utilisation",
+          privacy: "Politique de confidentialité",
+          terms: "Conditions d'utilisation",
           cookies: "Cookies"
         }
       }
