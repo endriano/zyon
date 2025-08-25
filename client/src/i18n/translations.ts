@@ -10,7 +10,7 @@ export const translations = {
         menu: "Menú"
       },
       hero: {
-        title: "Embarcaciones",
+        title: "Embarcaciones Profesionales",
         subtitle: "Especialistas en lanchas rápidas, embarcaciones de trabajo y pangas. Calidad, experiencia y servicio excepcional en el sector náutico.",
         cta_primary: "Ver Embarcaciones",
         cta_secondary: "Contactar"
@@ -143,7 +143,7 @@ export const translations = {
         menu: "Menu"
       },
       hero: {
-        title: "Professional",
+        title: "Professional Embarcations",
         subtitle: "Specialists in speedboats, workboats and pangas. Quality, experience and exceptional service in the nautical sector.",
         cta_primary: "View Boats",
         cta_secondary: "Contact"
@@ -276,7 +276,7 @@ export const translations = {
         menu: "Menu"
       },
       hero: {
-        title: "Embarcations",
+        title: "Embarquements Professionnels",
         subtitle: "Spécialistes en bateaux rapides, embarcations de travail et pangas. Qualité, expérience et service exceptionnel dans le secteur nautique.",
         cta_primary: "Voir Embarcations",
         cta_secondary: "Contact"

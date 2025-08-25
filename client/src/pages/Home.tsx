@@ -192,8 +192,11 @@ export default function Home() {
       "spécialistes",
       "qualité",
       "expérience",
-      "exceptionnelle",
+      "exceptionnel",
       "nautique",
+      "Professionnels",
+      "Profesionales",
+      "Professional",
     ];
 
     // Dividir el texto en palabras manteniendo los espacios y puntuación
@@ -253,9 +256,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span>{t("hero.title")}</span>
-            <br />
-            <span className="text-zyon-orange">Profesionales</span>
+             {highlightKeywords(t("hero.title"))}
           </motion.h1>
 
           <motion.p
