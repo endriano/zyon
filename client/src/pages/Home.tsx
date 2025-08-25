@@ -43,7 +43,10 @@ import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 
 // Importar imagen del hero desde assets
-import heroImage from "@/assets/images/hero/hero.webp";
+import heroImage from "@/assets/images/home/hero.webp";
+import speedboatImage from "@/assets/images/home/lancha.webp";
+import workboatImage from "@/assets/images/home/trabajo.webp";
+import pangaImage from "@/assets/images/home/panga.webp";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -522,113 +525,193 @@ export default function Home() {
       {/* Boats Categories Section */}
       <section id="embarcaciones" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {highlightKeywords(t("boats.title"))}
+               {highlightKeywords(t('boats.title'))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t("boats.subtitle")}
+              {t('boats.subtitle')}
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Speedboats */}
-            <div
+            <motion.div 
               className="group cursor-pointer"
               data-testid="boat-category-speedboats"
-              onClick={() => setLocation("/lanchas-rapidas")}
+              onClick={() => setLocation('/lanchas-rapidas')}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7,
+                delay: 0.1,
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true }}
+              whileHover={{ y: -15 }}
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">
-                    {t("boats.speedboats.title")}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-4">
-                    {t("boats.speedboats.description")}
-                  </p>
-                  <div className="flex items-center text-zyon-orange font-semibold">
-                    <span className="mr-2">Ver modelos</span>
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
-                  </div>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                {/* Imagen con overlay gradient */}
+                <div className="relative h-80">
+                  <motion.img 
+                    src={speedboatImage}
+                    alt="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
+
+                {/* Contenido con animación de slide up */}
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileHover={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className="text-2xl font-bold mb-2">{t('boats.speedboats.title')}</h3>
+                  <p className="text-sm opacity-90 mb-4">{t('boats.speedboats.description')}</p>
+                  <motion.div 
+                    className="flex items-center text-zyon-orange font-semibold"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="mr-2">Ver modelos</span>
+                    <ArrowRight className="transition-transform group-hover:translate-x-1 w-4 h-4" />
+                  </motion.div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Workboats */}
-            <div
+            <motion.div 
               className="group cursor-pointer"
               data-testid="boat-category-workboats"
-              onClick={() => setLocation("/embarcaciones-trabajo")}
+              onClick={() => setLocation('/embarcaciones-trabajo')}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7,
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true }}
+              whileHover={{ y: -15 }}
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">
-                    {t("boats.workboats.title")}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-4">
-                    {t("boats.workboats.description")}
-                  </p>
-                  <div className="flex items-center text-zyon-orange font-semibold">
-                    <span className="mr-2">Ver modelos</span>
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
-                  </div>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                {/* Imagen con overlay gradient */}
+                <div className="relative h-80">
+                  <motion.img 
+                    src={workboatImage}
+                    alt="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
+
+                {/* Contenido con animación de slide up */}
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileHover={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className="text-2xl font-bold mb-2">{t('boats.workboats.title')}</h3>
+                  <p className="text-sm opacity-90 mb-4">{t('boats.workboats.description')}</p>
+                  <motion.div 
+                    className="flex items-center text-zyon-orange font-semibold"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="mr-2">Ver modelos</span>
+                    <ArrowRight className="transition-transform group-hover:translate-x-1 w-4 h-4" />
+                  </motion.div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Pangas */}
-            <div
+            <motion.div 
               className="group cursor-pointer"
               data-testid="boat-category-pangas"
-              onClick={() => setLocation("/pangas")}
+              onClick={() => setLocation('/pangas')}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.7,
+                delay: 0.3,
+                type: "spring",
+                stiffness: 100
+              }}
+              viewport={{ once: true }}
+              whileHover={{ y: -15 }}
             >
-              <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Panga tradicional gallega Zyon Galicia - Embarcacit�n artesanal para pesca costera y navegación tradicional en aguas de Galicia"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">
-                    {t("boats.panga.title")}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-4">
-                    {t("boats.panga.description")}
-                  </p>
-                  <div className="flex items-center text-zyon-orange font-semibold">
-                    <span className="mr-2">Ver modelos</span>
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
-                  </div>
+              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                {/* Imagen con overlay gradient */}
+                <div className="relative h-80">
+                  <motion.img 
+                    src={pangaImage}
+                    alt="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
+
+                {/* Contenido con animación de slide up */}
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileHover={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className="text-2xl font-bold mb-2">{t('boats.panga.title')}</h3>
+                  <p className="text-sm opacity-90 mb-4">{t('boats.panga.description')}</p>
+                  <motion.div 
+                    className="flex items-center text-zyon-orange font-semibold"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="mr-2">Ver modelos</span>
+                    <ArrowRight className="transition-transform group-hover:translate-x-1 w-4 h-4" />
+                  </motion.div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <Button
-              onClick={() => setLocation("/embarcaciones-lanchas")}
+          {/* CTA Section mejorado */}
+          <motion.div 
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <motion.button 
+              onClick={() => setLocation('/embarcaciones-lanchas')}
               className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)"
+              }}
+              whileTap={{ scale: 0.95 }}
             >
-              {t("boats.cta")}
-            </Button>
-          </div>
+              {t('boats.cta')}
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 
