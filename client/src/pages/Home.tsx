@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import {BoatCategoryCard} from "@/components/BoatCategoryCard";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -556,7 +557,7 @@ export default function Home() {
       {/* Boats Categories Section */}
       <section id="embarcaciones" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <motion.div
+          <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -564,196 +565,64 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {highlightKeywords(t("boats.title"))}
+              {highlightKeywords(t('boats.title'))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t("boats.subtitle")}
+              {t('boats.subtitle')}
             </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Speedboats */}
-            <motion.div
-              className="group cursor-pointer"
-              data-testid="boat-category-speedboats"
-              onClick={() => setLocation("/lanchas-rapidas")}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.1,
-                type: "spring",
-                stiffness: 100,
-              }}
-              viewport={{ once: true }}
-              whileHover={{ y: -15 }}
-            >
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                {/* Imagen con overlay gradient */}
-                <div className="relative h-80">
-                  <motion.img
-                    src={speedboatImage}
-                    alt="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                </div>
+            {/* Componente reutilizable para cada categoría */}
+            <BoatCategoryCard 
+              image={speedboatImage}
+              title={t('boats.speedboats.title')}
+              description={t('boats.speedboats.description')}
+              onClick={() => setLocation('/lanchas-rapidas')}
+              delay={0.1}
+              testId="boat-category-speedboats"
+              altText="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
+            />
 
-                {/* Contenido con animación de slide up */}
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
-                  initial={{ y: 20, opacity: 0 }}
-                  whileHover={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h3 className="text-2xl font-bold mb-2">
-                    {t("boats.speedboats.title")}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-4">
-                    {t("boats.speedboats.description")}
-                  </p>
-                  <motion.div
-                    className="flex items-center text-zyon-orange font-semibold"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span className="mr-2">Ver modelos</span>
-                    <ArrowRight className="transition-transform group-hover:translate-x-1 w-4 h-4" />
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
+            <BoatCategoryCard 
+              image={workboatImage}
+              title={t('boats.workboats.title')}
+              description={t('boats.workboats.description')}
+              onClick={() => setLocation('/embarcaciones-trabajo')}
+              delay={0.2}
+              testId="boat-category-workboats"
+              altText="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
+            />
 
-            {/* Workboats */}
-            <motion.div
-              className="group cursor-pointer"
-              data-testid="boat-category-workboats"
-              onClick={() => setLocation("/embarcaciones-trabajo")}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.2,
-                type: "spring",
-                stiffness: 100,
-              }}
-              viewport={{ once: true }}
-              whileHover={{ y: -15 }}
-            >
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                {/* Imagen con overlay gradient */}
-                <div className="relative h-80">
-                  <motion.img
-                    src={workboatImage}
-                    alt="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                </div>
-
-                {/* Contenido con animación de slide up */}
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
-                  initial={{ y: 20, opacity: 0 }}
-                  whileHover={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h3 className="text-2xl font-bold mb-2">
-                    {t("boats.workboats.title")}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-4">
-                    {t("boats.workboats.description")}
-                  </p>
-                  <motion.div
-                    className="flex items-center text-zyon-orange font-semibold"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span className="mr-2">Ver modelos</span>
-                    <ArrowRight className="transition-transform group-hover:translate-x-1 w-4 h-4" />
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Pangas */}
-            <motion.div
-              className="group cursor-pointer"
-              data-testid="boat-category-pangas"
-              onClick={() => setLocation("/pangas")}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.3,
-                type: "spring",
-                stiffness: 100,
-              }}
-              viewport={{ once: true }}
-              whileHover={{ y: -15 }}
-            >
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                {/* Imagen con overlay gradient */}
-                <div className="relative h-80">
-                  <motion.img
-                    src={pangaImage}
-                    alt="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                </div>
-
-                {/* Contenido con animación de slide up */}
-                <motion.div
-                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
-                  initial={{ y: 20, opacity: 0 }}
-                  whileHover={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <h3 className="text-2xl font-bold mb-2">
-                    {t("boats.panga.title")}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-4">
-                    {t("boats.panga.description")}
-                  </p>
-                  <motion.div
-                    className="flex items-center text-zyon-orange font-semibold"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span className="mr-2">Ver modelos</span>
-                    <ArrowRight className="transition-transform group-hover:translate-x-1 w-4 h-4" />
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div>
+            <BoatCategoryCard 
+              image={pangaImage}
+              title={t('boats.panga.title')}
+              description={t('boats.panga.description')}
+              onClick={() => setLocation('/pangas')}
+              delay={0.3}
+              testId="boat-category-pangas"
+              altText="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
+            />
           </div>
 
-          {/* CTA Section mejorado */}
-          <motion.div
+          {/* CTA Section */}
+          <motion.div 
             className="text-center mt-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <motion.button
-              onClick={() => setLocation("/embarcaciones-lanchas")}
+            <motion.button 
+              onClick={() => setLocation('/embarcaciones-lanchas')}
               className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              whileHover={{
+              whileHover={{ 
                 scale: 1.05,
-                boxShadow:
-                  "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)",
+                boxShadow: "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)"
               }}
               whileTap={{ scale: 0.95 }}
             >
-              {t("boats.cta")}
+              {t('boats.cta')}
             </motion.button>
           </motion.div>
         </div>
@@ -813,7 +682,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:items-start">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-40">
             {/* Contact Form */}
             <motion.div
               className="bg-zyon-bg dark:bg-gray-900 rounded-2xl p-8 h-fit"
@@ -917,9 +786,6 @@ export default function Home() {
                             </SelectItem>
                             <SelectItem value="mantenimiento">
                               {t("contact.form.subjects.maintenance")}
-                            </SelectItem>
-                            <SelectItem value="financiacion">
-                              {t("contact.form.subjects.financing")}
                             </SelectItem>
                             <SelectItem value="otro">
                               {t("contact.form.subjects.other")}
@@ -1036,7 +902,7 @@ export default function Home() {
                 </motion.div>
               )}
 
-              {/* Mensaje de error mejorado */}
+              {/* Mensaje de error */}
               {contactMutation.isError && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -1065,7 +931,8 @@ export default function Home() {
               )}
             </motion.div>
 
-            {/* Contact Information con animaciones */}
+            {/* Contact Information */}
+            <div className="grid lg:grid-cols-2 gap-12">
             <motion.div
               className="space-y-8 h-fit"
               initial={{ opacity: 0, x: 30 }}
@@ -1090,7 +957,7 @@ export default function Home() {
                     transition={{ duration: 0.2 }}
                   >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-xl">📍</span>
+                      <span className="text-zyon-orange text-4xl">📍</span>
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
@@ -1112,7 +979,7 @@ export default function Home() {
                     transition={{ duration: 0.2 }}
                   >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-xl">📞</span>
+                      <span className="text-zyon-orange text-4xl">📞</span>
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
@@ -1133,7 +1000,7 @@ export default function Home() {
                     transition={{ duration: 0.2 }}
                   >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-xl">✉️</span>
+                      <span className="text-zyon-orange text-4xl">✉️</span>
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
@@ -1151,7 +1018,7 @@ export default function Home() {
                     transition={{ duration: 0.2 }}
                   >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-xl">🕒</span>
+                      <span className="text-zyon-orange text-4xl">🕒</span>
                     </div>
                     <div>
                       <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
@@ -1242,6 +1109,7 @@ export default function Home() {
                 </div>
               </motion.div>
             </motion.div>
+              </div>
           </div>
         </div>
       </motion.section>

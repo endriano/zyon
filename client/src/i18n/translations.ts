@@ -92,7 +92,6 @@ export const translations = {
           subjects: {
             sale: "Consulta de venta",
             maintenance: "Servicio de mantenimiento", 
-            financing: "Información sobre financiación",
             other: "Otro"
           },
           sending: "Enviando...",
@@ -136,7 +135,6 @@ export const translations = {
           sales: "Venta de embarcaciones",
           maintenance: "Mantenimiento",
           consulting: "Asesoramiento",
-          financing: "Financiación",
         },
         contact: {
           title: "Contacto",
@@ -236,14 +234,13 @@ export const translations = {
           subjects: {
             sale: "Sales inquiry",
             maintenance: "Maintenance service",
-            financing: "Financing information",
             other: "Other"
           },
           sending: "Sending...",
           placeholders: {
             name: "Your full name",
             email: "your@email.com",
-            phone: "+1 555 123 4567",
+            phone: "+44 555 123 4567",
             message: "Tell us how we can help you...",
           },
         },
@@ -280,7 +277,6 @@ export const translations = {
           sales: "Boat sales",
           maintenance: "Maintenance",
           consulting: "Consulting",
-          financing: "Financing",
         },
         contact: {
           title: "Contact",
@@ -386,7 +382,6 @@ export const translations = {
           subjects: {
             sale: "Demande de vente",
             maintenance: "Service de maintenance",
-            financing: "Information sur le financement",
             other: "Autre"
           },
           sending: "Envoi en cours...",
@@ -430,7 +425,6 @@ export const translations = {
           sales: "Vente d'embarcations",
           maintenance: "Maintenance",
           consulting: "Conseil",
-          financing: "Financement",
         },
         contact: {
           title: "Contact",
