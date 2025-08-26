@@ -144,9 +144,7 @@ export const translations = {
           title: "Contacto",
         },
         legal: {
-          privacy: "Política de privacidad",
-          terms: "Términos de uso",
-          cookies: "Cookies",
+          privacy: "© 2025 Zyon Galicia. Todos los derechos reservados.",
         },
       },
     },
@@ -290,9 +288,7 @@ export const translations = {
           title: "Contact",
         },
         legal: {
-          privacy: "Privacy policy",
-          terms: "Terms of use",
-          cookies: "Cookies",
+          privacy: "© 2025 Zyon Galicia. All rights reserved",
         },
       },
     },
@@ -442,9 +438,7 @@ export const translations = {
           title: "Contact",
         },
         legal: {
-          privacy: "Politique de confidentialité",
-          terms: "Conditions d'utilisation",
-          cookies: "Cookies",
+          privacy: "© 2025 Zyon Galicia. Tous droits réservés."
         },
       },
     },
