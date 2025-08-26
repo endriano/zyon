@@ -757,19 +757,33 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section id="galeria" className="py-20 bg-zyon-bg dark:bg-gray-900">
+      <motion.section 
+        id="galeria" 
+        className="py-20 bg-zyon-bg dark:bg-gray-900"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
               {highlightKeywords(t("gallery.title"))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("gallery.subtitle")}
             </p>
-          </div>
+          </motion.div>
+
           <Gallery />
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
       <section id="contacto" className="py-20 bg-white dark:bg-gray-800">
