@@ -222,6 +222,9 @@ export default function Home() {
       "Galerie",
       "Gallery",
       "Galería",
+      "Contacto",
+      "Contact",
+      "Contactez-nous",
     ];
 
     // Dividir el texto en palabras manteniendo los espacios y puntuación
@@ -757,8 +760,8 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <motion.section 
-        id="galeria" 
+      <motion.section
+        id="galeria"
         className="py-20 bg-zyon-bg dark:bg-gray-900"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -766,7 +769,7 @@ export default function Home() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -786,20 +789,39 @@ export default function Home() {
       </motion.section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 bg-white dark:bg-gray-800">
+      <motion.section
+        id="contacto"
+        className="py-20 bg-white dark:bg-gray-800"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {t("contact.title")}
+              {highlightKeywords(t("contact.title"))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("contact.subtitle")}
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:items-start">
             {/* Contact Form */}
-            <div className="bg-zyon-bg dark:bg-gray-900 rounded-2xl p-8 h-fit">
+            <motion.div
+              className="bg-zyon-bg dark:bg-gray-900 rounded-2xl p-8 h-fit"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
                 {t("contact.form.title")}
               </h3>
@@ -818,10 +840,10 @@ export default function Home() {
                           <FormLabel>{t("contact.form.name")} *</FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="Tu nombre"
+                              placeholder={t("contact.form.placeholders.name")}
                               {...field}
                               data-testid="contact-name"
-                              className="bg-white dark:bg-gray-800"
+                              className="bg-white dark:bg-gray-800 border-2 border-transparent focus:border-zyon-orange transition-colors"
                             />
                           </FormControl>
                           <FormMessage />
@@ -837,10 +859,10 @@ export default function Home() {
                           <FormControl>
                             <Input
                               type="email"
-                              placeholder="tu@email.com"
+                              placeholder={t("contact.form.placeholders.email")}
                               {...field}
                               data-testid="contact-email"
-                              className="bg-white dark:bg-gray-800"
+                              className="bg-white dark:bg-gray-800 border-2 border-transparent focus:border-zyon-orange transition-colors"
                             />
                           </FormControl>
                           <FormMessage />
@@ -858,10 +880,10 @@ export default function Home() {
                         <FormControl>
                           <Input
                             type="tel"
-                            placeholder="+34 600 000 000"
+                            placeholder={t("contact.form.placeholders.phone")}
                             {...field}
                             data-testid="contact-phone"
-                            className="bg-white dark:bg-gray-800"
+                            className="bg-white dark:bg-gray-800 border-2 border-transparent focus:border-zyon-orange transition-colors"
                           />
                         </FormControl>
                         <FormMessage />
@@ -882,22 +904,26 @@ export default function Home() {
                           <FormControl>
                             <SelectTrigger
                               data-testid="contact-subject"
-                              className="bg-white dark:bg-gray-800"
+                              className="bg-white dark:bg-gray-800 border-2 border-transparent focus:border-zyon-orange transition-colors"
                             >
-                              <SelectValue placeholder="Selecciona un asunto" />
+                              <SelectValue
+                                placeholder={t("contact.form.subject")}
+                              />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="venta">
-                              Consulta de venta
+                              {t("contact.form.subjects.sale")}
                             </SelectItem>
                             <SelectItem value="mantenimiento">
-                              Servicio de mantenimiento
+                              {t("contact.form.subjects.maintenance")}
                             </SelectItem>
                             <SelectItem value="financiacion">
-                              Información sobre financiación
+                              {t("contact.form.subjects.financing")}
                             </SelectItem>
-                            <SelectItem value="otro">Otro</SelectItem>
+                            <SelectItem value="otro">
+                              {t("contact.form.subjects.other")}
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -914,10 +940,10 @@ export default function Home() {
                         <FormControl>
                           <Textarea
                             rows={5}
-                            placeholder="Cuéntanos en qué podemos ayudarte..."
+                            placeholder={t("contact.form.placeholders.message")}
                             {...field}
                             data-testid="contact-message"
-                            className="resize-none bg-white dark:bg-gray-800"
+                            className="resize-none bg-white dark:bg-gray-800 border-2 border-transparent focus:border-zyon-orange transition-colors"
                           />
                         </FormControl>
                         <FormMessage />
@@ -925,29 +951,144 @@ export default function Home() {
                     )}
                   />
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-zyon-orange hover:bg-zyon-orange-dark text-white py-3 px-6 rounded-lg font-semibold transition-colors"
-                    disabled={contactMutation.isPending}
-                    data-testid="contact-submit"
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
                   >
-                    {contactMutation.isPending
-                      ? "Enviando..."
-                      : t("contact.form.submit")}
-                  </Button>
+                    <motion.button
+                      type="submit"
+                      className="w-full bg-zyon-orange hover:bg-zyon-orange-dark text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                      disabled={contactMutation.isPending}
+                      data-testid="contact-submit"
+                      whileHover={{
+                        scale: 1.02,
+                        boxShadow:
+                          "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)",
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      {contactMutation.isPending ? (
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
+                          className="flex items-center"
+                        >
+                          <svg
+                            className="w-5 h-5 mr-2"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          {t("contact.form.sending")}
+                        </motion.div>
+                      ) : (
+                        t("contact.form.submit")
+                      )}
+                    </motion.button>
+                  </motion.div>
                 </form>
               </Form>
-            </div>
 
-            {/* Contact Information */}
-            <div className="space-y-8 h-fit">
-              <div>
+              {/* Mensaje de confirmación/success*/}
+              {contactMutation.isSuccess && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg"
+                >
+                  <div className="flex items-center">
+                    <svg
+                      className="w-5 h-5 text-green-600 dark:text-green-400 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      ></path>
+                    </svg>
+                    <p className="text-green-800 dark:text-green-200 font-medium">
+                      {t("contact.form.success")}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Mensaje de error mejorado */}
+              {contactMutation.isError && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg"
+                >
+                  <div className="flex items-center">
+                    <svg
+                      className="w-5 h-5 text-red-600 dark:text-red-400 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      ></path>
+                    </svg>
+                    <p className="text-red-800 dark:text-red-200 font-medium">
+                      {t("contact.form.error")}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
+
+            {/* Contact Information con animaciones */}
+            <motion.div
+              className="space-y-8 h-fit"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
                 <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
                   {t("contact.info.title")}
                 </h3>
 
                 <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
+                  <motion.div
+                    className="flex items-start space-x-4"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-zyon-orange text-xl">📍</span>
                     </div>
@@ -963,9 +1104,13 @@ export default function Home() {
                         36202 Vigo, Pontevedra
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  <div className="flex items-start space-x-4">
+                  <motion.div
+                    className="flex items-start space-x-4"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-zyon-orange text-xl">📞</span>
                     </div>
@@ -980,9 +1125,13 @@ export default function Home() {
                         +34 600 123 456
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  <div className="flex items-start space-x-4">
+                  <motion.div
+                    className="flex items-start space-x-4"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-zyon-orange text-xl">✉️</span>
                     </div>
@@ -997,9 +1146,13 @@ export default function Home() {
                         ventas@zyongalicia.com
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  <div className="flex items-start space-x-4">
+                  <motion.div
+                    className="flex items-start space-x-4"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-zyon-orange text-xl">🕒</span>
                     </div>
@@ -1015,55 +1168,73 @@ export default function Home() {
                         Domingo: Cerrado
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Social Media */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold text-zyon-gray dark:text-white mb-4">
                   {t("contact.social.title")}
                 </h4>
                 <div className="flex space-x-4">
-                  <a
+                  <motion.a
                     href="#"
-                    className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
+                    className="w-12 h-12 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-facebook"
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <span>📘</span>
-                  </a>
-                  <a
+                    <span className="text-lg">📘</span>
+                  </motion.a>
+                  <motion.a
                     href="#"
-                    className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
+                    className="w-12 h-12 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-instagram"
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <span>📷</span>
-                  </a>
-                  <a
+                    <span className="text-lg">📷</span>
+                  </motion.a>
+                  <motion.a
                     href="#"
-                    className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
+                    className="w-12 h-12 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-linkedin"
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <span>💼</span>
-                  </a>
-                  <a
+                    <span className="text-lg">💼</span>
+                  </motion.a>
+                  <motion.a
                     href="#"
-                    className="w-10 h-10 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
+                    className="w-12 h-12 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg flex items-center justify-center transition-colors"
                     data-testid="social-youtube"
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <span>📺</span>
-                  </a>
+                    <span className="text-lg">📺</span>
+                  </motion.a>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Google Maps */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+                viewport={{ once: true }}
+              >
                 <h4 className="font-semibold text-zyon-gray dark:text-white mb-4">
                   Localización
                 </h4>
                 <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.8234567890123!2d-8.7267!3d42.2328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2f621234567890%3A0x1234567890abcdef!2sPuerto%20Deportivo%20de%20Vigo%2C%20Vigo%2C%20Pontevedra%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890123!5m2!1sen!2ses"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.865433744954!2d-8.5527903!3d42.2912942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2f7ebff8f7fff9%3A0x520b38101c9db809!2sYacht%20Port%20Marinas%2C%20S.L.!5e0!3m2!1ses!2ses!4v1721734567890!5m2!1ses!2ses"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -1075,11 +1246,11 @@ export default function Home() {
                     className="w-full h-full"
                   />
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

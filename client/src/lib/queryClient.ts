@@ -12,11 +12,13 @@ export async function apiRequest(
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  const res = await fetch(url, {
+  // Para el contacto, usar el nuevo endpoint
+  const apiUrl = url === '/api/contact' ? 'https://3a45f470-3007-479d-ad7d-6ab28896add6-00-392t45l2yn4ti.riker.replit.dev/send_email' : url;
+
+  const res = await fetch(apiUrl, {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},
     body: data ? JSON.stringify(data) : undefined,
-    credentials: "include",
   });
 
   await throwIfResNotOk(res);
