@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import {BoatCategoryCard} from "@/components/BoatCategoryCard";
+import { BoatCategoryCard } from "@/components/BoatCategoryCard";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -345,7 +345,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Contenido de texto con animaciones */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -557,7 +557,7 @@ export default function Home() {
       {/* Boats Categories Section */}
       <section id="embarcaciones" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -565,40 +565,40 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {highlightKeywords(t('boats.title'))}
+              {highlightKeywords(t("boats.title"))}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              {t('boats.subtitle')}
+              {t("boats.subtitle")}
             </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Componente reutilizable para cada categoría */}
-            <BoatCategoryCard 
+            <BoatCategoryCard
               image={speedboatImage}
-              title={t('boats.speedboats.title')}
-              description={t('boats.speedboats.description')}
-              onClick={() => setLocation('/lanchas-rapidas')}
+              title={t("boats.speedboats.title")}
+              description={t("boats.speedboats.description")}
+              onClick={() => setLocation("/lanchas-rapidas")}
               delay={0.1}
               testId="boat-category-speedboats"
               altText="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
             />
 
-            <BoatCategoryCard 
+            <BoatCategoryCard
               image={workboatImage}
-              title={t('boats.workboats.title')}
-              description={t('boats.workboats.description')}
-              onClick={() => setLocation('/embarcaciones-trabajo')}
+              title={t("boats.workboats.title")}
+              description={t("boats.workboats.description")}
+              onClick={() => setLocation("/embarcaciones-trabajo")}
               delay={0.2}
               testId="boat-category-workboats"
               altText="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
             />
 
-            <BoatCategoryCard 
+            <BoatCategoryCard
               image={pangaImage}
-              title={t('boats.panga.title')}
-              description={t('boats.panga.description')}
-              onClick={() => setLocation('/pangas')}
+              title={t("boats.panga.title")}
+              description={t("boats.panga.description")}
+              onClick={() => setLocation("/pangas")}
               delay={0.3}
               testId="boat-category-pangas"
               altText="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
@@ -606,23 +606,24 @@ export default function Home() {
           </div>
 
           {/* CTA Section */}
-          <motion.div 
+          <motion.div
             className="text-center mt-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <motion.button 
-              onClick={() => setLocation('/embarcaciones-lanchas')}
+            <motion.button
+              onClick={() => setLocation("/embarcaciones-lanchas")}
               className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)"
+                boxShadow:
+                  "0 20px 25px -5px rgba(242, 124, 56, 0.3), 0 10px 10px -5px rgba(242, 124, 56, 0.2)",
               }}
               whileTap={{ scale: 0.95 }}
             >
-              {t('boats.cta')}
+              {t("boats.cta")}
             </motion.button>
           </motion.div>
         </div>
@@ -933,106 +934,106 @@ export default function Home() {
 
             {/* Contact Information */}
             <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div
-              className="space-y-8 h-fit"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                className="space-y-8 h-fit"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
-                  {t("contact.info.title")}
-                </h3>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-2xl font-bold mb-6 text-zyon-gray dark:text-white">
+                    {t("contact.info.title")}
+                  </h3>
 
-                <div className="space-y-6">
-                  <motion.div
-                    className="flex items-start space-x-4"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-4xl">📍</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t("contact.info.address.title")}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        Polígono Industrial de Amoedo
-                        <br />
-                        Parcela 2B - Zona C - Sección B
-                        <br />
-                        36841 - Pazos de Borbén Pontevedra España
-                      </p>
-                    </div>
-                  </motion.div>
+                  <div className="space-y-6">
+                    <motion.div
+                      className="flex items-start space-x-4"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-zyon-orange text-4xl">📍</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
+                          {t("contact.info.address.title")}
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          {t("contact.info.address.address1")}
+                          <br />
+                          {t("contact.info.address.address2")}
+                          <br />
+                          {t("contact.info.address.address3")}
+                        </p>
+                      </div>
+                    </motion.div>
 
-                  <motion.div
-                    className="flex items-start space-x-4"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-4xl">📞</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t("contact.info.phone.title")}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        +34 986 497 436
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        +34 986 497 344
-                      </p>
-                    </div>
-                  </motion.div>
+                    <motion.div
+                      className="flex items-start space-x-4"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-zyon-orange text-4xl">📞</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
+                          {t("contact.info.phone.title")}
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          +34 986 497 436
+                        </p>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          +34 986 497 344
+                        </p>
+                      </div>
+                    </motion.div>
 
-                  <motion.div
-                    className="flex items-start space-x-4"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-4xl">✉️</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t("contact.info.email.title")}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        info@zyongalicia.com
-                      </p>
-                    </div>
-                  </motion.div>
+                    <motion.div
+                      className="flex items-start space-x-4"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-zyon-orange text-4xl">✉️</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
+                          {t("contact.info.email.title")}
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          info@zyongalicia.com
+                        </p>
+                      </div>
+                    </motion.div>
 
-                  <motion.div
-                    className="flex items-start space-x-4"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-zyon-orange text-4xl">🕒</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
-                        {t("contact.info.hours.title")}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        Lunes - Viernes: 9:00 - 18:00
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
+                    <motion.div
+                      className="flex items-start space-x-4"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-zyon-orange text-4xl">🕒</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-zyon-gray dark:text-white mb-1">
+                          {t("contact.info.hours.title")}
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          {t("contact.info.hours.hours1")}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
 
-              {/*  Social Media
+                {/*  Social Media
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1083,33 +1084,30 @@ export default function Home() {
               </motion.div>
           */}
 
-              {/* Google Maps */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.9 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="font-semibold text-zyon-gray dark:text-white mb-4">
-                  Localización
-                </h4>
-                <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.865433744954!2d-8.5527903!3d42.2912942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2f7ebff8f7fff9%3A0x520b38101c9db809!2sYacht%20Port%20Marinas%2C%20S.L.!5e0!3m2!1ses!2ses!4v1721734567890!5m2!1ses!2ses"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Ubicación de Zyon Galicia"
-                    data-testid="google-maps"
-                    className="w-full h-full"
-                  />
-                </div>
+                {/* Google Maps */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.865433744954!2d-8.5527903!3d42.2912942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2f7ebff8f7fff9%3A0x520b38101c9db809!2sYacht%20Port%20Marinas%2C%20S.L.!5e0!3m2!1ses!2ses!4v1721734567890!5m2!1ses!2ses"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Ubicación de Zyon Galicia"
+                      data-testid="google-maps"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-              </div>
+            </div>
           </div>
         </div>
       </motion.section>

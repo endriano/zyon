@@ -106,6 +106,9 @@ export const translations = {
           title: "Información de contacto",
           address: {
             title: "Dirección",
+            address1: "Polígono Industrial de Amoedo",
+            address2: "Parcela 2B - Zona C - Sección B",
+            address3: "36841 - Pazos de Borbén, Pontevedra, España",
           },
           phone: {
             title: "Teléfono",
@@ -115,6 +118,7 @@ export const translations = {
           },
           hours: {
             title: "Horario",
+            hours1: "Lunes - Viernes: 9:00 - 18:00",
           },
         },
         social: {
@@ -248,6 +252,9 @@ export const translations = {
           title: "Contact information",
           address: {
             title: "Address",
+            address1: "Amoedo Industrial Estate",
+            address2: "Plot 2B - Zone C - Section B",
+            address3: "36841 - Pazos de Borbén, Pontevedra, Spain",
           },
           phone: {
             title: "Phone",
@@ -257,6 +264,7 @@ export const translations = {
           },
           hours: {
             title: "Hours",
+            hours1: "Monday - Friday: 9:00 - 18:00",
           },
         },
         social: {
@@ -396,6 +404,9 @@ export const translations = {
           title: "Informations de contact",
           address: {
             title: "Adresse",
+            address1: "Parc Industriel d'Amoedo",
+            address2: "Parcelle 2B - Zone C - Section B",
+            address3: "36841 - Pazos de Borbén, Pontevedra, Espagne",
           },
           phone: {
             title: "Téléphone",
@@ -405,6 +416,7 @@ export const translations = {
           },
           hours: {
             title: "Horaires",
+            hours1: "Lundi - Vendredi: 9:00 - 18:00",
           },
         },
         social: {
