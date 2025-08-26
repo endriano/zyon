@@ -342,7 +342,7 @@ export default function Home() {
       {/* About Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-1 gap-12 items-center">
             {/* Contenido de texto con animaciones */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -504,7 +504,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
