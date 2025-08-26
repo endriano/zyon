@@ -1097,11 +1097,11 @@ export default function Home() {
                         {t("contact.info.address.title")}
                       </h4>
                       <p className="text-gray-600 dark:text-gray-400">
-                        Puerto Deportivo de Vigo
+                        Polígono Industrial de Amoedo
                         <br />
-                        Muelle 3, Local 15
+                        Parcela 2B - Zona C - Sección B
                         <br />
-                        36202 Vigo, Pontevedra
+                        36841 - Pazos de Borbén Pontevedra España
                       </p>
                     </div>
                   </motion.div>
@@ -1119,10 +1119,10 @@ export default function Home() {
                         {t("contact.info.phone.title")}
                       </h4>
                       <p className="text-gray-600 dark:text-gray-400">
-                        +34 986 123 456
+                        +34 986 497 436
                       </p>
                       <p className="text-gray-600 dark:text-gray-400">
-                        +34 600 123 456
+                        +34 986 497 344
                       </p>
                     </div>
                   </motion.div>
@@ -1142,9 +1142,6 @@ export default function Home() {
                       <p className="text-gray-600 dark:text-gray-400">
                         info@zyongalicia.com
                       </p>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        ventas@zyongalicia.com
-                      </p>
                     </div>
                   </motion.div>
 
@@ -1162,17 +1159,13 @@ export default function Home() {
                       </h4>
                       <p className="text-gray-600 dark:text-gray-400">
                         Lunes - Viernes: 9:00 - 18:00
-                        <br />
-                        Sábado: 9:00 - 14:00
-                        <br />
-                        Domingo: Cerrado
                       </p>
                     </div>
                   </motion.div>
                 </div>
               </motion.div>
 
-              {/* Social Media */}
+              {/*  Social Media
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1221,6 +1214,7 @@ export default function Home() {
                   </motion.a>
                 </div>
               </motion.div>
+          */}
 
               {/* Google Maps */}
               <motion.div

@@ -4,7 +4,7 @@ hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
 channel = "stable-24_05"
-packages = ["openssh", "lsof"]
+packages = ["openssh", "lsof", "psmisc"]
 
 [deployment]
 deploymentTarget = "autoscale"
@@ -37,8 +37,8 @@ waitForPort = 5000
 
 [[ports]]
 localPort = 3000
-externalPort = 3000
+externalPort = 80
 
 [[ports]]
 localPort = 5000
-externalPort = 80
+externalPort = 5000
