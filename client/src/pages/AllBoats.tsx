@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
+import { highlightKeywords, highlightKeywordsHero } from "@/lib/highlightKeywords";
 
 export default function AllBoats() {
   const { t } = useLanguage();
