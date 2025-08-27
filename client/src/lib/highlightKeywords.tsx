@@ -47,6 +47,17 @@ const highlightKeywordsBase = (
     "Contacto",
     "Contact",
     "Contactez-nous",
+    "Galicia",
+    "historia",
+    "story",
+    "histoire",
+    "nuestra",
+    "our",
+    "nos",
+    "nuestros",
+    "valores",
+    "values",
+    "valeurs",
   ];
 
   const regex = new RegExp(`(${keywords.join("|")})`, "gi");

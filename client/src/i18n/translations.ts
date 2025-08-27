@@ -68,7 +68,7 @@ export const translations = {
           description:
             "Embarcaciones tradicionales versátiles para pesca costera",
         },
-        category:{
+        category: {
           cta: "Ver modelos",
         },
         cta: "Ver catálogo completo",
@@ -94,8 +94,8 @@ export const translations = {
           error: "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
           subjects: {
             sale: "Consulta de venta",
-            maintenance: "Servicio de mantenimiento", 
-            other: "Otro"
+            maintenance: "Servicio de mantenimiento",
+            other: "Otro",
           },
           sending: "Enviando...",
           placeholders: {
@@ -148,6 +148,66 @@ export const translations = {
         },
         legal: {
           privacy: "© 2025 Zyon Galicia. Todos los derechos reservados.",
+        },
+      },
+      aboutPage: {
+        back: "Volver",
+        header: {
+          title: "Sobre Zyon Galicia",
+          subtitle:
+            "Más de 15 años de experiencia en el sector náutico  nos avalan como especialistas en embarcaciones profesionales de la más alta calidad.",
+        },
+        story: {
+          title: "Nuestra historia",
+          description1:
+            "Fundada en Galicia con la pasión por el mar, Zyon Galicia nació de la visión de ofrecer embarcaciones profesionales que se combinan en las siguientes áreas:",
+          description2:
+            "DISEÑO DE EMBARCACIONES: Nuestro equipo de ingenieros facilita la participación del cliente en el proceso de diseño para poder ofrecer un producto personalizado según las especificaciones de cada proyecto.",
+          description3:
+            "FABRICACIÓN DE EMBARCACIONES: Nuestras instalaciones nos permiten fabricar embarcaciones de toda clase y dimensiones. Además nuestros operarios nos facilitan la labor de ajustarnos al “timeline” que requieran nuestros clientes.",
+          description4:
+            "MODIFICACIONES Y RECTIFICACIONES DE EMBARCACIONES: Gracias a nuestra experiencia en el sector, estamos capacitados para asesorar y aconsejar acerca de las modificaciones y rectificaciones que mejor convengan a las embarcaciones para que se adapten a las las nuevas exigencias que requiera el cliente.",
+        },
+        values: {
+          title: "Nuestros valores",
+          subtitle: "Los principios que nos guían en todo lo que hacemos.",
+          quality: {
+            title: "Calidad excepcional",
+            description:
+              "Utilizamos solo los mejores materiales y técnicas de construcción para garantizar embarcaciones duraderas y confiables.",
+          },
+          service: {
+            title: "Servicio personalizado",
+            description:
+              "Cada cliente es único. Trabajamos de cerca con nuestros clientes para entender sus necesidades específicas.",
+          },
+          commitment: {
+            title: "Compromiso con la excelencia",
+            description:
+              "Nuestro compromiso no termina con la entrega. Ofrecemos soporte continuo y mantenimiento profesional.",
+          },
+          innovation: {
+            title: "Innovación y tradición",
+            description:
+              "Combinamos técnicas tradicionales con las últimas innovaciones para crear embarcaciones de vanguardia.",
+          },
+          puntuality: {
+            title: "Puntualidad",
+            description:
+              "Respetamos los plazos acordados y entregamos en tiempo y forma, cumpliendo siempre nuestros compromisos.",
+          },
+          support: {
+            title: "Soporte integral",
+            description:
+              "Ofrecemos asesoramiento completo desde el diseño hasta el mantenimiento, con un equipo experto siempre disponible.",
+          },
+        },
+        cta: {
+          title: "¿Listo para conocer nuestras embarcaciones?",
+          description:
+            "Descubre por qué Zyon Galicia es la elección preferida de profesionales del mundo naútico.",
+          cta1: "Ver embarcaciones",
+          cta2: "Contactar",
         },
       },
     },
@@ -217,7 +277,7 @@ export const translations = {
           title: "Pangas",
           description: "Versatile traditional boats for coastal fishing",
         },
-        category:{
+        category: {
           cta: "View models",
         },
         cta: "View Complete Catalog",
@@ -242,7 +302,7 @@ export const translations = {
           subjects: {
             sale: "Sales inquiry",
             maintenance: "Maintenance service",
-            other: "Other"
+            other: "Other",
           },
           sending: "Sending...",
           placeholders: {
@@ -295,6 +355,66 @@ export const translations = {
         },
         legal: {
           privacy: "© 2025 Zyon Galicia. All rights reserved",
+        },
+      },
+      aboutPage: {
+        back: "Back",
+        header: {
+          title: "About Zyon Galicia",
+          subtitle:
+            "More than 15 years of experience in the nautical sector endorse us as specialists in professional vessels of the highest quality.",
+        },
+        story: {
+          title: "Our story",
+          description1:
+            "Founded in Galicia with a passion for the sea, Zyon Galicia was born from the vision of offering professional vessels that combine expertise in the following areas:",
+          description2:
+            "VESSEL DESIGN: Our team of engineers facilitates client participation in the design process to deliver a customized product according to each project's specifications.",
+          description3:
+            "VESSEL MANUFACTURING: Our facilities allow us to manufacture vessels of all types and sizes. In addition, our operators help us meet the timelines required by our clients.",
+          description4:
+            "VESSEL MODIFICATIONS AND RECTIFICATIONS: Thanks to our industry experience, we are qualified to advise on the modifications and rectifications that best suit vessels so they adapt to the new requirements requested by the client.",
+        },
+        values: {
+          title: "Our values",
+          subtitle: "The principles that guide us in everything we do.",
+          quality: {
+            title: "Exceptional quality",
+            description:
+              "We use only the best materials and construction techniques to ensure durable and reliable vessels.",
+          },
+          service: {
+            title: "Personalized service",
+            description:
+              "Every client is unique. We work closely with our clients to understand their specific needs.",
+          },
+          commitment: {
+            title: "Commitment to excellence",
+            description:
+              "Our commitment does not end with delivery. We offer continuous support and professional maintenance.",
+          },
+          innovation: {
+            title: "Innovation and tradition",
+            description:
+              "We combine traditional techniques with the latest innovations to create state-of-the-art vessels.",
+          },
+          puntuality: {
+            title: "Punctuality",
+            description:
+              "We respect agreed deadlines and deliver on time and as promised, always honoring our commitments.",
+          },
+          support: {
+            title: "Comprehensive support",
+            description:
+              "We provide full advisory services from design through maintenance, with an expert team always available.",
+          },
+        },
+        cta: {
+          title: "Ready to discover our vessels?",
+          description:
+            "Find out why Zyon Galicia is the preferred choice of professionals in the nautical world.",
+          cta1: "View vessels",
+          cta2: "Contact",
         },
       },
     },
@@ -368,7 +488,7 @@ export const translations = {
           description:
             "Embarcations traditionnelles polyvalentes pour la pêche côtière",
         },
-        category:{
+        category: {
           cta: "Voir modèles",
         },
         cta: "Voir catalogue complet",
@@ -395,7 +515,7 @@ export const translations = {
           subjects: {
             sale: "Demande de vente",
             maintenance: "Service de maintenance",
-            other: "Autre"
+            other: "Autre",
           },
           sending: "Envoi en cours...",
           placeholders: {
@@ -447,7 +567,68 @@ export const translations = {
           title: "Contact",
         },
         legal: {
-          privacy: "© 2025 Zyon Galicia. Tous droits réservés."
+          privacy: "© 2025 Zyon Galicia. Tous droits réservés.",
+        },
+      },
+      aboutPage: {
+        back: "Retour",
+        header: {
+          title: "À propos de Zyon Galicia",
+          subtitle:
+            "Plus de 15 ans d'expérience dans le secteur nautique nous avalisent en tant que spécialistes des embarcations professionnelles de la plus haute qualité.",
+        },
+        story: {
+          title: "Notre histoire",
+          description1:
+            "Fondée en Galice avec la passion de la mer, Zyon Galicia est née de la volonté d'offrir des embarcations professionnelles qui combinent une expertise dans les domaines suivants :",
+          description2:
+            "CONCEPTION D'EMBARCATIONS : Notre équipe d'ingénieurs facilite la participation du client au processus de conception afin de fournir un produit personnalisé selon les spécifications de chaque projet.",
+          description3:
+            "FABRICATION D'EMBARCATIONS : Nos installations nous permettent de fabriquer des embarcations de tous types et dimensions. De plus, nos opérateurs nous aident à respecter les délais ('timeline') exigés par nos clients.",
+          description4:
+            "MODIFICATIONS ET RECTIFICATIONS D'EMBARCATIONS : Grâce à notre expérience dans le secteur, nous sommes en mesure de conseiller sur les modifications et rectifications les mieux adaptées aux embarcations afin qu'elles répondent aux nouvelles exigences du client.",
+        },
+        values: {
+          title: "Nos valeurs",
+          subtitle:
+            "Les principes qui nous guident dans tout ce que nous faisons.",
+          quality: {
+            title: "Qualité exceptionnelle",
+            description:
+              "Nous n'utilisons que les meilleurs matériaux et techniques de construction pour garantir des embarcations durables et fiables.",
+          },
+          service: {
+            title: "Service personnalisé",
+            description:
+              "Chaque client est unique. Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins spécifiques.",
+          },
+          commitment: {
+            title: "Engagement envers l'excellence",
+            description:
+              "Notre engagement ne s'arrête pas à la livraison. Nous offrons un support continu et un entretien professionnel.",
+          },
+          innovation: {
+            title: "Innovation et tradition",
+            description:
+              "Nous combinons des techniques traditionnelles avec les dernières innovations pour créer des embarcations à la pointe.",
+          },
+          puntuality: {
+            title: "Ponctualité",
+            description:
+              "Nous respectons les délais convenus et livrons dans les délais et conformément à nos engagements.",
+          },
+          support: {
+            title: "Support complet",
+            description:
+              "Nous offrons des conseils complets depuis la conception jusqu'à la maintenance, avec une équipe d'experts toujours disponible.",
+          },
+        },
+        cta: {
+          title: "Prêt à découvrir nos embarcations?",
+          description:
+            "Découvrez pourquoi Zyon Galicia est le choix préféré des professionnels du monde nautique.",
+          cta1: "Voir les embarcations",
+          cta2: "Contact",
         },
       },
     },
