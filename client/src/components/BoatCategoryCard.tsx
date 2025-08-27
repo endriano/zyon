@@ -1,6 +1,6 @@
-// components/BoatCategoryCard.tsx
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface BoatCategoryCardProps {
   image: string;
@@ -21,6 +21,8 @@ export function BoatCategoryCard({
   testId, 
   altText 
 }: BoatCategoryCardProps) {
+  const { t } = useLanguage();
+
   return (
     <motion.div 
       className="group cursor-pointer"
@@ -51,20 +53,23 @@ export function BoatCategoryCard({
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         </div>
 
-        {/* Contenido - Siempre visible */}
+        {/* Contenido */}
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
           <h3 className="text-2xl font-bold mb-2">{title}</h3>
 
-          {/* Descripción siempre visible en móvil, con efecto hover en desktop */}
+          {/* Descripción */}
           <p className="text-sm opacity-90 mb-4 transition-all duration-300">
             {description}
           </p>
 
-          {/* CTA siempre visible */}
-          <div className="flex items-center text-zyon-orange font-semibold group-hover:translate-x-1 transition-transform duration-300">
-            <span className="mr-2">Ver modelos</span>
+          {/* CTA con traducción según idioma */}
+          <motion.div 
+            className="flex items-center text-zyon-orange font-semibold group-hover:translate-x-1 transition-transform duration-300"
+            whileHover={{ x: 5 }}
+          >
+            <span className="mr-2">{t('boats.category.cta')}</span>
             <ArrowRight className="w-4 h-4" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>

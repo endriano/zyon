@@ -68,6 +68,9 @@ export const translations = {
           description:
             "Embarcaciones tradicionales versátiles para pesca costera",
         },
+        category:{
+          cta: "Ver modelos",
+        },
         cta: "Ver catálogo completo",
       },
       gallery: {
@@ -213,6 +216,9 @@ export const translations = {
         panga: {
           title: "Pangas",
           description: "Versatile traditional boats for coastal fishing",
+        },
+        category:{
+          cta: "View models",
         },
         cta: "View Complete Catalog",
       },
@@ -361,6 +367,9 @@ export const translations = {
           title: "Pangas",
           description:
             "Embarcations traditionnelles polyvalentes pour la pêche côtière",
+        },
+        category:{
+          cta: "Voir modèles",
         },
         cta: "Voir catalogue complet",
       },

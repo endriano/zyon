@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { highlightKeywords, highlightKeywordsHero } from "@/lib/highlightKeywords";
 import {
   Select,
   SelectContent,
@@ -168,101 +169,6 @@ export default function Home() {
       description: t("services.certifications.description"),
     },
   ];
-
-  // Función general que respeta el tema (para secciones normales)
-  const highlightKeywords = (text: string) => {
-    return highlightKeywordsBase(text, "theme"); // "theme" indica usar colores del tema
-  };
-
-  // Función específica para Hero section (texto siempre blanco)
-  const highlightKeywordsHero = (text: string) => {
-    return highlightKeywordsBase(text, "hero"); // "hero" indica mantener blanco
-  };
-
-  // Función base reutilizable
-  const highlightKeywordsBase = (
-    text: string,
-    mode: "hero" | "theme" = "theme",
-  ) => {
-    // Palabras a resaltar (case insensitive)
-    const keywords = [
-      "calidad",
-      "experiencia",
-      "excepcional",
-      "experience",
-      "exceptional",
-      "qualité",
-      "expérience",
-      "exceptionnel",
-      "Professionnels",
-      "Profesionales",
-      "Professional",
-      "navigation",
-      "sailing",
-      "navegando",
-      "15",
-      "services",
-      "servicios",
-      "productos",
-      "products",
-      "produits",
-      "soluciones completas",
-      "Amplio catálogo",
-      "completos",
-      "Consultoría especializada",
-      "Gestión completa",
-      "complete solutions",
-      "Wide catalog",
-      "Complete",
-      "Specialized consultancy",
-      "management",
-      "Large catalogue",
-      "complets",
-      "Conseil spécialisé",
-      "Gestion complète",
-      "Galerie",
-      "Gallery",
-      "Galería",
-      "Contacto",
-      "Contact",
-      "Contactez-nous",
-    ];
-
-    // Dividir el texto en palabras manteniendo los espacios y puntuación
-    const regex = new RegExp(`(${keywords.join("|")})`, "gi");
-    const parts = text.split(regex);
-
-    return parts.map((part, index) => {
-      if (part === "") return null;
-
-      // Verificar si esta parte es una keyword (case insensitive)
-      const isKeyword = keywords.some(
-        (keyword) =>
-          keyword.toLowerCase() ===
-          part.toLowerCase().replace(/[.,;:!?()]/g, ""),
-      );
-
-      if (isKeyword) {
-        return (
-          <span key={index} className="text-zyon-orange font-bold">
-            {part}
-          </span>
-        );
-      } else {
-        // Determinar el color del texto según el modo
-        const textColorClass =
-          mode === "hero"
-            ? "text-white" // Siempre blanco para hero
-            : "text-zyon-gray dark:text-white"; // Respeta el tema para otras secciones
-
-        return (
-          <span key={index} className={textColorClass}>
-            {part}
-          </span>
-        );
-      }
-    });
-  };
 
   return (
     <div className="w-full">
