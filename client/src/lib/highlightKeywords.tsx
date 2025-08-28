@@ -58,6 +58,9 @@ const highlightKeywordsBase = (
     "valores",
     "values",
     "valeurs",
+    "modelos",
+    "models",
+    "modèles",
   ];
 
   const regex = new RegExp(`(${keywords.join("|")})`, "gi");

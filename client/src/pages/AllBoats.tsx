@@ -4,123 +4,81 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
-
-// Datos de los modelos de embarcaciones
-const boatModels = [
-  {
-    id: 1,
-    name: "Zyon Speed 3000",
-    category: "speedboat",
-    purpose: "Transporte rápido y recreación",
-    year: 2023,
-    image: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Lancha de alta velocidad con motor potente y diseño aerodinámico",
-    features: ["Motor 300HP", "Capacidad 8 personas", "Velocidad máxima 60 nudos"]
-  },
-  {
-    id: 2,
-    name: "Zyon Work Pro 25",
-    category: "workboat",
-    purpose: "Pesca comercial y transporte de carga",
-    year: 2022,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Embarcación robusta diseñada para condiciones marítimas exigentes",
-    features: ["Casco reforzado", "Capacidad carga 2 toneladas", "Sistema de pesca integrado"]
-  },
-  {
-    id: 3,
-    name: "Zyon Panga Classic",
-    category: "panga",
-    purpose: "Pesca costera y navegación tradicional",
-    year: 2023,
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Panga tradicional gallega con acabados modernos",
-    features: ["Madera de pino marítimo", "Motor 40HP", "Capacidad 4 personas"]
-  },
-  {
-    id: 4,
-    name: "Zyon Rescue 15",
-    category: "rescue",
-    purpose: "Rescate marítimo y emergencias",
-    year: 2024,
-    image: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Bote de rescate rápido con equipos de emergencia",
-    features: ["Motor gemelo 200HP", "Sistema GPS avanzado", "Equipo de rescate incluido"]
-  },
-  {
-    id: 5,
-    name: "Zyon Speed Turbo",
-    category: "speedboat",
-    purpose: "Deportes acuáticos y recreación",
-    year: 2023,
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Lancha de lujo para deportes acuáticos",
-    features: ["Motor 400HP", "Sistema de sonido premium", "Capacidad 10 personas"]
-  },
-  {
-    id: 6,
-    name: "Zyon Work Heavy",
-    category: "workboat",
-    purpose: "Trabajos pesados y transporte industrial",
-    year: 2022,
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Embarcación industrial para trabajos pesados",
-    features: ["Motor 500HP", "Capacidad carga 5 toneladas", "Grúa hidráulica incluida"]
-  },
-  {
-    id: 7,
-    name: "Zyon Panga Modern",
-    category: "panga",
-    purpose: "Pesca recreativa y turismo",
-    year: 2024,
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Panga moderna con acabados de lujo",
-    features: ["Fibra de vidrio reforzada", "Motor 60HP", "Sistema de navegación digital"]
-  },
-  {
-    id: 8,
-    name: "Zyon Rescue Pro",
-    category: "rescue",
-    purpose: "Rescate profesional y guardacostas",
-    year: 2024,
-    image: "https://images.unsplash.com/photo-1552832230-52d5c6132cd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    description: "Bote de rescate profesional certificado",
-    features: ["Casco auto-estabilizante", "Sistema de comunicación militar", "Capacidad 12 personas"]
-  }
-];
+import { boatModels } from "@/data";
+import {
+  highlightKeywords,
+  highlightKeywordsHero,
+} from "@/lib/highlightKeywords";
 
 export default function AllBoats() {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [, setLocation] = useLocation();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   // Scroll to top when component mounts
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const goBack = () => {
-    setLocation('/');
+    setLocation("/");
+  };
+
+  // Función para obtener texto en el idioma actual
+  const getText = (textObj: { es: string; en: string; fr: string }) => {
+    return textObj[currentLanguage as keyof typeof textObj] || textObj.es;
   };
 
   // Categorías para el filtro
   const categories = [
-    { id: "all", name: "Todos", count: boatModels.length },
-    { id: "speedboat", name: t('boats.speedboats.title'), count: boatModels.filter(b => b.category === "speedboat").length },
-    { id: "workboat", name: t('boats.workboats.title'), count: boatModels.filter(b => b.category === "workboat").length },
-    { id: "panga", name: t('boats.panga.title'), count: boatModels.filter(b => b.category === "panga").length },
-    { id: "rescue", name: "Botes de Rescate", count: boatModels.filter(b => b.category === "rescue").length }
+    {
+      id: "all",
+      name: t("allBoats.categories.all"),
+      count: boatModels.length,
+    },
+    {
+      id: "speedboat",
+      name: t("allBoats.speedboats.title"),
+      count: boatModels.filter((b) => b.category === "speedboat").length,
+    },
+    {
+      id: "workboat",
+      name: t("allBoats.workboats.title"),
+      count: boatModels.filter((b) => b.category === "workboat").length,
+    },
+    {
+      id: "panga",
+      name: t("allBoats.panga.title"),
+      count: boatModels.filter((b) => b.category === "panga").length,
+    },
+    {
+      id: "rescue",
+      name: t("allBoats.rescue.title"),
+      count: boatModels.filter((b) => b.category === "rescue").length,
+    },
   ];
 
   // Filtrar modelos según la categoría seleccionada
-  const filteredModels = selectedCategory === "all" 
-    ? boatModels 
-    : boatModels.filter(model => model.category === selectedCategory);
+  const filteredModels =
+    selectedCategory === "all"
+      ? boatModels
+      : boatModels.filter((model) => model.category === selectedCategory);
+
+  // Función para hacer scroll a la sección de contacto
+  const scrollToContact = () => {
+    setLocation("/");
+    setTimeout(() => {
+      const contactSection = document.getElementById("contacto");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
     <div className="w-full">
-      {/* Header Section con animaciones */}
-      <motion.section 
+      {/* Header Section */}
+      <motion.section
         className="py-20 bg-zyon-bg dark:bg-gray-900"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -132,37 +90,42 @@ export default function AllBoats() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.button 
+            <motion.button
               onClick={goBack}
-              className="mb-6 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white transition-all duration-300"
+              className="mb-6 flex items-center px-4 py-2 border-2 border-zyon-orange text-zyon-orange 
+                           rounded-full font-medium shadow-sm
+                           hover:bg-zyon-orange hover:text-white 
+                           transition-all duration-300 ease-in-out"
               data-testid="back-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Volver
+              {t("aboutPage.back")}
             </motion.button>
           </motion.div>
 
           <motion.div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-zyon-gray dark:text-white">
-              {t('boats.title')}
+              {t("allBoats.title").split(" ")[0]}{" "}
+              <span className="text-zyon-orange">
+                {t("allBoats.title").split(" ")[1]}
+              </span>
             </h1>
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
-              {t('boats.subtitle')}. Explora nuestra completa gama de embarcaciones profesionales, 
-              diseñadas para satisfacer todas tus necesidades náuticas.
+              {t("allBoats.explore")}
             </motion.p>
           </motion.div>
         </div>
       </motion.section>
 
       {/* Categories Filter Section */}
-      <motion.section 
+      <motion.section
         className="py-12 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -171,7 +134,7 @@ export default function AllBoats() {
       >
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8 text-zyon-gray dark:text-white">
-            Filtrar por Categoría
+            {t("allBoats.filter")}
           </h2>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -181,14 +144,16 @@ export default function AllBoats() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-zyon-orange text-white shadow-lg'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-zyon-orange/20 hover:text-zyon-orange'
+                    ? "bg-zyon-orange text-white shadow-lg"
+                    : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-zyon-orange/20 hover:text-zyon-orange"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {category.name} 
-                <span className="ml-2 text-xs opacity-75">({category.count})</span>
+                {category.name}
+                <span className="ml-2 text-xs opacity-75">
+                  ({category.count})
+                </span>
               </motion.button>
             ))}
           </div>
@@ -196,7 +161,7 @@ export default function AllBoats() {
       </motion.section>
 
       {/* All Products Grid Section con animaciones */}
-      <motion.section 
+      <motion.section
         className="py-20 bg-zyon-bg dark:bg-gray-900"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -204,22 +169,23 @@ export default function AllBoats() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center mb-12 text-zyon-gray dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Nuestros Modelos {selectedCategory !== "all" && (
+            {highlightKeywords(t("allBoats.models"))}{" "}
+            {selectedCategory !== "all" && (
               <span className="text-zyon-orange">
-                - {categories.find(c => c.id === selectedCategory)?.name}
+                - {categories.find((c) => c.id === selectedCategory)?.name}
               </span>
             )}
           </motion.h2>
 
           {/* Grid con animaciones escalonadas */}
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             initial="hidden"
             whileInView="visible"
@@ -228,28 +194,28 @@ export default function AllBoats() {
               visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.1
-                }
-              }
+                  staggerChildren: 0.1,
+                },
+              },
             }}
             viewport={{ once: true }}
           >
             {filteredModels.map((model, index) => (
               <motion.div
                 key={model.id}
-                className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 data-testid={`boat-model-${model.id}`}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 }
+                  visible: { opacity: 1, y: 0 },
                 }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 onClick={() => setLocation(`/embarcacion/${model.id}`)}
               >
                 <div className="relative overflow-hidden rounded-lg mb-3">
-                  <img 
+                  <img
                     src={model.image}
-                    alt={`${model.name} - ${model.description}`}
+                    alt={`${getText(model.name)} - ${getText(model.description)}`}
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -259,28 +225,32 @@ export default function AllBoats() {
                 </div>
 
                 <h3 className="text-lg font-semibold mb-1 text-zyon-gray dark:text-white">
-                  {model.name}
+                  {getText(model.name)}
                 </h3>
 
                 <p className="text-sm text-zyon-orange font-medium mb-2">
-                  {categories.find(c => c.id === model.category)?.name}
+                  {categories.find((c) => c.id === model.category)?.name}
                 </p>
 
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">
-                  {model.description}
+                  {getText(model.description)}
                 </p>
 
                 <div className="mb-3">
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Propósito:</p>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">{model.purpose}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                    {t("allBoats.purpose")}:
+                  </p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    {getText(model.purpose)}
+                  </p>
                 </div>
 
-                <motion.button 
-                  className="w-full bg-zyon-orange hover:bg-zyon-orange-dark text-white transition-all duration-300"
+                <motion.button
+                  className="w-full flex items-center justify-center px-4 py-2 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-md transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Ver Detalles
+                  {t("allBoats.details")}
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </motion.button>
               </motion.div>
@@ -288,21 +258,21 @@ export default function AllBoats() {
           </motion.div>
 
           {filteredModels.length === 0 && (
-            <motion.div 
+            <motion.div
               className="text-center py-12"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
               <p className="text-gray-500 dark:text-gray-400 text-lg">
-                No se encontraron modelos en esta categoría.
+                {t("allBoats.noModels")}
               </p>
-              <Button 
+              <Button
                 onClick={() => setSelectedCategory("all")}
                 variant="outline"
                 className="mt-4 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white"
               >
-                Ver Todos los Modelos
+                {t("allBoats.viewAll")}
               </Button>
             </motion.div>
           )}
@@ -310,7 +280,7 @@ export default function AllBoats() {
       </motion.section>
 
       {/* CTA Section con animaciones */}
-      <motion.section 
+      <motion.section
         className="py-20 bg-zyon-orange"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -318,24 +288,24 @@ export default function AllBoats() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-4 text-center text-white">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            ¿No encuentras lo que buscas?
+            {t("allBoats.notFound")}
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             className="text-xl mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Contacta con nosotros y te ayudaremos a encontrar la embarcación perfecta para ti.
+            {t("allBoats.contactHelp")}
           </motion.p>
 
           <motion.div
@@ -344,17 +314,18 @@ export default function AllBoats() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <motion.button 
-              onClick={goBack}
-              className="border-2 border-white text-white hover:bg-white hover:text-zyon-orange px-8 py-3 text-lg transition-all duration-300"
+            <motion.button
+              onClick={scrollToContact}
+              className="border-2 border-white text-white hover:bg-white hover:text-zyon-orange px-8 py-3 text-lg transition-all duration-300 rounded-md"
               data-testid="contact-cta"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                boxShadow:
+                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Contactar Ahora
+              {t("allBoats.contactNow")}
             </motion.button>
           </motion.div>
         </div>
