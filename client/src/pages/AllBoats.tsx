@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
@@ -29,40 +29,50 @@ export default function AllBoats() {
     return textObj[currentLanguage as keyof typeof textObj] || textObj.es;
   };
 
+  // Pre-computar las listas filtradas para mejor performance
+  const categorizedModels = useMemo(() => {
+    return {
+      all: boatModels,
+      speedboat: boatModels.filter((model) => model.category === "speedboat"),
+      workboat: boatModels.filter((model) => model.category === "workboat"),
+      panga: boatModels.filter((model) => model.category === "panga"),
+      rescue: boatModels.filter((model) => model.category === "rescue"),
+    };
+  }, []);
+
   // Categorías para el filtro
   const categories = [
     {
       id: "all",
       name: t("allBoats.categories.all"),
-      count: boatModels.length,
+      count: categorizedModels.all.length,
     },
     {
       id: "speedboat",
       name: t("allBoats.speedboats.title"),
-      count: boatModels.filter((b) => b.category === "speedboat").length,
+      count: categorizedModels.speedboat.length,
     },
     {
       id: "workboat",
       name: t("allBoats.workboats.title"),
-      count: boatModels.filter((b) => b.category === "workboat").length,
+      count: categorizedModels.workboat.length,
     },
     {
       id: "panga",
       name: t("allBoats.panga.title"),
-      count: boatModels.filter((b) => b.category === "panga").length,
+      count: categorizedModels.panga.length,
     },
     {
       id: "rescue",
       name: t("allBoats.rescue.title"),
-      count: boatModels.filter((b) => b.category === "rescue").length,
+      count: categorizedModels.rescue.length,
     },
   ];
 
-  // Filtrar modelos según la categoría seleccionada
+  // Obtener modelos filtrados usando las listas pre-computadas
   const filteredModels =
-    selectedCategory === "all"
-      ? boatModels
-      : boatModels.filter((model) => model.category === selectedCategory);
+    categorizedModels[selectedCategory as keyof typeof categorizedModels] ||
+    categorizedModels.all;
 
   // Función para hacer scroll a la sección de contacto
   const scrollToContact = () => {
@@ -73,6 +83,11 @@ export default function AllBoats() {
         contactSection.scrollIntoView({ behavior: "smooth" });
       }
     }, 100);
+  };
+
+  // Función para manejar el cambio de categoría
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
   };
 
   return (
@@ -141,7 +156,7 @@ export default function AllBoats() {
             {categories.map((category) => (
               <motion.button
                 key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
+                onClick={() => handleCategoryChange(category.id)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   selectedCategory === category.id
                     ? "bg-zyon-orange text-white shadow-lg"
@@ -199,10 +214,11 @@ export default function AllBoats() {
               },
             }}
             viewport={{ once: true }}
+            key={selectedCategory} // Forzar re-render cuando cambia la categoría
           >
             {filteredModels.map((model, index) => (
               <motion.div
-                key={model.id}
+                key={`${selectedCategory}-${model.id}`} // Key único para cada render
                 className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 data-testid={`boat-model-${model.id}`}
                 variants={{
@@ -251,7 +267,6 @@ export default function AllBoats() {
                   whileTap={{ scale: 0.98 }}
                 >
                   {t("allBoats.details")}
-                  <ArrowRight className="ml-2 w-4 h-4" />
                 </motion.button>
               </motion.div>
             ))}
@@ -268,7 +283,7 @@ export default function AllBoats() {
                 {t("allBoats.noModels")}
               </p>
               <Button
-                onClick={() => setSelectedCategory("all")}
+                onClick={() => handleCategoryChange("all")}
                 variant="outline"
                 className="mt-4 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white"
               >
