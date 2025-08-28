@@ -1,15 +1,15 @@
-modules = ["nodejs-20", "postgresql-16", "python-3.11", "web"]
+modules = ["nodejs-20", "python-3.12", "web", "php-8.2"]
 run = "npm run dev"
 hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
-channel = "stable-24_05"
+channel = "stable-25_05"
 packages = ["openssh", "lsof", "psmisc"]
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
 run = ["npm", "run", "start"]
+build = ["npm", "run", "build"]
 
 [env]
 PORT = "5000"
