@@ -30,22 +30,35 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export default function BoatDetail() {
   const { t, currentLanguage } = useLanguage();
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
   const [selectedImage, setSelectedImage] = useState(0);
   const [boatData, setBoatData] = useState<any>(null);
 
-  // Obtener el ID del boat de la URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const boatId = parseInt(urlParams.get("id") || "1");
+  // Obtener el ID del boat de la URL (ruta: /embarcacion/1)
+  const getBoatIdFromUrl = () => {
+    const path = location;
+    const parts = path.split('/');
+    const id = parts[parts.length - 1];
+    return id ? parseInt(id, 10) : 1;
+  };
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
+    // Obtener el ID correcto de la URL
+    const boatId = getBoatIdFromUrl();
+
     // Encontrar el boat data
     const foundBoat = boatModels.find((boat) => boat.id === boatId);
-    setBoatData(foundBoat);
-  }, [boatId]);
+
+    if (foundBoat) {
+      setBoatData(foundBoat);
+    } else {
+      // Si no se encuentra, redirigir al catálogo
+      setLocation("/embarcaciones-lanchas");
+    }
+  }, [location, setLocation]);
 
   const goBack = () => {
     setLocation("/embarcaciones-lanchas");
@@ -58,22 +71,30 @@ export default function BoatDetail() {
 
   // Función para hacer scroll a la sección de contacto con mensaje preestablecido
   const scrollToContactWithMessage = (messageType: "info" | "budget") => {
-    const boatName = getText(boatData?.name);
+    if (!boatData) return;
+
+    const boatName = getText(boatData.name);
 
     let subject = "";
     let message = "";
 
     if (messageType === "info") {
-      subject = t("boatDetail.contact.subject.info");
+      subject = t("boatDetail.contact.subject.info", {
+        boatName,
+        year: boatData.year,
+      });
       message = t("boatDetail.contact.message.info", {
         boatName,
-        year: boatData?.year,
+        year: boatData.year,
       });
     } else {
-      subject = t("boatDetail.contact.subject.budget");
+      subject = t("boatDetail.contact.subject.budget", {
+        boatName,
+        year: boatData.year,
+      });
       message = t("boatDetail.contact.message.budget", {
         boatName,
-        year: boatData?.year,
+        year: boatData.year,
       });
     }
 
@@ -109,7 +130,6 @@ export default function BoatDetail() {
       </div>
     );
   }
-
   return (
     <div className="w-full">
       {/* Header Section */}
