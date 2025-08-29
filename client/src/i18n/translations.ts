@@ -254,22 +254,33 @@ export const translations = {
         contactNow: "Contactar ahora",
       },
       boatDetail: {
-        gallery: "Galería de imágenes",
-        features: "Características principales",
-        feature: "Característica",
-        specifications: "Especificaciones técnicas",
+        notFound: "Embarcación no encontrada",
+        gallery: "Galería de Imágenes",
+        features: "Características Principales",
+        specifications: "Especificaciones Técnicas",
         questions: "¿Tienes preguntas?",
         expertHelp:
           "Nuestro equipo de expertos está listo para ayudarte con cualquier consulta sobre esta embarcación.",
-        contactAdvisor: "Contactar con un asesor",
-        interestedIn: "¿Interesado en",
-        requestMoreInfo:
-          "Solicita más información o presupuesto para esta embarcación.",
-        requestQuote: "Solicitar presupuesto",
-        requestDetailedInfo: "Solicitar información detallada",
-        prefill: {
-          info: "Hola, estoy interesado en obtener más información sobre la embarcación {{boatName}} del año {{year}}. ¿Podrían proporcionarme detalles técnicos, disponibilidad y precios? Gracias.",
-          quote: "Hola, me gustaría solicitar un presupuesto para la embarcación {{boatName}} del año {{year}}. Por favor, incluyan información sobre precios, opciones de financiación y plazos de entrega. Gracias.",
+        contactAdvisor: "Contactar con un Asesor",
+        interested: "¿Interesado en {{boatName}}?",
+        requestInfoOrBudget:
+          "Solicita más información o presupuesto para conocer esta embarcación en persona.",
+        actions: {
+          requestInfo: "Solicitar Información",
+          requestBudget: "Solicitar Presupuesto",
+          detailedInfo: "Solicitar Información Detallada",
+          scheduleVisit: "Agendar Visita",
+        },
+        contact: {
+          subject: {
+            info: "Solicitud de información - {{boatName}} {{year}}",
+            budget: "Solicitud de presupuesto - {{boatName}} {{year}}",
+          },
+          message: {
+            info: "Estoy interesado en el modelo {{boatName}} del año {{year}} y me gustaría recibir más información detallada sobre sus características y disponibilidad.",
+            budget:
+              "Me interesa solicitar un presupuesto detallado para el modelo {{boatName}} del año {{year}}. Por favor, envíenme la información de precios y condiciones.",
+          },
         },
       },
     },
@@ -521,18 +532,34 @@ export const translations = {
         contactNow: "Contact now",
       },
       boatDetail: {
-        gallery: "Image gallery",
-        features: "Key features",
-        feature: "Feature",
-        specifications: "Technical specifications",
+        notFound: "Boat not found",
+        gallery: "Image Gallery",
+        features: "Key Features",
+        specifications: "Technical Specifications",
         questions: "Have questions?",
         expertHelp:
-          "Our expert team is ready to help you with any inquiries about this boat.",
-        contactAdvisor: "Contact an advisor",
-        interestedIn: "Interested in",
-        requestMoreInfo: "Request more information or a quote for this boat.",
-        requestQuote: "Request quote",
-        requestDetailedInfo: "Request detailed information",
+          "Our expert team is ready to help you with any questions about this boat.",
+        contactAdvisor: "Contact an Advisor",
+        interested: "Interested in {{boatName}}?",
+        requestInfoOrBudget:
+          "Request more information or a quote to see this boat in person.",
+        actions: {
+          requestInfo: "Request Information",
+          requestBudget: "Request Quote",
+          detailedInfo: "Request Detailed Information",
+          scheduleVisit: "Schedule Visit",
+        },
+        contact: {
+          subject: {
+            info: "Information request - {{boatName}} {{year}}",
+            budget: "Quote request - {{boatName}} {{year}}",
+          },
+          message: {
+            info: "I am interested in the {{boatName}} model from {{year}} and would like to receive more detailed information about its features and availability.",
+            budget:
+              "I would like to request a detailed quote for the {{boatName}} model from {{year}}. Please send me pricing and conditions information.",
+          },
+        },
       },
     },
   },
@@ -793,19 +820,34 @@ export const translations = {
         contactNow: "Contacter maintenant",
       },
       boatDetail: {
-        gallery: "Galerie d'images",
-        features: "Caractéristiques principales",
-        feature: "Caractéristique",
-        specifications: "Spécifications techniques",
-        questions: "Des questions?",
+        notFound: "Embarcation non trouvée",
+        gallery: "Galerie d'Images",
+        features: "Caractéristiques Principales",
+        specifications: "Spécifications Techniques",
+        questions: "Des questions ?",
         expertHelp:
-          "Notre équipe d'experts est prête à vous aider avec toutes les questions sur cette embarcation.",
-        contactAdvisor: "Contacter un conseiller",
-        interestedIn: "Intéressé par",
-        requestMoreInfo:
-          "Demandez plus d'informations ou un devis pour cette embarcation.",
-        requestQuote: "Demander un devis",
-        requestDetailedInfo: "Demander des informations détaillées",
+          "Notre équipe d'experts est prête à vous aider avec toute question sur cette embarcation.",
+        contactAdvisor: "Contacter un Conseiller",
+        interested: "Intéressé par {{boatName}} ?",
+        requestInfoOrBudget:
+          "Demandez plus d'informations ou un devis pour voir cette embarcation en personne.",
+        actions: {
+          requestInfo: "Demander des Informations",
+          requestBudget: "Demander un Devis",
+          detailedInfo: "Demander des Informations Détaillées",
+          scheduleVisit: "Programmer une Visite",
+        },
+        contact: {
+          subject: {
+            info: "Demande d'information - {{boatName}} {{year}}",
+            budget: "Demande de devis - {{boatName}} {{year}}",
+          },
+          message: {
+            info: "Je suis intéressé par le modèle {{boatName}} de l'année {{year}} et j'aimerais recevoir plus d'informations détaillées sur ses caractéristiques et sa disponibilité.",
+            budget:
+              "Je souhaite demander un devis détaillé pour le modèle {{boatName}} de l'année {{year}}. Veuillez m'envoyer les informations sur les prix et les conditions.",
+          },
+        },
       },
     },
   },

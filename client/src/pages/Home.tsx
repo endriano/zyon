@@ -7,7 +7,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { highlightKeywords, highlightKeywordsHero } from "@/lib/highlightKeywords";
+import {
+  highlightKeywords,
+  highlightKeywordsHero,
+} from "@/lib/highlightKeywords";
 import {
   Select,
   SelectContent,
@@ -58,7 +61,7 @@ export default function Home() {
     years: 0,
     satisfaction: 0,
   });
-  const [, setLocation] = useLocation();  
+  const [, setLocation] = useLocation();
 
   // Animated counters
   useEffect(() => {
@@ -117,24 +120,20 @@ export default function Home() {
   });
 
   useEffect(() => {
-    // Cargar mensaje pre-rellenado si existe
-    const savedSubject = localStorage.getItem('contactSubject');
-    const savedMessage = localStorage.getItem('contactMessage');
+    // Verificar si hay mensajes preestablecidos en sessionStorage
+    const savedSubject = sessionStorage.getItem("contactSubject");
+    const savedMessage = sessionStorage.getItem("contactMessage");
 
     if (savedSubject) {
-      form.setValue('subject', savedSubject);
-      //localStorage.removeItem('contactSubject');
+      form.setValue("subject", savedSubject);
+      sessionStorage.removeItem("contactSubject"); // Limpiar después de usar
     }
 
     if (savedMessage) {
-      form.setValue('message', savedMessage);
- //localStorage.removeItem('contactMessage');
+      form.setValue("message", savedMessage);
+      sessionStorage.removeItem("contactMessage"); // Limpiar después de usar
     }
-
-    //localStorage.removeItem('contactSubject');
-    //localStorage.removeItem('contactMessage');
-    
-  }, [form]); // Dependencia en 'form' para asegurar que está disponible
+  }, [form]);
 
   const contactMutation = useMutation({
     mutationFn: async (data: InsertContactMessage) => {
