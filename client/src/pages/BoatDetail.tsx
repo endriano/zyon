@@ -119,17 +119,17 @@ export default function BoatDetail() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Button 
-              onClick={goBack}
-              variant="outline"
-              className="mb-6 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white"
-              data-testid="back-button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              {t('aboutPage.back')}
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                onClick={goBack}
+                variant="outline"
+                className="mb-6 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white"
+                data-testid="back-button"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                {t('aboutPage.back')}
+              </Button>
+            </motion.div>
           </motion.div>
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -151,25 +151,25 @@ export default function BoatDetail() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Button 
-                onClick={() => scrollToContactWithMessage('info')}
-                className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 flex items-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                {t('boatDetail.actions.requestInfo')}
-              </Button>
-              <Button 
-                onClick={() => scrollToContactWithMessage('budget')}
-                variant="outline"
-                className="border-2 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white px-6 py-3 flex items-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                {t('boatDetail.actions.requestBudget')}
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  onClick={() => scrollToContactWithMessage('info')}
+                  className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 flex items-center"
+                >
+                  <Mail className="w-4 h-4 mr-2" />
+                  {t('boatDetail.actions.requestInfo')}
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  onClick={() => scrollToContactWithMessage('budget')}
+                  variant="outline"
+                  className="border-2 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white px-6 py-3 flex items-center"
+                >
+                  <FileText className="w-4 h-4 mr-2" />
+                  {t('boatDetail.actions.requestBudget')}
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -312,15 +312,15 @@ export default function BoatDetail() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   {t('boatDetail.expertHelp')}
                 </p>
-                <Button 
-                  onClick={() => scrollToContactWithMessage('info')}
-                  className="bg-zyon-orange hover:bg-zyon-orange-dark text-white flex items-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  {t('boatDetail.contactAdvisor')}
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button 
+                    onClick={() => scrollToContactWithMessage('info')}
+                    className="bg-zyon-orange hover:bg-zyon-orange-dark text-white flex items-center"
+                  >
+                    <Mail className="w-4 h-4 mr-2" />
+                    {t('boatDetail.contactAdvisor')}
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -363,25 +363,25 @@ export default function BoatDetail() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Button 
-              onClick={() => scrollToContactWithMessage('info')}
-              className="bg-white text-zyon-orange hover:bg-gray-100 px-8 py-3 text-lg flex items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              {t('boatDetail.actions.detailedInfo')}
-            </Button>
-            <Button 
-              onClick={() => scrollToContactWithMessage('budget')}
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-zyon-orange px-8 py-3 text-lg flex items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FileText className="w-5 h-5 mr-2" />
-              {t('boatDetail.actions.scheduleVisit')}
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                onClick={() => scrollToContactWithMessage('info')}
+                className="bg-white text-zyon-orange hover:bg-gray-100 px-8 py-3 text-lg flex items-center"
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                {t('boatDetail.actions.detailedInfo')}
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                onClick={() => scrollToContactWithMessage('budget')}
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-zyon-orange px-8 py-3 text-lg flex items-center"
+              >
+                <FileText className="w-5 h-5 mr-2" />
+                {t('boatDetail.actions.scheduleVisit')}
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
