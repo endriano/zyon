@@ -108,46 +108,44 @@ export const boatModels: BoatModel[] = [
     year: 2022,
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     gallery: [
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     ],
     description: {
-      es: "Lancha de alta velocidad con motor potente y diseño aerodinámico",
-      en: "High-speed boat with powerful engine and aerodynamic design",
-      fr: "Bateau à grande vitesse avec moteur puissant et design aérodynamique"
+      es: "Embarcación robusta diseñada para condiciones marítimas exigentes",
+      en: "Robust vessel designed for demanding maritime conditions",
+      fr: "Embarcation robuste conçue pour des conditions maritimes exigeantes"
     },
     features: {
-      es: ["Motor 300HP", "Capacidad 8 personas", "Velocidad máxima 60 nudos"],
-      en: ["300HP Engine", "8 Person Capacity", "Maximum Speed 60 knots"],
-      fr: ["Moteur 300CH", "Capacité 8 personnes", "Vitesse maximale 60 nœuds"]
+      es: ["Casco reforzado", "Capacidad carga 2 toneladas", "Sistema de pesca integrado"],
+      en: ["Reinforced hull", "2-ton cargo capacity", "Integrated fishing system"],
+      fr: ["Coque renforcée", "Capacité de charge 2 tonnes", "Système de pêche intégré"]
     },
     specifications: {
       es: {
-        "Longitud": "12 metros",
-        "Ancho": "3.2 metros",
-        "Calado": "0.8 metros",
-        "Peso": "2,800 kg",
-        "Combustible": "Tanque de 400 litros",
-        "Color": "Blanco perlado"
+        "Longitud": "15 metros",
+        "Ancho": "4.5 metros",
+        "Calado": "1.2 metros",
+        "Peso": "5,200 kg",
+        "Combustible": "Tanque de 600 litros",
+        "Material": "Acero inoxidable"
       },
       en: {
-        "Length": "12 meters",
-        "Width": "3.2 meters",
-        "Draft": "0.8 meters",
-        "Weight": "2,800 kg",
-        "Fuel": "400-liter tank",
-        "Color": "Pearl white"
+        "Length": "15 meters",
+        "Width": "4.5 meters",
+        "Draft": "1.2 meters",
+        "Weight": "5,200 kg",
+        "Fuel": "600-liter tank",
+        "Material": "Stainless steel"
       },
       fr: {
-        "Longueur": "12 mètres",
-        "Largeur": "3,2 mètres",
-        "Tirant d'eau": "0,8 mètre",
-        "Poids": "2 800 kg",
-        "Carburant": "Réservoir de 400 litres",
-        "Couleur": "Blanc nacré"
+        "Longueur": "15 mètres",
+        "Largeur": "4,5 mètres",
+        "Tirant d'eau": "1,2 mètre",
+        "Poids": "5 200 kg",
+        "Carburant": "Réservoir de 600 litres",
+        "Matériau": "Acier inoxydable"
       }
     }
   },
@@ -167,46 +165,44 @@ export const boatModels: BoatModel[] = [
     year: 2023,
     image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     gallery: [
+      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     ],
     description: {
-      es: "Lancha de alta velocidad con motor potente y diseño aerodinámico",
-      en: "High-speed boat with powerful engine and aerodynamic design",
-      fr: "Bateau à grande vitesse avec moteur puissant et design aérodynamique"
+      es: "Panga tradicional gallega con acabados modernos",
+      en: "Traditional Galician panga with modern finishes",
+      fr: "Panga traditionnelle galicienne avec finitions modernes"
     },
     features: {
-      es: ["Motor 300HP", "Capacidad 8 personas", "Velocidad máxima 60 nudos"],
-      en: ["300HP Engine", "8 Person Capacity", "Maximum Speed 60 knots"],
-      fr: ["Moteur 300CH", "Capacité 8 personnes", "Vitesse maximale 60 nœuds"]
+      es: ["Madera de pino marítimo", "Motor 40HP", "Capacidad 4 personas"],
+      en: ["Maritime pine wood", "40HP Engine", "4 Person Capacity"],
+      fr: ["Bois de pin maritime", "Moteur 40CH", "Capacité 4 personnes"]
     },
     specifications: {
       es: {
-        "Longitud": "12 metros",
-        "Ancho": "3.2 metros",
-        "Calado": "0.8 metros",
-        "Peso": "2,800 kg",
-        "Combustible": "Tanque de 400 litros",
-        "Color": "Blanco perlado"
+        "Longitud": "6.5 metros",
+        "Ancho": "2.2 metros",
+        "Calado": "0.4 metros",
+        "Peso": "450 kg",
+        "Combustible": "Tanque de 50 litros",
+        "Color": "Natural con barniz"
       },
       en: {
-        "Length": "12 meters",
-        "Width": "3.2 meters",
-        "Draft": "0.8 meters",
-        "Weight": "2,800 kg",
-        "Fuel": "400-liter tank",
-        "Color": "Pearl white"
+        "Length": "6.5 meters",
+        "Width": "2.2 meters",
+        "Draft": "0.4 meters",
+        "Weight": "450 kg",
+        "Fuel": "50-liter tank",
+        "Color": "Natural with varnish"
       },
       fr: {
-        "Longueur": "12 mètres",
-        "Largeur": "3,2 mètres",
-        "Tirant d'eau": "0,8 mètre",
-        "Poids": "2 800 kg",
-        "Carburant": "Réservoir de 400 litres",
-        "Couleur": "Blanc nacré"
+        "Longueur": "6,5 mètres",
+        "Largeur": "2,2 mètres",
+        "Tirant d'eau": "0,4 mètre",
+        "Poids": "450 kg",
+        "Carburant": "Réservoir de 50 litres",
+        "Couleur": "Naturel avec vernis"
       }
     }
   },
@@ -226,46 +222,44 @@ export const boatModels: BoatModel[] = [
     year: 2024,
     image: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     gallery: [
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     ],
     description: {
-      es: "Lancha de alta velocidad con motor potente y diseño aerodinámico",
-      en: "High-speed boat with powerful engine and aerodynamic design",
-      fr: "Bateau à grande vitesse avec moteur puissant et design aérodynamique"
+      es: "Bote de rescate rápido con equipos de emergencia",
+      en: "Fast rescue boat with emergency equipment",
+      fr: "Bateau de sauvetage rapide avec équipement d'urgence"
     },
     features: {
-      es: ["Motor 300HP", "Capacidad 8 personas", "Velocidad máxima 60 nudos"],
-      en: ["300HP Engine", "8 Person Capacity", "Maximum Speed 60 knots"],
-      fr: ["Moteur 300CH", "Capacité 8 personnes", "Vitesse maximale 60 nœuds"]
+      es: ["Motor gemelo 200HP", "Sistema GPS avanzado", "Equipo de rescate incluido"],
+      en: ["Twin 200HP Engine", "Advanced GPS System", "Rescue Equipment Included"],
+      fr: ["Moteur jumeau 200CH", "Système GPS avancé", "Équipement de sauvetage inclus"]
     },
     specifications: {
       es: {
-        "Longitud": "12 metros",
-        "Ancho": "3.2 metros",
-        "Calado": "0.8 metros",
-        "Peso": "2,800 kg",
-        "Combustible": "Tanque de 400 litros",
-        "Color": "Blanco perlado"
+        "Longitud": "8 metros",
+        "Ancho": "2.8 metros",
+        "Calado": "0.6 metros",
+        "Peso": "1,200 kg",
+        "Combustible": "Tanque de 200 litros",
+        "Color": "Rojo de seguridad"
       },
       en: {
-        "Length": "12 meters",
-        "Width": "3.2 meters",
-        "Draft": "0.8 meters",
-        "Weight": "2,800 kg",
-        "Fuel": "400-liter tank",
-        "Color": "Pearl white"
+        "Length": "8 meters",
+        "Width": "2.8 meters",
+        "Draft": "0.6 meters",
+        "Weight": "1,200 kg",
+        "Fuel": "200-liter tank",
+        "Color": "Safety red"
       },
       fr: {
-        "Longueur": "12 mètres",
-        "Largeur": "3,2 mètres",
-        "Tirant d'eau": "0,8 mètre",
-        "Poids": "2 800 kg",
-        "Carburant": "Réservoir de 400 litres",
-        "Couleur": "Blanc nacré"
+        "Longueur": "8 mètres",
+        "Largeur": "2,8 mètres",
+        "Tirant d'eau": "0,6 mètre",
+        "Poids": "1 200 kg",
+        "Carburant": "Réservoir de 200 litres",
+        "Couleur": "Rouge de sécurité"
       }
     }
   }

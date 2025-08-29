@@ -8,9 +8,6 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Layout } from "@/components/Layout";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
-import SpeedBoats from "@/pages/SpeedBoats";
-import WorkBoats from "@/pages/WorkBoats";
-import Pangas from "@/pages/Pangas";
 import AllBoats from "@/pages/AllBoats";
 import NotFound from "@/pages/not-found";
 import BoatDetail from "@/pages/BoatDetail";
@@ -22,9 +19,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/sobre-nosotros" component={About} />
-      <Route path="/lanchas-rapidas" component={SpeedBoats} />
-      <Route path="/embarcaciones-trabajo" component={WorkBoats} />
-      <Route path="/pangas" component={Pangas} />
       <Route path="/embarcaciones-lanchas" component={AllBoats} />
       <Route path="/embarcacion/:id" component={BoatDetail} />{" "}
       {/* Nueva ruta */}
@@ -41,8 +35,7 @@ function App() {
           <TooltipProvider>
             <Helmet>
               <title>
-                Zyon Galicia - Embarcaciones Profesionales | Lanchas Rápidas,
-                Embarcaciones de Trabajo y Pangas
+                Zyon Galicia
               </title>
               <meta
                 name="description"

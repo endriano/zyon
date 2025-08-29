@@ -97,13 +97,13 @@ export default function BoatDetail() {
       {/* Header Section con animaciones mejoradas */}
       <motion.section
         className="py-12 bg-zyon-bg dark:bg-gray-900"
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
@@ -228,7 +228,7 @@ export default function BoatDetail() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Features */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
