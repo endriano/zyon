@@ -109,8 +109,10 @@ export default function BoatDetail() {
           >
             <motion.button
               onClick={goBack}
-              variant="outline"
-              className="mb-6 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white transition-all duration-300"
+              className="mb-6 flex items-center px-4 py-2 border-2 border-zyon-orange text-zyon-orange 
+                           rounded-full font-medium shadow-sm
+                           hover:bg-zyon-orange hover:text-white 
+                           transition-all duration-300 ease-in-out"
               data-testid="back-button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
