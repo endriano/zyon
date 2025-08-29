@@ -58,7 +58,7 @@ export default function Home() {
     years: 0,
     satisfaction: 0,
   });
-  const [, setLocation] = useLocation();
+  const [, setLocation] = useLocation();  
 
   // Animated counters
   useEffect(() => {
@@ -115,6 +115,26 @@ export default function Home() {
       message: "",
     },
   });
+
+  useEffect(() => {
+    // Cargar mensaje pre-rellenado si existe
+    const savedSubject = localStorage.getItem('contactSubject');
+    const savedMessage = localStorage.getItem('contactMessage');
+
+    if (savedSubject) {
+      form.setValue('subject', savedSubject);
+      //localStorage.removeItem('contactSubject');
+    }
+
+    if (savedMessage) {
+      form.setValue('message', savedMessage);
+ //localStorage.removeItem('contactMessage');
+    }
+
+    //localStorage.removeItem('contactSubject');
+    //localStorage.removeItem('contactMessage');
+    
+  }, [form]); // Dependencia en 'form' para asegurar que está disponible
 
   const contactMutation = useMutation({
     mutationFn: async (data: InsertContactMessage) => {

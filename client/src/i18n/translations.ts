@@ -253,6 +253,22 @@ export const translations = {
           "Contacta con nosotros y te ayudaremos a encontrar la embarcación perfecta para ti.",
         contactNow: "Contactar ahora",
       },
+      boatDetail: {
+        gallery: "Galería de Imágenes",
+        features: "Características Principales",
+        feature: "Característica",
+        specifications: "Especificaciones Técnicas",
+        questions: "¿Tienes preguntas?",
+        expertHelp:
+          "Nuestro equipo de expertos está listo para ayudarte con cualquier consulta sobre esta embarcación.",
+        contactAdvisor: "Contactar con un Asesor",
+        interestedIn: "¿Interesado en",
+        requestMoreInfo:
+          "Solicita más información o presupuesto para esta embarcación.",
+        requestInfo: "Solicitar Información",
+        requestQuote: "Solicitar Presupuesto",
+        requestDetailedInfo: "Solicitar Información Detallada",
+      },
     },
   },
   en: {
@@ -500,6 +516,21 @@ export const translations = {
         contactHelp:
           "Contact us and we'll help you find the perfect boat for you.",
         contactNow: "Contact now",
+      },
+      boatDetail: {
+        gallery: "Image Gallery",
+        features: "Key Features",
+        feature: "Feature",
+        specifications: "Technical Specifications",
+        questions: "Have Questions?",
+        expertHelp:
+          "Our expert team is ready to help you with any inquiries about this boat.",
+        contactAdvisor: "Contact an Advisor",
+        interestedIn: "Interested in",
+        requestMoreInfo: "Request more information or a quote for this boat.",
+        requestInfo: "Request Information",
+        requestQuote: "Request Quote",
+        requestDetailedInfo: "Request Detailed Information",
       },
     },
   },
@@ -758,6 +789,22 @@ export const translations = {
       contactHelp:
         "Contactez-nous et nous vous aiderons à trouver l'embarcation parfaite pour vous.",
       contactNow: "Contacter maintenant",
+    },
+    boatDetail: {
+      gallery: "Galerie d'Images",
+      features: "Caractéristiques Principales",
+      feature: "Caractéristique",
+      specifications: "Spécifications Techniques",
+      questions: "Des Questions?",
+      expertHelp:
+        "Notre équipe d'experts est prête à vous aider avec toutes les questions sur cette embarcation.",
+      contactAdvisor: "Contacter un Conseiller",
+      interestedIn: "Intéressé par",
+      requestMoreInfo:
+        "Demandez plus d'informations ou un devis pour cette embarcation.",
+      requestInfo: "Demander des Informations",
+      requestQuote: "Demander un Devis",
+      requestDetailedInfo: "Demander des Informations Détaillées",
     },
   },
 };
