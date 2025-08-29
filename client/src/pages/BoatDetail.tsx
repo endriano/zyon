@@ -14,7 +14,6 @@ const featureIcons = {
   year: Calendar,
   material: Anchor,
   length: Anchor,
-  width: Anchor,
 };
 
 export default function BoatDetail() {
@@ -62,17 +61,29 @@ export default function BoatDetail() {
     if (!boatData) return;
 
     const boatName = getText(boatData.name);
-    const message =
-      type === "info"
-        ? `Estoy interesado en obtener más información sobre el modelo ${boatName} (${boatData.year}). Por favor, envíenme detalles adicionales.`
-        : `Me gustaría solicitar un presupuesto para el modelo ${boatName} (${boatData.year}). ¿Podrían proporcionarme una cotización detallada?`;
 
-    // Guardar mensaje en localStorage para usar en el formulario de contacto
-    localStorage.setItem(
-      "contactSubject",
-      type === "info" ? "informacion" : "presupuesto",
-    );
+    // Crear mensaje preestablecido según el tipo
+    let subject = "";
+    let message = "";
+
+    if (type === "info") {
+      subject = "informacion";
+      message = t("boatDetail.prefill.info", { 
+        boatName, 
+        year: boatData.year 
+      });
+    } else {
+      subject = "presupuesto";
+      message = t("boatDetail.prefill.quote", { 
+        boatName,
+        year: boatData.year 
+      });
+    }
+
+    // Guardar datos en localStorage para usar en el formulario de contacto
+    localStorage.setItem("contactSubject", subject);
     localStorage.setItem("contactMessage", message);
+    localStorage.setItem("contactBoatName", boatName);
 
     // Navegar a contacto
     setLocation("/");
@@ -80,15 +91,30 @@ export default function BoatDetail() {
       const contactSection = document.getElementById("contacto");
       if (contactSection) {
         contactSection.scrollIntoView({ behavior: "smooth" });
+
+        // Opcional: enfocar el campo de mensaje para mejor UX
+        setTimeout(() => {
+          const messageField = document.querySelector('[data-testid="contact-message"]');
+          if (messageField) {
+            (messageField as HTMLTextAreaElement).focus();
+          }
+        }, 500);
       }
     }, 100);
   };
 
   if (!boatData) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-zyon-gray dark:text-white">Cargando...</div>
-      </div>
+      <motion.div 
+        className="flex items-center justify-center min-h-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="text-zyon-gray dark:text-white text-xl">
+          {t("boatDetail.loading")}
+        </div>
+      </motion.div>
     );
   }
 
@@ -104,7 +130,7 @@ export default function BoatDetail() {
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <motion.button
@@ -129,19 +155,49 @@ export default function BoatDetail() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2 text-zyon-gray dark:text-white">
+              <motion.h1 
+                className="text-3xl md:text-4xl font-bold mb-2 text-zyon-gray dark:text-white"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 {getText(boatData.name)}
-              </h1>
-              <p className="text-lg text-zyon-orange font-medium">
+              </motion.h1>
+              <motion.p 
+                className="text-lg text-zyon-orange font-medium"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 {getText(boatData.purpose)} • {boatData.year}
-              </p>
+              </motion.p>
             </div>
+
+            {/* Botones de acción en el header */}
             <motion.div
               className="flex flex-col sm:flex-row gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            ></motion.div>
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <Button
+                onClick={() => contactWithInfo("info")}
+                className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {t("boatDetail.requestInfo")}
+              </Button>
+              <Button
+                onClick={() => contactWithInfo("quote")}
+                variant="outline"
+                className="border-2 border-zyon-orange text-zyon-orange hover:bg-zyon-orange hover:text-white px-6 py-3 rounded-md transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {t("boatDetail.requestQuote")}
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
@@ -163,17 +219,39 @@ export default function BoatDetail() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
             >
-              <img
+              <motion.img
                 src={boatData.gallery[selectedImage]}
                 alt={`${getText(boatData.name)} - Vista principal`}
-                className="w-full h-96 object-cover transition-transform duration-500"
+                className="w-full h-96 object-cover transition-transform duration-700"
                 loading="lazy"
+                key={selectedImage} // Forzar re-render cuando cambia la imagen
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
               />
               <div className="absolute top-4 right-4 bg-zyon-orange text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
                 {selectedImage + 1} / {boatData.gallery.length}
               </div>
+
+              {/* Indicadores de navegación */}
+              {boatData.gallery.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {boatData.gallery.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedImage(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        selectedImage === index 
+                          ? 'bg-zyon-orange scale-125' 
+                          : 'bg-white/50 hover:bg-white'
+                      }`}
+                      aria-label={`Ir a imagen ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </motion.div>
 
             {/* Gallery Thumbnails */}
@@ -192,12 +270,13 @@ export default function BoatDetail() {
                     key={index}
                     className={`relative overflow-hidden rounded-lg cursor-pointer border-2 transition-all duration-300 ${
                       selectedImage === index
-                        ? "border-zyon-orange shadow-lg"
+                        ? "border-zyon-orange shadow-lg scale-105"
                         : "border-transparent hover:border-zyon-orange/50 hover:shadow-md"
                     }`}
                     onClick={() => setSelectedImage(index)}
                     whileHover={{ scale: 1.05, y: -5 }}
                     whileTap={{ scale: 0.95 }}
+                    layout // Animación de layout para transiciones suaves
                   >
                     <img
                       src={image}
@@ -206,7 +285,12 @@ export default function BoatDetail() {
                       loading="lazy"
                     />
                     {selectedImage === index && (
-                      <div className="absolute inset-0 bg-zyon-orange/20 rounded-lg"></div>
+                      <motion.div 
+                        className="absolute inset-0 bg-zyon-orange/20 rounded-lg"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
                     )}
                   </motion.div>
                 ))}
@@ -228,7 +312,7 @@ export default function BoatDetail() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Features */}
             <motion.div
-              initial={{ opacity: 0, y: -30 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
@@ -274,40 +358,31 @@ export default function BoatDetail() {
                 {getText(boatData.features).map((feature, index) => {
                   // Determinar icono basado en el contenido de la característica
                   let IconComponent = Anchor;
-                  if (
-                    feature.toLowerCase().includes("velocidad") ||
-                    feature.toLowerCase().includes("speed")
-                  ) {
+                  const featureLower = feature.toLowerCase();
+
+                  if (featureLower.includes("velocidad") || featureLower.includes("speed") || featureLower.includes("máxima")) {
                     IconComponent = Gauge;
-                  } else if (
-                    feature.toLowerCase().includes("capacidad") ||
-                    feature.toLowerCase().includes("capacity")
-                  ) {
+                  } else if (featureLower.includes("capacidad") || featureLower.includes("capacity") || featureLower.includes("personas")) {
                     IconComponent = Users;
-                  } else if (
-                    feature.toLowerCase().includes("motor") ||
-                    feature.toLowerCase().includes("engine")
-                  ) {
+                  } else if (featureLower.includes("motor") || featureLower.includes("engine") || featureLower.includes("hp") || featureLower.includes("caballo")) {
                     IconComponent = Fuel;
-                  } else if (
-                    feature.toLowerCase().includes("año") ||
-                    feature.toLowerCase().includes("year")
-                  ) {
+                  } else if (featureLower.includes("año") || featureLower.includes("year")) {
                     IconComponent = Calendar;
                   }
 
                   return (
                     <motion.div
                       key={index}
-                      className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300"
+                      className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700"
                       variants={{
                         hidden: { opacity: 0, y: 20 },
                         visible: { opacity: 1, y: 0 },
                       }}
                       whileHover={{ y: -5, scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300 }}
                     >
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-zyon-orange/10 rounded-lg flex items-center justify-center">
+                        <div className="w-10 h-10 bg-zyon-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                           <IconComponent className="w-5 h-5 text-zyon-orange" />
                         </div>
                         <div>
@@ -343,7 +418,7 @@ export default function BoatDetail() {
               </motion.h3>
 
               <motion.div
-                className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md"
+                className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-100 dark:border-gray-700"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -354,16 +429,16 @@ export default function BoatDetail() {
                     ([key, value], index) => (
                       <motion.div
                         key={key}
-                        className="flex justify-between py-2 border-b border-gray-100 dark:border-gray-700"
+                        className="flex justify-between py-2 border-b border-gray-100 dark:border-gray-700 last:border-0"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                         viewport={{ once: true }}
                       >
-                        <dt className="text-gray-600 dark:text-gray-400">
+                        <dt className="text-gray-600 dark:text-gray-400 font-medium">
                           {key}
                         </dt>
-                        <dd className="font-medium text-zyon-gray dark:text-white">
+                        <dd className="font-semibold text-zyon-gray dark:text-white">
                           {value}
                         </dd>
                       </motion.div>
@@ -387,7 +462,7 @@ export default function BoatDetail() {
                 </p>
                 <motion.button
                   onClick={() => contactWithInfo("info")}
-                  className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 rounded-md transition-all duration-300"
+                  className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -401,13 +476,20 @@ export default function BoatDetail() {
 
       {/* CTA Section con animaciones mejoradas */}
       <motion.section
-        className="py-16 bg-zyon-orange"
+        className="py-16 bg-zyon-orange relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <div className="container mx-auto px-4 text-center text-white">
+        {/* Elementos decorativos de fondo */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-white"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-white"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white"></div>
+        </div>
+
+        <div className="container mx-auto px-4 text-center text-white relative z-10">
           <motion.h2
             className="text-3xl md:text-4xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
@@ -415,7 +497,7 @@ export default function BoatDetail() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {t("boatDetail.interestedIn")} {getText(boatData.name)}?
+            {t("boatDetail.interestedIn")} <span className="font-bold">{getText(boatData.name)}</span>?
           </motion.h2>
 
           <motion.p
@@ -437,11 +519,10 @@ export default function BoatDetail() {
           >
             <motion.button
               onClick={() => contactWithInfo("info")}
-              className="bg-white text-zyon-orange hover:bg-gray-100 px-8 py-3 text-lg rounded-md transition-all duration-300"
+              className="bg-white text-zyon-orange hover:bg-gray-100 px-8 py-3 text-lg rounded-md transition-all duration-300 shadow-lg hover:shadow-xl font-semibold"
               whileHover={{
                 scale: 1.05,
-                boxShadow:
-                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -449,11 +530,10 @@ export default function BoatDetail() {
             </motion.button>
             <motion.button
               onClick={() => contactWithInfo("quote")}
-              className="border-2 border-white text-white hover:bg-white hover:text-zyon-orange px-8 py-3 text-lg rounded-md transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-zyon-orange px-8 py-3 text-lg rounded-md transition-all duration-300 shadow-lg hover:shadow-xl font-semibold"
               whileHover={{
                 scale: 1.05,
-                boxShadow:
-                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
               }}
               whileTap={{ scale: 0.95 }}
             >

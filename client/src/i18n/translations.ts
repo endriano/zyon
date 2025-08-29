@@ -267,6 +267,10 @@ export const translations = {
           "Solicita más información o presupuesto para esta embarcación.",
         requestQuote: "Solicitar presupuesto",
         requestDetailedInfo: "Solicitar información detallada",
+        prefill: {
+          info: "Hola, estoy interesado en obtener más información sobre la embarcación {{boatName}} del año {{year}}. ¿Podrían proporcionarme detalles técnicos, disponibilidad y precios? Gracias.",
+          quote: "Hola, me gustaría solicitar un presupuesto para la embarcación {{boatName}} del año {{year}}. Por favor, incluyan información sobre precios, opciones de financiación y plazos de entrega. Gracias.",
+        },
       },
     },
   },
@@ -744,64 +748,65 @@ export const translations = {
           cta2: "Contact",
         },
       },
-    },
-    allBoats: {
-      title: "Nos embarcations",
-      explore:
-        "Découvrez notre gamme complète d’embarcations professionnelles, personnalisées selon les spécifications du client.",
-      filter: "Filtrer par catégorie",
-      models: "Nos modèles",
-      speedboats: {
-        title: "Bateaux rapides",
-        description:
-          "Embarcations haute vitesse pour transport rapide et efficace",
+
+      allBoats: {
+        title: "Nos embarcations",
+        explore:
+          "Découvrez notre gamme complète d’embarcations professionnelles, personnalisées selon les spécifications du client.",
+        filter: "Filtrer par catégorie",
+        models: "Nos modèles",
+        speedboats: {
+          title: "Bateaux rapides",
+          description:
+            "Embarcations haute vitesse pour transport rapide et efficace",
+        },
+        workboats: {
+          title: "Embarcations de travail",
+          description:
+            "Bateaux robustes conçus pour la pêche professionnelle et le travail maritime",
+        },
+        panga: {
+          title: "Pangas",
+          description:
+            "Embarcations traditionnelles polyvalentes pour la pêche côtière",
+        },
+        rescue: {
+          title: "Bateaux de sauvetage",
+          description:
+            "Embarcations spécialisées pour le sauvetage maritime et les urgences",
+        },
+        cta: "Voir catalogue complet",
+        categories: {
+          all: "Tous",
+          speedboat: "Bateaux rapides",
+          workboat: "Embarcations de travail",
+          panga: "Pangas",
+          rescue: "Bateaux de rauvetage",
+        },
+        purpose: "But",
+        details: "Voir détails",
+        noModels: "Aucun modèle trouvé dans cette catégorie.",
+        viewAll: "Voir tous les modèles",
+        notFound: "Vous ne trouvez pas ce que vous cherchez?",
+        contactHelp:
+          "Contactez-nous et nous vous aiderons à trouver l'embarcation parfaite pour vous.",
+        contactNow: "Contacter maintenant",
       },
-      workboats: {
-        title: "Embarcations de travail",
-        description:
-          "Bateaux robustes conçus pour la pêche professionnelle et le travail maritime",
+      boatDetail: {
+        gallery: "Galerie d'images",
+        features: "Caractéristiques principales",
+        feature: "Caractéristique",
+        specifications: "Spécifications techniques",
+        questions: "Des questions?",
+        expertHelp:
+          "Notre équipe d'experts est prête à vous aider avec toutes les questions sur cette embarcation.",
+        contactAdvisor: "Contacter un conseiller",
+        interestedIn: "Intéressé par",
+        requestMoreInfo:
+          "Demandez plus d'informations ou un devis pour cette embarcation.",
+        requestQuote: "Demander un devis",
+        requestDetailedInfo: "Demander des informations détaillées",
       },
-      panga: {
-        title: "Pangas",
-        description:
-          "Embarcations traditionnelles polyvalentes pour la pêche côtière",
-      },
-      rescue: {
-        title: "Bateaux de sauvetage",
-        description:
-          "Embarcations spécialisées pour le sauvetage maritime et les urgences",
-      },
-      cta: "Voir catalogue complet",
-      categories: {
-        all: "Tous",
-        speedboat: "Bateaux rapides",
-        workboat: "Embarcations de travail",
-        panga: "Pangas",
-        rescue: "Bateaux de rauvetage",
-      },
-      purpose: "But",
-      details: "Voir détails",
-      noModels: "Aucun modèle trouvé dans cette catégorie.",
-      viewAll: "Voir tous les modèles",
-      notFound: "Vous ne trouvez pas ce que vous cherchez?",
-      contactHelp:
-        "Contactez-nous et nous vous aiderons à trouver l'embarcation parfaite pour vous.",
-      contactNow: "Contacter maintenant",
-    },
-    boatDetail: {
-      gallery: "Galerie d'images",
-      features: "Caractéristiques principales",
-      feature: "Caractéristique",
-      specifications: "Spécifications techniques",
-      questions: "Des questions?",
-      expertHelp:
-        "Notre équipe d'experts est prête à vous aider avec toutes les questions sur cette embarcation.",
-      contactAdvisor: "Contacter un conseiller",
-      interestedIn: "Intéressé par",
-      requestMoreInfo:
-        "Demandez plus d'informations ou un devis pour cette embarcation.",
-      requestQuote: "Demander un devis",
-      requestDetailedInfo: "Demander des informations détaillées",
     },
   },
 };
