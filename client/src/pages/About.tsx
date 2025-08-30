@@ -115,7 +115,7 @@ export default function About() {
       </motion.section>
 
       {/* Company Story con imagen de fondo */}
-      <motion.section 
+      <motion.section
         className="py-20 bg-white dark:bg-gray-800 relative overflow-hidden"
         initial="hidden"
         whileInView="visible"
@@ -124,7 +124,7 @@ export default function About() {
       >
         {/* Imagen de fondo con overlay */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src={aboutFondo}
             alt="Historia de Zyon Galicia - Más de 15 años construyendo embarcaciones profesionales de calidad en el sector náutico gallego"
             className="w-full h-full object-cover"
@@ -144,16 +144,21 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold mb-6 text-zyon-gray dark:text-white"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                {highlightKeywords(t("aboutPage.story.title"))}
+                <span className="text-white">
+                  {t("aboutPage.story.title").split(" ")[0]}{" "}
+                </span>
+                <span className="text-zyon-orange">
+                  {t("aboutPage.story.title").split(" ")[1]}
+                </span>
               </motion.h2>
-              <motion.div 
+              <motion.div
                 className="space-y-4 text-gray-300 dark:text-gray-300"
                 variants={staggerContainer}
                 initial="hidden"
@@ -176,14 +181,13 @@ export default function About() {
             </motion.div>
 
             {/* Espacio vacío que ahora muestra mejor la imagen de fondo */}
-            <motion.div 
+            <motion.div
               className="hidden lg:block"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
               viewport={{ once: true }}
-            >
-            </motion.div>
+            ></motion.div>
           </div>
         </div>
       </motion.section>
@@ -205,7 +209,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {highlightKeywords(t("aboutPage.values.title"))}
+              {t("aboutPage.values.title").split(" ")[0]}{" "}
+              <span className="text-zyon-orange">
+                {t("aboutPage.values.title").split(" ")[1]}
+              </span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("aboutPage.values.subtitle")}

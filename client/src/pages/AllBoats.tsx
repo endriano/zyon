@@ -149,7 +149,12 @@ export default function AllBoats() {
       >
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8 text-zyon-gray dark:text-white">
-            {t("allBoats.filter")}
+          
+            {t("allBoats.filter").split(" ")[0]}{" "}
+            {t("allBoats.filter").split(" ")[1]}{" "}
+            <span className="text-zyon-orange">
+              {t("allBoats.filter").split(" ")[2]}
+            </span>
           </h2>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -191,7 +196,10 @@ export default function AllBoats() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {highlightKeywords(t("allBoats.models"))}{" "}
+            {t("allBoats.models").split(" ")[0]}{" "}
+            <span className="text-zyon-orange">
+              {t("allBoats.models").split(" ")[1]}
+            </span>
             {selectedCategory !== "all" && (
               <span className="text-zyon-orange">
                 - {categories.find((c) => c.id === selectedCategory)?.name}

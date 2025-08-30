@@ -280,7 +280,10 @@ export default function BoatDetail() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                {t("boatDetail.features")}
+                {t("boatDetail.features").split(" ")[0]}{" "}
+                <span className="text-zyon-orange">
+                  {t("boatDetail.features").split(" ")[1]}
+                </span>
               </motion.h3>
 
               <motion.p
@@ -378,7 +381,10 @@ export default function BoatDetail() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                {t("boatDetail.specifications")}
+                {t("boatDetail.specifications").split(" ")[0]}{" "}
+                <span className="text-zyon-orange">
+                  {t("boatDetail.specifications").split(" ")[1]}
+                </span>
               </motion.h3>
 
               <motion.div

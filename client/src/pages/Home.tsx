@@ -298,7 +298,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              {/* Estadísticas con animaciones mejoradas */}
+              {/* Estadísticas */}
               <div id="stats" className="grid sm:grid-cols-3 gap-6 mb-8">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -422,7 +422,10 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {highlightKeywords(t("services.title"))}
+              {t("services.title").split(" ")[0]}{" "}
+              <span className="text-zyon-orange">
+                {t("services.title").split(" ")[1]}
+              </span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("services.subtitle")}
@@ -490,7 +493,10 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zyon-gray dark:text-white">
-              {highlightKeywords(t("boats.title"))}
+              {t("boats.title").split(" ")[0]}{" "}
+              <span className="text-zyon-orange">
+                {t("boats.title").split(" ")[1]}
+              </span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               {t("boats.subtitle")}
