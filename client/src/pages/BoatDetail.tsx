@@ -13,6 +13,11 @@ import {
   LifeBuoy,
   Mail,
   FileText,
+  Wrench,
+  Target,
+  Clock,
+  Award,
+  Zap
 } from "lucide-react";
 import { useLocation } from "wouter";
 import { boatModels } from "@/data";
@@ -26,6 +31,12 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Users: Users,
   Fuel: Fuel,
   Calendar: Calendar,
+  Wrench: Wrench,
+  Target: Target,
+  Clock: Clock,
+  Award: Award,
+  Zap: Zap,
+  // Agrega más iconos según necesites
 };
 
 export default function BoatDetail() {
@@ -257,6 +268,7 @@ export default function BoatDetail() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Features con animaciones mejoradas */}
+            
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -283,8 +295,8 @@ export default function BoatDetail() {
                 {getText(boatData.description)}
               </motion.p>
 
-              {/* Grid de features con stagger animation */}
-              <motion.div
+                    {/* Features con iconos individuales */}
+              <motion.div 
                 className="grid sm:grid-cols-2 gap-4"
                 initial="hidden"
                 whileInView="visible"
@@ -293,72 +305,64 @@ export default function BoatDetail() {
                   visible: {
                     opacity: 1,
                     transition: {
-                      staggerChildren: 0.1,
-                    },
-                  },
+                      staggerChildren: 0.1
+                    }
+                  }
                 }}
                 viewport={{ once: true }}
               >
-                {getText(boatData.features).map(
-                  (feature: string, index: number) => {
-                    const IconComponent =
-                      iconMap[boatData.features.icon] || Ship;
-                    return (
-                      <motion.div
-                        key={index}
-                        className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300"
-                        variants={{
-                          hidden: { opacity: 0, y: 20 },
-                          visible: { opacity: 1, y: 0 },
-                        }}
-                        whileHover={{
-                          y: -8,
-                          scale: 1.02,
-                          boxShadow:
-                            "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                        }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20,
-                        }}
-                      >
-                        <div className="flex items-center space-x-3">
-                          <motion.div
-                            className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center"
-                            whileHover={{
-                              scale: 1.1,
-                              rotate: 5,
-                            }}
-                            transition={{
-                              type: "spring",
-                              stiffness: 400,
-                              damping: 17,
-                            }}
+                {boatData.features.items.map((feature: any, index: number) => {
+                  const IconComponent = iconMap[feature.icon] || Ship;
+                  return (
+                    <motion.div
+                      key={index}
+                      className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300"
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0 }
+                      }}
+                      whileHover={{ 
+                        y: -8, 
+                        scale: 1.02,
+                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                      }}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: 300, 
+                        damping: 20 
+                      }}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <motion.div 
+                          className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center"
+                          whileHover={{ 
+                            scale: 1.1,
+                            rotate: 5
+                          }}
+                          transition={{ 
+                            type: "spring", 
+                            stiffness: 400, 
+                            damping: 17 
+                          }}
+                        >
+                          <IconComponent className="w-6 h-6 text-zyon-orange" />
+                        </motion.div>
+                        <div>
+                          <motion.p 
+                            className="font-medium text-zyon-gray dark:text-white"
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.3, delay: index * 0.05 }}
+                            viewport={{ once: true }}
                           >
-                            <IconComponent className="w-6 h-6 text-zyon-orange" />
-                          </motion.div>
-                          <div>
-                            <motion.p
-                              className="font-medium text-zyon-gray dark:text-white"
-                              initial={{ opacity: 0, x: -10 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              transition={{
-                                duration: 0.3,
-                                delay: index * 0.05,
-                              }}
-                              viewport={{ once: true }}
-                            >
-                              {feature}
-                            </motion.p>
-                          </div>
+                            {getText(feature)}
+                          </motion.p>
                         </div>
-                      </motion.div>
-                    );
-                  },
-                )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
-            </motion.div>
 
             {/* Specifications con animaciones mejoradas */}
             <motion.div
@@ -429,13 +433,13 @@ export default function BoatDetail() {
                   transition={{ duration: 0.4, delay: 0.7 }}
                   viewport={{ once: true }}
                 >
-                  <Button
+                  <motion.button
                     onClick={() => scrollToContactWithMessage("info")}
                     className="bg-zyon-orange hover:bg-zyon-orange-dark text-white flex items-center px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <Mail className="w-4 h-4 mr-2" />
                     {t("boatDetail.contactAdvisor")}
-                  </Button>
+                  </motion.button>
                 </motion.div>
               </motion.div>
             </motion.div>

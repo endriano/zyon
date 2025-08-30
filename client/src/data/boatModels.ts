@@ -21,10 +21,12 @@ export interface BoatModel {
     fr: string;
   };
   features: {
-    icon: string;
-    es: string[];
-    en: string[];
-    fr: string[];
+    items: Array<{
+      icon: string;
+      es: string;
+      en: string;
+      fr: string;
+    }>;
   };
   specifications: {
     es: Record<string, string>;
@@ -62,10 +64,26 @@ export const boatModels: BoatModel[] = [
       fr: "Bateau à grande vitesse avec moteur puissant et design aérodynamique"
     },
     features: {
-      icon: "Gauge",
-      es: ["Motor 300HP", "Capacidad 8 personas", "Velocidad máxima 60 nudos"],
-      en: ["300HP Engine", "8 Person Capacity", "Maximum Speed 60 knots"],
-      fr: ["Moteur 300CH", "Capacité 8 personnes", "Vitesse maximale 60 nœuds"]
+      items: [
+        {
+          icon: "Gauge",
+          es: "Motor 300HP",
+          en: "300HP Engine",
+          fr: "Moteur 300CH"
+        },
+        {
+          icon: "Users",
+          es: "Capacidad 8 personas",
+          en: "8 Person Capacity",
+          fr: "Capacité 8 personnes"
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 60 nudos",
+          en: "Maximum Speed 60 knots",
+          fr: "Vitesse maximale 60 nœuds"
+        }
+      ]
     },
     specifications: {
       es: {
@@ -120,10 +138,26 @@ export const boatModels: BoatModel[] = [
       fr: "Embarcation robuste conçue pour des conditions maritimes exigeantes"
     },
     features: {
-      icon: "Anchor",
-      es: ["Casco reforzado", "Capacidad carga 2 toneladas", "Sistema de pesca integrado"],
-      en: ["Reinforced hull", "2-ton cargo capacity", "Integrated fishing system"],
-      fr: ["Coque renforcée", "Capacité de charge 2 tonnes", "Système de pêche intégré"]
+      items: [
+        {
+          icon: "Anchor",
+          es: "Casco reforzado",
+          en: "Reinforced hull",
+          fr: "Coque renforcée"
+        },
+        {
+          icon: "Fuel",
+          es: "Capacidad carga 2 toneladas",
+          en: "2-ton cargo capacity",
+          fr: "Capacité de charge 2 tonnes"
+        },
+        {
+          icon: "Ship",
+          es: "Sistema de pesca integrado",
+          en: "Integrated fishing system",
+          fr: "Système de pêche intégré"
+        }
+      ]
     },
     specifications: {
       es: {
@@ -178,10 +212,26 @@ export const boatModels: BoatModel[] = [
       fr: "Panga traditionnelle galicienne avec finitions modernes"
     },
     features: {
-      icon: "Ship",
-      es: ["Madera de pino marítimo", "Motor 40HP", "Capacidad 4 personas"],
-      en: ["Maritime pine wood", "40HP Engine", "4 Person Capacity"],
-      fr: ["Bois de pin maritime", "Moteur 40CH", "Capacité 4 personnes"]
+      items: [
+        {
+          icon: "Ship",
+          es: "Madera de pino marítimo",
+          en: "Maritime pine wood",
+          fr: "Bois de pin maritime"
+        },
+        {
+          icon: "Fuel",
+          es: "Motor 40HP",
+          en: "40HP Engine",
+          fr: "Moteur 40CH"
+        },
+        {
+          icon: "Users",
+          es: "Capacidad 4 personas",
+          en: "4 Person Capacity",
+          fr: "Capacité 4 personnes"
+        }
+      ]
     },
     specifications: {
       es: {
@@ -236,10 +286,26 @@ export const boatModels: BoatModel[] = [
       fr: "Bateau de sauvetage rapide avec équipement d'urgence"
     },
     features: {
-      icon: "LifeBuoy",
-      es: ["Motor gemelo 200HP", "Sistema GPS avanzado", "Equipo de rescate incluido"],
-      en: ["Twin 200HP Engine", "Advanced GPS System", "Rescue Equipment Included"],
-      fr: ["Moteur jumeau 200CH", "Système GPS avancé", "Équipement de sauvetage inclus"]
+      items: [
+        {
+          icon: "Fuel",
+          es: "Motor gemelo 200HP",
+          en: "Twin 200HP Engine",
+          fr: "Moteur jumeau 200CH"
+        },
+        {
+          icon: "Gauge",
+          es: "Sistema GPS avanzado",
+          en: "Advanced GPS System",
+          fr: "Système GPS avancé"
+        },
+        {
+          icon: "LifeBuoy",
+          es: "Equipo de rescate incluido",
+          en: "Rescue Equipment Included",
+          fr: "Équipement de sauvetage inclus"
+        }
+      ]
     },
     specifications: {
       es: {
