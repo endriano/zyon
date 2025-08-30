@@ -363,6 +363,7 @@ export default function BoatDetail() {
                   );
                 })}
               </motion.div>
+            </motion.div>
 
             {/* Specifications con animaciones mejoradas */}
             <motion.div

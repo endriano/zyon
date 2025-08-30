@@ -54,16 +54,10 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Puerto 3000 para el servidor Node.js (frontend + API)
-  // El puerto externo sigue siendo el que proporciona Replit (PORT env var)
-  const internalPort = 3000;
-  const externalPort = parseInt(process.env.PORT || '80', 10);
+  // Frontend should bind to port 5000 as per system requirements
+  const port = parseInt(process.env.PORT || '5000', 10);
 
-  server.listen({
-    port: internalPort,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`Frontend server listening on internal port ${internalPort}, external port ${externalPort}`);
+  server.listen(port, "0.0.0.0", () => {
+    log(`Frontend server listening on port ${port}`);
   });
 })();
