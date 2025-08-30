@@ -17,7 +17,7 @@ import {
   Target,
   Clock,
   Award,
-  Zap
+  Zap,
 } from "lucide-react";
 import { useLocation } from "wouter";
 import { boatModels } from "@/data";
@@ -48,7 +48,7 @@ export default function BoatDetail() {
   // Obtener el ID del boat de la URL (ruta: /embarcacion/1)
   const getBoatIdFromUrl = () => {
     const path = location;
-    const parts = path.split('/');
+    const parts = path.split("/");
     const id = parts[parts.length - 1];
     return id ? parseInt(id, 10) : 1;
   };
@@ -156,21 +156,19 @@ export default function BoatDetail() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <motion.button
-                onClick={goBack}
-                className="mb-6 flex items-center px-4 py-2 border-2 border-zyon-orange text-zyon-orange 
+            <motion.button
+              onClick={goBack}
+              className="mb-6 flex items-center px-4 py-2 border-2 border-zyon-orange text-zyon-orange 
                              rounded-full font-medium shadow-sm
                              hover:bg-zyon-orange hover:text-white 
                              transition-all duration-300 ease-in-out"
-                data-testid="back-button"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                {t("aboutPage.back")}
-              </motion.button>
-            </motion.div>
+              data-testid="back-button"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              {t("aboutPage.back")}
+            </motion.button>
           </motion.div>
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -268,7 +266,7 @@ export default function BoatDetail() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Features con animaciones mejoradas */}
-            
+
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -295,8 +293,8 @@ export default function BoatDetail() {
                 {getText(boatData.description)}
               </motion.p>
 
-                    {/* Features con iconos individuales */}
-              <motion.div 
+              {/* Features con iconos individuales */}
+              <motion.div
                 className="grid sm:grid-cols-2 gap-4"
                 initial="hidden"
                 whileInView="visible"
@@ -305,9 +303,9 @@ export default function BoatDetail() {
                   visible: {
                     opacity: 1,
                     transition: {
-                      staggerChildren: 0.1
-                    }
-                  }
+                      staggerChildren: 0.1,
+                    },
+                  },
                 }}
                 viewport={{ once: true }}
               >
@@ -319,36 +317,37 @@ export default function BoatDetail() {
                       className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300"
                       variants={{
                         hidden: { opacity: 0, y: 20 },
-                        visible: { opacity: 1, y: 0 }
+                        visible: { opacity: 1, y: 0 },
                       }}
-                      whileHover={{ 
-                        y: -8, 
+                      whileHover={{
+                        y: -8,
                         scale: 1.02,
-                        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                        boxShadow:
+                          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                       }}
-                      transition={{ 
-                        type: "spring", 
-                        stiffness: 300, 
-                        damping: 20 
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
                       }}
                     >
                       <div className="flex items-center space-x-3">
-                        <motion.div 
+                        <motion.div
                           className="w-12 h-12 bg-zyon-orange/10 rounded-lg flex items-center justify-center"
-                          whileHover={{ 
+                          whileHover={{
                             scale: 1.1,
-                            rotate: 5
+                            rotate: 5,
                           }}
-                          transition={{ 
-                            type: "spring", 
-                            stiffness: 400, 
-                            damping: 17 
+                          transition={{
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 17,
                           }}
                         >
                           <IconComponent className="w-6 h-6 text-zyon-orange" />
                         </motion.div>
                         <div>
-                          <motion.p 
+                          <motion.p
                             className="font-medium text-zyon-gray dark:text-white"
                             initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -486,9 +485,9 @@ export default function BoatDetail() {
               visible: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.15
-                }
-              }
+                  staggerChildren: 0.15,
+                },
+              },
             }}
             viewport={{ once: true }}
           >
@@ -496,7 +495,7 @@ export default function BoatDetail() {
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 }
+                visible: { opacity: 1, y: 0 },
               }}
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -506,7 +505,7 @@ export default function BoatDetail() {
                 className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-zyon-orange rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden"
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 25px 50px -12px rgba(242, 124, 56, 0.25)"
+                  boxShadow: "0 25px 50px -12px rgba(242, 124, 56, 0.25)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="detailed-info-button"
@@ -525,7 +524,7 @@ export default function BoatDetail() {
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 }
+                visible: { opacity: 1, y: 0 },
               }}
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -535,7 +534,7 @@ export default function BoatDetail() {
                 className="group relative px-8 py-4 bg-zyon-orange hover:bg-zyon-orange-dark text-white border-2 border-zyon-orange hover:border-zyon-orange-dark rounded-xl font-semibold text-lg transition-all duration-300 overflow-hidden shadow-lg hover:shadow-zyon-orange/25"
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 25px 50px -12px rgba(242, 124, 56, 0.35)"
+                  boxShadow: "0 25px 50px -12px rgba(242, 124, 56, 0.35)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="schedule-visit-button"
