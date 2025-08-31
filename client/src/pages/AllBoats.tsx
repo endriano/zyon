@@ -180,7 +180,7 @@ export default function AllBoats() {
         </div>
       </motion.section>
 
-      {/* All Products Grid Section con animaciones */}
+      {/* All Products Grid Section */}
       <motion.section
         className="py-20 bg-zyon-bg dark:bg-gray-900"
         initial={{ opacity: 0 }}
@@ -198,7 +198,7 @@ export default function AllBoats() {
           >
             {t("allBoats.models").split(" ")[0]}{" "}
             <span className="text-zyon-orange">
-              {t("allBoats.models").split(" ")[1]}
+              {t("allBoats.models").split(" ")[1]}{" "}
             </span>
             {selectedCategory !== "all" && (
               <span className="text-zyon-orange">

@@ -215,7 +215,7 @@ export const translations = {
         explore:
           "Explora nuestra completa gama de embarcaciones profesionales, personalizadas según las especificaciones del cliente.",
         filter: "Filtrar por categoría",
-        models: "Nuestros modelos",
+        models: "Nuestros modelos ",
         speedboats: {
           title: "Lanchas rápidas",
           description:
@@ -227,7 +227,7 @@ export const translations = {
             "Barcos robustos diseñados para pesca profesional y trabajo marítimo",
         },
         panga: {
-          title: "Pangas",
+          title: "Pangas y barcos de pesca",
           description:
             "Embarcaciones tradicionales versátiles para pesca costera",
         },
@@ -241,7 +241,7 @@ export const translations = {
           all: "Todos",
           speedboat: "Lanchas rápidas",
           workboat: "Embarcaciones de trabajo",
-          panga: "Pangas",
+          panga: "Pangas y barcos de pesca",
           rescue: "Botes de rescate",
         },
         purpose: "Propósito",
@@ -493,7 +493,7 @@ export const translations = {
         explore:
           "Explore our full range of professional vessels, customized according to client specifications.",
         filter: "Filter by category",
-        models: "Our models",
+        models: "Our models ",
         speedboats: {
           title: "Speedboats",
           description: "High-speed boats for fast and efficient transport",
@@ -504,7 +504,7 @@ export const translations = {
             "Robust boats designed for professional fishing and maritime work",
         },
         panga: {
-          title: "Pangas",
+          title: "Pangas and fishing boats",
           description: "Versatile traditional boats for coastal fishing",
         },
         rescue: {
@@ -624,7 +624,7 @@ export const translations = {
             "Bateaux robustes conçus pour la pêche professionnelle et le travail maritime",
         },
         panga: {
-          title: "Pangas",
+          title: "Pangas et bateaux de pêche",
           description:
             "Embarcations traditionnelles polyvalentes pour la pêche côtière",
         },

@@ -347,7 +347,7 @@ export default function BoatDetail() {
                             damping: 17,
                           }}
                         >
-                          <IconComponent className="w-6 h-6 text-zyon-orange" />
+                          <IconComponent className="w-6 h-6 text-zyon-orange group-hover:rotate-20" />
                         </motion.div>
                         <div>
                           <motion.p
@@ -520,7 +520,7 @@ export default function BoatDetail() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
 
                 <div className="relative flex items-center justify-center">
-                  <Mail className="w-5 h-5 mr-3 group-hover:animate-pulse" />
+                  <Mail className="w-5 h-5 mr-3 group-hover:animate-pulse group-hover:rotate-12" />
                   <span>{t("boatDetail.actions.detailedInfo")}</span>
                 </div>
               </motion.button>

@@ -1,4 +1,24 @@
 // src/data/boatModels.ts
+
+import ambulancia from "@/assets/images/boatModels/ambulancia.png";
+import at105L from "@/assets/images/boatModels/at105L.png";
+import at700F from "@/assets/images/boatModels/at700F.png";
+import barcoPesca from "@/assets/images/boatModels/barcoPesca.png";
+import fueraborda from "@/assets/images/boatModels/fueraborda.png";
+import hidrojet from "@/assets/images/boatModels/hidrojet.png";
+import lineaEje from "@/assets/images/boatModels/lineaEje.png";
+import miniworkboat from "@/assets/images/boatModels/miniworkboat.png";
+import panga from "@/assets/images/boatModels/panga.png";
+import patrullera from "@/assets/images/boatModels/patrullera.png";
+import rescateRapido from "@/assets/images/boatModels/rescateRapido.png";
+import s500 from "@/assets/images/boatModels/s500.png";
+import s650 from "@/assets/images/boatModels/s650.png";
+import s750 from "@/assets/images/boatModels/s750.png";
+import s850 from "@/assets/images/boatModels/s850.png";
+import s850i from "@/assets/images/boatModels/s850i.png";
+import s900 from "@/assets/images/boatModels/s900.png";
+import workboat from "@/assets/images/boatModels/workboat.png";
+
 export interface BoatModel {
   id: number;
   name: {
@@ -39,299 +59,1531 @@ export const boatModels: BoatModel[] = [
   {
     id: 1,
     name: {
-      es: "Zyon Speed 3000",
-      en: "Zyon Speed 3000",
-      fr: "Zyon Speed 3000"
+      es: "SPEEDBOAT Zyon SPH/ 5.75 Hidrojet",
+      en: "SPEEDBOAT Zyon SPH/ 5.75 Hydrojet",
+      fr: "SPEEDBOAT Zyon SPH/ 5.75 Hydrojet",
     },
     category: "speedboat",
     purpose: {
-      es: "Transporte rápido y recreación",
-      en: "Fast transport and recreation",
-      fr: "Transport rapide et récréation"
+      es: "Pesca de cerco con alta velocidad y maniobrabilidad",
+      en: "Purse seine fishing with high speed and maneuverability",
+      fr: "Pêche au chalut avec haute vitesse et maniabilité",
     },
-    year: 2023,
-    image: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    gallery: [
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-    ],
+    year: 2024,
+    image: hidrojet,
+    gallery: [hidrojet, hidrojet, hidrojet],
     description: {
-      es: "Lancha de alta velocidad con motor potente y diseño aerodinámico",
-      en: "High-speed boat with powerful engine and aerodynamic design",
-      fr: "Bateau à grande vitesse avec moteur puissant et design aérodynamique"
+      es: "El SPH / 5.75 Hidrojet alcanza los 30 nudos, elevada potencia con respecto a las dimensiones de la embarcación. La instalación del Hidrojet facilita la maniobrabilidad y rapidez de la embarcación y ofrece mayor seguridad en un entorno con elementos de pesca. Utilizada comúnmente en el Atlántico e Índico.",
+      en: "The SPH / 5.75 Hydrojet reaches 30 knots, high power relative to the vessel's dimensions. The Hydrojet installation facilitates maneuverability and speed of the vessel and offers greater safety in a fishing environment. Commonly used in the Atlantic and Indian Oceans.",
+      fr: "Le SPH / 5.75 Hydrojet atteint 30 nœuds, puissance élevée par rapport aux dimensions de l'embarcation. L'installation de l'Hydrojet facilite la maniabilité et la rapidité de l'embarcation et offre une plus grande sécurité dans un environnement de pêche. Couramment utilisé dans l'Atlantique et l'Océan Indien.",
     },
     features: {
       items: [
         {
           icon: "Gauge",
-          es: "Motor 300HP",
-          en: "300HP Engine",
-          fr: "Moteur 300CH"
+          es: "Velocidad máxima 30 nudos",
+          en: "Maximum speed 30 knots",
+          fr: "Vitesse maximale 30 nœuds",
         },
         {
-          icon: "Users",
-          es: "Capacidad 8 personas",
-          en: "8 Person Capacity",
-          fr: "Capacité 8 personnes"
+          icon: "Anchor",
+          es: "Hidrojet para mayor maniobrabilidad",
+          en: "Hydrojet for greater maneuverability",
+          fr: "Hydrojet pour plus de maniabilité",
         },
         {
-          icon: "Gauge",
-          es: "Velocidad máxima 60 nudos",
-          en: "Maximum Speed 60 knots",
-          fr: "Vitesse maximale 60 nœuds"
-        }
-      ]
+          icon: "Shield",
+          es: "Mayor seguridad con elementos de pesca",
+          en: "Greater safety with fishing elements",
+          fr: "Plus de sécurité avec éléments de pêche",
+        },
+        {
+          icon: "Compass",
+          es: "Uso común en Atlántico e Índico",
+          en: "Common use in Atlantic and Indian Oceans",
+          fr: "Usage courant en Atlantique et Océan Indien",
+        },
+      ],
     },
     specifications: {
       es: {
-        "Longitud": "12 metros",
-        "Ancho": "3.2 metros",
-        "Calado": "0.8 metros",
-        "Peso": "2,800 kg",
-        "Combustible": "Tanque de 400 litros",
-        "Color": "Blanco perlado"
+        Eslora: "5.75 m",
+        Manga: "2.00 m",
+        Motorización: "YANMAR 4LHA-HTP 160CV",
+        Propulsión: "Hidrojet CASTOLDI",
+        Hélice: "18''",
+        "Depósito Combustible": "90 l",
+        Desplazamiento: "1150 Kg",
       },
       en: {
-        "Length": "12 meters",
-        "Width": "3.2 meters",
-        "Draft": "0.8 meters",
-        "Weight": "2,800 kg",
-        "Fuel": "400-liter tank",
-        "Color": "Pearl white"
+        Length: "5.75 m",
+        Beam: "2.00 m",
+        Engine: "YANMAR 4LHA-HTP 160HP",
+        Propulsion: "Hydrojet CASTOLDI",
+        Propeller: "18''",
+        "Fuel Tank": "90 l",
+        Displacement: "1150 Kg",
       },
       fr: {
-        "Longueur": "12 mètres",
-        "Largeur": "3,2 mètres",
-        "Tirant d'eau": "0,8 mètre",
-        "Poids": "2 800 kg",
-        "Carburant": "Réservoir de 400 litres",
-        "Couleur": "Blanc nacré"
-      }
-    }
+        Longueur: "5,75 m",
+        Largeur: "2,00 m",
+        Moteur: "YANMAR 4LHA-HTP 160CH",
+        Propulsion: "Hydrojet CASTOLDI",
+        Hélice: "18''",
+        "Réservoir Carburant": "90 l",
+        Déplacement: "1150 Kg",
+      },
+    },
   },
   {
     id: 2,
     name: {
-      es: "Zyon Work Pro 25",
-      en: "Zyon Work Pro 25",
-      fr: "Zyon Work Pro 25"
+      es: "SPEEDBOAT Zyon SPL/ 5.75 Línea de Eje",
+      en: "SPEEDBOAT Zyon SPL/ 5.75 Shaft Line",
+      fr: "SPEEDBOAT Zyon SPL/ 5.75 Ligne d'Arbre",
+    },
+    category: "speedboat",
+    purpose: {
+      es: "Pesca de cerco con necesidad de sacar objeto del cerco",
+      en: "Purse seine fishing with need to retrieve object from seine",
+      fr: "Pêche au chalut avec besoin de retirer l'objet du chalut",
+    },
+    year: 2024,
+    image: lineaEje,
+    gallery: [lineaEje, lineaEje, lineaEje],
+    description: {
+      es: "El modelo SPL / 5.75 de Línea de Eje ha sido ideado a partir de la necesidad de sacar el objeto del cerco. Adaptando un modelo de turbina, conseguimos alcanzar mayor tiro manteniendo el motor y casco existentes en la embarcación. Las protecciones de la hélice del motor, evitan posibles daños al aparejo.",
+      en: "The SPL / 5.75 Shaft Line model was conceived from the need to retrieve the purse seine object. By adapting a turbine model, we achieve greater thrust while maintaining the existing engine and hull on the vessel. The engine propeller protections prevent possible damage to fishing gear.",
+      fr: "Le modèle SPL / 5.75 Ligne d'Arbre a été conçu à partir du besoin de retirer l'objet du chalut. En adaptant un modèle de turbine, nous atteignons une plus grande poussée tout en maintenant le moteur et la coque existants sur l'embarcation. Les protections de l'hélice du moteur évitent les dommages possibles au gréement.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Zap",
+          es: "Mayor tiro manteniendo motor y casco",
+          en: "Greater thrust maintaining engine and hull",
+          fr: "Plus grande poussée maintenant moteur et coque",
+        },
+        {
+          icon: "Shield",
+          es: "Protecciones de hélice evitan daños al aparejo",
+          en: "Propeller protections prevent damage to fishing gear",
+          fr: "Protections d'hélice évitent dommages au gréement",
+        },
+        {
+          icon: "Target",
+          es: "Diseñado para sacar objeto del cerco",
+          en: "Designed to retrieve object from seine",
+          fr: "Conçu pour retirer objet du chalut",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        Eslora: "5.75 m",
+        Manga: "2.00 m",
+        Motorización: "YANMAR 4LHA-HTP 160CV",
+        Propulsión: "Línea de eje",
+        Hélice: "22''",
+        "Depósito Combustible": "90 l",
+        Desplazamiento: "1170 Kg",
+      },
+      en: {
+        Length: "5.75 m",
+        Beam: "2.00 m",
+        Engine: "YANMAR 4LHA-HTP 160HP",
+        Propulsion: "Shaft line",
+        Propeller: "22''",
+        "Fuel Tank": "90 l",
+        Displacement: "1170 Kg",
+      },
+      fr: {
+        Longueur: "5,75 m",
+        Largeur: "2,00 m",
+        Moteur: "YANMAR 4LHA-HTP 160CH",
+        Propulsion: "Ligne d'arbre",
+        Hélice: "22''",
+        "Réservoir Carburant": "90 l",
+        Déplacement: "1170 Kg",
+      },
+    },
+  },
+  {
+    id: 3,
+    name: {
+      es: "SPEEDBOAT Zyon SPF/ 5.50 Fueraborda",
+      en: "SPEEDBOAT Zyon SPF/ 5.50 Outboard",
+      fr: "SPEEDBOAT Zyon SPF/ 5.50 Hors-Bord",
+    },
+    category: "speedboat",
+    purpose: {
+      es: "Desplazamiento rápido para pesca de atún al delfín",
+      en: "Rapid displacement for dolphin tuna fishing",
+      fr: "Déplacement rapide pour pêche au thon dauphin",
+    },
+    year: 2024,
+    image: fueraborda,
+    gallery: [fueraborda, fueraborda, fueraborda],
+    description: {
+      es: "Speedboat modelo SPF / 5.50 Fueraborda, diseñada para desplazarse rápidamente facilitando la pesca del atún al delfín (en el Pacifico). Añadimos unas protecciones a la hélice del motor, protegiendo los elementos de pesca como las redes.",
+      en: "Speedboat model SPF / 5.50 Outboard, designed to move quickly facilitating dolphin tuna fishing (in the Pacific). We add protections to the engine propeller, protecting fishing elements such as nets.",
+      fr: "Speedboat modèle SPF / 5.50 Hors-Bord, conçue pour se déplacer rapidement facilitant la pêche au thon dauphin (dans le Pacifique). Nous ajoutons des protections à l'hélice du moteur, protégeant les éléments de pêche comme les filets.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Zap",
+          es: "Desplazamiento rápido para pesca de atún al delfín",
+          en: "Rapid displacement for dolphin tuna fishing",
+          fr: "Déplacement rapide pour pêche au thon dauphin",
+        },
+        {
+          icon: "Shield",
+          es: "Protecciones de hélice protegen elementos de pesca",
+          en: "Propeller protections protect fishing elements",
+          fr: "Protections d'hélice protègent éléments de pêche",
+        },
+        {
+          icon: "Compass",
+          es: "Uso común en Océano Pacífico",
+          en: "Common use in Pacific Ocean",
+          fr: "Usage courant en Océan Pacifique",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        Eslora: "5.50 m",
+        Manga: "1.80 m",
+        Motorización: "YAMAHA ENDURO TUNA/ 115CV",
+        Propulsión: "Fueraborda",
+        "Depósito Combustible": "90 l",
+        Desplazamiento: "800 Kg",
+      },
+      en: {
+        Length: "5.50 m",
+        Beam: "1.80 m",
+        Engine: "YAMAHA ENDURO TUNA/ 115HP",
+        Propulsion: "Outboard",
+        "Fuel Tank": "90 l",
+        Displacement: "800 Kg",
+      },
+      fr: {
+        Longueur: "5,50 m",
+        Largeur: "1,80 m",
+        Moteur: "YAMAHA ENDURO TUNA/ 115CH",
+        Propulsion: "Hors-bord",
+        "Réservoir Carburant": "90 l",
+        Déplacement: "800 Kg",
+      },
+    },
+  },
+  {
+    id: 4,
+    name: {
+      es: "WORKBOAT 6.0",
+      en: "WORKBOAT 6.0",
+      fr: "WORKBOAT 6.0",
     },
     category: "workboat",
     purpose: {
-      es: "Pesca comercial y transporte de carga",
-      en: "Commercial fishing and cargo transport",
-      fr: "Pêche commerciale et transport de marchandises"
+      es: "Trabajo pesado con gran potencia de tiro",
+      en: "Heavy duty work with great thrust power",
+      fr: "Travail lourd avec grande puissance de poussée",
     },
-    year: 2022,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    gallery: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-    ],
+    year: 2024,
+    image: workboat,
+    gallery: [workboat, workboat, workboat],
     description: {
-      es: "Embarcación robusta diseñada para condiciones marítimas exigentes",
-      en: "Robust vessel designed for demanding maritime conditions",
-      fr: "Embarcation robuste conçue pour des conditions maritimes exigeantes"
+      es: "El modelo Workboat 6.0 propulsado por un motor de gran potencia consigue la mejor relación de tiro - desplazamiento en rosca. Normalmente utilizado en el Océano Pacífico para sacar objetos, abrir al arte y contrarrestar el efecto de las corrientes.",
+      en: "The Workboat 6.0 model propelled by a high power engine achieves the best thrust-displacement ratio. Commonly used in the Pacific Ocean to retrieve objects, open to gear and counteract current effects.",
+      fr: "Le modèle Workboat 6.0 propulsé par un moteur de grande puissance obtient le meilleur rapport poussée-déplacement. Couramment utilisé dans l'Océan Pacifique pour retirer des objets, ouvrir au gréement et contrer l'effet des courants.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Zap",
+          es: "Mejor relación tiro-desplazamiento",
+          en: "Best thrust-displacement ratio",
+          fr: "Meilleur rapport poussée-déplacement",
+        },
+        {
+          icon: "Anchor",
+          es: "Motor de gran potencia",
+          en: "High power engine",
+          fr: "Moteur de grande puissance",
+        },
+        {
+          icon: "Compass",
+          es: "Uso común en Océano Pacífico",
+          en: "Common use in Pacific Ocean",
+          fr: "Usage courant en Océan Pacifique",
+        },
+        {
+          icon: "Target",
+          es: "Sacar objetos, abrir al arte, contrarrestar corrientes",
+          en: "Retrieve objects, open to gear, counteract currents",
+          fr: "Retirer objets, ouvrir au gréement, contrer courants",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        Eslora: "6.00 m",
+        Manga: "2.60 m",
+        Motorización: "VOLVO PENTA D7C TA 250CV / CATERPILAR 3056 205CV",
+        Propulsión: "Línea de Eje",
+        Hélice: "35''",
+        "Depósito Combustible": "270 l (+90l reserva opcional)",
+        "Bollard Pull": "> 2000Kg",
+        Desplazamiento: "2800 Kg",
+      },
+      en: {
+        Length: "6.00 m",
+        Beam: "2.60 m",
+        Engine: "VOLVO PENTA D7C TA 250HP / CATERPILAR 3056 205HP",
+        Propulsion: "Shaft line",
+        Propeller: "35''",
+        "Fuel Tank": "270 l (+90l optional reserve)",
+        "Bollard Pull": "> 2000Kg",
+        Displacement: "2800 Kg",
+      },
+      fr: {
+        Longueur: "6,00 m",
+        Largeur: "2,60 m",
+        Moteur: "VOLVO PENTA D7C TA 250CH / CATERPILAR 3056 205CH",
+        Propulsion: "Ligne d'arbre",
+        Hélice: "35''",
+        "Réservoir Carburant": "270 l (+90l réserve optionnelle)",
+        "Bollard Pull": "> 2000Kg",
+        Déplacement: "2800 Kg",
+      },
+    },
+  },
+  {
+    id: 5,
+    name: {
+      es: "MINI WORKBOAT 5.7",
+      en: "MINI WORKBOAT 5.7",
+      fr: "MINI WORKBOAT 5.7",
+    },
+    category: "workboat",
+    purpose: {
+      es: "Embarcación polivalente con dimensiones reducidas",
+      en: "Versatile vessel with reduced dimensions",
+      fr: "Embarcation polyvalente aux dimensions réduites",
+    },
+    year: 2024,
+    image: miniworkboat,
+    gallery: [miniworkboat, miniworkboat, miniworkboat],
+    description: {
+      es: "El modelo Mini/Workboat 5.7 es una embarcación polivalente que presenta las dimensiones de una Speedboat con la potencia de tiro de una Workboat convencional. Utilizada comúnmente en el océano Atlántico e Índico. Las reducidas dimensiones de la consola y guardacalor facilitan una cubierta diáfana que permite a los operarios trabajar con comodidad.",
+      en: "The Mini/Workboat 5.7 model is a versatile vessel that presents the dimensions of a Speedboat with the thrust power of a conventional Workboat. Commonly used in the Atlantic and Indian Oceans. The reduced dimensions of the console and wheelhouse facilitate a clear deck that allows operators to work comfortably.",
+      fr: "Le modèle Mini/Workboat 5.7 est une embarcation polyvalente qui présente les dimensions d'une Speedboat avec la puissance de poussée d'une Workboat conventionnelle. Couramment utilisé dans l'océan Atlantique et Indien. Les dimensions réduites de la console et du rouf facilitent un pont clair qui permet aux opérateurs de travailler confortablement.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Maximize2",
+          es: "Dimensiones reducidas con potencia de Workboat",
+          en: "Reduced dimensions with Workboat power",
+          fr: "Dimensions réduites avec puissance Workboat",
+        },
+        {
+          icon: "Layout",
+          es: "Cubierta diáfana para trabajo cómodo",
+          en: "Clear deck for comfortable work",
+          fr: "Pont clair pour travail confortable",
+        },
+        {
+          icon: "Compass",
+          es: "Uso común en Atlántico e Índico",
+          en: "Common use in Atlantic and Indian Oceans",
+          fr: "Usage courant en Atlantique et Océan Indien",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        Eslora: "5.75 m",
+        Manga: "2.00 m",
+        Motorización: "YANMAR 4LHA-HTP 160cv / KMH50A",
+        Propulsión: "Línea de Eje",
+        Hélice: "22''",
+        "Depósito Combustible": "84 l",
+        "Bollard Pull": "> 1000Kg",
+        Desplazamiento: "1580 Kg",
+      },
+      en: {
+        Length: "5.75 m",
+        Beam: "2.00 m",
+        Engine: "YANMAR 4LHA-HTP 160hp / KMH50A",
+        Propulsion: "Shaft line",
+        Propeller: "22''",
+        "Fuel Tank": "84 l",
+        "Bollard Pull": "> 1000Kg",
+        Displacement: "1580 Kg",
+      },
+      fr: {
+        Longueur: "5,75 m",
+        Largeur: "2,00 m",
+        Moteur: "YANMAR 4LHA-HTP 160ch / KMH50A",
+        Propulsion: "Ligne d'arbre",
+        Hélice: "22''",
+        "Réservoir Carburant": "84 l",
+        "Bollard Pull": "> 1000Kg",
+        Déplacement: "1580 Kg",
+      },
+    },
+  },
+  {
+    id: 6,
+    name: {
+      es: "PANGA",
+      en: "PANGA",
+      fr: "PANGA",
+    },
+    category: "panga",
+    purpose: {
+      es: "Embarcación de uso extremo para pesca profesional",
+      en: "Extreme use vessel for professional fishing",
+      fr: "Embarcation d'usage extrême pour pêche professionnelle",
+    },
+    year: 2024,
+    image: panga,
+    gallery: [panga, panga],
+    description: {
+      es: "La panga es una embarcación de uso extremo, y debe estar preparada para los embites ocasionados por los diferentes métodos de pesca. Por ello son fabricadas en acero, una estructura recia con refuerzos longitudinales y transversales que permite realizar un trabajo brusco con seguridad además de las dos quillas laterales evitan el enganche de la red. Está provista de unas cámaras estancas que la mantienen a flote en caso de vuelco o inundación. Propulsada por un motor de gran potencia, hélice de gran tracción a punto fijo, gancho de disparo rápido y una gran capacidad de tiro.",
+      en: "The panga is an extreme use vessel, and must be prepared for the impacts caused by different fishing methods. Therefore they are manufactured in steel, a sturdy structure with longitudinal and transverse reinforcements that allows performing rough work safely, plus the two side keels prevent net entanglement. It is equipped with watertight chambers that keep it afloat in case of capsizing or flooding. Propelled by a high power engine, fixed pitch propeller with high traction, quick release hook and great towing capacity.",
+      fr: "La panga est une embarcation d'usage extrême, et doit être préparée pour les chocs occasionnés par les différentes méthodes de pêche. C'est pourquoi elles sont fabriquées en acier, une structure robuste avec renforts longitudinaux et transversaux qui permet de réaliser un travail brutal en toute sécurité, en plus des deux quilles latérales qui évitent l'accrochage du filet. Elle est équipée de chambres étanches qui la maintiennent à flot en cas de chavirement ou d'inondation. Propulsée par un moteur de grande puissance, hélice à pas fixe de grande traction, crochet de largage rapide et une grande capacité de traction.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Shield",
+          es: "Fabricada en acero con refuerzos estructurales",
+          en: "Manufactured in steel with structural reinforcements",
+          fr: "Fabriquée en acier avec renforts structurels",
+        },
+        {
+          icon: "Anchor",
+          es: "Dos quillas laterales evitan enganche de red",
+          en: "Two side keels prevent net entanglement",
+          fr: "Deux quilles latérales évitent accrochage filet",
+        },
+        {
+          icon: "LifeBuoy",
+          es: "Cámaras estancas mantienen flote en vuelco",
+          en: "Watertight chambers keep afloat when capsized",
+          fr: "Chambres étanches maintiennent flottement chavirement",
+        },
+        {
+          icon: "Zap",
+          es: "Motor de gran potencia y gran capacidad de tiro",
+          en: "High power engine and great towing capacity",
+          fr: "Moteur de grande puissance et grande capacité traction",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora LH": "12.00 m",
+        "Manga B": "6.00 m",
+        Propulsión: "Línea de Eje",
+        Hélice: "50''*",
+        Motorización: "Según especificaciones",
+        "Depósito Combustible": "1070 l.*",
+        "Bollard Pull": "> 11000Kg",
+      },
+      en: {
+        "Length LH": "12.00 m",
+        "Beam B": "6.00 m",
+        Propulsion: "Shaft line",
+        Propeller: "50''*",
+        Engine: "According to specifications",
+        "Fuel Tank": "1070 l.*",
+        "Bollard Pull": "> 11000Kg",
+      },
+      fr: {
+        "Longueur LH": "12,00 m",
+        "Largeur B": "6,00 m",
+        Propulsion: "Ligne d'arbre",
+        Hélice: "50''*",
+        Motorisation: "Selon spécifications",
+        "Réservoir Carburant": "1070 l.*",
+        "Bollard Pull": "> 11000Kg",
+      },
+    },
+  },
+  {
+    id: 7,
+    name: {
+      es: "SPBR / Bote de Rescate Rápido",
+      en: "SPBR / Fast Rescue Boat",
+      fr: "SPBR / Bateau de Sauvetage Rapide",
+    },
+    category: "rescue",
+    purpose: {
+      es: "Rescate marítimo rápido con prestaciones de Speedboat",
+      en: "Fast maritime rescue with Speedboat capabilities",
+      fr: "Sauvetage maritime rapide avec capacités Speedboat",
+    },
+    year: 2024,
+    image: rescateRapido,
+    gallery: [rescateRapido, rescateRapido],
+    description: {
+      es: "Modelo SPBR / Bote de Rescate Rápido. Con las prestaciones de una Speedboat. Homologado como bote de rescate rápido y cumple con la labor de las Speedboats. Por tanto, permite eliminar una embarcación de la cubierta.",
+      en: "Model SPBR / Fast Rescue Boat. With the capabilities of a Speedboat. Certified as a fast rescue boat and fulfills the role of Speedboats. Therefore, it allows eliminating a vessel from the deck.",
+      fr: "Modèle SPBR / Bateau de Sauvetage Rapide. Avec les capacités d'une Speedboat. Homologué comme bateau de sauvetage rapide et remplit le rôle des Speedboats. Par conséquent, il permet d'éliminer une embarcation du pont.",
+    },
+    features: {
+      items: [
+        {
+          icon: "LifeBuoy",
+          es: "Homologado como bote de rescate rápido",
+          en: "Certified as fast rescue boat",
+          fr: "Homologué comme bateau de sauvetage rapide",
+        },
+        {
+          icon: "Zap",
+          es: "Prestaciones de Speedboat para rescate",
+          en: "Speedboat capabilities for rescue",
+          fr: "Capacités Speedboat pour sauvetage",
+        },
+        {
+          icon: "Maximize2",
+          es: "Permite eliminar embarcación de la cubierta",
+          en: "Allows eliminating vessel from deck",
+          fr: "Permet d'éliminer embarcation du pont",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "6.10 m",
+        Manga: "2.2 m",
+        Desplazamiento: "1850 Kg",
+        "Depósito Combustible": "180 l",
+        Motorización: "2x100 CV Fueraborda / 160-240 CV Fueraborda+ Hidrojet",
+        "Velocidad Máxima": "30 nudos",
+        Casco: "Polietileno- HWU",
+        Superestructura: "Blindaje Tipo 4(opcional)",
+      },
+      en: {
+        "Total Length": "6.10 m",
+        Beam: "2.2 m",
+        Displacement: "1850 Kg",
+        "Fuel Tank": "180 l",
+        Engine: "2x100 HP Outboard / 160-240 HP Outboard+ Hydrojet",
+        "Maximum Speed": "30 knots",
+        Hull: "Polyethylene- HWU",
+        Superstructure: "Type 4 Armor(optional)",
+      },
+      fr: {
+        "Longueur Totale": "6,10 m",
+        Largeur: "2,2 m",
+        Déplacement: "1850 Kg",
+        "Réservoir Carburant": "180 l",
+        Motorisation: "2x100 CH Hors-bord / 160-240 CH Hors-bord+ Hydrojet",
+        "Vitesse Maximale": "30 nœuds",
+        Coque: "Polyéthylène- HWU",
+        Superstructure: "Blindage Type 4(optionnel)",
+      },
+    },
+  },
+  {
+    id: 8,
+    name: {
+      es: "S500",
+      en: "S500",
+      fr: "S500",
+    },
+    category: "panga",
+    purpose: {
+      es: "Pesca artesanal de cabotaje reducido",
+      en: "Small-scale artisanal fishing",
+      fr: "Pêche artisanale de cabotage réduit",
+    },
+    year: 2024,
+    image: s500,
+    gallery: [s500],
+    description: {
+      es: "Embarcación de fibra de vidrio para pesca artesanal de cabotaje reducido. Ideal para pequeños pescadores autónomos.",
+      en: "Fiberglass vessel for small-scale coastal fishing. Ideal for autonomous small fishermen.",
+      fr: "Embarcation en fibre de verre pour la pêche artisanale de cabotage réduit. Idéal pour les petits pêcheurs autonomes.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Ship",
+          es: "Fibra de vidrio para durabilidad",
+          en: "Fiberglass for durability",
+          fr: "Fibre de verre pour durabilité",
+        },
+        {
+          icon: "Users",
+          es: "Capacidad para 6 personas",
+          en: "Capacity for 6 people",
+          fr: "Capacité pour 6 personnes",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 75 nudos (40 CV)",
+          en: "Maximum speed 75 knots (40 HP)",
+          fr: "Vitesse maximale 75 nœuds (40 CH)",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "5.00 m",
+        Manga: "2.06 m",
+        "Capacidad Pasaje": "6 Personas",
+        Desplazamiento: "715 Kg",
+        "Velocidad máxima": "75/ 40 CV",
+      },
+      en: {
+        "Total Length": "5.00 m",
+        Beam: "2.06 m",
+        "Passenger Capacity": "6 People",
+        Displacement: "715 Kg",
+        "Maximum Speed": "75/ 40 HP",
+      },
+      fr: {
+        "Longueur Totale": "5,00 m",
+        Largeur: "2,06 m",
+        "Capacité Passagers": "6 Personnes",
+        Déplacement: "715 Kg",
+        "Vitesse Maximale": "75/ 40 CH",
+      },
+    },
+  },
+  {
+    id: 9,
+    name: {
+      es: "S650",
+      en: "S650",
+      fr: "S650",
+    },
+    category: "panga",
+    purpose: {
+      es: "Pesca artesanal de media distancia",
+      en: "Medium-distance artisanal fishing",
+      fr: "Pêche artisanale de moyenne distance",
+    },
+    year: 2024,
+    image: s650,
+    gallery: [s650],
+    description: {
+      es: "Embarcación reforzada para pesca artesanal de media distancia. Mayor capacidad de almacenamiento y pasaje.",
+      en: "Reinforced vessel for medium-distance artisanal fishing. Greater storage capacity and passenger space.",
+      fr: "Embarcation renforcée pour la pêche artisanale de moyenne distance. Plus grande capacité de stockage et d'espace passager.",
     },
     features: {
       items: [
         {
           icon: "Anchor",
-          es: "Casco reforzado",
-          en: "Reinforced hull",
-          fr: "Coque renforcée"
+          es: "Refuerzo estructural para navegación media distancia",
+          en: "Structural reinforcement for medium-distance navigation",
+          fr: "Renforcement structurel pour navigation moyenne distance",
         },
         {
-          icon: "Fuel",
-          es: "Capacidad carga 2 toneladas",
-          en: "2-ton cargo capacity",
-          fr: "Capacité de charge 2 tonnes"
+          icon: "Users",
+          es: "Capacidad para 12 personas",
+          en: "Capacity for 12 people",
+          fr: "Capacité pour 12 personnes",
         },
         {
-          icon: "Ship",
-          es: "Sistema de pesca integrado",
-          en: "Integrated fishing system",
-          fr: "Système de pêche intégré"
-        }
-      ]
+          icon: "Zap",
+          es: "Motorización hasta 200 CV",
+          en: "Engine up to 200 HP",
+          fr: "Motorisation jusqu'à 200 CH",
+        },
+      ],
     },
     specifications: {
       es: {
-        "Longitud": "15 metros",
-        "Ancho": "4.5 metros",
-        "Calado": "1.2 metros",
-        "Peso": "5,200 kg",
-        "Combustible": "Tanque de 600 litros",
-        "Material": "Acero inoxidable"
+        "Eslora Total": "6.45 m",
+        Manga: "2.40 m",
+        "Capacidad Pasaje": "12 Personas",
+        Desplazamiento: "1065 Kg",
+        "Velocidad máxima": "200/ 150 CV",
       },
       en: {
-        "Length": "15 meters",
-        "Width": "4.5 meters",
-        "Draft": "1.2 meters",
-        "Weight": "5,200 kg",
-        "Fuel": "600-liter tank",
-        "Material": "Stainless steel"
+        "Total Length": "6.45 m",
+        Beam: "2.40 m",
+        "Passenger Capacity": "12 People",
+        Displacement: "1065 Kg",
+        "Maximum Speed": "200/ 150 HP",
       },
       fr: {
-        "Longueur": "15 mètres",
-        "Largeur": "4,5 mètres",
-        "Tirant d'eau": "1,2 mètre",
-        "Poids": "5 200 kg",
-        "Carburant": "Réservoir de 600 litres",
-        "Matériau": "Acier inoxydable"
-      }
-    }
+        "Longueur Totale": "6,45 m",
+        Largeur: "2,40 m",
+        "Capacité Passagers": "12 Personnes",
+        Déplacement: "1065 Kg",
+        "Vitesse Maximale": "200/ 150 CH",
+      },
+    },
   },
   {
-    id: 3,
+    id: 10,
     name: {
-      es: "Zyon Panga Classic",
-      en: "Zyon Panga Classic",
-      fr: "Zyon Panga Classique"
+      es: "S750",
+      en: "S750",
+      fr: "S750",
     },
     category: "panga",
     purpose: {
-      es: "Pesca costera y navegación tradicional",
-      en: "Coastal fishing and traditional navigation",
-      fr: "Pêche côtière et navigation traditionnelle"
+      es: "Pesca artesanal de mayor capacidad",
+      en: "Higher capacity artisanal fishing",
+      fr: "Pêche artisanale de plus grande capacité",
     },
-    year: 2023,
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-    gallery: [
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-    ],
+    year: 2024,
+    image: s750,
+    gallery: [s750],
     description: {
-      es: "Panga tradicional gallega con acabados modernos",
-      en: "Traditional Galician panga with modern finishes",
-      fr: "Panga traditionnelle galicienne avec finitions modernes"
+      es: "Embarcación versátil para pesca artesanal con mayor capacidad de carga y pasaje. Diseñada para largas jornadas de trabajo.",
+      en: "Versatile vessel for artisanal fishing with greater cargo capacity and passenger space. Designed for long working days.",
+      fr: "Embarcation polyvalente pour la pêche artisanale avec plus grande capacité de chargement et d'espace passager. Conçue pour de longues journées de travail.",
     },
     features: {
       items: [
         {
           icon: "Ship",
-          es: "Madera de pino marítimo",
-          en: "Maritime pine wood",
-          fr: "Bois de pin maritime"
-        },
-        {
-          icon: "Fuel",
-          es: "Motor 40HP",
-          en: "40HP Engine",
-          fr: "Moteur 40CH"
+          es: "Diseño versátil para largas jornadas",
+          en: "Versatile design for long working days",
+          fr: "Design polyvalent pour longues journées",
         },
         {
           icon: "Users",
-          es: "Capacidad 4 personas",
-          en: "4 Person Capacity",
-          fr: "Capacité 4 personnes"
+          es: "Capacidad para 12 personas",
+          en: "Capacity for 12 people",
+          fr: "Capacité pour 12 personnes",
+        },
+        {
+          icon: "Fuel",
+          es: "Motorización hasta 200 CV",
+          en: "Engine up to 200 HP",
+          fr: "Motorisation jusqu'à 200 CH",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "7.40 m",
+        Manga: "2.70 m",
+        "Capacidad Pasaje": "12 Personas",
+        Desplazamiento: "1175 Kg",
+        "Velocidad máxima": "200/ 150 CV",
+      },
+      en: {
+        "Total Length": "7.40 m",
+        Beam: "2.70 m",
+        "Passenger Capacity": "12 People",
+        Displacement: "1175 Kg",
+        "Maximum Speed": "200/ 150 HP",
+      },
+      fr: {
+        "Longueur Totale": "7,40 m",
+        Largeur: "2,70 m",
+        "Capacité Passagers": "12 Personnes",
+        Déplacement: "1175 Kg",
+        "Vitesse Maximale": "200/ 150 CH",
+      },
+    },
+  },
+  {
+    id: 11,
+    name: {
+      es: "S850",
+      en: "S850",
+      fr: "S850",
+    },
+    category: "panga",
+    purpose: {
+      es: "Pesca artesanal de alta capacidad",
+      en: "High-capacity artisanal fishing",
+      fr: "Pêche artisanale de haute capacité",
+    },
+    year: 2024,
+    image: s850,
+    gallery: [s850],
+    description: {
+      es: "Embarcación de alto rendimiento para pesca artesanal intensiva. Máxima capacidad de almacenamiento y velocidad.",
+      en: "High-performance vessel for intensive artisanal fishing. Maximum storage capacity and speed.",
+      fr: "Embarcation haute performance pour pêche artisanale intensive. Capacité de stockage maximale et vitesse.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Zap",
+          es: "Alto rendimiento con motores potentes",
+          en: "High performance with powerful engines",
+          fr: "Haute performance avec moteurs puissants",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 350 nudos (180 CV)",
+          en: "Maximum speed 350 knots (180 HP)",
+          fr: "Vitesse maximale 350 nœuds (180 CH)",
+        },
+        {
+          icon: "Fuel",
+          es: "Gran capacidad de almacenamiento",
+          en: "Large storage capacity",
+          fr: "Grande capacité de stockage",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "8.50 m",
+        Manga: "3.00 m",
+        "Capacidad Pasaje": "12 Personas",
+        Desplazamiento: "1450 Kg",
+        "Velocidad máxima": "350/ 180 CV",
+      },
+      en: {
+        "Total Length": "8.50 m",
+        Beam: "3.00 m",
+        "Passenger Capacity": "12 People",
+        Displacement: "1450 Kg",
+        "Maximum Speed": "350/ 180 HP",
+      },
+      fr: {
+        "Longueur Totale": "8,50 m",
+        Largeur: "3,00 m",
+        "Capacité Passagers": "12 Personnes",
+        Déplacement: "1450 Kg",
+        "Vitesse Maximale": "350/ 180 CH",
+      },
+    },
+  },
+  {
+    id: 12,
+    name: {
+      es: "S900",
+      en: "S900",
+      fr: "S900",
+    },
+    category: "panga",
+    purpose: {
+      es: "Pesca artesanal profesional de gran escala",
+      en: "Professional large-scale artisanal fishing",
+      fr: "Pêche artisanale professionnelle à grande échelle",
+    },
+    year: 2024,
+    image: s900,
+    gallery: [s900],
+    description: {
+      es: "Embarcación profesional para pesca artesanal a gran escala. Máxima capacidad de pasaje y carga para operaciones intensivas.",
+      en: "Professional vessel for large-scale artisanal fishing. Maximum passenger and cargo capacity for intensive operations.",
+      fr: "Embarcation professionnelle pour la pêche artisanale à grande échelle. Capacité maximale passagers et chargement pour opérations intensives.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Users",
+          es: "Capacidad para 25 personas",
+          en: "Capacity for 25 people",
+          fr: "Capacité pour 25 personnes",
+        },
+        {
+          icon: "Zap",
+          es: "Motores de alta potencia 400 CV",
+          en: "High-power engines 400 HP",
+          fr: "Moteurs haute puissance 400 CH",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 400 nudos",
+          en: "Maximum speed 400 knots",
+          fr: "Vitesse maximale 400 nœuds",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "9 m",
+        Manga: "3.50 m",
+        "Capacidad Pasaje": "25 Personas",
+        Desplazamiento: "2650 Kg",
+        "Velocidad máxima": "400/ 200 CV",
+      },
+      en: {
+        "Total Length": "9 m",
+        Beam: "3.50 m",
+        "Passenger Capacity": "25 People",
+        Displacement: "2650 Kg",
+        "Maximum Speed": "400/ 200 HP",
+      },
+      fr: {
+        "Longueur Totale": "9 m",
+        Largeur: "3,50 m",
+        "Capacité Passagers": "25 Personnes",
+        Déplacement: "2650 Kg",
+        "Vitesse Maximale": "400/ 200 CH",
+      },
+    },
+  },
+  /* {
+    id: 13,
+    name: {
+      es: "Ulises Express",
+      en: "Ulises Express",
+      fr: "Ulises Express",
+    },
+    category: "workboat",
+    purpose: {
+      es: "Transporte rápido de pasajeros y tripulación",
+      en: "Fast passenger and crew transportation",
+      fr: "Transport rapide de passagers et d'équipage",
+    },
+    year: 2024,
+    image:
+      "https://pixabay.com/images/search/passenger%20ferry%20high%20speed/",
+    gallery: [
+      "https://pixabay.com/images/search/passenger%20ferry%20high%20speed/",
+    ],
+    description: {
+      es: "Embarcación de pasaje de alta velocidad para transporte eficiente de tripulación y pasajeros. Diseñada para operaciones de reemplazo rápido.",
+      en: "High-speed passenger vessel for efficient transportation of crew and passengers. Designed for fast replacement operations.",
+      fr: "Embarcation passagers haute vitesse pour transport efficace d'équipage et passagers. Conçue pour opérations de remplacement rapide.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Users",
+          es: "Capacidad para 48 pasajeros + 2 tripulantes",
+          en: "Capacity for 48 passengers + 2 crew",
+          fr: "Capacité pour 48 passagers + 2 équipiers",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 25 nudos",
+          en: "Maximum speed 25 knots",
+          fr: "Vitesse maximale 25 nœuds",
+        },
+        {
+          icon: "Fuel",
+          es: "Depósitos de 2x450 litros",
+          en: "Tanks of 2x450 liters",
+          fr: "Réservoirs de 2x450 litres",
+        },
+        {
+          icon: "Zap",
+          es: "Motor SOLE DIESEL MINI-74 (65.1 HP)",
+          en: "SOLE DIESEL MINI-74 Engine (65.1 HP)",
+          fr: "Moteur SOLE DIESEL MINI-74 (65.1 CH)",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "13.95 m",
+        Manga: "4 m",
+        "Capacidad Pasaje": "48 Pa/ 2Tri",
+        Desplazamiento: "16.43 T.M.",
+        "Velocidad máxima": "25 nudos",
+        "Depósito de Combustible": "2 x 450 l",
+        Motorización: "SOLE DIESEL MINI-74(65.1 HP)",
+      },
+      en: {
+        "Total Length": "13.95 m",
+        Beam: "4 m",
+        "Passenger Capacity": "48 Pa/ 2Cr",
+        Displacement: "16.43 T.M.",
+        "Maximum Speed": "25 knots",
+        "Fuel Tank": "2 x 450 l",
+        Engine: "SOLE DIESEL MINI-74(65.1 HP)",
+      },
+      fr: {
+        "Longueur Totale": "13,95 m",
+        Largeur: "4 m",
+        "Capacité Passagers": "48 Pa/ 2Eq",
+        Déplacement: "16,43 T.M.",
+        "Vitesse Maximale": "25 nœuds",
+        "Réservoir Carburant": "2 x 450 l",
+        Motorisation: "SOLE DIESEL MINI-74(65.1 CH)",
+      },
+    },
+  },*/
+  {
+    id: 13,
+    name: {
+      es: "Bote de Rescate Rápido",
+      en: "Fast Rescue Boat",
+      fr: "Bateau de Sauvetage Rapide",
+    },
+    category: "rescue",
+    purpose: {
+      es: "Rescate marítimo rápido y patrullaje",
+      en: "Fast maritime rescue and patrol",
+      fr: "Sauvetage maritime rapide et patrouille",
+    },
+    year: 2024,
+    image: "https://pixabay.com/images/search/fast%20rescue%20boat%20patrol/",
+    gallery: [
+      "https://pixabay.com/images/search/fast%20rescue%20boat%20patrol/",
+    ],
+    description: {
+      es: "Embarcación polivalente de rescate rápido con blindaje opcional. Diseñada para operaciones de salvamento y patrullaje costero.",
+      en: "Versatile fast rescue vessel with optional armor. Designed for salvage operations and coastal patrol.",
+      fr: "Embarcation polyvalente de sauvetage rapide avec blindage optionnel. Conçue pour opérations de sauvetage et patrouille côtière.",
+    },
+    features: {
+      items: [
+        {
+          icon: "LifeBuoy",
+          es: "Blindaje Tipo 4 (opcional)",
+          en: "Type 4 Armor (optional)",
+          fr: "Blindage Type 4 (optionnel)",
+        },
+        {
+          icon: "Zap",
+          es: "Motorización dual o hidrojet",
+          en: "Dual engine or hydrojet propulsion",
+          fr: "Motorisation double ou hydrojet",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 30 nudos",
+          en: "Maximum speed 30 knots",
+          fr: "Vitesse maximale 30 nœuds",
+        },
+        {
+          icon: "Shield",
+          es: "Casco Polietileno HWU para flotabilidad",
+          en: "Polyethylene HWU hull for buoyancy",
+          fr: "Coque Polyéthylène HWU pour flottabilité",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "6.10 m",
+        Manga: "2.2 m",
+        Desplazamiento: "1850 Kg",
+        "Depósito de Combustible": "180 l",
+        Motorización: "2x100 CV Fueraborda/ 160-240 CV Fueraborda+ Hidrojet",
+        "Velocidad Máxima": "30 nudos",
+        Casco: "Polietileno- HWU",
+        Superestructura: "Blindaje Tipo 4(opcional)",
+      },
+      en: {
+        "Total Length": "6.10 m",
+        Beam: "2.2 m",
+        Displacement: "1850 Kg",
+        "Fuel Tank": "180 l",
+        Engine: "2x100 HP Outboard/ 160-240 HP Outboard+ Hydrojet",
+        "Maximum Speed": "30 knots",
+        Hull: "Polyethylene- HWU",
+        Superstructure: "Type 4 Armor(optional)",
+      },
+      fr: {
+        "Longueur Totale": "6,10 m",
+        Largeur: "2,2 m",
+        Déplacement: "1850 Kg",
+        "Réservoir Carburant": "180 l",
+        Motorisation: "2x100 CH Hors-bord/ 160-240 CH Hors-bord+ Hydrojet",
+        "Vitesse Maximale": "30 nœuds",
+        Coque: "Polyéthylène- HWU",
+        Superstructure: "Blindage Type 4(optionnel)",
+      },
+    },
+  },
+  {
+    id: 14,
+    name: {
+      es: "Patrullera",
+      en: "Patrol Boat",
+      fr: "Patrouilleur",
+    },
+    category: "rescue",
+    purpose: {
+      es: "Patrullaje marítimo y vigilancia costera",
+      en: "Maritime patrol and coastal surveillance",
+      fr: "Patrouille maritime et surveillance côtière",
+    },
+    year: 2024,
+    image: patrullera,
+    gallery: [patrullera],
+    description: {
+      es: "Embarcación de patrullaje de mediana eslora para vigilancia marítima y operaciones de seguridad. Equipada con sistemas de comunicación avanzados.",
+      en: "Medium-length patrol vessel for maritime surveillance and security operations. Equipped with advanced communication systems.",
+      fr: "Embarcation de patrouille de longueur moyenne pour surveillance maritime et opérations sécurité. Équipée systèmes communication avancés.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Zap",
+          es: "Motores gemelos Yanmar 6HYM-WET (700 HP)",
+          en: "Twin Yanmar 6HYM-WET Engines (700 HP)",
+          fr: "Moteurs jumeaux Yanmar 6HYM-WET (700 CH)",
+        },
+        {
+          icon: "Compass",
+          es: "Equipamiento UVI Mobil",
+          en: "UVI Mobil Equipment",
+          fr: "Équipement UVI Mobil",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 25 nudos",
+          en: "Maximum speed 25 knots",
+          fr: "Vitesse maximale 25 nœuds",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "16.50 m",
+        Manga: "4.50 m",
+        Motorización: "2xYANMAR 6HYM-WET(700 HP)",
+        "Velocidad máxima": "25 nudos",
+        Casco: "Polietileno- HWU",
+        Equipamiento: "UVI Mobil",
+      },
+      en: {
+        "Total Length": "16.50 m",
+        Beam: "4.50 m",
+        Engine: "2xYANMAR 6HYM-WET(700 HP)",
+        "Maximum Speed": "25 knots",
+        Hull: "Polyethylene- HWU",
+        Equipment: "UVI Mobil",
+      },
+      fr: {
+        "Longueur Totale": "16,50 m",
+        Largeur: "4,50 m",
+        Motorisation: "2xYANMAR 6HYM-WET(700 CH)",
+        "Vitesse Maximale": "25 nœuds",
+        Coque: "Polyéthylène- HWU",
+        Équipement: "UVI Mobil",
+      },
+    },
+  },
+  {
+    id: 15,
+    name: {
+      es: "Ambulancia Marítima",
+      en: "Maritime Ambulance",
+      fr: "Ambulance Maritime",
+    },
+    category: "rescue",
+    purpose: {
+      es: "Asistencia médica marítima y evacuación sanitaria",
+      en: "Maritime medical assistance and medical evacuation",
+      fr: "Assistance médicale maritime et évacuation sanitaire",
+    },
+    year: 2024,
+    image: ambulancia,
+    gallery: [ambulancia],
+    description: {
+      es: "Embarcación especializada en asistencia médica marítima con espacio para camilla y equipo médico. Diseñada para evacuaciones sanitarias rápidas.",
+      en: "Specialized vessel for maritime medical assistance with stretcher space and medical equipment. Designed for rapid medical evacuations.",
+      fr: "Embarcation spécialisée en assistance médicale maritime avec espace civière et équipement médical. Conçue pour évacuations sanitaires rapides.",
+    },
+    features: {
+      items: [
+        {
+          icon: "LifeBuoy",
+          es: "Espacio para camilla y equipo médico",
+          en: "Stretcher space and medical equipment",
+          fr: "Espace civière et équipement médical",
+        },
+        {
+          icon: "Zap",
+          es: "Motores gemelos Yanmar 6LPA-STP2 (315 HP)",
+          en: "Twin Yanmar 6LPA-STP2 Engines (315 HP)",
+          fr: "Moteurs jumeaux Yanmar 6LPA-STP2 (315 CH)",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 25 nudos",
+          en: "Maximum speed 25 knots",
+          fr: "Vitesse maximale 25 nœuds",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "12.50 m",
+        Manga: "3.50 m",
+        Motorización: "2xYANMAR 6LPA-STP2(315 HP)",
+        "Velocidad máxima": "25 nudos",
+        Casco: "Polietileno- HWU",
+      },
+      en: {
+        "Total Length": "12.50 m",
+        Beam: "3.50 m",
+        Engine: "2xYANMAR 6LPA-STP2(315 HP)",
+        "Maximum Speed": "25 knots",
+        Hull: "Polyethylene- HWU",
+      },
+      fr: {
+        "Longueur Totale": "12,50 m",
+        Largeur: "3,50 m",
+        Motorisation: "2xYANMAR 6LPA-STP2(315 CH)",
+        "Vitesse Maximale": "25 nœuds",
+        Coque: "Polyéthylène- HWU",
+      },
+    },
+  },
+  {
+    id: 16,
+    name: {
+      es: "AT 105 L",
+      en: "AT 105 L",
+      fr: "AT 105 L",
+    },
+    category: "workboat",
+    purpose: {
+      es: "Auxiliar portuario para mantenimiento y limpieza",
+      en: "Port auxiliary for maintenance and cleaning",
+      fr: "Auxiliaire portuaire pour maintenance et nettoyage",
+    },
+    year: 2024,
+    image: at105L,
+    gallery: [at105L],
+    description: {
+      es: "Embarcación auxiliar portuaria de gran capacidad para operaciones de mantenimiento, limpieza y recogida de residuos. Diseñada para operaciones lentas y precisas.",
+      en: "Large-capacity port auxiliary vessel for maintenance, cleaning and waste collection operations. Designed for slow and precise operations.",
+      fr: "Embarcation auxiliaire portuaire de grande capacité pour opérations maintenance, nettoyage et collecte déchets. Conçue pour opérations lentes et précises.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Fuel",
+          es: "Capacidad del Tanque de Residuos 3 m³",
+          en: "Waste Tank Capacity 3 m³",
+          fr: "Capacité Réservoir Déchets 3 m³",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 7 nudos",
+          en: "Maximum speed 7 knots",
+          fr: "Vitesse maximale 7 nœuds",
+        },
+        {
+          icon: "Anchor",
+          es: "Desplazamiento 9 toneladas",
+          en: "Displacement 9 tons",
+          fr: "Déplacement 9 tonnes",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "10.50 m",
+        Manga: "2.5 m",
+        Calado: "0.9 m",
+        Desplazamiento: "9 T.",
+        "Velocidad máxima": "7 nudos",
+        "Capacidad del Tanque de Residuos": "3 m3",
+      },
+      en: {
+        "Total Length": "10.50 m",
+        Beam: "2.5 m",
+        Draft: "0.9 m",
+        Displacement: "9 T.",
+        "Maximum Speed": "7 knots",
+        "Waste Tank Capacity": "3 m3",
+      },
+      fr: {
+        "Longueur Totale": "10,50 m",
+        Largeur: "2,5 m",
+        "Tirant d'eau": "0,9 m",
+        Déplacement: "9 T.",
+        "Vitesse Maximale": "7 nœuds",
+        "Capacité Réservoir Déchets": "3 m3",
+      },
+    },
+  },
+  {
+    id: 17,
+    name: {
+      es: "AT 700 F",
+      en: "AT 700 F",
+      fr: "AT 700 F",
+    },
+    category: "workboat",
+    purpose: {
+      es: "Auxiliar portuario compacto para operaciones específicas",
+      en: "Compact port auxiliary for specific operations",
+      fr: "Auxiliaire portuaire compact pour opérations spécifiques",
+    },
+    year: 2024,
+    image: at700F,
+    gallery: [at700F],
+    description: {
+      es: "Embarcación auxiliar portuaria compacta para operaciones específicas de mantenimiento y limpieza. Mayor maniobrabilidad en espacios reducidos.",
+      en: "Compact port auxiliary vessel for specific maintenance and cleaning operations. Greater maneuverability in confined spaces.",
+      fr: "Embarcation auxiliaire portuaire compacte pour opérations maintenance et nettoyage spécifiques. Plus grande maniabilité espaces confinés.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Fuel",
+          es: "Almacenamiento de Desechos 500 Kg",
+          en: "Waste Storage 500 Kg",
+          fr: "Stockage Déchets 500 Kg",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 8 nudos",
+          en: "Maximum speed 8 knots",
+          fr: "Vitesse maximale 8 nœuds",
+        },
+        {
+          icon: "Anchor",
+          es: "Desplazamiento 1400 Kg",
+          en: "Displacement 1400 Kg",
+          fr: "Déplacement 1400 Kg",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "7 m",
+        Manga: "2.3 m",
+        Calado: "1.00 m",
+        Desplazamiento: "1400 Kg",
+        "Velocidad máxima": "8 nudos",
+        "Almacenamiento del Desechos": "500 Kg",
+      },
+      en: {
+        "Total Length": "7 m",
+        Beam: "2.3 m",
+        Draft: "1.00 m",
+        Displacement: "1400 Kg",
+        "Maximum Speed": "8 knots",
+        "Waste Storage": "500 Kg",
+      },
+      fr: {
+        "Longueur Totale": "7 m",
+        Largeur: "2,3 m",
+        "Tirant d'eau": "1,00 m",
+        Déplacement: "1400 Kg",
+        "Vitesse Maximale": "8 nœuds",
+        "Stockage des Déchets": "500 Kg",
+      },
+    },
+  },
+  {
+    id: 18,
+    name: {
+      es: "Practico S850i",
+      en: "Practical S850i",
+      fr: "Practique S850i",
+    },
+    category: "workboat",
+    purpose: {
+      es: "Embarcación práctica para operaciones auxiliares portuarias",
+      en: "Workboat for port auxiliary operations",
+      fr: "Embarcation pratique pour opérations auxiliaires portuaires",
+    },
+    year: 2024,
+    image: s850i,
+    gallery: [
+      s850i,
+    ],
+    description: {
+      es: "Embarcación práctica diseñada para operaciones auxiliares en puertos, como apoyo a buques, transporte de personal y labores de inspección..",
+      en: "Practical vessel designed for auxiliary port operations such as ship support, crew transport, and inspection duties.",
+      fr: "Embarcation pratique conçue pour des opérations auxiliaires portuaires telles que le soutien aux navires, le transport d'équipage et les inspections.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Users",
+          es: "Capacidad para 12 personas",
+          en: "Capacity for 12 people",
+          fr: "Capacité pour 12 personnes",
+        },
+        {
+          icon: "Zap",
+          es: "Motorización 350/180 CV (consultar)",
+          en: "Engine 350/180 HP (consult)",
+          fr: "Motorisation 350/180 CH (consulter)",
+        },
+        {
+          icon: "Gauge",
+          es: "Diseño deportivo y elegante",
+          en: "Sporty and elegant design",
+          fr: "Design sportif et élégant",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora Total": "8.50 m",
+        Manga: "3.00 m",
+        "Carga máxima Total": "2500/ 1766 Kg",
+        "Capacidad Pasaje": "12 Personas",
+        Desplazamiento: "2500 Kg",
+        Motorización: "350/ 180 CV*",
+        "*Consultar": "",
+      },
+      en: {
+        "Total Length": "8.50 m",
+        Beam: "3.00 m",
+        "Total Maximum Load": "2500/ 1766 Kg",
+        "Passenger Capacity": "12 People",
+        Displacement: "2500 Kg",
+        Engine: "350/ 180 HP*",
+        "*Consult": "",
+      },
+      fr: {
+        "Longueur Totale": "8,50 m",
+        Largeur: "3,00 m",
+        "Charge maximale Totale": "2500/ 1766 Kg",
+        "Capacité Passagers": "12 Personnes",
+        Déplacement: "2500 Kg",
+        Motorisation: "350/ 180 CH*",
+        "*Consulter": "",
+      },
+    },
+  },
+];
+// Embarcaciones de Recreo
+/*{
+    id: 20,
+    name: {
+      es: "Dreamer",
+      en: "Dreamer",
+      fr: "Dreamer"
+    },
+    category: "speedboat",
+    purpose: {
+      es: "Yate de recreo de lujo",
+      en: "Luxury recreational yacht",
+      fr: "Yacht de loisir de luxe"
+    },
+    year: 2024,
+    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    gallery: [
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+    ],
+    description: {
+      es: "Yate de recreo de lujo para experiencias náuticas premium. Espacios amplios y comodidades de primera calidad para hasta 48 pasajeros.",
+      en: "Luxury recreational yacht for premium nautical experiences. Spacious areas and first-class amenities for up to 48 passengers.",
+      fr: "Yacht de loisir de luxe pour expériences nautiques premium. Espaces spacieux et commodités première qualité jusqu'à 48 passagers."
+    },
+    features: {
+      items: [
+        {
+          icon: "Users",
+          es: "Capacidad para 48 pasajeros + 2 tripulantes",
+          en: "Capacity for 48 passengers + 2 crew",
+          fr: "Capacité pour 48 passagers + 2 équipiers"
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 20 nudos",
+          en: "Maximum speed 20 knots",
+          fr: "Vitesse maximale 20 nœuds"
+        },
+        {
+          icon: "Zap",
+          es: "Motor SOLE DIESEL MINI-74 (65.1 HP)",
+          en: "SOLE DIESEL MINI-74 Engine (65.1 HP)",
+          fr: "Moteur SOLE DIESEL MINI-74 (65.1 CH)"
         }
       ]
     },
     specifications: {
       es: {
-        "Longitud": "6.5 metros",
-        "Ancho": "2.2 metros",
-        "Calado": "0.4 metros",
-        "Peso": "450 kg",
-        "Combustible": "Tanque de 50 litros",
-        "Color": "Natural con barniz"
+        "Eslora Total": "13.95 m",
+        "Manga": "4 m",
+        "Capacidad Pasaje": "48 Pa/ 2Tri",
+        "Desplazamiento": "12.55 T.M.",
+        "Velocidad máxima": "20 nudos",
+        "Motorización": "SOLE DIESEL MINI-74(65.1 HP)"
       },
       en: {
-        "Length": "6.5 meters",
-        "Width": "2.2 meters",
-        "Draft": "0.4 meters",
-        "Weight": "450 kg",
-        "Fuel": "50-liter tank",
-        "Color": "Natural with varnish"
+        "Total Length": "13.95 m",
+        "Beam": "4 m",
+        "Passenger Capacity": "48 Pa/ 2Cr",
+        "Displacement": "12.55 T.M.",
+        "Maximum Speed": "20 knots",
+        "Engine": "SOLE DIESEL MINI-74(65.1 HP)"
       },
       fr: {
-        "Longueur": "6,5 mètres",
-        "Largeur": "2,2 mètres",
-        "Tirant d'eau": "0,4 mètre",
-        "Poids": "450 kg",
-        "Carburant": "Réservoir de 50 litres",
-        "Couleur": "Naturel avec vernis"
+        "Longueur Totale": "13,95 m",
+        "Largeur": "4 m",
+        "Capacité Passagers": "48 Pa/ 2Eq",
+        "Déplacement": "12,55 T.M.",
+        "Vitesse Maximale": "20 nœuds",
+        "Motorisation": "SOLE DIESEL MINI-74(65.1 CH)"
       }
     }
   },
   {
-    id: 4,
+    id: 21,
     name: {
-      es: "Zyon Rescue 15",
-      en: "Zyon Rescue 15",
-      fr: "Zyon Rescue 15"
+      es: "Twister Jet",
+      en: "Twister Jet",
+      fr: "Twister Jet"
     },
-    category: "rescue",
+    category: "speedboat",
     purpose: {
-      es: "Rescate marítimo y emergencias",
-      en: "Maritime rescue and emergencies",
-      fr: "Sauvetage maritime et urgences"
+      es: "Embarcación deportiva a reacción",
+      en: "Sports jet boat",
+      fr: "Embarcation sportive à réaction"
     },
     year: 2024,
     image: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
     gallery: [
-      "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
     ],
     description: {
-      es: "Bote de rescate rápido con equipos de emergencia",
-      en: "Fast rescue boat with emergency equipment",
-      fr: "Bateau de sauvetage rapide avec équipement d'urgence"
+      es: "Embarcación deportiva a reacción con motor Marine Diesel MD300 V8 de 650 cc. Diseñada para deportes acuáticos y navegación emocionante.",
+      en: "Sports jet boat with Marine Diesel MD300 V8 engine of 650 cc. Designed for water sports and exciting boating.",
+      fr: "Embarcation sportive à réaction avec moteur Marine Diesel MD300 V8 de 650 cc. Conçue pour sports nautiques et navigation excitante."
     },
     features: {
       items: [
         {
-          icon: "Fuel",
-          es: "Motor gemelo 200HP",
-          en: "Twin 200HP Engine",
-          fr: "Moteur jumeau 200CH"
+          icon: "Users",
+          es: "Capacidad para 14 plazas",
+          en: "Capacity for 14 seats",
+          fr: "Capacité pour 14 places"
+        },
+        {
+          icon: "Zap",
+          es: "Motor Marine Diesel MD300 V8 650 C.C (INTERCOOLER)",
+          en: "Marine Diesel MD300 V8 650 C.C Engine (INTERCOOLER)",
+          fr: "Moteur Marine Diesel MD300 V8 650 C.C (INTERCOOLER)"
         },
         {
           icon: "Gauge",
-          es: "Sistema GPS avanzado",
-          en: "Advanced GPS System",
-          fr: "Système GPS avancé"
-        },
-        {
-          icon: "LifeBuoy",
-          es: "Equipo de rescate incluido",
-          en: "Rescue Equipment Included",
-          fr: "Équipement de sauvetage inclus"
+          es: "Diseño deportivo y ágil",
+          en: "Sporty and agile design",
+          fr: "Design sportif et agile"
         }
       ]
     },
     specifications: {
       es: {
-        "Longitud": "8 metros",
-        "Ancho": "2.8 metros",
-        "Calado": "0.6 metros",
-        "Peso": "1,200 kg",
-        "Combustible": "Tanque de 200 litros",
-        "Color": "Rojo de seguridad"
+        "Eslora Total": "6.95 m",
+        "Manga": "2.45 m",
+        "Capacidad Pasaje": "14 Plazas",
+        "Desplazamiento": "1750 Kg",
+        "Motorización": "Marine Diesel MD300 V8 650 C.C (INTERCOOLER)"
       },
       en: {
-        "Length": "8 meters",
-        "Width": "2.8 meters",
-        "Draft": "0.6 meters",
-        "Weight": "1,200 kg",
-        "Fuel": "200-liter tank",
-        "Color": "Safety red"
+        "Total Length": "6.95 m",
+        "Beam": "2.45 m",
+        "Passenger Capacity": "14 Seats",
+        "Displacement": "1750 Kg",
+        "Engine": "Marine Diesel MD300 V8 650 C.C (INTERCOOLER)"
       },
       fr: {
-        "Longueur": "8 mètres",
-        "Largeur": "2,8 mètres",
-        "Tirant d'eau": "0,6 mètre",
-        "Poids": "1 200 kg",
-        "Carburant": "Réservoir de 200 litres",
-        "Couleur": "Rouge de sécurité"
+        "Longueur Totale": "6,95 m",
+        "Largeur": "2,45 m",
+        "Capacité Passagers": "14 Places",
+        "Déplacement": "1750 Kg",
+        "Motorisation": "Marine Diesel MD300 V8 650 C.C (INTERCOOLER)"
       }
     }
-  }
-];
+  }*/
