@@ -24,6 +24,8 @@ const highlightKeywordsBase = (
     "15",
     "services",
     "servicios",
+    "servicio",
+    "service",
     "soluciones completas",
     "Amplio catálogo",
     "completos",
