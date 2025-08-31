@@ -8,6 +8,7 @@ const highlightKeywordsBase = (
   // Palabras a resaltar (case insensitive)
   const keywords = [
     "calidad",
+    "quality",
     "experiencia",
     "excepcional",
     "experience",

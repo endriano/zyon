@@ -90,6 +90,15 @@ export default function AllBoats() {
     setSelectedCategory(categoryId);
   };
 
+  useEffect(() => {
+    const savedCategory = localStorage.getItem("selectedBoatCategory");
+    if (savedCategory) {
+      setSelectedCategory(savedCategory);
+      // Limpiar el valor para futuras visitas
+      localStorage.removeItem("selectedBoatCategory");
+    }
+  }, []);
+
   return (
     <div className="w-full">
       {/* Header Section */}
@@ -149,7 +158,6 @@ export default function AllBoats() {
       >
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-8 text-zyon-gray dark:text-white">
-          
             {t("allBoats.filter").split(" ")[0]}{" "}
             {t("allBoats.filter").split(" ")[1]}{" "}
             <span className="text-zyon-orange">

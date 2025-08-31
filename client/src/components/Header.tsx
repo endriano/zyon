@@ -142,6 +142,15 @@ export function Header() {
               >
                 {t("nav.home")}
               </motion.button>
+              <motion.button 
+                onClick={() => navigateToPage('/sobre-nosotros')}
+                className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+                data-testid="nav-about"
+              >
+                {t('nav.about')}
+              </motion.button>
               <motion.button
                 onClick={() => scrollToSection("servicios")}
                 className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"

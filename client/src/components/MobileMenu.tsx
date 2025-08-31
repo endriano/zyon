@@ -23,6 +23,11 @@ export function MobileMenu({
   const menuItems = [
     { id: "home", label: t("nav.home"), action: () => onScrollTo("inicio") },
     {
+      id: "about",
+      label: t("nav.about"),
+      action: () => onNavigate("/sobre-nosotros"),
+    },
+    {
       id: "services",
       label: t("nav.services"),
       action: () => onScrollTo("servicios"),

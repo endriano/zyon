@@ -509,7 +509,11 @@ export default function Home() {
               image={speedboatImage}
               title={t("boats.speedboats.title")}
               description={t("boats.speedboats.description")}
-              onClick={() => setLocation("/lanchas-rapidas")}
+              onClick={() => {
+                // Guardar la categoría seleccionada y redirigir a AllBoats
+                localStorage.setItem("selectedBoatCategory", "speedboat");
+                setLocation("/embarcaciones-lanchas");
+              }}
               delay={0.1}
               testId="boat-category-speedboats"
               altText="Lancha rápida Zyon Galicia navegando a alta velocidad - Embarcaciones deportivas y recreativas de máximo rendimiento en Galicia"
@@ -519,7 +523,11 @@ export default function Home() {
               image={workboatImage}
               title={t("boats.workboats.title")}
               description={t("boats.workboats.description")}
-              onClick={() => setLocation("/embarcaciones-trabajo")}
+              onClick={() => {
+                // Guardar la categoría seleccionada y redirigir a AllBoats
+                localStorage.setItem("selectedBoatCategory", "workboat");
+                setLocation("/embarcaciones-lanchas");
+              }}
               delay={0.2}
               testId="boat-category-workboats"
               altText="Embarcación de trabajo profesional Zyon Galicia - Barcos robustos para pesca comercial y trabajos marítimos en puertos gallegos"
@@ -529,7 +537,11 @@ export default function Home() {
               image={pangaImage}
               title={t("boats.panga.title")}
               description={t("boats.panga.description")}
-              onClick={() => setLocation("/pangas")}
+              onClick={() => {
+                // Guardar la categoría seleccionada y redirigir a AllBoats
+                localStorage.setItem("selectedBoatCategory", "panga");
+                setLocation("/embarcaciones-lanchas");
+              }}
               delay={0.3}
               testId="boat-category-pangas"
               altText="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"

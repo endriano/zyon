@@ -3,6 +3,7 @@ export const translations = {
     translation: {
       nav: {
         home: "Inicio",
+        about: "Sobre nosotros",
         services: "Servicios",
         boats: "Embarcaciones",
         gallery: "Galería",
@@ -19,7 +20,7 @@ export const translations = {
       about: {
         title: "Más de 15 años navegando",
         description:
-          "En Zyon Galicia somos especialistas en embarcaciones profesionales, ofreciendo soluciones adaptadas a las necesidades específicas de cada cliente.",
+          "En Zyon Galicia, somos especialistas en embarcaciones profesionales, ofreciendo soluciones adaptadas a las necesidades específicas de cada cliente.",
         stat1: "Embarcaciones entregadas",
         stat2: "Años de experiencia",
         stat3: "Satisfacción cliente",
@@ -45,9 +46,9 @@ export const translations = {
             "Consultoría especializada para elegir la embarcación perfecta según sus necesidades.",
         },
         certifications: {
-          title: "Homologaciones",
+          title: "Diseño y fabricación",
           description:
-            "Gestión completa de documentación y homologaciones oficiales.",
+            "Gestión completa en el proceso de diseño hasta su fabricación y homologación.",
         },
       },
       boats: {
@@ -287,6 +288,7 @@ export const translations = {
     translation: {
       nav: {
         home: "Home",
+        about: "About Us",
         services: "Services",
         boats: "Boats",
         gallery: "Gallery",
@@ -296,14 +298,14 @@ export const translations = {
       hero: {
         title: "Professional embarcations",
         subtitle:
-          "At Zyon Galicia we are specialists in professional boats, offering solutions tailored to the specific needs of each client.",
+          "Specialists in speedboats, workboats, and pangas. Quality, experience, and exceptional service in the nautical sector.",
         cta_primary: "View Boats",
         cta_secondary: "Contact",
       },
       about: {
         title: "More than 15 years sailing",
         description:
-          "At Zyon Galicia we are specialists in professional boats, offering nautical solutions adapted to the needs of fishermen, maritime companies and sea enthusiasts.",
+          "At Zyon Galicia, we are specialists in professional boats, offering nautical solutions adapted to the needs of fishermen, maritime companies and sea enthusiasts.",
         stat1: "Boats delivered",
         stat2: "Years of experience",
         stat3: "Customer satisfaction",
@@ -327,10 +329,10 @@ export const translations = {
             "Specialized consultancy to choose the perfect boat according to your needs.",
         },
         certifications: {
-          title: "Certifications",
-          description:
-            "Complete management of official documentation and certifications.",
-        },
+          title: "Design and manufacturing",
+            description:
+              "Complete management in the process from design to manufacturing and certification.",
+          },
       },
       boats: {
         title: "Our products",
@@ -433,18 +435,18 @@ export const translations = {
         header: {
           title: "About Zyon Galicia",
           subtitle:
-            "More than 15 years of experience in the nautical sector endorse us as specialists in professional vessels of the highest quality.",
+            "More than 15 years of experience in the nautical sector endorse us as specialists in professional boats of the highest quality.",
         },
         story: {
           title: "Our story",
           description1:
-            "Founded in Galicia with a passion for the sea, Zyon Galicia was born from the vision of offering professional vessels that combine expertise in the following areas:",
+            "Founded in Galicia with a passion for the sea, Zyon Galicia was born from the vision of offering professional boats that combine expertise in the following areas:",
           description2:
-            "VESSEL DESIGN: Our team of engineers facilitates client participation in the design process to deliver a customized product according to each project's specifications.",
+            "BOAT DESIGN: Our team of engineers facilitates client participation in the design process to deliver a customized product according to each project's specifications.",
           description3:
-            "VESSEL MANUFACTURING: Our facilities allow us to manufacture vessels of all types and sizes. In addition, our operators help us meet the timelines required by our clients.",
+            "BOAT MANUFACTURING: Our facilities allow us to manufacture boats of all types and sizes. In addition, our operators help us meet the timelines required by our clients.",
           description4:
-            "VESSEL MODIFICATIONS AND RECTIFICATIONS: Thanks to our industry experience, we are qualified to advise on the modifications and rectifications that best suit vessels so they adapt to the new requirements requested by the client.",
+            "BOAT MODIFICATIONS AND RECTIFICATIONS: Thanks to our industry experience, we are qualified to advise on the modifications and rectifications that best suit boats so they adapt to the new requirements requested by the client.",
         },
         values: {
           title: "Our values",
@@ -452,7 +454,7 @@ export const translations = {
           quality: {
             title: "Exceptional quality",
             description:
-              "We use only the best materials and construction techniques to ensure durable and reliable vessels.",
+              "We use only the best materials and construction techniques to ensure durable and reliable boats.",
           },
           service: {
             title: "Personalized service",
@@ -467,7 +469,7 @@ export const translations = {
           innovation: {
             title: "Innovation and tradition",
             description:
-              "We combine traditional techniques with the latest innovations to create state-of-the-art vessels.",
+              "We combine traditional techniques with the latest innovations to create state-of-the-art boats.",
           },
           puntuality: {
             title: "Punctuality",
@@ -481,17 +483,17 @@ export const translations = {
           },
         },
         cta: {
-          title: "Ready to discover our vessels?",
+          title: "Ready to discover our boats?",
           description:
             "Find out why Zyon Galicia is the preferred choice of professionals in the nautical world.",
-          cta1: "View vessels",
+          cta1: "View boats",
           cta2: "Contact",
         },
       },
       allBoats: {
         title: "Our boats",
         explore:
-          "Explore our full range of professional vessels, customized according to client specifications.",
+          "Explore our full range of professional boats, customized according to client specifications.",
         filter: "Filter by category",
         models: "Our models ",
         speedboats: {
@@ -510,7 +512,7 @@ export const translations = {
         rescue: {
           title: "Rescue boats",
           description:
-            "Specialized vessels for maritime rescue and emergencies",
+            "Specialized boats for maritime rescue and emergencies",
         },
         cta: "View complete catalog",
         categories: {
@@ -563,6 +565,7 @@ export const translations = {
     translation: {
       nav: {
         home: "Accueil",
+        about: "À propos",
         services: "Services",
         boats: "Embarcations",
         gallery: "Galerie",
@@ -605,10 +608,10 @@ export const translations = {
             "Conseil spécialisé pour choisir l'embarcation parfaite selon vos besoins.",
         },
         certifications: {
-          title: "Homologations",
-          description:
-            "Gestion complète de la documentation et des homologations officielles.",
-        },
+          title: "Conception et fabrication",
+            description:
+              "Gestion complète du processus, de la conception jusqu'à la fabrication et l'homologation.",
+          },
       },
       boats: {
         title: "Nos produits",
