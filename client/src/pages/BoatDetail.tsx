@@ -181,7 +181,7 @@ export default function BoatDetail() {
                 {getText(boatData.name)}
               </h1>
               <p className="text-lg text-zyon-orange font-medium">
-                {getText(boatData.purpose)} • {boatData.year}
+                {getText(boatData.purpose)}
               </p>
             </motion.div>
             <motion.div

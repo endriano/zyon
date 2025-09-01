@@ -251,9 +251,9 @@ export default function AllBoats() {
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute top-2 right-2 bg-zyon-orange text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {/*   <div className="absolute top-2 right-2 bg-zyon-orange text-white text-xs font-bold px-2 py-1 rounded-full">
                     {model.year}
-                  </div>
+                  </div> */ }
                 </div>
 
                 <h3 className="text-lg font-semibold mb-1 text-zyon-gray dark:text-white">

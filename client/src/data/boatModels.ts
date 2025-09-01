@@ -1,14 +1,41 @@
 // src/data/boatModels.ts
 
 import ambulancia from "@/assets/images/boatModels/ambulancia.png";
-import at105L from "@/assets/images/boatModels/at105L.png";
+import at105L1 from "@/assets/images/boatModels/at105L1.webp";
+import at105L2 from "@/assets/images/boatModels/at105L2.webp";
+import at105L3 from "@/assets/images/boatModels/at105L3.webp";
+import at105L4 from "@/assets/images/boatModels/at105L4.webp";
 import at700F from "@/assets/images/boatModels/at700F.png";
 import barcoPesca from "@/assets/images/boatModels/barcoPesca.png";
-import fueraborda from "@/assets/images/boatModels/fueraborda.png";
-import hidrojet from "@/assets/images/boatModels/hidrojet.png";
-import lineaEje from "@/assets/images/boatModels/lineaEje.png";
-import miniworkboat from "@/assets/images/boatModels/miniworkboat.png";
-import panga from "@/assets/images/boatModels/panga.png";
+import fueraborda1 from "@/assets/images/boatModels/fueraborda1.webp";
+import fueraborda2 from "@/assets/images/boatModels/fueraborda2.webp";
+import fueraborda3 from "@/assets/images/boatModels/fueraborda3.webp";
+import fueraborda4 from "@/assets/images/boatModels/fueraborda4.webp";
+import fueraborda5 from "@/assets/images/boatModels/fueraborda5.webp";
+import hidrojet1 from "@/assets/images/boatModels/hidrojet1.webp";
+import hidrojet2 from "@/assets/images/boatModels/hidrojet2.webp";
+import hidrojet3 from "@/assets/images/boatModels/hidrojet3.webp";
+import hidrojet4 from "@/assets/images/boatModels/hidrojet4.webp";
+import hidrojet5 from "@/assets/images/boatModels/hidrojet5.webp";
+import hidrojet6 from "@/assets/images/boatModels/hidrojet6.webp";
+import hidrojet7 from "@/assets/images/boatModels/hidrojet7.webp";
+import lineaEje1 from "@/assets/images/boatModels/lineaEje1.webp";
+import lineaEje2 from "@/assets/images/boatModels/lineaEje2.webp";
+import workboat1 from "@/assets/images/boatModels/workboat1.webp";
+import workboat2 from "@/assets/images/boatModels/workboat2.webp";
+import workboat3 from "@/assets/images/boatModels/workboat3.webp";
+import workboat4 from "@/assets/images/boatModels/workboat4.webp";
+import workboat5 from "@/assets/images/boatModels/workboat5.webp";
+import workboat6 from "@/assets/images/boatModels/workboat6.webp";
+import workboat7 from "@/assets/images/boatModels/workboat7.webp";
+import miniworkboat1 from "@/assets/images/boatModels/miniworkboat1.webp";
+import miniworkboat2 from "@/assets/images/boatModels/miniworkboat2.webp";
+import panga1 from "@/assets/images/boatModels/panga1.webp";
+import panga2 from "@/assets/images/boatModels/panga2.webp";
+import panga3 from "@/assets/images/boatModels/panga3.webp";
+import panga4 from "@/assets/images/boatModels/panga4.webp";
+import panga5 from "@/assets/images/boatModels/panga5.webp";
+import panga6 from "@/assets/images/boatModels/panga6.webp";
 import patrullera from "@/assets/images/boatModels/patrullera.png";
 import rescateRapido from "@/assets/images/boatModels/rescateRapido.png";
 import s500 from "@/assets/images/boatModels/s500.png";
@@ -17,7 +44,6 @@ import s750 from "@/assets/images/boatModels/s750.png";
 import s850 from "@/assets/images/boatModels/s850.png";
 import s850i from "@/assets/images/boatModels/s850i.png";
 import s900 from "@/assets/images/boatModels/s900.png";
-import workboat from "@/assets/images/boatModels/workboat.png";
 
 export interface BoatModel {
   id: number;
@@ -69,9 +95,17 @@ export const boatModels: BoatModel[] = [
       en: "Purse seine fishing with high speed and maneuverability",
       fr: "Pêche au chalut avec haute vitesse et maniabilité",
     },
-    year: 2024,
-    image: hidrojet,
-    gallery: [hidrojet, hidrojet, hidrojet],
+    year: 2025,
+    image: hidrojet1,
+    gallery: [
+      hidrojet1,
+      hidrojet2,
+      hidrojet3,
+      hidrojet4,
+      hidrojet5,
+      hidrojet6,
+      hidrojet7,
+    ],
     description: {
       es: "El SPH / 5.75 Hidrojet alcanza los 30 nudos, elevada potencia con respecto a las dimensiones de la embarcación. La instalación del Hidrojet facilita la maniobrabilidad y rapidez de la embarcación y ofrece mayor seguridad en un entorno con elementos de pesca. Utilizada comúnmente en el Atlántico e Índico.",
       en: "The SPH / 5.75 Hydrojet reaches 30 knots, high power relative to the vessel's dimensions. The Hydrojet installation facilitates maneuverability and speed of the vessel and offers greater safety in a fishing environment. Commonly used in the Atlantic and Indian Oceans.",
@@ -149,8 +183,8 @@ export const boatModels: BoatModel[] = [
       fr: "Pêche au chalut avec besoin de retirer l'objet du chalut",
     },
     year: 2024,
-    image: lineaEje,
-    gallery: [lineaEje, lineaEje, lineaEje],
+    image: lineaEje1,
+    gallery: [lineaEje1, lineaEje2],
     description: {
       es: "El modelo SPL / 5.75 de Línea de Eje ha sido ideado a partir de la necesidad de sacar el objeto del cerco. Adaptando un modelo de turbina, conseguimos alcanzar mayor tiro manteniendo el motor y casco existentes en la embarcación. Las protecciones de la hélice del motor, evitan posibles daños al aparejo.",
       en: "The SPL / 5.75 Shaft Line model was conceived from the need to retrieve the purse seine object. By adapting a turbine model, we achieve greater thrust while maintaining the existing engine and hull on the vessel. The engine propeller protections prevent possible damage to fishing gear.",
@@ -221,11 +255,11 @@ export const boatModels: BoatModel[] = [
       en: "Rapid displacement for dolphin tuna fishing",
       fr: "Déplacement rapide pour pêche au thon dauphin",
     },
-    year: 2024,
-    image: fueraborda,
-    gallery: [fueraborda, fueraborda, fueraborda],
+    year: 2014,
+    image: fueraborda1,
+    gallery: [fueraborda1, fueraborda2, fueraborda3, fueraborda4, fueraborda5],
     description: {
-      es: "Speedboat modelo SPF / 5.50 Fueraborda, diseñada para desplazarse rápidamente facilitando la pesca del atún al delfín (en el Pacifico). Añadimos unas protecciones a la hélice del motor, protegiendo los elementos de pesca como las redes.",
+      es: "Speedboat modelo SPF / 5.50 Fueraborda, diseñada para desplazarse rápidamente facilitando la pesca del atún al delfín (en el Pacífico). Añadimos unas protecciones a la hélice del motor, protegiendo los elementos de pesca como las redes.",
       en: "Speedboat model SPF / 5.50 Outboard, designed to move quickly facilitating dolphin tuna fishing (in the Pacific). We add protections to the engine propeller, protecting fishing elements such as nets.",
       fr: "Speedboat modèle SPF / 5.50 Hors-Bord, conçue pour se déplacer rapidement facilitant la pêche au thon dauphin (dans le Pacifique). Nous ajoutons des protections à l'hélice du moteur, protégeant les éléments de pêche comme les filets.",
     },
@@ -292,8 +326,16 @@ export const boatModels: BoatModel[] = [
       fr: "Travail lourd avec grande puissance de poussée",
     },
     year: 2024,
-    image: workboat,
-    gallery: [workboat, workboat, workboat],
+    image: workboat1,
+    gallery: [
+      workboat1,
+      workboat2,
+      workboat3,
+      workboat4,
+      workboat5,
+      workboat6,
+      workboat7,
+    ],
     description: {
       es: "El modelo Workboat 6.0 propulsado por un motor de gran potencia consigue la mejor relación de tiro - desplazamiento en rosca. Normalmente utilizado en el Océano Pacífico para sacar objetos, abrir al arte y contrarrestar el efecto de las corrientes.",
       en: "The Workboat 6.0 model propelled by a high power engine achieves the best thrust-displacement ratio. Commonly used in the Pacific Ocean to retrieve objects, open to gear and counteract current effects.",
@@ -374,8 +416,8 @@ export const boatModels: BoatModel[] = [
       fr: "Embarcation polyvalente aux dimensions réduites",
     },
     year: 2024,
-    image: miniworkboat,
-    gallery: [miniworkboat, miniworkboat, miniworkboat],
+    image: miniworkboat1,
+    gallery: [miniworkboat1, miniworkboat2],
     description: {
       es: "El modelo Mini/Workboat 5.7 es una embarcación polivalente que presenta las dimensiones de una Speedboat con la potencia de tiro de una Workboat convencional. Utilizada comúnmente en el océano Atlántico e Índico. Las reducidas dimensiones de la consola y guardacalor facilitan una cubierta diáfana que permite a los operarios trabajar con comodidad.",
       en: "The Mini/Workboat 5.7 model is a versatile vessel that presents the dimensions of a Speedboat with the thrust power of a conventional Workboat. Commonly used in the Atlantic and Indian Oceans. The reduced dimensions of the console and wheelhouse facilitate a clear deck that allows operators to work comfortably.",
@@ -450,8 +492,8 @@ export const boatModels: BoatModel[] = [
       fr: "Embarcation d'usage extrême pour pêche professionnelle",
     },
     year: 2024,
-    image: panga,
-    gallery: [panga, panga],
+    image: panga1,
+    gallery: [panga1, panga2, panga3, panga4, panga5, panga6],
     description: {
       es: "La panga es una embarcación de uso extremo, y debe estar preparada para los embites ocasionados por los diferentes métodos de pesca. Por ello son fabricadas en acero, una estructura recia con refuerzos longitudinales y transversales que permite realizar un trabajo brusco con seguridad además de las dos quillas laterales evitan el enganche de la red. Está provista de unas cámaras estancas que la mantienen a flote en caso de vuelco o inundación. Propulsada por un motor de gran potencia, hélice de gran tracción a punto fijo, gancho de disparo rápido y una gran capacidad de tiro.",
       en: "The panga is an extreme use vessel, and must be prepared for the impacts caused by different fishing methods. Therefore they are manufactured in steel, a sturdy structure with longitudinal and transverse reinforcements that allows performing rough work safely, plus the two side keels prevent net entanglement. It is equipped with watertight chambers that keep it afloat in case of capsizing or flooding. Propelled by a high power engine, fixed pitch propeller with high traction, quick release hook and great towing capacity.",
@@ -1011,90 +1053,6 @@ export const boatModels: BoatModel[] = [
   {
     id: 13,
     name: {
-      es: "Bote de Rescate Rápido",
-      en: "Fast Rescue Boat",
-      fr: "Bateau de Sauvetage Rapide",
-    },
-    category: "rescue",
-    purpose: {
-      es: "Rescate marítimo rápido y patrullaje",
-      en: "Fast maritime rescue and patrol",
-      fr: "Sauvetage maritime rapide et patrouille",
-    },
-    year: 2024,
-    image: "https://pixabay.com/images/search/fast%20rescue%20boat%20patrol/",
-    gallery: [
-      "https://pixabay.com/images/search/fast%20rescue%20boat%20patrol/",
-    ],
-    description: {
-      es: "Embarcación polivalente de rescate rápido con blindaje opcional. Diseñada para operaciones de salvamento y patrullaje costero.",
-      en: "Versatile fast rescue vessel with optional armor. Designed for salvage operations and coastal patrol.",
-      fr: "Embarcation polyvalente de sauvetage rapide avec blindage optionnel. Conçue pour opérations de sauvetage et patrouille côtière.",
-    },
-    features: {
-      items: [
-        {
-          icon: "LifeBuoy",
-          es: "Blindaje Tipo 4 (opcional)",
-          en: "Type 4 Armor (optional)",
-          fr: "Blindage Type 4 (optionnel)",
-        },
-        {
-          icon: "Zap",
-          es: "Motorización dual o hidrojet",
-          en: "Dual engine or hydrojet propulsion",
-          fr: "Motorisation double ou hydrojet",
-        },
-        {
-          icon: "Gauge",
-          es: "Velocidad máxima 30 nudos",
-          en: "Maximum speed 30 knots",
-          fr: "Vitesse maximale 30 nœuds",
-        },
-        {
-          icon: "Shield",
-          es: "Casco Polietileno HWU para flotabilidad",
-          en: "Polyethylene HWU hull for buoyancy",
-          fr: "Coque Polyéthylène HWU pour flottabilité",
-        },
-      ],
-    },
-    specifications: {
-      es: {
-        "Eslora Total": "6.10 m",
-        Manga: "2.2 m",
-        Desplazamiento: "1850 Kg",
-        "Depósito de Combustible": "180 l",
-        Motorización: "2x100 CV Fueraborda/ 160-240 CV Fueraborda+ Hidrojet",
-        "Velocidad Máxima": "30 nudos",
-        Casco: "Polietileno- HWU",
-        Superestructura: "Blindaje Tipo 4(opcional)",
-      },
-      en: {
-        "Total Length": "6.10 m",
-        Beam: "2.2 m",
-        Displacement: "1850 Kg",
-        "Fuel Tank": "180 l",
-        Engine: "2x100 HP Outboard/ 160-240 HP Outboard+ Hydrojet",
-        "Maximum Speed": "30 knots",
-        Hull: "Polyethylene- HWU",
-        Superstructure: "Type 4 Armor(optional)",
-      },
-      fr: {
-        "Longueur Totale": "6,10 m",
-        Largeur: "2,2 m",
-        Déplacement: "1850 Kg",
-        "Réservoir Carburant": "180 l",
-        Motorisation: "2x100 CH Hors-bord/ 160-240 CH Hors-bord+ Hydrojet",
-        "Vitesse Maximale": "30 nœuds",
-        Coque: "Polyéthylène- HWU",
-        Superstructure: "Blindage Type 4(optionnel)",
-      },
-    },
-  },
-  {
-    id: 14,
-    name: {
       es: "Patrullera",
       en: "Patrol Boat",
       fr: "Patrouilleur",
@@ -1163,7 +1121,7 @@ export const boatModels: BoatModel[] = [
     },
   },
   {
-    id: 15,
+    id: 14,
     name: {
       es: "Ambulancia Marítima",
       en: "Maritime Ambulance",
@@ -1230,7 +1188,7 @@ export const boatModels: BoatModel[] = [
     },
   },
   {
-    id: 16,
+    id: 15,
     name: {
       es: "AT 105 L",
       en: "AT 105 L",
@@ -1243,8 +1201,8 @@ export const boatModels: BoatModel[] = [
       fr: "Auxiliaire portuaire pour maintenance et nettoyage",
     },
     year: 2024,
-    image: at105L,
-    gallery: [at105L],
+    image: at105L1,
+    gallery: [at105L1, at105L2, at105L3, at105L4],
     description: {
       es: "Embarcación auxiliar portuaria de gran capacidad para operaciones de mantenimiento, limpieza y recogida de residuos. Diseñada para operaciones lentas y precisas.",
       en: "Large-capacity port auxiliary vessel for maintenance, cleaning and waste collection operations. Designed for slow and precise operations.",
@@ -1300,7 +1258,7 @@ export const boatModels: BoatModel[] = [
     },
   },
   {
-    id: 17,
+    id: 16,
     name: {
       es: "AT 700 F",
       en: "AT 700 F",
@@ -1370,7 +1328,7 @@ export const boatModels: BoatModel[] = [
     },
   },
   {
-    id: 18,
+    id: 17,
     name: {
       es: "Practico S850i",
       en: "Practical S850i",
@@ -1384,9 +1342,7 @@ export const boatModels: BoatModel[] = [
     },
     year: 2024,
     image: s850i,
-    gallery: [
-      s850i,
-    ],
+    gallery: [s850i],
     description: {
       es: "Embarcación práctica diseñada para operaciones auxiliares en puertos, como apoyo a buques, transporte de personal y labores de inspección..",
       en: "Practical vessel designed for auxiliary port operations such as ship support, crew transport, and inspection duties.",
