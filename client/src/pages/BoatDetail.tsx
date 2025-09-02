@@ -688,9 +688,6 @@ export default function BoatDetail() {
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div className="text-center sm:text-left">
-                  <p className="text-white text-lg font-semibold">
-                    {getText(boatData?.name || "")}
-                  </p>
                   <p className="text-gray-300 text-sm">
                     {lightboxImageIndex + 1} / {boatData?.gallery.length}
                   </p>
