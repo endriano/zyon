@@ -52,6 +52,7 @@ import heroImage from "@/assets/images/home/hero.webp";
 import speedboatImage from "@/assets/images/home/lancha.webp";
 import workboatImage from "@/assets/images/home/trabajo.webp";
 import pangaImage from "@/assets/images/home/panga.webp";
+import rescueImage from "@/assets/images/home/rescate.webp";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -234,7 +235,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <motion.button
-              onClick={() => scrollToSection("embarcaciones")}
+              onClick={() => setLocation("/embarcaciones-lanchas")}
               className="bg-zyon-orange hover:bg-zyon-orange-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               data-testid="hero-cta-boats"
               whileHover={{ scale: 1.05 }}
@@ -544,7 +545,21 @@ export default function Home() {
               }}
               delay={0.3}
               testId="boat-category-pangas"
-              altText="Panga tradicional gallega Zyon Galicia - Embarcación artesanal para pesca costera y navegación tradicional en aguas de Galicia"
+              altText="Panga Zyon Galicia - Embarcación para pesca costera y navegación"
+            />
+
+            <BoatCategoryCard
+              image={rescueImage}
+              title={t("boats.rescue.title")}
+              description={t("boats.rescue.description")}
+              onClick={() => {
+                // Guardar la categoría seleccionada y redirigir a AllBoats
+                localStorage.setItem("selectedBoatCategory", "rescue");
+                setLocation("/embarcaciones-lanchas");
+              }}
+              delay={0.3}
+              testId="boat-category-rescue"
+              altText="Embarcación de rescate Zyon Galicia - Barcos de salvamento y seguridad marítima"
             />
           </div>
 

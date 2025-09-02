@@ -66,8 +66,12 @@ export const translations = {
         },
         panga: {
           title: "Pangas",
+          description: "Embarcaciones versátiles para pesca costera",
+        },
+        rescue: {
+          title: "Embarcaciones de rescate y salvamento",
           description:
-            "Embarcaciones tradicionales versátiles para pesca costera",
+            "Embarcaciones encargadas del rescate, vigialncia y salvamento marítimo",
         },
         category: {
           cta: "Ver modelos",
@@ -190,7 +194,7 @@ export const translations = {
           innovation: {
             title: "Innovación y tradición",
             description:
-              "Combinamos técnicas tradicionales con las últimas innovaciones para crear embarcaciones de vanguardia.",
+              "Combinamos técnicas con las últimas innovaciones para crear embarcaciones de vanguardia.",
           },
           puntuality: {
             title: "Puntualidad",
@@ -229,8 +233,7 @@ export const translations = {
         },
         panga: {
           title: "Pangas y barcos de pesca",
-          description:
-            "Embarcaciones tradicionales versátiles para pesca costera",
+          description: "Embarcaciones versátiles para pesca costera",
         },
         rescue: {
           title: "Botes de rescate",
@@ -330,9 +333,9 @@ export const translations = {
         },
         certifications: {
           title: "Design and manufacturing",
-            description:
-              "Complete management in the process from design to manufacturing and certification.",
-          },
+          description:
+            "Complete management in the process from design to manufacturing and certification.",
+        },
       },
       boats: {
         title: "Our products",
@@ -348,7 +351,12 @@ export const translations = {
         },
         panga: {
           title: "Pangas",
-          description: "Versatile traditional boats for coastal fishing",
+          description: "Versatile boats for coastal fishing",
+        },
+        rescue: {
+          title: "Rescue and salvage boats",
+          description:
+            "Boats responsible for maritime rescue, surveillance and salvage",
         },
         category: {
           cta: "View models",
@@ -469,7 +477,7 @@ export const translations = {
           innovation: {
             title: "Innovation and tradition",
             description:
-              "We combine traditional techniques with the latest innovations to create state-of-the-art boats.",
+              "We combine techniques with the latest innovations to create state-of-the-art boats.",
           },
           puntuality: {
             title: "Punctuality",
@@ -507,12 +515,11 @@ export const translations = {
         },
         panga: {
           title: "Pangas and fishing boats",
-          description: "Versatile traditional boats for coastal fishing",
+          description: "Versatile boats for coastal fishing",
         },
         rescue: {
           title: "Rescue boats",
-          description:
-            "Specialized boats for maritime rescue and emergencies",
+          description: "Specialized boats for maritime rescue and emergencies",
         },
         cta: "View complete catalog",
         categories: {
@@ -609,9 +616,9 @@ export const translations = {
         },
         certifications: {
           title: "Conception et fabrication",
-            description:
-              "Gestion complète du processus, de la conception jusqu'à la fabrication et l'homologation.",
-          },
+          description:
+            "Gestion complète du processus, de la conception jusqu'à la fabrication et l'homologation.",
+        },
       },
       boats: {
         title: "Nos produits",
@@ -628,8 +635,12 @@ export const translations = {
         },
         panga: {
           title: "Pangas et bateaux de pêche",
+          description: "Embarcations polyvalentes pour la pêche côtière",
+        },
+        rescue: {
+          title: "Embarcations de sauvetage et de récupération",
           description:
-            "Embarcations traditionnelles polyvalentes pour la pêche côtière",
+            "Embarcations chargés du sauvetage, de la surveillance et du sauvetage maritimes",
         },
         category: {
           cta: "Voir modèles",
@@ -753,7 +764,7 @@ export const translations = {
           innovation: {
             title: "Innovation et tradition",
             description:
-              "Nous combinons des techniques traditionnelles avec les dernières innovations pour créer des embarcations à la pointe.",
+              "Nous combinons des techniques avec les dernières innovations pour créer des embarcations à la pointe.",
           },
           puntuality: {
             title: "Ponctualité",
@@ -793,8 +804,7 @@ export const translations = {
         },
         panga: {
           title: "Pangas",
-          description:
-            "Embarcations traditionnelles polyvalentes pour la pêche côtière",
+          description: "Embarcations polyvalentes pour la pêche côtière",
         },
         rescue: {
           title: "Bateaux de sauvetage",
