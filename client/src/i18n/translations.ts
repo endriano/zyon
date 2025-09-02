@@ -260,6 +260,8 @@ export const translations = {
       boatDetail: {
         notFound: "Embarcación no encontrada",
         gallery: "Galería de imágenes",
+        galleryFullscreen: "Ver a pantalla completa",
+        useAsMain: "Usar como principal",
         features: "Características principales",
         specifications: "Especificaciones técnicas",
         questions: "¿Tienes preguntas?",
@@ -541,6 +543,8 @@ export const translations = {
       boatDetail: {
         notFound: "Boat not found",
         gallery: "Image gallery",
+        galleryFullscreen: "View fullscreen",
+        useAsMain: "Use as main",
         features: "Key features",
         specifications: "Technical specifications",
         questions: "Have questions?",
@@ -831,6 +835,8 @@ export const translations = {
       boatDetail: {
         notFound: "Embarcation non trouvée",
         gallery: "Galerie d'images",
+        galleryFullscreen: "Voir en plein écran",
+        useAsMain: "Utiliser comme principal",
         features: "Caractéristiques principales",
         specifications: "Spécifications techniques",
         questions: "Des questions ?",

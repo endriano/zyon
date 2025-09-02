@@ -18,9 +18,12 @@ import {
   Clock,
   Award,
   Zap,
+  Expand,
+  X,
 } from "lucide-react";
 import { useLocation } from "wouter";
 import { boatModels } from "@/data";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 // Mapa de iconos para las features
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -44,6 +47,42 @@ export default function BoatDetail() {
   const [location, setLocation] = useLocation();
   const [selectedImage, setSelectedImage] = useState(0);
   const [boatData, setBoatData] = useState<any>(null);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxImageIndex(index);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setLightboxImageIndex((prev) => 
+      prev === (boatData?.gallery.length || 1) - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setLightboxImageIndex((prev) => 
+      prev === 0 ? (boatData?.gallery.length || 1) - 1 : prev - 1
+    );
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isLightboxOpen) return;
+
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') closeLightbox();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isLightboxOpen]);
 
   // Obtener el ID del boat de la URL (ruta: /embarcacion/1)
   const getBoatIdFromUrl = () => {
@@ -204,9 +243,9 @@ export default function BoatDetail() {
       >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Main Image */}
+            {/* Main Image con botón de pantalla completa */}
             <motion.div
-              className="relative overflow-hidden rounded-2xl shadow-xl"
+              className="relative overflow-hidden rounded-2xl shadow-xl group"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -215,19 +254,41 @@ export default function BoatDetail() {
               <img
                 src={boatData.gallery[selectedImage]}
                 alt={`${getText(boatData.name)} - Vista principal`}
-                className="w-full h-96 object-cover"
+                className="w-full h-96 object-cover cursor-pointer"
                 loading="lazy"
+                onClick={() => openLightbox(selectedImage)}
               />
+              {/* Botón de pantalla completa en la imagen principal */}
+              <motion.button
+                className="absolute top-4 right-16 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
+                onClick={() => openLightbox(selectedImage)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Expand className="w-4 h-4" />
+              </motion.button>
               <div className="absolute top-4 right-4 bg-zyon-orange text-white px-3 py-1 rounded-full text-sm font-bold">
                 {selectedImage + 1} / {boatData.gallery.length}
               </div>
             </motion.div>
 
-            {/* Gallery Thumbnails */}
+            {/* Gallery Thumbnails con botón de pantalla completa */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-zyon-gray dark:text-white">
-                {t("boatDetail.gallery")}
-              </h3>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-bold text-zyon-gray dark:text-white">
+                  {t("boatDetail.gallery")}
+                </h3>
+                {/* Botón de pantalla completa para toda la galería */}
+                <motion.button
+                  onClick={() => openLightbox(selectedImage)}
+                  className="flex items-center text-zyon-orange hover:text-zyon-orange-dark text-sm font-medium ml-10"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Expand className="w-4 h-4 mr-1" />
+                  {t("boatDetail.galleryFullscreen")}
+                </motion.button>
+              </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {boatData.gallery.map((image: string, index: number) => (
                   <motion.div
@@ -236,7 +297,7 @@ export default function BoatDetail() {
                       selectedImage === index
                         ? "border-zyon-orange"
                         : "border-transparent hover:border-zyon-orange/50"
-                    }`}
+                    } group`}
                     onClick={() => setSelectedImage(index)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -562,6 +623,71 @@ export default function BoatDetail() {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* LIGHTBOX MODAL */}
+      <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
+        <DialogContent 
+          className="max-w-7xl max-h-[90vh] p-0 bg-black/95 border-none backdrop-blur-sm"
+          onOpenAutoFocus={(e) => e.preventDefault()}
+        >
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Botón de cerrar */}
+            <motion.button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-20 rounded-full p-2 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <X className="w-4 h-4" />
+            </motion.button>
+
+            {/* Botón anterior */}
+            <motion.button
+              onClick={prevImage}
+              className="absolute left-4 inset-y-0 my-auto w-10 h-10 flex items-center justify-center text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-20 rounded-full p-2 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </motion.button>
+
+            {/* Imagen principal del lightbox */}
+            <motion.img
+              src={boatData?.gallery[lightboxImageIndex]}
+              alt={`${getText(boatData?.name || "")} - Vista ${lightboxImageIndex + 1}`}
+              className="max-w-full max-h-full object-contain"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              key={lightboxImageIndex}
+            />
+
+            {/* Botón siguiente */}
+            <motion.button
+              onClick={nextImage}
+              className="absolute right-4 inset-y-0 my-auto w-10 h-10 flex items-center justify-center text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-20 rounded-full p-2 transition-colors"
+              whileHover={{ scale:1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ArrowLeft className="w-4 h-4 rotate-180" />
+            </motion.button>
+
+            {/* Información de la imagen */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-white text-lg font-semibold">
+                    {getText(boatData?.name || "")}
+                  </p>
+                  <p className="text-gray-300 text-sm">
+                    {lightboxImageIndex + 1} / {boatData?.gallery.length}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
