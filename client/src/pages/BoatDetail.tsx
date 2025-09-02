@@ -60,14 +60,14 @@ export default function BoatDetail() {
   };
 
   const nextImage = () => {
-    setLightboxImageIndex((prev) => 
-      prev === (boatData?.gallery.length || 1) - 1 ? 0 : prev + 1
+    setLightboxImageIndex((prev) =>
+      prev === (boatData?.gallery.length || 1) - 1 ? 0 : prev + 1,
     );
   };
 
   const prevImage = () => {
-    setLightboxImageIndex((prev) => 
-      prev === 0 ? (boatData?.gallery.length || 1) - 1 : prev - 1
+    setLightboxImageIndex((prev) =>
+      prev === 0 ? (boatData?.gallery.length || 1) - 1 : prev - 1,
     );
   };
 
@@ -75,13 +75,13 @@ export default function BoatDetail() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isLightboxOpen) return;
 
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') prevImage();
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") closeLightbox();
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isLightboxOpen]);
 
   // Obtener el ID del boat de la URL (ruta: /embarcacion/1)
@@ -624,58 +624,70 @@ export default function BoatDetail() {
         </div>
       </motion.section>
 
-      {/* LIGHTBOX MODAL */}
+      {/* Lightbox Modal */}
       <Dialog open={isLightboxOpen} onOpenChange={setIsLightboxOpen}>
-        <DialogContent 
-          className="max-w-7xl max-h-[90vh] p-0 bg-black/95 border-none backdrop-blur-sm"
+        <DialogContent
+          className="max-w-7xl max-h-[90vh] p-0 bg-black/95 border-none backdrop-blur-sm overflow-hidden"
           onOpenAutoFocus={(e) => e.preventDefault()}
         >
-          <div className="relative w-full h-full flex items-center justify-center">
-            {/* Botón de cerrar */}
-            <motion.button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-20 rounded-full p-2 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <X className="w-4 h-4" />
-            </motion.button>
+          <div className="relative w-full h-full flex flex-col">
+            {/* Header con botón de cerrar */}
+            <div className="absolute top-4 right-4 z-20">
+              <motion.button
+                onClick={closeLightbox}
+                className="text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 rounded-full p-2 transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <X className="w-4 h-4" />
+              </motion.button>
+            </div>
 
-            {/* Botón anterior */}
-            <motion.button
-              onClick={prevImage}
-              className="absolute left-4 inset-y-0 my-auto w-10 h-10 flex items-center justify-center text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-20 rounded-full p-2 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <ArrowLeft className="w-4 h-4" />
-            </motion.button>
+            {/* Área principal de la imagen con contenedor flexible */}
+            <div className="flex-1 flex items-center justify-center p-4 lg:p-8 relative overflow-hidden">
+              {/* Botón anterior */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-10 rounded-full p-3 transition-all duration-200 hover:scale-110 active:scale-95 lg:left-8"
+                disabled={boatData?.gallery.length <= 1}
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
 
-            {/* Imagen principal del lightbox */}
-            <motion.img
-              src={boatData?.gallery[lightboxImageIndex]}
-              alt={`${getText(boatData?.name || "")} - Vista ${lightboxImageIndex + 1}`}
-              className="max-w-full max-h-full object-contain"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-              key={lightboxImageIndex}
-            />
+              {/* CONTENEDOR RESPONSIVE PARA LA IMAGEN */}
+              <div className="relative w-full h-full max-w-6xl max-h-[70vh] flex items-center justify-center">
+                <motion.img
+                  src={boatData?.gallery[lightboxImageIndex]}
+                  alt={`${getText(boatData?.name || "")} - Vista ${lightboxImageIndex + 1}`}
+                  className="max-w-full max-h-full object-contain rounded-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                  key={lightboxImageIndex}
+                  onLoad={(e) => {
+                    // Opcional: puedes ajustar el zoom o posición basado en las dimensiones reales
+                    const img = e.target as HTMLImageElement;
+                    console.log(
+                      `Imagen cargada: ${img.naturalWidth}x${img.naturalHeight}`,
+                    );
+                  }}
+                />
+              </div>
 
-            {/* Botón siguiente */}
-            <motion.button
-              onClick={nextImage}
-              className="absolute right-4 inset-y-0 my-auto w-10 h-10 flex items-center justify-center text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-20 rounded-full p-2 transition-colors"
-              whileHover={{ scale:1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <ArrowLeft className="w-4 h-4 rotate-180" />
-            </motion.button>
+              {/* Botón siguiente */}
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-zyon-orange bg-black/30 hover:bg-black/50 z-10 rounded-full p-3 transition-all duration-200 hover:scale-110 active:scale-95 lg:right-8"
+                disabled={boatData?.gallery.length <= 1}
+              >
+                <ArrowLeft className="w-4 h-4 rotate-180" />
+              </button>
+            </div>
 
-            {/* Información de la imagen */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <div className="flex justify-between items-center">
-                <div>
+            {/* Footer con información y controles */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="text-center sm:text-left">
                   <p className="text-white text-lg font-semibold">
                     {getText(boatData?.name || "")}
                   </p>
@@ -683,6 +695,7 @@ export default function BoatDetail() {
                     {lightboxImageIndex + 1} / {boatData?.gallery.length}
                   </p>
                 </div>
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center"></div>
               </div>
             </div>
           </div>
