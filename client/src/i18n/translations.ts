@@ -266,11 +266,11 @@ export const translations = {
         specifications: "Especificaciones técnicas",
         questions: "¿Tienes preguntas?",
         expertHelp:
-          "Nuestro equipo de expertos está listo para ayudarte con cualquier consulta sobre esta embarcación.",
+          "Nuestro equipo de expertos está listo para ayudarte con cualquier consulta sobre esta embarcación y adaptar sus especificaciones según tus necesidades.",
         contactAdvisor: "Contactar con un asesor",
         interested: "¿Interesado en {{boatName}}?",
         requestInfoOrBudget:
-          "Solicita más información o presupuesto para conocer esta embarcación en persona.",
+          "Solicita más información o un presupuesto para conocer todos los detalles de esta embarcación",
         actions: {
           detailedInfo: "Solicitar información detallada",
           scheduleVisit: "Solicitar presupuesto",
@@ -549,11 +549,11 @@ export const translations = {
         specifications: "Technical specifications",
         questions: "Have questions?",
         expertHelp:
-          "Our expert team is ready to help you with any questions about this boat.",
+          "Our team of experts is ready to assist you with any questions about this boat and to customize its specifications according to your needs.",
         contactAdvisor: "Contact an advisor",
         interested: "Interested in {{boatName}}?",
         requestInfoOrBudget:
-          "Request more information or a quote to see this boat in person.",
+          "Request more information or a quote to learn more about this boat.",
         actions: {
           detailedInfo: "Request detailed information",
           scheduleVisit: "Request quote",
@@ -841,11 +841,11 @@ export const translations = {
         specifications: "Spécifications techniques",
         questions: "Des questions ?",
         expertHelp:
-          "Notre équipe d'experts est prête à vous aider avec toute question sur cette embarcation.",
+          "Notre équipe d'experts est prête à vous aider pour toute question concernant ce navire et à adapter ses spécifications selon vos besoins.",
         contactAdvisor: "Contacter un conseiller",
         interested: "Intéressé par {{boatName}} ?",
         requestInfoOrBudget:
-          "Demandez plus d'informations ou un devis pour voir cette embarcation en personne.",
+          "Demandez plus d'informations ou un devis pour en savoir plus sur ce navire.",
         actions: {
           detailedInfo: "Demander des informations détaillées",
           scheduleVisit: "Demander un devis",

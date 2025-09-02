@@ -1279,7 +1279,7 @@ export const boatModels: BoatModel[] = [
         {
           icon: "Compass",
           es: "Equipamiento UVI mobil",
-          en: "UVI Mobil Equipment",
+          en: "UVI mobil equipment",
           fr: "Équipement UVI mobil",
         },
         {
@@ -1297,7 +1297,7 @@ export const boatModels: BoatModel[] = [
         Motorización: "2xYANMAR 6HYM-WET(700 HP)",
         "Velocidad máxima": "25 nudos",
         Casco: "Polietileno- HWU",
-        Equipamiento: "UVI Mobil",
+        Equipamiento: "UVI mobil",
       },
       en: {
         "Total Length": "16.50 m",
@@ -1305,7 +1305,7 @@ export const boatModels: BoatModel[] = [
         Engine: "2xYANMAR 6HYM-WET(700 HP)",
         "Maximum Speed": "25 knots",
         Hull: "Polyethylene- HWU",
-        Equipment: "UVI Mobil",
+        Equipment: "UVI mobil",
       },
       fr: {
         "Longueur Totale": "16,50 m",
@@ -1313,7 +1313,7 @@ export const boatModels: BoatModel[] = [
         Motorisation: "2xYANMAR 6HYM-WET(700 CH)",
         "Vitesse Maximale": "25 nœuds",
         Coque: "Polyéthylène- HWU",
-        Équipement: "UVI Mobil",
+        Équipement: "UVI mobil",
       },
     },
   },
