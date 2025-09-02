@@ -1,12 +1,16 @@
 // src/data/boatModels.ts
 
-import ambulancia from "@/assets/images/boatModels/ambulancia.png";
+import ambulancia1 from "@/assets/images/boatModels/ambulancia1.webp";
+import ambulancia2 from "@/assets/images/boatModels/ambulancia2.webp";
 import at105L1 from "@/assets/images/boatModels/at105L1.webp";
 import at105L2 from "@/assets/images/boatModels/at105L2.webp";
 import at105L3 from "@/assets/images/boatModels/at105L3.webp";
 import at105L4 from "@/assets/images/boatModels/at105L4.webp";
-import at700F from "@/assets/images/boatModels/at700F.png";
-import barcoPesca from "@/assets/images/boatModels/barcoPesca.png";
+import at700F1 from "@/assets/images/boatModels/at700F1.webp";
+import at700F2 from "@/assets/images/boatModels/at700F2.webp";
+import barcoPesca1 from "@/assets/images/boatModels/barcoPesca1.webp";
+import barcoPesca2 from "@/assets/images/boatModels/barcoPesca2.webp";
+import barcoPesca3 from "@/assets/images/boatModels/barcoPesca3.webp";
 import fueraborda1 from "@/assets/images/boatModels/fueraborda1.webp";
 import fueraborda2 from "@/assets/images/boatModels/fueraborda2.webp";
 import fueraborda3 from "@/assets/images/boatModels/fueraborda3.webp";
@@ -36,14 +40,49 @@ import panga3 from "@/assets/images/boatModels/panga3.webp";
 import panga4 from "@/assets/images/boatModels/panga4.webp";
 import panga5 from "@/assets/images/boatModels/panga5.webp";
 import panga6 from "@/assets/images/boatModels/panga6.webp";
-import patrullera from "@/assets/images/boatModels/patrullera.png";
-import rescateRapido from "@/assets/images/boatModels/rescateRapido.png";
-import s500 from "@/assets/images/boatModels/s500.png";
-import s650 from "@/assets/images/boatModels/s650.png";
-import s750 from "@/assets/images/boatModels/s750.png";
-import s850 from "@/assets/images/boatModels/s850.png";
-import s850i from "@/assets/images/boatModels/s850i.png";
-import s900 from "@/assets/images/boatModels/s900.png";
+import patrullera1 from "@/assets/images/boatModels/patrullera1.webp";
+import patrullera2 from "@/assets/images/boatModels/patrullera2.webp";
+import patrullera3 from "@/assets/images/boatModels/patrullera3.webp";
+import patrullera4 from "@/assets/images/boatModels/patrullera4.webp";
+import patrullera5 from "@/assets/images/boatModels/patrullera5.webp";
+import patrullera6 from "@/assets/images/boatModels/patrullera6.webp";
+import rescateRapido1 from "@/assets/images/boatModels/rescateRapido1.webp";
+import rescateRapido2 from "@/assets/images/boatModels/rescateRapido2.webp";
+import rescateRapido3 from "@/assets/images/boatModels/rescateRapido3.webp";
+import rescateRapido4 from "@/assets/images/boatModels/rescateRapido4.webp";
+import rescateRapido5 from "@/assets/images/boatModels/rescateRapido5.webp";
+import rescateRapido6 from "@/assets/images/boatModels/rescateRapido6.webp";
+import rescateRapido7 from "@/assets/images/boatModels/rescateRapido7.webp";
+import rescateSalvamento1 from "@/assets/images/boatModels/rescateSalvamento1.webp";
+import rescateSalvamento2 from "@/assets/images/boatModels/rescateSalvamento2.webp";
+import rescateSalvamento3 from "@/assets/images/boatModels/rescateSalvamento3.webp";
+import rescateSalvamento4 from "@/assets/images/boatModels/rescateSalvamento4.webp";
+import rescateSalvamento5 from "@/assets/images/boatModels/rescateSalvamento5.webp";
+import limpieza1 from "@/assets/images/boatModels/limpieza1.webp";
+import limpieza2 from "@/assets/images/boatModels/limpieza2.webp";
+import limpieza3 from "@/assets/images/boatModels/limpieza3.webp";
+import limpieza4 from "@/assets/images/boatModels/limpieza4.webp";
+import limpieza5 from "@/assets/images/boatModels/limpieza5.webp";
+import s5001 from "@/assets/images/boatModels/s5001.webp";
+import s5002 from "@/assets/images/boatModels/s5002.webp";
+import s5003 from "@/assets/images/boatModels/s5003.webp";
+import s5004 from "@/assets/images/boatModels/s5004.webp";
+import s5005 from "@/assets/images/boatModels/s5005.webp";
+import s6501 from "@/assets/images/boatModels/s6501.webp";
+import s6502 from "@/assets/images/boatModels/s6502.webp";
+import s6503 from "@/assets/images/boatModels/s6503.webp";
+import s6504 from "@/assets/images/boatModels/s6504.webp";
+import s6505 from "@/assets/images/boatModels/s6505.webp";
+import s6506 from "@/assets/images/boatModels/s6506.webp";
+import s7501 from "@/assets/images/boatModels/s7501.webp";
+import s7502 from "@/assets/images/boatModels/s7502.webp";
+import s7503 from "@/assets/images/boatModels/s7503.webp";
+import s8501 from "@/assets/images/boatModels/s8501.webp";
+import s8502 from "@/assets/images/boatModels/s8502.webp";
+import s8503 from "@/assets/images/boatModels/s8503.webp";
+import s9001 from "@/assets/images/boatModels/s9001.webp";
+import s9002 from "@/assets/images/boatModels/s9002.webp";
+import s9003 from "@/assets/images/boatModels/s9003.webp";
 
 export interface BoatModel {
   id: number;
@@ -172,9 +211,9 @@ export const boatModels: BoatModel[] = [
   {
     id: 2,
     name: {
-      es: "SPEEDBOAT Zyon SPL/ 5.75 Línea de Eje",
-      en: "SPEEDBOAT Zyon SPL/ 5.75 Shaft Line",
-      fr: "SPEEDBOAT Zyon SPL/ 5.75 Ligne d'Arbre",
+      es: "SPEEDBOAT Zyon SPL/ 5.75 Línea de eje",
+      en: "SPEEDBOAT Zyon SPL/ 5.75 Shaft line",
+      fr: "SPEEDBOAT Zyon SPL/ 5.75 Ligne d'arbre",
     },
     category: "speedboat",
     purpose: {
@@ -291,7 +330,7 @@ export const boatModels: BoatModel[] = [
         Manga: "1.80 m",
         Motorización: "YAMAHA ENDURO TUNA/ 115CV",
         Propulsión: "Fueraborda",
-        "Depósito Combustible": "90 l",
+        "Depósito combustible": "90 l",
         Desplazamiento: "800 Kg",
       },
       en: {
@@ -299,7 +338,7 @@ export const boatModels: BoatModel[] = [
         Beam: "1.80 m",
         Engine: "YAMAHA ENDURO TUNA/ 115HP",
         Propulsion: "Outboard",
-        "Fuel Tank": "90 l",
+        "Fuel tank": "90 l",
         Displacement: "800 Kg",
       },
       fr: {
@@ -307,7 +346,7 @@ export const boatModels: BoatModel[] = [
         Largeur: "1,80 m",
         Moteur: "YAMAHA ENDURO TUNA/ 115CH",
         Propulsion: "Hors-bord",
-        "Réservoir Carburant": "90 l",
+        "Réservoir carburant": "90 l",
         Déplacement: "800 Kg",
       },
     },
@@ -374,10 +413,10 @@ export const boatModels: BoatModel[] = [
         Eslora: "6.00 m",
         Manga: "2.60 m",
         Motorización: "VOLVO PENTA D7C TA 250CV / CATERPILAR 3056 205CV",
-        Propulsión: "Línea de Eje",
+        Propulsión: "Línea de eje",
         Hélice: "35''",
-        "Depósito Combustible": "270 l (+90l reserva opcional)",
-        "Bollard Pull": "> 2000Kg",
+        "Depósito combustible": "270 l (+90l reserva opcional)",
+        "Bollard pull": "> 2000Kg",
         Desplazamiento: "2800 Kg",
       },
       en: {
@@ -386,8 +425,8 @@ export const boatModels: BoatModel[] = [
         Engine: "VOLVO PENTA D7C TA 250HP / CATERPILAR 3056 205HP",
         Propulsion: "Shaft line",
         Propeller: "35''",
-        "Fuel Tank": "270 l (+90l optional reserve)",
-        "Bollard Pull": "> 2000Kg",
+        "Fuel tank": "270 l (+90l optional reserve)",
+        "Bollard pull": "> 2000Kg",
         Displacement: "2800 Kg",
       },
       fr: {
@@ -396,8 +435,8 @@ export const boatModels: BoatModel[] = [
         Moteur: "VOLVO PENTA D7C TA 250CH / CATERPILAR 3056 205CH",
         Propulsion: "Ligne d'arbre",
         Hélice: "35''",
-        "Réservoir Carburant": "270 l (+90l réserve optionnelle)",
-        "Bollard Pull": "> 2000Kg",
+        "Réservoir carburant": "270 l (+90l réserve optionnelle)",
+        "Bollard pull": "> 2000Kg",
         Déplacement: "2800 Kg",
       },
     },
@@ -450,10 +489,10 @@ export const boatModels: BoatModel[] = [
         Eslora: "5.75 m",
         Manga: "2.00 m",
         Motorización: "YANMAR 4LHA-HTP 160cv / KMH50A",
-        Propulsión: "Línea de Eje",
+        Propulsión: "Línea de eje",
         Hélice: "22''",
-        "Depósito Combustible": "84 l",
-        "Bollard Pull": "> 1000Kg",
+        "Depósito combustible": "84 l",
+        "Bollard pull": "> 1000Kg",
         Desplazamiento: "1580 Kg",
       },
       en: {
@@ -462,8 +501,8 @@ export const boatModels: BoatModel[] = [
         Engine: "YANMAR 4LHA-HTP 160hp / KMH50A",
         Propulsion: "Shaft line",
         Propeller: "22''",
-        "Fuel Tank": "84 l",
-        "Bollard Pull": "> 1000Kg",
+        "Fuel tank": "84 l",
+        "Bollard pull": "> 1000Kg",
         Displacement: "1580 Kg",
       },
       fr: {
@@ -472,8 +511,8 @@ export const boatModels: BoatModel[] = [
         Moteur: "YANMAR 4LHA-HTP 160ch / KMH50A",
         Propulsion: "Ligne d'arbre",
         Hélice: "22''",
-        "Réservoir Carburant": "84 l",
-        "Bollard Pull": "> 1000Kg",
+        "Réservoir carburant": "84 l",
+        "Bollard pull": "> 1000Kg",
         Déplacement: "1580 Kg",
       },
     },
@@ -532,37 +571,37 @@ export const boatModels: BoatModel[] = [
         "Eslora LH": "12.00 m",
         "Manga B": "6.00 m",
         Propulsión: "Línea de Eje",
-        Hélice: "50''*",
+        Hélice: "50",
         Motorización: "Según especificaciones",
-        "Depósito Combustible": "1070 l.*",
-        "Bollard Pull": "> 11000Kg",
+        "Depósito combustible": "1070 l",
+        "Bollard pull": "> 11000Kg",
       },
       en: {
         "Length LH": "12.00 m",
         "Beam B": "6.00 m",
         Propulsion: "Shaft line",
-        Propeller: "50''*",
+        Propeller: "50",
         Engine: "According to specifications",
-        "Fuel Tank": "1070 l.*",
-        "Bollard Pull": "> 11000Kg",
+        "Fuel tank": "1070 l",
+        "Bollard pull": "> 11000Kg",
       },
       fr: {
         "Longueur LH": "12,00 m",
         "Largeur B": "6,00 m",
         Propulsion: "Ligne d'arbre",
-        Hélice: "50''*",
+        Hélice: "50",
         Motorisation: "Selon spécifications",
-        "Réservoir Carburant": "1070 l.*",
-        "Bollard Pull": "> 11000Kg",
+        "Réservoir carburant": "1070 l",
+        "Bollard pull": "> 11000Kg",
       },
     },
   },
   {
     id: 7,
     name: {
-      es: "SPBR / Bote de Rescate Rápido",
-      en: "SPBR / Fast Rescue Boat",
-      fr: "SPBR / Bateau de Sauvetage Rapide",
+      es: "SPBR / Bote de rescate rápido",
+      en: "SPBR / Fast rescue boat",
+      fr: "SPBR / Bateau de sauvetage rapide",
     },
     category: "rescue",
     purpose: {
@@ -571,8 +610,16 @@ export const boatModels: BoatModel[] = [
       fr: "Sauvetage maritime rapide avec capacités Speedboat",
     },
     year: 2024,
-    image: rescateRapido,
-    gallery: [rescateRapido, rescateRapido],
+    image: rescateRapido1,
+    gallery: [
+      rescateRapido1,
+      rescateRapido3,
+      rescateRapido4,
+      rescateRapido5,
+      rescateRapido6,
+      rescateRapido7,
+      rescateRapido2,
+    ],
     description: {
       es: "Modelo SPBR / Bote de Rescate Rápido. Con las prestaciones de una Speedboat. Homologado como bote de rescate rápido y cumple con la labor de las Speedboats. Por tanto, permite eliminar una embarcación de la cubierta.",
       en: "Model SPBR / Fast Rescue Boat. With the capabilities of a Speedboat. Certified as a fast rescue boat and fulfills the role of Speedboats. Therefore, it allows eliminating a vessel from the deck.",
@@ -602,34 +649,34 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "6.10 m",
+        "Eslora total": "6.10 m",
         Manga: "2.2 m",
         Desplazamiento: "1850 Kg",
-        "Depósito Combustible": "180 l",
-        Motorización: "2x100 CV Fueraborda / 160-240 CV Fueraborda+ Hidrojet",
-        "Velocidad Máxima": "30 nudos",
-        Casco: "Polietileno- HWU",
-        Superestructura: "Blindaje Tipo 4(opcional)",
+        "Depósito combustible": "180 l",
+        Motorización: "2x100 CV Fueraborda / 160-240 CV Fueraborda + Hidrojet",
+        "Velocidad máxima": "30 nudos",
+        Casco: "Polietileno - HWU",
+        Superestructura: "Blindaje tipo 4 (opcional)",
       },
       en: {
         "Total Length": "6.10 m",
         Beam: "2.2 m",
         Displacement: "1850 Kg",
-        "Fuel Tank": "180 l",
-        Engine: "2x100 HP Outboard / 160-240 HP Outboard+ Hydrojet",
-        "Maximum Speed": "30 knots",
-        Hull: "Polyethylene- HWU",
-        Superstructure: "Type 4 Armor(optional)",
+        "Fuel tank": "180 l",
+        Engine: "2x100 HP Outboard / 160-240 HP Outboard + Hydrojet",
+        "Maximum speed": "30 knots",
+        Hull: "Polyethylene - HWU",
+        Superstructure: "Type 4 armor (optional)",
       },
       fr: {
         "Longueur Totale": "6,10 m",
         Largeur: "2,2 m",
         Déplacement: "1850 Kg",
-        "Réservoir Carburant": "180 l",
-        Motorisation: "2x100 CH Hors-bord / 160-240 CH Hors-bord+ Hydrojet",
-        "Vitesse Maximale": "30 nœuds",
-        Coque: "Polyéthylène- HWU",
-        Superstructure: "Blindage Type 4(optionnel)",
+        "Réservoir carburant": "180 l",
+        Motorisation: "2x100 CH Hors-bord / 160-240 CH Hors-bord + Hydrojet",
+        "Vitesse maximale": "30 nœuds",
+        Coque: "Polyéthylène - HWU",
+        Superstructure: "Blindage type 4 (optionnel)",
       },
     },
   },
@@ -647,8 +694,8 @@ export const boatModels: BoatModel[] = [
       fr: "Pêche artisanale de cabotage réduit",
     },
     year: 2024,
-    image: s500,
-    gallery: [s500],
+    image: s5001,
+    gallery: [s5001, s5002, s5003, s5004, s5005],
     description: {
       es: "Embarcación de fibra de vidrio para pesca artesanal de cabotaje reducido. Ideal para pequeños pescadores autónomos.",
       en: "Fiberglass vessel for small-scale coastal fishing. Ideal for autonomous small fishermen.",
@@ -678,25 +725,25 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "5.00 m",
+        "Eslora total": "5.00 m",
         Manga: "2.06 m",
-        "Capacidad Pasaje": "6 Personas",
+        "Capacidad pasaje": "6 Personas",
         Desplazamiento: "715 Kg",
         "Velocidad máxima": "75/ 40 CV",
       },
       en: {
-        "Total Length": "5.00 m",
+        "Total length": "5.00 m",
         Beam: "2.06 m",
-        "Passenger Capacity": "6 People",
+        "Passenger capacity": "6 People",
         Displacement: "715 Kg",
-        "Maximum Speed": "75/ 40 HP",
+        "Maximum speed": "75/ 40 HP",
       },
       fr: {
-        "Longueur Totale": "5,00 m",
+        "Longueur totale": "5,00 m",
         Largeur: "2,06 m",
-        "Capacité Passagers": "6 Personnes",
+        "Capacité passagers": "6 Personnes",
         Déplacement: "715 Kg",
-        "Vitesse Maximale": "75/ 40 CH",
+        "Vitesse maximale": "75/ 40 CH",
       },
     },
   },
@@ -714,8 +761,8 @@ export const boatModels: BoatModel[] = [
       fr: "Pêche artisanale de moyenne distance",
     },
     year: 2024,
-    image: s650,
-    gallery: [s650],
+    image: s6501,
+    gallery: [s6501, s6502, s6503, s6504, s6505, s6506],
     description: {
       es: "Embarcación reforzada para pesca artesanal de media distancia. Mayor capacidad de almacenamiento y pasaje.",
       en: "Reinforced vessel for medium-distance artisanal fishing. Greater storage capacity and passenger space.",
@@ -745,25 +792,25 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "6.45 m",
+        "Eslora total": "6.45 m",
         Manga: "2.40 m",
-        "Capacidad Pasaje": "12 Personas",
+        "Capacidad pasaje": "12 personas",
         Desplazamiento: "1065 Kg",
         "Velocidad máxima": "200/ 150 CV",
       },
       en: {
-        "Total Length": "6.45 m",
+        "Total length": "6.45 m",
         Beam: "2.40 m",
-        "Passenger Capacity": "12 People",
+        "Passenger capacity": "12 people",
         Displacement: "1065 Kg",
-        "Maximum Speed": "200/ 150 HP",
+        "Maximum speed": "200/ 150 HP",
       },
       fr: {
-        "Longueur Totale": "6,45 m",
+        "Longueur totale": "6,45 m",
         Largeur: "2,40 m",
-        "Capacité Passagers": "12 Personnes",
+        "Capacité passagers": "12 personnes",
         Déplacement: "1065 Kg",
-        "Vitesse Maximale": "200/ 150 CH",
+        "Vitesse maximale": "200/ 150 CH",
       },
     },
   },
@@ -781,8 +828,8 @@ export const boatModels: BoatModel[] = [
       fr: "Pêche artisanale de plus grande capacité",
     },
     year: 2024,
-    image: s750,
-    gallery: [s750],
+    image: s7501,
+    gallery: [s7501, s7502, s7503],
     description: {
       es: "Embarcación versátil para pesca artesanal con mayor capacidad de carga y pasaje. Diseñada para largas jornadas de trabajo.",
       en: "Versatile vessel for artisanal fishing with greater cargo capacity and passenger space. Designed for long working days.",
@@ -812,25 +859,25 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "7.40 m",
+        "Eslora total": "7.40 m",
         Manga: "2.70 m",
-        "Capacidad Pasaje": "12 Personas",
+        "Capacidad pasaje": "12 personas",
         Desplazamiento: "1175 Kg",
         "Velocidad máxima": "200/ 150 CV",
       },
       en: {
-        "Total Length": "7.40 m",
+        "Total length": "7.40 m",
         Beam: "2.70 m",
-        "Passenger Capacity": "12 People",
+        "Passenger capacity": "12 people",
         Displacement: "1175 Kg",
-        "Maximum Speed": "200/ 150 HP",
+        "Maximum speed": "200/ 150 HP",
       },
       fr: {
-        "Longueur Totale": "7,40 m",
+        "Longueur totale": "7,40 m",
         Largeur: "2,70 m",
-        "Capacité Passagers": "12 Personnes",
+        "Capacité passagers": "12 personnes",
         Déplacement: "1175 Kg",
-        "Vitesse Maximale": "200/ 150 CH",
+        "Vitesse maximale": "200/ 150 CH",
       },
     },
   },
@@ -848,8 +895,8 @@ export const boatModels: BoatModel[] = [
       fr: "Pêche artisanale de haute capacité",
     },
     year: 2024,
-    image: s850,
-    gallery: [s850],
+    image: s8501,
+    gallery: [s8501, s8502, s8503],
     description: {
       es: "Embarcación de alto rendimiento para pesca artesanal intensiva. Máxima capacidad de almacenamiento y velocidad.",
       en: "High-performance vessel for intensive artisanal fishing. Maximum storage capacity and speed.",
@@ -879,25 +926,25 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "8.50 m",
+        "Eslora total": "8.50 m",
         Manga: "3.00 m",
-        "Capacidad Pasaje": "12 Personas",
+        "Capacidad pasaje": "12 personas",
         Desplazamiento: "1450 Kg",
         "Velocidad máxima": "350/ 180 CV",
       },
       en: {
-        "Total Length": "8.50 m",
+        "Total length": "8.50 m",
         Beam: "3.00 m",
-        "Passenger Capacity": "12 People",
+        "Passenger capacity": "12 People",
         Displacement: "1450 Kg",
-        "Maximum Speed": "350/ 180 HP",
+        "Maximum speed": "350/ 180 HP",
       },
       fr: {
-        "Longueur Totale": "8,50 m",
+        "Longueur totale": "8,50 m",
         Largeur: "3,00 m",
-        "Capacité Passagers": "12 Personnes",
+        "Capacité passagers": "12 Personnes",
         Déplacement: "1450 Kg",
-        "Vitesse Maximale": "350/ 180 CH",
+        "Vitesse maximale": "350/ 180 CH",
       },
     },
   },
@@ -915,8 +962,8 @@ export const boatModels: BoatModel[] = [
       fr: "Pêche artisanale professionnelle à grande échelle",
     },
     year: 2024,
-    image: s900,
-    gallery: [s900],
+    image: s9001,
+    gallery: [s9001, s9002, s9003],
     description: {
       es: "Embarcación profesional para pesca artesanal a gran escala. Máxima capacidad de pasaje y carga para operaciones intensivas.",
       en: "Professional vessel for large-scale artisanal fishing. Maximum passenger and cargo capacity for intensive operations.",
@@ -946,25 +993,92 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "9 m",
+        "Eslora total": "9 m",
         Manga: "3.50 m",
-        "Capacidad Pasaje": "25 Personas",
+        "Capacidad pasaje": "25 personas",
         Desplazamiento: "2650 Kg",
         "Velocidad máxima": "400/ 200 CV",
       },
       en: {
-        "Total Length": "9 m",
+        "Total length": "9 m",
         Beam: "3.50 m",
-        "Passenger Capacity": "25 People",
+        "Passenger capacity": "25 People",
         Displacement: "2650 Kg",
-        "Maximum Speed": "400/ 200 HP",
+        "Maximum speed": "400/ 200 HP",
       },
       fr: {
-        "Longueur Totale": "9 m",
+        "Longueur totale": "9 m",
         Largeur: "3,50 m",
-        "Capacité Passagers": "25 Personnes",
+        "Capacité passagers": "25 personnes",
         Déplacement: "2650 Kg",
-        "Vitesse Maximale": "400/ 200 CH",
+        "Vitesse maximale": "400/ 200 CH",
+      },
+    },
+  },
+  {
+    id: 13,
+    name: {
+      es: "Barco de pesca",
+      en: "Fishing boat",
+      fr: "Bateau de pêche",
+    },
+    category: "panga",
+    purpose: {
+      es: "Pesca profesional de gran escala",
+      en: "Professional large-scale fishing",
+      fr: "Pêche professionnelle à grande échelle",
+    },
+    year: 2024,
+    image: barcoPesca1,
+    gallery: [barcoPesca1, barcoPesca2, barcoPesca3],
+    description: {
+      es: "Embarcación profesional para pesca a gran escala. Máxima capacidad de pasaje y carga para operaciones intensivas.",
+      en: "Professional vessel for large-scale fishing. Maximum passenger and cargo capacity for intensive operations.",
+      fr: "Embarcation professionnelle pour la pêche à grande échelle. Capacité maximale passagers et chargement pour opérations intensives.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Ship",
+          es: "Eslora total: 7.50 m",
+          en: "Total length: 7.50 m",
+          fr: "Longueur totale: 7.50 m",
+        },
+        {
+          icon: "Zap",
+          es: "Motorización: SOLE Diesel Mini-74 (65.1 CV)",
+          en: "Engine: SOLE Diesel Mini-74 (65.1 HP)",
+          fr: "Motorisation : SOLE Diesel Mini-74 (65.1 CV)",
+        },
+        {
+          icon: "Layers",
+          es: "Superestructura: Aluminio EN 5083 H111",
+          en: "Superstructure: Aluminium EN 5083 H111",
+          fr: "Superstructure : Aluminium EN 5083 H111",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora total": "7.50 m",
+        Manga: "2.80 m",
+        Calado: "0.85 m",
+        Motorización: "SOLE Diesel Mini-74 (65.1 CV)",
+        Superestructura: "Aluminio EN 5083 H111",
+      },
+      en: {
+        "Total length": "7.50 m",
+        Beam: "2.80 m",
+        Draft: "0.85 m",
+        Engine: "SOLE Diesel Mini-74 (65.1 HP)",
+        Superstructure: "Aluminium EN 5083 H111",
+      },
+      fr: {
+        "Longueur totale": "7.50 m",
+        Largeur: "2.80 m",
+        "Tirant d'eau": "0.85 m",
+        Motorisation: "SOLE Diesel Mini-74 (65.1 CV)",
+        Superstructure: "Aluminium EN 5083 H111",
       },
     },
   },
@@ -1051,10 +1165,10 @@ export const boatModels: BoatModel[] = [
     },
   },*/
   {
-    id: 13,
+    id: 14,
     name: {
       es: "Patrullera",
-      en: "Patrol Boat",
+      en: "Patrol boat",
       fr: "Patrouilleur",
     },
     category: "rescue",
@@ -1064,8 +1178,15 @@ export const boatModels: BoatModel[] = [
       fr: "Patrouille maritime et surveillance côtière",
     },
     year: 2024,
-    image: patrullera,
-    gallery: [patrullera],
+    image: patrullera1,
+    gallery: [
+      patrullera1,
+      patrullera2,
+      patrullera3,
+      patrullera4,
+      patrullera5,
+      patrullera6,
+    ],
     description: {
       es: "Embarcación de patrullaje de mediana eslora para vigilancia marítima y operaciones de seguridad. Equipada con sistemas de comunicación avanzados.",
       en: "Medium-length patrol vessel for maritime surveillance and security operations. Equipped with advanced communication systems.",
@@ -1076,14 +1197,90 @@ export const boatModels: BoatModel[] = [
         {
           icon: "Zap",
           es: "Motores gemelos Yanmar 6HYM-WET (700 HP)",
-          en: "Twin Yanmar 6HYM-WET Engines (700 HP)",
+          en: "Twin Yanmar 6HYM-WET engines (700 HP)",
           fr: "Moteurs jumeaux Yanmar 6HYM-WET (700 CH)",
         },
         {
           icon: "Compass",
-          es: "Equipamiento UVI Mobil",
+          es: "Equipamiento UVI mobil",
+          en: "UVI mobil equipment",
+          fr: "Équipement UVI mobil",
+        },
+        {
+          icon: "Gauge",
+          es: "Velocidad máxima 25 nudos",
+          en: "Maximum speed 25 knots",
+          fr: "Vitesse maximale 25 nœuds",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        "Eslora total": "16.50 m",
+        Manga: "4.50 m",
+        Motorización: "2xYANMAR 6HYM-WET(700 HP)",
+        "Velocidad máxima": "25 nudos",
+        Casco: "Polietileno- HWU",
+        Equipamiento: "UVI mobil",
+      },
+      en: {
+        "Total length": "16.50 m",
+        Beam: "4.50 m",
+        Engine: "2xYANMAR 6HYM-WET(700 HP)",
+        "Maximum speed": "25 knots",
+        Hull: "Polyethylene- HWU",
+        Equipment: "UVI mobil",
+      },
+      fr: {
+        "Longueur totale": "16,50 m",
+        Largeur: "4,50 m",
+        Motorisation: "2xYANMAR 6HYM-WET(700 CH)",
+        "Vitesse maximale": "25 nœuds",
+        Coque: "Polyéthylène- HWU",
+        Équipement: "UVI mobil",
+      },
+    },
+  },
+  {
+    id: 15,
+    name: {
+      es: "Bote de rescate y salvamento",
+      en: "Rescue and salvage boat",
+      fr: "Bateau de sauvetage et de récupération",
+    },
+    category: "rescue",
+    purpose: {
+      es: "Bote de rescate y salvamento marítimo",
+      en: "Maritime rescue and salvage boat",
+      fr: "Bateau de sauvetage et de récupération maritime",
+    },
+    year: 2024,
+    image: rescateSalvamento1,
+    gallery: [
+      rescateSalvamento1,
+      rescateSalvamento2,
+      rescateSalvamento3,
+      rescateSalvamento4,
+      rescateSalvamento5,
+    ],
+    description: {
+      es: "Embarcación de salvamento y rescate de mediana eslora para vigilancia marítima y operaciones de seguridad. Equipada con sistemas de comunicación avanzados.",
+      en: "Medium-length rescue vessel for maritime surveillance and security operations. Equipped with advanced communication systems.",
+      fr: "Embarcation de sauvetage de longueur moyenne pour surveillance maritime et opérations sécurité. Équipée systèmes communication avancés.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Zap",
+          es: "Motores gemelos Yanmar 6HYM-WET (700 HP)",
+          en: "Twin Yanmar 6HYM-WET engines (700 HP)",
+          fr: "Moteurs jumeaux Yanmar 6HYM-WET (700 CH)",
+        },
+        {
+          icon: "Compass",
+          es: "Equipamiento UVI mobil",
           en: "UVI Mobil Equipment",
-          fr: "Équipement UVI Mobil",
+          fr: "Équipement UVI mobil",
         },
         {
           icon: "Gauge",
@@ -1121,11 +1318,11 @@ export const boatModels: BoatModel[] = [
     },
   },
   {
-    id: 14,
+    id: 16,
     name: {
-      es: "Ambulancia Marítima",
-      en: "Maritime Ambulance",
-      fr: "Ambulance Maritime",
+      es: "Ambulancia marítima",
+      en: "Maritime ambulance",
+      fr: "Ambulance maritime",
     },
     category: "rescue",
     purpose: {
@@ -1134,8 +1331,8 @@ export const boatModels: BoatModel[] = [
       fr: "Assistance médicale maritime et évacuation sanitaire",
     },
     year: 2024,
-    image: ambulancia,
-    gallery: [ambulancia],
+    image: ambulancia1,
+    gallery: [ambulancia1, ambulancia2],
     description: {
       es: "Embarcación especializada en asistencia médica marítima con espacio para camilla y equipo médico. Diseñada para evacuaciones sanitarias rápidas.",
       en: "Specialized vessel for maritime medical assistance with stretcher space and medical equipment. Designed for rapid medical evacuations.",
@@ -1165,30 +1362,30 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "12.50 m",
+        "Eslora total": "12.50 m",
         Manga: "3.50 m",
         Motorización: "2xYANMAR 6LPA-STP2(315 HP)",
         "Velocidad máxima": "25 nudos",
         Casco: "Polietileno- HWU",
       },
       en: {
-        "Total Length": "12.50 m",
+        "Total length": "12.50 m",
         Beam: "3.50 m",
         Engine: "2xYANMAR 6LPA-STP2(315 HP)",
-        "Maximum Speed": "25 knots",
+        "Maximum speed": "25 knots",
         Hull: "Polyethylene- HWU",
       },
       fr: {
-        "Longueur Totale": "12,50 m",
+        "Longueur totale": "12,50 m",
         Largeur: "3,50 m",
         Motorisation: "2xYANMAR 6LPA-STP2(315 CH)",
-        "Vitesse Maximale": "25 nœuds",
+        "Vitesse maximale": "25 nœuds",
         Coque: "Polyéthylène- HWU",
       },
     },
   },
   {
-    id: 15,
+    id: 17,
     name: {
       es: "AT 105 L",
       en: "AT 105 L",
@@ -1212,9 +1409,9 @@ export const boatModels: BoatModel[] = [
       items: [
         {
           icon: "Fuel",
-          es: "Capacidad del Tanque de Residuos 3 m³",
-          en: "Waste Tank Capacity 3 m³",
-          fr: "Capacité Réservoir Déchets 3 m³",
+          es: "Capacidad del tanque de residuos 3 m³",
+          en: "Waste tank capacity 3 m³",
+          fr: "Capacité réservoir déchets 3 m³",
         },
         {
           icon: "Gauge",
@@ -1232,33 +1429,33 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "10.50 m",
+        "Eslora total": "10.50 m",
         Manga: "2.5 m",
         Calado: "0.9 m",
         Desplazamiento: "9 T.",
         "Velocidad máxima": "7 nudos",
-        "Capacidad del Tanque de Residuos": "3 m3",
+        "Capacidad del tanque de residuos": "3 m3",
       },
       en: {
-        "Total Length": "10.50 m",
+        "Total length": "10.50 m",
         Beam: "2.5 m",
         Draft: "0.9 m",
         Displacement: "9 T.",
-        "Maximum Speed": "7 knots",
-        "Waste Tank Capacity": "3 m3",
+        "Maximum speed": "7 knots",
+        "Waste tank capacity": "3 m3",
       },
       fr: {
-        "Longueur Totale": "10,50 m",
+        "Longueur totale": "10,50 m",
         Largeur: "2,5 m",
         "Tirant d'eau": "0,9 m",
         Déplacement: "9 T.",
-        "Vitesse Maximale": "7 nœuds",
-        "Capacité Réservoir Déchets": "3 m3",
+        "Vitesse maximale": "7 nœuds",
+        "Capacité réservoir déchets": "3 m3",
       },
     },
   },
   {
-    id: 16,
+    id: 18,
     name: {
       es: "AT 700 F",
       en: "AT 700 F",
@@ -1271,8 +1468,8 @@ export const boatModels: BoatModel[] = [
       fr: "Auxiliaire portuaire compact pour opérations spécifiques",
     },
     year: 2024,
-    image: at700F,
-    gallery: [at700F],
+    image: at700F1,
+    gallery: [at700F1, at700F2],
     description: {
       es: "Embarcación auxiliar portuaria compacta para operaciones específicas de mantenimiento y limpieza. Mayor maniobrabilidad en espacios reducidos.",
       en: "Compact port auxiliary vessel for specific maintenance and cleaning operations. Greater maneuverability in confined spaces.",
@@ -1282,9 +1479,9 @@ export const boatModels: BoatModel[] = [
       items: [
         {
           icon: "Fuel",
-          es: "Almacenamiento de Desechos 500 Kg",
-          en: "Waste Storage 500 Kg",
-          fr: "Stockage Déchets 500 Kg",
+          es: "Almacenamiento de desechos 500 Kg",
+          en: "Waste storage 500 Kg",
+          fr: "Stockage déchets 500 Kg",
         },
         {
           icon: "Gauge",
@@ -1302,33 +1499,108 @@ export const boatModels: BoatModel[] = [
     },
     specifications: {
       es: {
-        "Eslora Total": "7 m",
+        "Eslora total": "7 m",
         Manga: "2.3 m",
         Calado: "1.00 m",
         Desplazamiento: "1400 Kg",
         "Velocidad máxima": "8 nudos",
-        "Almacenamiento del Desechos": "500 Kg",
+        "Almacenamiento del desechos": "500 Kg",
       },
       en: {
-        "Total Length": "7 m",
+        "Total length": "7 m",
         Beam: "2.3 m",
         Draft: "1.00 m",
         Displacement: "1400 Kg",
-        "Maximum Speed": "8 knots",
-        "Waste Storage": "500 Kg",
+        "Maximum speed": "8 knots",
+        "Waste storage": "500 Kg",
       },
       fr: {
-        "Longueur Totale": "7 m",
+        "Longueur totale": "7 m",
         Largeur: "2,3 m",
         "Tirant d'eau": "1,00 m",
         Déplacement: "1400 Kg",
-        "Vitesse Maximale": "8 nœuds",
-        "Stockage des Déchets": "500 Kg",
+        "Vitesse maximale": "8 nœuds",
+        "Stockage des déchets": "500 Kg",
       },
     },
   },
   {
-    id: 17,
+    id: 19,
+    name: {
+      es: "Embarcación de limpieza portuaria",
+      en: "Port cleaning boat",
+      fr: "Bateau de nettoyage portuaire",
+    },
+    category: "workboat",
+    purpose: {
+      es: "Embarcación robusta para operaciones de limpieza en puertos y entornos acuáticos",
+      en: "Robust vessel for cleaning operations in ports and aquatic environments",
+      fr: "Embarcation robuste pour opérations de nettoyage dans les ports et environnements aquatiques",
+    },
+    year: 2024,
+    image: limpieza1,
+    gallery: [limpieza1, limpieza2, limpieza3, limpieza4, limpieza5],
+    description: {
+      es: "Lancha fabricada en aleación de aluminio naval 5083 H111, diseñada para adaptarse a actividades de limpieza portuaria, cumpliendo normativas y ofreciendo robustez y fiabilidad en todo momento.",
+      en: "Boat manufactured in naval aluminum alloy 5083 H111, designed to adapt to port cleaning activities, complying with regulations and offering robustness and reliability at all times.",
+      fr: "Bateau fabriqué en alliage d'aluminium naval 5083 H111, conçu pour s'adapter aux activités de nettoyage portuaire, respectant les normes et offrant robustesse et fiabilité en tout temps.",
+    },
+    features: {
+      items: [
+        {
+          icon: "Anchor",
+          es: "Construida en aluminio de alta resistencia",
+          en: "Built in high-resistance aluminum",
+          fr: "Construit en aluminium haute résistance",
+        },
+        {
+          icon: "Zap",
+          es: "Motorización fueraborda de 200 Hp",
+          en: "200 Hp outboard engine",
+          fr: "Motorisation hors-bord de 200 Ch",
+        },
+        {
+          icon: "Droplet",
+          es: "Equipo hidráulico de limpieza",
+          en: "Hydraulic cleaning equipment",
+          fr: "Équipement hydraulique de nettoyage",
+        },
+      ],
+    },
+    specifications: {
+      es: {
+        Eslora: "9,0 m",
+        Manga: "2,5 m",
+        Puntal: "0,80 m",
+        Motorización: "Fueraborda",
+        Potencia: "200 Hp",
+        "Carga útil": "950 kg",
+        Equipo: "Hidráulico de limpieza",
+      },
+      en: {
+        Length: "9.0 m",
+        Beam: "2.5 m",
+        Depth: "0.80 m",
+        Engine: "Outboard",
+        Power: "200 Hp",
+        Payload: "950 kg",
+        Equipment: "Hydraulic cleaning",
+      },
+      fr: {
+        Longueur: "9,0 m",
+        Largeur: "2,5 m",
+        Profondeur: "0,80 m",
+        Motorisation: "Hors-bord",
+        Puissance: "200 Ch",
+        "Charge utile": "950 kg",
+        Équipement: "Hydraulique de nettoyage",
+      },
+    },
+  },
+];
+/*
+  {
+    id: 20,
     name: {
       es: "Practico S850i",
       en: "Practical S850i",
@@ -1402,7 +1674,7 @@ export const boatModels: BoatModel[] = [
   },
 ];
 // Embarcaciones de Recreo
-/*{
+{
     id: 20,
     name: {
       es: "Dreamer",
