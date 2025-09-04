@@ -134,9 +134,11 @@ export const translations = {
         },
       },
       footer: {
+        downloadCatalog: "Descargar catálogo",
         links: {
           title: "Enlaces rápidos",
           home: "Inicio",
+          about: "Sobre nosotros",
           services: "Servicios",
           boats: "Embarcaciones",
           gallery: "Galería",
@@ -420,8 +422,10 @@ export const translations = {
         },
       },
       footer: {
+        downloadCatalog: "Download catalog",
         links: {
           title: "Quick links",
+          about: "About Us",
           home: "Home",
           services: "Services",
           boats: "Boats",
@@ -709,9 +713,11 @@ export const translations = {
         },
       },
       footer: {
+        downloadCatalog: "Télécharger catalogue",
         links: {
           title: "Liens rapides",
           home: "Accueil",
+          about: "À propos",
           services: "Services",
           boats: "Embarcations",
           gallery: "Galerie",

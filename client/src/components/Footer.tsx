@@ -1,5 +1,6 @@
+// components/Footer.tsx
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Ship } from "lucide-react";
+import { Ship, Download } from "lucide-react"; // Añadido Download
 import { useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -8,9 +9,10 @@ import zyonLogoDark from "@/assets/images/logos/zyon-logo-dark.png";
 
 export function Footer() {
   const { t } = useLanguage();
-  const [, setLocation] = useLocation();
-  const { theme, toggleTheme } = useTheme();
+  const [location, setLocation] = useLocation();
+  const { theme } = useTheme();
 
+  // Función para hacer scroll a una sección
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -18,18 +20,47 @@ export function Footer() {
     }
   };
 
-  const navigateToPage = (path: string) => {
-    setLocation(path);
+  // Función mejorada para navegar y/o hacer scroll
+  const navigateAndScroll = (path: string, sectionId?: string) => {
+    if (location === path) {
+      if (sectionId) {
+        scrollToSection(sectionId);
+      }
+    } else {
+      setLocation(path);
+      if (sectionId) {
+        setTimeout(() => {
+          scrollToSection(sectionId);
+        }, 100);
+      }
+    }
+  };
+
+  // Función para descargar el catálogo
+  const downloadCatalog = () => {
+    // Ruta al catálogo en la carpeta public
+    const catalogPath = "src/assets/catalog/zyon-catalogo.pdf";
+
+    // Crear un elemento 'a' temporal para la descarga
+    const link = document.createElement("a");
+    link.href = catalogPath;
+    link.download = "catalogo-zyon-galicia.pdf"; // Nombre del archivo al descargar
+    link.target = "_blank"; // Abrir en nueva pestaña por si el navegador lo bloquea
+
+    // Simular click para iniciar la descarga
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
     <footer className="bg-zyon-gray dark:bg-gray-900 text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
-          <div>
+          <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-40 h-30 rounded-lg flex items-center justify-center">
+              <div className="w-20 h-20 rounded-lg flex items-center justify-center">
                 <img
                   src={theme === "dark" ? zyonLogoDark : zyonLogoLight}
                   alt="Logo Zyon Galicia"
@@ -43,6 +74,15 @@ export function Footer() {
                 </h1>
               </div>
             </div>
+            {/* Botón de descarga del catálogo */}
+            <button
+              onClick={downloadCatalog}
+              className="flex items-center px-4 py-2 bg-zyon-orange hover:bg-zyon-orange-dark text-white rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+              data-testid="footer-download-catalog"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              {t("footer.downloadCatalog")}
+            </button>
           </div>
 
           {/* Quick Links */}
@@ -53,8 +93,8 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <button
-                  onClick={() => scrollToSection("inicio")}
-                  className="text-gray-400 hover:text-zyon-orange transition-colors"
+                  onClick={() => navigateAndScroll("/", "inicio")}
+                  className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-link-home"
                 >
                   {t("footer.links.home")}
@@ -62,8 +102,17 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("servicios")}
-                  className="text-gray-400 hover:text-zyon-orange transition-colors"
+                  onClick={() => navigateAndScroll("/sobre-nosotros")}
+                  className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
+                  data-testid="footer-link-home"
+                >
+                  {t("footer.links.about")}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigateAndScroll("/", "servicios")}
+                  className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-link-services"
                 >
                   {t("footer.links.services")}
@@ -71,8 +120,8 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage("/embarcaciones-lanchas")}
-                  className="text-gray-400 hover:text-zyon-orange transition-colors"
+                  onClick={() => navigateAndScroll("/embarcaciones-lanchas")}
+                  className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-link-boats"
                 >
                   {t("footer.links.boats")}
@@ -80,8 +129,8 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("galeria")}
-                  className="text-gray-400 hover:text-zyon-orange transition-colors"
+                  onClick={() => navigateAndScroll("/", "galeria")}
+                  className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-link-gallery"
                 >
                   {t("footer.links.gallery")}
@@ -89,8 +138,8 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("contacto")}
-                  className="text-gray-400 hover:text-zyon-orange transition-colors"
+                  onClick={() => navigateAndScroll("/", "contacto")}
+                  className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-link-contact"
                 >
                   {t("footer.links.contact")}
@@ -107,7 +156,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <button
-                  onClick={() => scrollToSection("contacto")}
+                  onClick={() => navigateAndScroll("/", "contacto")}
                   className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-service-sales"
                 >
@@ -116,7 +165,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("contacto")}
+                  onClick={() => navigateAndScroll("/", "contacto")}
                   className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-service-maintenance"
                 >
@@ -125,7 +174,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("contacto")}
+                  onClick={() => navigateAndScroll("/", "contacto")}
                   className="text-gray-400 hover:text-zyon-orange transition-colors text-left w-full"
                   data-testid="footer-service-consulting"
                 >
@@ -141,8 +190,8 @@ export function Footer() {
               {t("footer.contact.title")}
             </h3>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center space-x-2">
-                <span className="text-zyon-orange">📍</span>
+              <li className="flex items-start space-x-2">
+                <span className="text-zyon-orange mt-1">📍</span>
                 <span className="text-gray-400">
                   {t("contact.info.address.address1")}
                   <br />
@@ -151,16 +200,16 @@ export function Footer() {
                   {t("contact.info.address.address3")}
                 </span>
               </li>
-              <li className="flex items-center space-x-2">
-                <span className="text-zyon-orange">📞</span>
+              <li className="flex items-start space-x-2">
+                <span className="text-zyon-orange mt-1">📞</span>
                 <span className="text-gray-400">
                   +34 986 497 436
                   <br />
                   +34 986 497 344
                 </span>
               </li>
-              <li className="flex items-center space-x-2">
-                <span className="text-zyon-orange">✉️</span>
+              <li className="flex items-start space-x-2">
+                <span className="text-zyon-orange mt-1">✉️</span>
                 <span className="text-gray-400">info@zyongalicia.com</span>
               </li>
             </ul>
@@ -172,7 +221,7 @@ export function Footer() {
           <p className="text-gray-400 text-sm">
             {t("footer.legal.privacy")}
           </p>
-          {/*  <div className="flex space-x-6 mt-4 md:mt-0">
+          {/*<div className="flex space-x-6 mt-4 md:mt-0">
             <a
               href="#"
               className="text-gray-400 hover:text-zyon-orange text-sm transition-colors"
@@ -191,7 +240,7 @@ export function Footer() {
             >
               {t("footer.legal.cookies")}
             </a>
-          </div> */}
+          </div>*/}
         </div>
       </div>
     </footer>
