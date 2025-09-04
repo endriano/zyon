@@ -25,15 +25,20 @@ import hidrojet6 from "@/assets/images/boatModels/hidrojet6.webp";
 import hidrojet7 from "@/assets/images/boatModels/hidrojet7.webp";
 import lineaEje1 from "@/assets/images/boatModels/lineaEje1.webp";
 import lineaEje2 from "@/assets/images/boatModels/lineaEje2.webp";
+import miniworkboat1 from "@/assets/images/boatModels/miniworkboat1.webp";
+import miniworkboat2 from "@/assets/images/boatModels/miniworkboat2.webp";
+import miniworkboat3 from "@/assets/images/boatModels/miniworkboat3.webp";
+import miniworkboat4 from "@/assets/images/boatModels/miniworkboat4.webp";
+import miniworkboat5 from "@/assets/images/boatModels/miniworkboat5.webp";
+import miniworkboat6 from "@/assets/images/boatModels/miniworkboat6.webp";
+import miniworkboat7 from "@/assets/images/boatModels/miniworkboat7.webp";
+import miniworkboat8 from "@/assets/images/boatModels/miniworkboat8.webp";
 import workboat1 from "@/assets/images/boatModels/workboat1.webp";
 import workboat2 from "@/assets/images/boatModels/workboat2.webp";
 import workboat3 from "@/assets/images/boatModels/workboat3.webp";
 import workboat4 from "@/assets/images/boatModels/workboat4.webp";
 import workboat5 from "@/assets/images/boatModels/workboat5.webp";
 import workboat6 from "@/assets/images/boatModels/workboat6.webp";
-import workboat7 from "@/assets/images/boatModels/workboat7.webp";
-import miniworkboat1 from "@/assets/images/boatModels/miniworkboat1.webp";
-import miniworkboat2 from "@/assets/images/boatModels/miniworkboat2.webp";
 import panga1 from "@/assets/images/boatModels/panga1.webp";
 import panga2 from "@/assets/images/boatModels/panga2.webp";
 import panga3 from "@/assets/images/boatModels/panga3.webp";
@@ -373,7 +378,6 @@ export const boatModels: BoatModel[] = [
       workboat4,
       workboat5,
       workboat6,
-      workboat7,
     ],
     description: {
       es: "El modelo Workboat 6.0 propulsado por un motor de gran potencia consigue la mejor relación de tiro - desplazamiento en rosca. Normalmente utilizado en el Océano Pacífico para sacar objetos, abrir al arte y contrarrestar el efecto de las corrientes.",
@@ -456,7 +460,7 @@ export const boatModels: BoatModel[] = [
     },
     year: 2024,
     image: miniworkboat1,
-    gallery: [miniworkboat1, miniworkboat2],
+    gallery: [miniworkboat1, miniworkboat2, miniworkboat3, miniworkboat4, miniworkboat5, miniworkboat6, miniworkboat7, miniworkboat8],
     description: {
       es: "El modelo Mini/Workboat 5.7 es una embarcación polivalente que presenta las dimensiones de una Speedboat con la potencia de tiro de una Workboat convencional. Utilizada comúnmente en el océano Atlántico e Índico. Las reducidas dimensiones de la consola y guardacalor facilitan una cubierta diáfana que permite a los operarios trabajar con comodidad.",
       en: "The Mini/Workboat 5.7 model is a versatile vessel that presents the dimensions of a Speedboat with the thrust power of a conventional Workboat. Commonly used in the Atlantic and Indian Oceans. The reduced dimensions of the console and wheelhouse facilitate a clear deck that allows operators to work comfortably.",
@@ -599,9 +603,9 @@ export const boatModels: BoatModel[] = [
   {
     id: 7,
     name: {
-      es: "SPBR / Bote de rescate rápido",
-      en: "SPBR / Fast rescue boat",
-      fr: "SPBR / Bateau de sauvetage rapide",
+      es: "Bote de rescate rápido",
+      en: "Fast rescue boat",
+      fr: "Bateau de sauvetage rapide",
     },
     category: "rescue",
     purpose: {
@@ -621,9 +625,9 @@ export const boatModels: BoatModel[] = [
       rescateRapido2,
     ],
     description: {
-      es: "Modelo SPBR / Bote de Rescate Rápido. Con las prestaciones de una Speedboat. Homologado como bote de rescate rápido y cumple con la labor de las Speedboats. Por tanto, permite eliminar una embarcación de la cubierta.",
-      en: "Model SPBR / Fast Rescue Boat. With the capabilities of a Speedboat. Certified as a fast rescue boat and fulfills the role of Speedboats. Therefore, it allows eliminating a vessel from the deck.",
-      fr: "Modèle SPBR / Bateau de Sauvetage Rapide. Avec les capacités d'une Speedboat. Homologué comme bateau de sauvetage rapide et remplit le rôle des Speedboats. Par conséquent, il permet d'éliminer une embarcation du pont.",
+      es: "Modelo Bote de Rescate Rápido. Con las prestaciones de una Speedboat. Homologado como bote de rescate rápido y cumple con la labor de las Speedboats. Por tanto, permite eliminar una embarcación de la cubierta.",
+      en: "Model Fast Rescue Boat. With the capabilities of a Speedboat. Certified as a fast rescue boat and fulfills the role of Speedboats. Therefore, it allows eliminating a vessel from the deck.",
+      fr: "Modèle Bateau de Sauvetage Rapide. Avec les capacités d'une Speedboat. Homologué comme bateau de sauvetage rapide et remplit le rôle des Speedboats. Par conséquent, il permet d'éliminer une embarcation du pont.",
     },
     features: {
       items: [
