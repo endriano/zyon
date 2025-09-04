@@ -20,11 +20,31 @@ import flagES from "@/assets/images/flags/es.png";
 import flagEN from "@/assets/images/flags/en.png";
 import flagFR from "@/assets/images/flags/fr.png";
 
+// Hook personalizado para detectar el breakpoint
+const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, [matches, query]);
+
+  return matches;
+};
+
 export function Header() {
   const { theme, toggleTheme } = useTheme();
   const { currentLanguage, changeLanguage, t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location, setLocation] = useLocation();
+
+  // Usar 1200px como breakpoint en lugar del md por defecto
+  const isMobileView = useMediaQuery("(max-width: 1199px)");
 
   // Estados para el efecto de scroll
   const [isVisible, setIsVisible] = useState(true);
@@ -92,6 +112,16 @@ export function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  // Items de navegación
+  const navItems = [
+    { id: "home", label: t("nav.home"), action: () => scrollToSection("inicio") },
+    { id: "about", label: t("nav.about"), action: () => navigateToPage("/sobre-nosotros") },
+    { id: "services", label: t("nav.services"), action: () => scrollToSection("servicios") },
+    { id: "boats", label: t("nav.boats"), action: () => navigateToPage("/embarcaciones-lanchas") },
+    { id: "gallery", label: t("nav.gallery"), action: () => scrollToSection("galeria") },
+    { id: "contact", label: t("nav.contact"), action: () => scrollToSection("contacto") },
+  ];
+
   return (
     <>
       {/* Animación con Framer Motion y control de visibilidad */}
@@ -131,63 +161,24 @@ export function Header() {
               </div>
             </motion.div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <motion.button
-                onClick={() => scrollToSection("inicio")}
-                className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                data-testid="nav-home"
-              >
-                {t("nav.home")}
-              </motion.button>
-              <motion.button 
-                onClick={() => navigateToPage('/sobre-nosotros')}
-                className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                data-testid="nav-about"
-              >
-                {t('nav.about')}
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("servicios")}
-                className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                data-testid="nav-services"
-              >
-                {t("nav.services")}
-              </motion.button>
-              <motion.button
-                onClick={() => navigateToPage("/embarcaciones-lanchas")}
-                className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                data-testid="nav-boats"
-              >
-                {t("nav.boats")}
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("galeria")}
-                className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                data-testid="nav-gallery"
-              >
-                {t("nav.gallery")}
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("contacto")}
-                className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors"
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
-                data-testid="nav-contact"
-              >
-                {t("nav.contact")}
-              </motion.button>
-            </div>
+            {/* Desktop Navigation - Solo visible en pantallas >= 1200px */}
+            {!isMobileView && (
+              <div className="hidden xl:flex items-center space-x-8">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    onClick={item.action}
+                    className="text-zyon-gray dark:text-gray-300 hover:text-zyon-orange transition-colors relative group"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ y: 0 }}
+                    data-testid={`nav-${item.id}`}
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zyon-orange transition-all group-hover:w-full"></span>
+                  </motion.button>
+                ))}
+              </div>
+            )}
 
             {/* Controls */}
             <div className="flex items-center space-x-4">
@@ -241,16 +232,18 @@ export function Header() {
                 )}
               </Button>
 
-              {/* Mobile Menu Button*/}
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setIsMobileMenuOpen(true)}
-                className="md:hidden bg-gray-100 dark:bg-gray-800 rounded-full p-2"
-                data-testid="mobile-menu-button"
-              >
-                <Menu className="w-4 h-4" />
-              </Button>
+              {/* Mobile Menu Button - Visible en pantallas < 1200px */}
+              {isMobileView && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsMobileMenuOpen(true)}
+                  className="bg-gray-100 dark:bg-gray-800 rounded-full p-2"
+                  data-testid="mobile-menu-button"
+                >
+                  <Menu className="w-4 h-4" />
+                </Button>
+              )}
             </div>
           </div>
         </nav>
@@ -263,6 +256,7 @@ export function Header() {
         onNavigate={navigateToPage}
         onScrollTo={scrollToSection}
         isHomePage={isHomePage}
+        navItems={navItems}
       />
     </>
   );

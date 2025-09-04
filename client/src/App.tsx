@@ -39,7 +39,7 @@ function App() {
               </title>
               <meta
                 name="description"
-                content="Zyon Galicia - Especialistas en embarcaciones profesionales con más de 20 años de experiencia. Venta, mantenimiento y asesoramiento en lanchas rápidas, embarcaciones de trabajo y pangas en Galicia."
+                content="Zyon Galicia - Especialistas en embarcaciones profesionales con más de 15 años de experiencia. Venta, mantenimiento y asesoramiento en embarcaciones de rescate y salvamento, lanchas rápidas, embarcaciones de trabajo y pangas en Galicia."
               />
               <meta
                 name="keywords"
@@ -51,7 +51,7 @@ function App() {
               />
               <meta
                 property="og:description"
-                content="Especialistas en embarcaciones profesionales con más de 20 años de experiencia en el sector náutico gallego."
+                content="Especialistas en embarcaciones profesionales con más de 15 años de experiencia en el sector náutico gallego."
               />
               <meta property="og:type" content="website" />
               <meta property="og:url" content="https://zyongalicia.com" />
@@ -62,7 +62,7 @@ function App() {
               />
               <meta
                 name="twitter:description"
-                content="Especialistas en embarcaciones profesionales con más de 20 años de experiencia en el sector náutico gallego."
+                content="Especialistas en embarcaciones profesionales con más de 15 años de experiencia en el sector náutico gallego."
               />
               <link rel="canonical" href="https://zyongalicia.com" />
             </Helmet>

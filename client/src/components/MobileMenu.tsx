@@ -9,45 +9,15 @@ interface MobileMenuProps {
   onNavigate: (path: string) => void;
   onScrollTo: (sectionId: string) => void;
   isHomePage: boolean;
+  navItems: { id: string; label: string; action: () => void }[];
 }
 
 export function MobileMenu({
   isOpen,
   onClose,
-  onNavigate,
-  onScrollTo,
-  isHomePage,
+  navItems,
 }: MobileMenuProps) {
   const { t } = useLanguage();
-
-  const menuItems = [
-    { id: "home", label: t("nav.home"), action: () => onScrollTo("inicio") },
-    {
-      id: "about",
-      label: t("nav.about"),
-      action: () => onNavigate("/sobre-nosotros"),
-    },
-    {
-      id: "services",
-      label: t("nav.services"),
-      action: () => onScrollTo("servicios"),
-    },
-    {
-      id: "boats",
-      label: t("nav.boats"),
-      action: () => onNavigate("/embarcaciones-lanchas"),
-    },
-    {
-      id: "gallery",
-      label: t("nav.gallery"),
-      action: () => onScrollTo("galeria"),
-    },
-    {
-      id: "contact",
-      label: t("nav.contact"),
-      action: () => onScrollTo("contacto"),
-    },
-  ];
 
   return (
     <AnimatePresence>
@@ -79,8 +49,7 @@ export function MobileMenu({
             {/* Header del menu */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
               <h2 className="text-xl font-bold text-zyon-gray dark:text-white">
-                {t("nav.menu") || "Menú"}{" "}
-                {/* Fallback a 'Menú' si no existe la traducción */}
+                {t("nav.menu") || "Menú"}
               </h2>
               <Button
                 variant="ghost"
@@ -107,7 +76,7 @@ export function MobileMenu({
                 },
               }}
             >
-              {menuItems.map((item, index) => (
+              {navItems.map((item) => (
                 <motion.button
                   key={item.id}
                   variants={{
