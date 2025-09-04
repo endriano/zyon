@@ -11,12 +11,16 @@ import embarcacionLimpieza2 from "@/assets/images/home/galeria/embarcacionLimpie
 import embarcaciónNeumatica from "@/assets/images/home/galeria/embarcaciónNeumatica.webp";
 import lanchaLLoret from "@/assets/images/home/galeria/lanchaLLoret.webp";
 import motores from "@/assets/images/home/galeria/motores.webp";
-import panga from "@/assets/images/home/galeria/panga.webp";
-import pangaTrimarine from "@/assets/images/home/galeria/pangaTrimarine.webp";
+import workboat1 from "@/assets/images/home/galeria/workboat1.webp";
+import workboatTrimarine from "@/assets/images/home/galeria/workboatTrimarine.webp";
 import speedboatArmon from "@/assets/images/home/galeria/speedboatArmon.webp";
 import speedboats from "@/assets/images/home/galeria/speedboats.webp";
-import workboat from "@/assets/images/home/galeria/workboat.webp";
+import workboat2 from "@/assets/images/home/galeria/workboat2.webp";
 import workboatCalvo from "@/assets/images/home/galeria/workboatCalvo.webp";
+import embarcacionBombero from "@/assets/images/home/galeria/embarcacionBombero.webp";
+import lanchaRapida from "@/assets/images/home/galeria/lanchaRapida.webp";
+import lanchaRescate from "@/assets/images/home/galeria/lanchaRescate.webp";
+import speedboat from  "@/assets/images/home/galeria/speedboat.webp";
 
 const galleryImages = [
   {
@@ -40,9 +44,9 @@ const galleryImages = [
     category: "workboat",
   },
   {
-    src: panga,
+    src: workboat1,
     alt: "Embarcación de diseño panga",
-    category: "panga",
+    category: "workboat",
   },
   {
     src: motores,
@@ -70,16 +74,38 @@ const galleryImages = [
     category: "speedboat",
   },
   {
-    src: workboat,
+    src: workboat2,
     alt: "Pruebas de motor en embarcación recién construida",
     category: "workboat",
   },
   {
-    src: pangaTrimarine,
+    src: embarcacionBombero,
+    alt: "Embarcación de bomberos equipada para emergencias marítimas",
+    category: "rescue",
+  },
+  {
+    src: workboatTrimarine,
     alt: "Pruebas de embarcaciones panga",
-    category: "panga",
+    category: "workboat",
+  },
+
+  {
+    src: lanchaRapida,
+    alt: "Lancha rápida lista para operaciones marítimas",
+    category: "speedboat",
+  },
+  {
+    src: lanchaRescate,
+    alt: "Lancha de rescate equipada para emergencias en el mar",
+    category: "rescue",
+  },
+  {
+    src: speedboat,
+    alt: "Speedboat moderna y veloz en puerto",
+    category: "speedboat",
   },
 ];
+
 
 export function Gallery() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
