@@ -1,6 +1,37 @@
 // src/lib/queryClient.ts
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
+const API_BASE_URL_PHP = '/contact_form_handler.php';
+
+export async function submitContactFormPhp(formData: any): Promise<{ success: boolean; message: string }> {
+  const response = await fetch(API_BASE_URL_PHP, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
+
+  if (!response.ok) {
+      // Intenta obtener el mensaje de error del cuerpo de la respuesta
+      let errorMessage = 'Error desconocido al enviar el formulario.';
+      try {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorMessage;
+      } catch (e) {
+          // Si no se puede parsear el JSON, usa el texto de la respuesta
+          try {
+              errorMessage = await response.text() || errorMessage;
+          } catch (e) {
+              // Ignora errores al leer el texto
+          }
+      }
+      throw new Error(errorMessage);
+  }
+
+  return response.json();
+}
+
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
     const text = (await res.text()) || res.statusText;
