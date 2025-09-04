@@ -1,3 +1,4 @@
+// src/lib/queryClient.ts
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
 async function throwIfResNotOk(res: Response) {
@@ -12,13 +13,18 @@ export async function apiRequest(
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  // Para el contacto, usar el nuevo endpoint
-  const apiUrl = url === '/api/contact' ? 'https://3a45f470-3007-479d-ad7d-6ab28896add6-00-392t45l2yn4ti.riker.replit.dev/send_email' : url;
+  // NO necesitas cambiar la apiUrl para /api/contact si está servido por el mismo servidor Express
+  // La línea comentada de abajo es innecesaria en este caso.
+  // const apiUrl = url === '/api/contact' ? '...' : url;
+
+  // Simplemente usa la URL tal cual. El navegador la resolverá correctamente.
+  const apiUrl = url;
 
   const res = await fetch(apiUrl, {
     method,
     headers: data ? { "Content-Type": "application/json" } : {},
     body: data ? JSON.stringify(data) : undefined,
+    // credentials: "include", // Solo si necesitas cookies/sesiones
   });
 
   await throwIfResNotOk(res);
