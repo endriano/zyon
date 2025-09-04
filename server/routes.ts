@@ -25,7 +25,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Ruta al script PHP simple
-      const phpScriptPath = path.join(__dirname, '..', 'scripts', 'send_email_simple.php');
+      const phpScriptPath = path.join(__dirname, '..', 'scripts', 'send_email.php');
 
       // Convertir los datos del formulario a una cadena JSON para pasarla como argumento
       const jsonDataString = JSON.stringify(formData);
