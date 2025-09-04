@@ -252,6 +252,7 @@ export const translations = {
         details: "Ver detalles",
         noModels: "No se encontraron modelos en esta categoría.",
         viewAll: "Ver todos los modelos",
+        downloadCatalog: "Descargar catálogo",
         notFound: "¿No encuentras lo que buscas?",
         contactHelp:
           "Contacta con nosotros y te ayudaremos a encontrar la embarcación perfecta para ti.",
@@ -535,6 +536,7 @@ export const translations = {
         details: "View details",
         noModels: "No models found in this category.",
         viewAll: "View all models",
+        downloadCatalog: "Download catalog",
         notFound: "Can't find what you're looking for?",
         contactHelp:
           "Contact us and we'll help you find the perfect boat for you.",
@@ -827,6 +829,7 @@ export const translations = {
         details: "Voir détails",
         noModels: "Aucun modèle trouvé dans cette catégorie.",
         viewAll: "Voir tous les modèles",
+        downloadCatalog: "Télécharger catalogue",
         notFound: "Vous ne trouvez pas ce que vous cherchez?",
         contactHelp:
           "Contactez-nous et nous vous aiderons à trouver l'embarcation parfaite pour vous.",

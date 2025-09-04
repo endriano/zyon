@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Download } from "lucide-react";
 import { useLocation } from "wouter";
 import { boatModels } from "@/data";
 import {
@@ -52,7 +52,7 @@ export default function AllBoats() {
       name: t("allBoats.speedboats.title"),
       count: categorizedModels.speedboat.length,
     },
-    {
+      {
       id: "workboat",
       name: t("allBoats.workboats.title"),
       count: categorizedModels.workboat.length,
@@ -88,6 +88,23 @@ export default function AllBoats() {
   // Función para manejar el cambio de categoría
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategory(categoryId);
+  };
+
+  // Función para descargar el catálogo
+  const downloadCatalog = () => {
+    // Ruta al catálogo en la carpeta assets
+    const catalogPath = "src/assets/catalog/zyon-catalogo.pdf";
+
+    // Crear un elemento 'a' temporal para la descarga
+    const link = document.createElement("a");
+    link.href = catalogPath;
+    link.download = "catalogo-zyon-galicia.pdf"; // Nombre del archivo al descargar
+    link.target = "_blank"; // Abrir en nueva pestaña por si el navegador lo bloquea
+
+    // Simular click para iniciar la descarga
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   useEffect(() => {
@@ -157,33 +174,60 @@ export default function AllBoats() {
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8 text-zyon-gray dark:text-white">
-            {t("allBoats.filter").split(" ")[0]}{" "}
-            {t("allBoats.filter").split(" ")[1]}{" "}
-            <span className="text-zyon-orange">
-              {t("allBoats.filter").split(" ")[2]}
-            </span>
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-bold text-center md:text-left mb-4 text-zyon-gray dark:text-white">
+                {t("allBoats.filter").split(" ")[0]}{" "}
+                {t("allBoats.filter").split(" ")[1]}{" "}
+                <span className="text-zyon-orange">
+                  {t("allBoats.filter").split(" ")[2]}
+                </span>
+              </h2>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                {categories.map((category) => (
+                  <motion.button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(category.id)}
+                    className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                      selectedCategory === category.id
+                        ? "bg-zyon-orange text-white shadow-lg"
+                        : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-zyon-orange/20 hover:text-zyon-orange"
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {category.name}
+                    <span className="ml-2 text-xs opacity-75">
+                      ({category.count})
+                    </span>
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+
+            {/* Botón de descarga del catálogo */}
+            <motion.div
+              className="flex justify-center md:justify-end"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <motion.button
-                key={category.id}
-                onClick={() => handleCategoryChange(category.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category.id
-                    ? "bg-zyon-orange text-white shadow-lg"
-                    : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-zyon-orange/20 hover:text-zyon-orange"
-                }`}
-                whileHover={{ scale: 1.05 }}
+                onClick={downloadCatalog}
+                className="flex items-center px-6 py-3 bg-zyon-orange hover:bg-zyon-orange-dark text-white 
+                         rounded-full font-medium shadow-lg transition-all duration-300"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px -5px rgba(242, 124, 56, 0.4), 0 8px 10px -6px rgba(242, 124, 56, 0.2)"
+                }}
                 whileTap={{ scale: 0.95 }}
               >
-                {category.name}
-                <span className="ml-2 text-xs opacity-75">
-                  ({category.count})
-                </span>
+                <Download className="w-6 h-6 mr-2" />
+                {t("allBoats.downloadCatalog")}
               </motion.button>
-            ))}
+            </motion.div>
           </div>
         </div>
       </motion.section>
