@@ -93,7 +93,7 @@ export default function AllBoats() {
   // Función para descargar el catálogo
   const downloadCatalog = () => {
     // Ruta al catálogo en la carpeta assets
-    const catalogPath = "src/assets/catalog/zyon-catalogo.pdf";
+    const catalogPath = "public/zyon-catalogo.pdf";
 
     // Crear un elemento 'a' temporal para la descarga
     const link = document.createElement("a");

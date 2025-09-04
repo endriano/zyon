@@ -39,7 +39,7 @@ export function Footer() {
   // Función para descargar el catálogo
   const downloadCatalog = () => {
     // Ruta al catálogo en la carpeta public
-    const catalogPath = "src/assets/catalog/zyon-catalogo.pdf";
+    const catalogPath = "public/zyon-catalogo.pdf";
 
     // Crear un elemento 'a' temporal para la descarga
     const link = document.createElement("a");
