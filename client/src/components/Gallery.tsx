@@ -25,83 +25,67 @@ import speedboat from  "@/assets/images/home/galeria/speedboat.webp";
 const galleryImages = [
   {
     src: lanchaLLoret,
-    alt: "Embarcación para realizar acciones de rescate",
     category: "workboat",
   },
   {
     src: embarcaciónNeumatica,
-    alt: "Lancha rápida Zyon Galicia listas para navegar",
     category: "speedboat",
   },
   {
     src: embarcacionLimpieza2,
-    alt: "Embarcación de limpieza realizando su función a modo de prueba",
     category: "detail",
   },
   {
     src: embarcacionBarcelona,
-    alt: "Embarcación profesional con casco y motores fuera de borda",
     category: "workboat",
   },
   {
     src: workboat1,
-    alt: "Embarcación de diseño panga",
     category: "workboat",
   },
   {
     src: motores,
-    alt: "Detalle de motores de embarcación Zyon Galicia - Calidad y precisión en construcción naval",
     category: "detail",
   },
   {
     src: embarcacionLimpieza,
-    alt: "Equipo profesional Zyon Galicia realizando para operaciones de limpieza de las aguas del mar",
     category: "workboat",
   },
   {
     src: speedboatArmon,
-    alt: "Embarcaciones rápidas de Zyon Galicia",
     category: "speedboat",
   },
   {
     src: workboatCalvo,
-    alt: "Embarcación de trabajo lista para ser introducida en el agua",
     category: "workboat",
   },
   {
     src: speedboats,
-    alt: "Lanchas rápidas en puerto listas para su operación",
     category: "speedboat",
   },
   {
     src: workboat2,
-    alt: "Pruebas de motor en embarcación recién construida",
     category: "workboat",
   },
   {
     src: embarcacionBombero,
-    alt: "Embarcación de bomberos equipada para emergencias marítimas",
     category: "rescue",
   },
   {
     src: workboatTrimarine,
-    alt: "Pruebas de embarcaciones panga",
     category: "workboat",
   },
 
   {
     src: lanchaRapida,
-    alt: "Lancha rápida lista para operaciones marítimas",
     category: "speedboat",
   },
   {
     src: lanchaRescate,
-    alt: "Lancha de rescate equipada para emergencias en el mar",
     category: "rescue",
   },
   {
     src: speedboat,
-    alt: "Speedboat moderna y veloz en puerto",
     category: "speedboat",
   },
 ];
