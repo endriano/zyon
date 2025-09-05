@@ -3,8 +3,7 @@
 // Script PHP para manejar el formulario de contacto y enviar correo usando PHPMailer.
 
 // --- PERMITIR CORS (Importante para llamadas AJAX desde el navegador) ---
-// Ajusta '*' al dominio de tu web en producción para mayor seguridad (ej: 'https://tuweb.com')
-header("Access-Control-Allow-Origin: *"); 
+header("Access-Control-Allow-Origin: https://zyongalicia.com"); 
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header('Content-Type: application/json'); // Asegurar que la respuesta sea JSON
@@ -22,15 +21,44 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
-// --- CARGAR PHPMAILER ---
-// Asegúrate de que esta ruta sea correcta. Debe apuntar al autoload.php generado por Composer.
-// Si este script está en /httpdocs/scripts/, y vendor/ está en /httpdocs/vendor/,
-// la ruta relativa es '../../vendor/autoload.php'
-require_once __DIR__ . '/vendor/autoload.php'; 
+// --- CARGAR VARIABLES DE ENTORNO (.env) ---
+// Intenta cargar Dotenv si Composer está disponible
+$dotenv_loaded = false;
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+    if (class_exists('Dotenv\Dotenv')) {
+        // Cargar .env desde el mismo directorio donde está este script
+        $dotenv_path = __DIR__; // O __DIR__ . '/..' si lo pones un nivel arriba
+        if (file_exists($dotenv_path . '/.env')) {
+            $dotenv = Dotenv\Dotenv::createImmutable($dotenv_path);
+            $dotenv->load();
+            $dotenv_loaded = true;
+            error_log("Variables de entorno cargadas desde: " . $dotenv_path . '/.env');
+        } else {
+             error_log("Archivo .env no encontrado en: " . $dotenv_path);
+        }
+    } else {
+         error_log("Clase Dotenv no encontrada. Asegúrate de haber ejecutado 'composer require vlucas/phpdotenv'");
+    }
+} else {
+     error_log("vendor/autoload.php no encontrado. Asegúrate de haber ejecutado 'composer install'");
+}
+
+// Definir constantes con valores por defecto o desde $_ENV si Dotenv falla/no está
+define("SENDER_EMAIL", $_ENV['SENDER_EMAIL'] ?? '');
+define("SENDER_NAME", $_ENV['SENDER_NAME'] ?? '');
+define("RECEIVER_EMAIL", $_ENV['RECEIVER_EMAIL'] ?? '');
+
+// Para SMTP (opcional)
+define("SMTP_HOST", $_ENV['SMTP_HOST'] ?? 'localhost');
+define("SMTP_PORT", $_ENV['SMTP_PORT'] ?? 25);
+define("SMTP_USERNAME", $_ENV['SMTP_USERNAME'] ?? '');
+define("SMTP_PASSWORD", $_ENV['SMTP_PASSWORD'] ?? '');
+define("SMTP_ENCRYPTION", $_ENV['SMTP_ENCRYPTION'] ?? '');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-// use PHPMailer\PHPMailer\Exception; // Opcional, si quieres manejar excepciones específicas
+// use PHPMailer\PHPMailer\Exception; // Opcional
 
 // --- OBTENER Y PROCESAR DATOS DEL FORMULARIO ---
 $input = file_get_contents("php://input");
@@ -74,14 +102,6 @@ $subjects_map = [
 ];
 $subject_prefix = $subjects_map[$subject_key] ?? $subjects_map['otro'];
 $mail_subject = "$subject_prefix Consulta desde la web: $name";
-
-// --- CONFIGURAR DESTINATARIOS ---
-// *** AJUSTA ESTAS CONSTANTES SEGÚN TU CONFIGURACIÓN ***
-// Lo ideal es que coincidan con tu dominio para evitar ser marcados como spam.
-define("SENDER_EMAIL", "ehernandez@zyongalicia.com"); // Correo del remitente (puede ser el mismo que el usuario o uno del dominio)
-define("SENDER_NAME", "Formulario Web Zyon Galicia"); // Nombre del remitente
-define("RECEIVER_EMAIL", "endry@fmetal.es"); // Correo del destinatario
-// Para pruebas, podrías usar RECEIVER_EMAIL = SENDER_EMAIL para auto-enviarte
 
 // --- CREAR CONTENIDO DEL CORREO ---
 $mail_body_html = "
@@ -139,31 +159,28 @@ $mail = new PHPMailer(true); // Pasar `true` habilita excepciones
 
 try {
     // --- CONFIGURACIÓN DEL SERVIDOR SMTP ---
-    // *** DEBES CONFIGURAR ESTO SEGÚN LAS INSTRUCCIONES DE TU HOSTING ***
-    
-    // OPCIÓN 1: Usar mail() de PHP (similar al ejemplo que funciona)
-    // Esta es la más común en hostings compartidos simples.
+    // OPCIÓN 1: Usar mail() de PHP (muy común en hostings compartidos)
+    // Esta es la forma más simple y la que suele funcionar.
     $mail->isMail(); 
     // Nota: isMail() no requiere Host, Username, Password, etc.
 
-    // O SI TU HOSTING REQUIERE SMTP EXPLÍCITO, USA ESTO EN SU LUGAR:
+    // O SI TU HOSTING REQUIERE CONFIGURACIÓN SMTP EXPLÍCITA, USA ESTO EN SU LUGAR:
     /*
     $mail->isSMTP();
-    $mail->Host       = 'localhost'; // O la dirección SMTP proporcionada por tu hosting (ej: 'mail.tudominio.com')
+    $mail->Host       = SMTP_HOST; // Usando la constante definida arriba
     $mail->SMTPAuth   = false;      // A menudo false para localhost
-    $mail->Port       = 25;         // O el puerto proporcionado (25, 26, 587, 465)
+    $mail->Port       = SMTP_PORT; // Usando la constante definida arriba
     // Si se requiere autenticación:
     // $mail->SMTPAuth   = true;
-    // $mail->Username   = 'tu_usuario_smtp@tudominio.com';
-    // $mail->Password   = 'tu_contraseña_smtp';
-    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // o ENCRYPTION_SMTPS
+    // $mail->Username   = SMTP_USERNAME;
+    // $mail->Password   = SMTP_PASSWORD;
+    // $mail->SMTPSecure = SMTP_ENCRYPTION; // 'tls' o 'ssl'
     */
+
 
     // --- CONFIGURACIÓN DE REMITENTE Y DESTINATARIO ---
     $mail->setFrom(SENDER_EMAIL, SENDER_NAME);
     $mail->addAddress(RECEIVER_EMAIL); // Añadir destinatario
-    // Opcional: añadir copia al remitente
-    // $mail->addReplyTo($email, $name); // Para que la respuesta vaya al usuario que escribió
 
     // --- CONFIGURACIÓN DEL CONTENIDO ---
     $mail->isHTML(true); // Establecer formato HTML
@@ -183,19 +200,15 @@ try {
 
 } catch (Exception $e) {
     // --- REGISTRAR ERROR EN EL SERVIDOR ---
-    // Es crucial registrar el error real para poder depurarlo.
     error_log("Error de PHPMailer en contact_form_handler.php (ErrorInfo): " . $mail->ErrorInfo);
-    // Si quieres registrar la excepción completa:
     error_log("Excepción de PHPMailer: " . $e->getMessage());
 
     // --- RESPUESTA DE ERROR GENÉRICA AL CLIENTE ---
-    // No reveles información interna sobre por qué falló el correo.
     http_response_code(500); // 500 Internal Server Error
     echo json_encode([
         "success" => false, 
         "message" => "Error al enviar el mensaje. Por favor, inténtalo más tarde o contáctanos directamente."
     ]);
-    // No es necesario `exit()` aquí porque es el final del script en este flujo.
 }
 
 ?>

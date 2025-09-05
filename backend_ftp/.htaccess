@@ -1,0 +1,41 @@
+# httpdocs/.htaccess
+# Archivo para proteger archivos sensibles y configurar el servidor
+
+# Deshabilitar el listado de directorios
+Options -Indexes
+
+# --- REGLAS DE SEGURIDAD PARA ARCHIVOS SENSIBLES ---
+
+# Proteger el archivo .env
+<Files ".env">
+    # Denegar cualquier acceso directo
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Proteger la carpeta vendor y sus contenidos
+<Files "vendor/*">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Proteger archivos de configuración de Composer
+<Files "composer.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "composer.lock">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Regla adicional por si el archivo se llama diferente pero termina en .env
+<FilesMatch "\.env$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# --- FIN REGLAS DE SEGURIDAD ---
+
+# Otras configuraciones útiles de .htaccess pueden ir aquí...
