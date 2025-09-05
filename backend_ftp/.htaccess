@@ -1,41 +1,65 @@
 # httpdocs/.htaccess
-# Archivo para proteger archivos sensibles y configurar el servidor
+# Configuración para una Single Page Application (SPA) como React
+
+# -------------------------------------------------------
+# 1. SEGURIDAD BÁSICA DE ARCHIVOS
+# -------------------------------------------------------
 
 # Deshabilitar el listado de directorios
 Options -Indexes
 
-# --- REGLAS DE SEGURIDAD PARA ARCHIVOS SENSIBLES ---
-
-# Proteger el archivo .env
+# Proteger archivos sensibles específicamente por nombre
 <Files ".env">
-    # Denegar cualquier acceso directo
-    Order Allow,Deny
-    Deny from all
+    Require all denied
 </Files>
 
-# Proteger la carpeta vendor y sus contenidos
-<Files "vendor/*">
-    Order Allow,Deny
-    Deny from all
-</Files>
-
-# Proteger archivos de configuración de Composer
 <Files "composer.json">
-    Order Allow,Deny
-    Deny from all
+    Require all denied
 </Files>
 
 <Files "composer.lock">
-    Order Allow,Deny
-    Deny from all
+    Require all denied
 </Files>
 
-# Regla adicional por si el archivo se llama diferente pero termina en .env
-<FilesMatch "\.env$">
-    Order Allow,Deny
-    Deny from all
+# Proteger archivos sensibles por extensión
+<FilesMatch "\.(env|ini|log|sh|inc|engine|install|make|module|profile|theme|info|yml|sql|db|conf|config|bak|backup)$">
+    Require all denied
 </FilesMatch>
 
-# --- FIN REGLAS DE SEGURIDAD ---
+# -------------------------------------------------------
+# 2. REGLAS DE REESCRITURA PARA LA SPA (REACT ROUTER)
+# -------------------------------------------------------
 
-# Otras configuraciones útiles de .htaccess pueden ir aquí...
+# Habilitar el motor de reescritura
+RewriteEngine On
+
+# --- Reglas específicas para evitar conflictos con archivos reales ---
+# (Estas deben ir antes de la regla general de la SPA)
+
+# Permitir acceso directo a archivos específicos de la raíz que NO son index.html
+# (sitemap.xml, robots.txt, favicon.ico, etc.)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^(sitemap\.xml|robots\.txt|favicon\.ico|manifest\.json|.*\.(png|jpg|jpeg|gif|svg|webp|ico|pdf))$ - [L]
+
+# --- Regla principal de la SPA ---
+# Si la solicitud NO es para un archivo físico o directorio físico,
+# y la URL no termina con una extensión de archivo conocida,
+# entonces REESCRIBE la solicitud para que cargue index.html.
+# Esto permite que React Router maneje la navegación.
+
+# Condición: La solicitud NO es para un archivo físico (-f)
+RewriteCond %{REQUEST_FILENAME} !-f
+# Condición: La solicitud NO es para un directorio físico (-d)
+RewriteCond %{REQUEST_FILENAME} !-d
+# Condición: La solicitud NO contiene un punto (evita reescribir archivos con extensión como .css, .js a menos que no existan)
+# Esta condición es más flexible y permite que archivos inexistentes con extensión también carguen la SPA
+# RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]+$ [OR]
+# RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|ico|pdf|xml|txt|json)$ [NC]
+# Condición combinada más robusta: Si no es archivo/dir físico Y (no tiene extensión O es una extensión de asset pero el archivo no existe)
+# Simplifiquémoslo para el caso común de SPA:
+# Si no es un archivo o directorio real, reescribe a index.html
+
+# Regla: Cualquier cosa que no sea un archivo o directorio real se reescribe a index.html
+RewriteRule ^.*$ /index.html [L,QSA]
+
+# Fin del archivo .htaccess

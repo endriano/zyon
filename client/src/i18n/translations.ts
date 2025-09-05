@@ -71,7 +71,7 @@ export const translations = {
         rescue: {
           title: "Embarcaciones de rescate y salvamento",
           description:
-            "Embarcaciones encargadas del rescate, vigialncia y salvamento marítimo",
+            "Embarcaciones encargadas del rescate, vigilancia y salvamento marítimo",
         },
         category: {
           cta: "Ver modelos",

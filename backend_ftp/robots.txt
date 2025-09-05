@@ -1,0 +1,14 @@
+# www.robotstxt.org/
+
+# Permitir a todos los robots rastrear todo el sitio
+User-agent: *
+
+# Sitemap
+Sitemap: https://www.zyongalicia.com/sitemap.xml
+
+# Páginas o carpetas que NO queremos que indexen
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /scripts/
+
+# Fin del archivo robots.txt
