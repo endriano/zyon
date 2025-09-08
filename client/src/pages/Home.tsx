@@ -142,22 +142,22 @@ export default function Home() {
     onSuccess: (responseData) => {
       if (responseData.success) {
         toast({
-          title: t("contact.form.success.title"),
-          description: responseData.message,
+          title: t('contact.toast.success.title'),
+          description: t('contact.toast.success.description'),
         });
         form.reset();
       } else {
         toast({
-          title: "Error",
-          description: responseData.message,
+          title: t('contact.toast.error.title'),
+          description: responseData.message || t('contact.toast.error.description'),
           variant: "destructive",
         });
       }
     },
     onError: (error: any) => {
       toast({
-        title: "Error",
-        description: error.message || t("contact.form.error"),
+        title: t('contact.toast.error.title'),
+        description: error.message || t('contact.form.error'),
         variant: "destructive",
       });
     },

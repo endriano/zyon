@@ -132,6 +132,16 @@ export const translations = {
         social: {
           title: "Síguenos",
         },
+        toast: {
+          success: {
+            title: "¡Mensaje enviado!",
+            description: "Nos pondremos en contacto contigo pronto."
+          },
+          error: {
+            title: "Error",
+            description: "Hubo un problema al enviar el mensaje. Por favor, inténtalo de nuevo."
+          }
+        },
       },
       footer: {
         downloadCatalog: "Descargar catálogo",
@@ -419,6 +429,16 @@ export const translations = {
         },
         social: {
           title: "Follow Us",
+        },
+        toast: {
+          success: {
+            title: "Message Sent!",
+            description: "We will contact you soon."
+          },
+          error: {
+            title: "Error",
+            description: "There was a problem sending the message. Please try again."
+          }
         },
       },
       footer: {
@@ -710,6 +730,16 @@ export const translations = {
         },
         social: {
           title: "Suivez-nous",
+        },
+        toast: {
+          success: {
+            title: "Message Envoyé !",
+            description: "Nous vous contacterons bientôt."
+          },
+          error: {
+            title: "Erreur",
+            description: "Il y a eu un problème lors de l'envoi du message. Veuillez réessayer."
+          }
         },
       },
       footer: {
