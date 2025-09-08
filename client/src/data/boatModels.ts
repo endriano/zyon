@@ -187,7 +187,7 @@ export const boatModels: BoatModel[] = [
       es: {
         Eslora: "5.75 m",
         Manga: "2.00 m",
-        Motorización: "YANMAR 4LHA-HTP 160CV",
+        Motorización: "YANMAR 4LHA-HTP 160 CV",
         Propulsión: "Hidrojet CASTOLDI",
         Hélice: "18''",
         "Depósito Combustible": "90 l",
@@ -196,7 +196,7 @@ export const boatModels: BoatModel[] = [
       en: {
         Length: "5.75 m",
         Beam: "2.00 m",
-        Engine: "YANMAR 4LHA-HTP 160HP",
+        Engine: "YANMAR 4LHA-HTP 160 HP",
         Propulsion: "Hydrojet CASTOLDI",
         Propeller: "18''",
         "Fuel Tank": "90 l",
@@ -205,7 +205,7 @@ export const boatModels: BoatModel[] = [
       fr: {
         Longueur: "5,75 m",
         Largeur: "2,00 m",
-        Moteur: "YANMAR 4LHA-HTP 160CH",
+        Moteur: "YANMAR 4LHA-HTP 160 CH",
         Propulsion: "Hydrojet CASTOLDI",
         Hélice: "18''",
         "Réservoir Carburant": "90 l",
@@ -260,7 +260,7 @@ export const boatModels: BoatModel[] = [
       es: {
         Eslora: "5.75 m",
         Manga: "2.00 m",
-        Motorización: "YANMAR 4LHA-HTP 160CV",
+        Motorización: "YANMAR 4LHA-HTP 160 CV",
         Propulsión: "Línea de eje",
         Hélice: "22''",
         "Depósito Combustible": "90 l",
@@ -269,7 +269,7 @@ export const boatModels: BoatModel[] = [
       en: {
         Length: "5.75 m",
         Beam: "2.00 m",
-        Engine: "YANMAR 4LHA-HTP 160HP",
+        Engine: "YANMAR 4LHA-HTP 160 HP",
         Propulsion: "Shaft line",
         Propeller: "22''",
         "Fuel Tank": "90 l",
@@ -278,7 +278,7 @@ export const boatModels: BoatModel[] = [
       fr: {
         Longueur: "5,75 m",
         Largeur: "2,00 m",
-        Moteur: "YANMAR 4LHA-HTP 160CH",
+        Moteur: "YANMAR 4LHA-HTP 160 CH",
         Propulsion: "Ligne d'arbre",
         Hélice: "22''",
         "Réservoir Carburant": "90 l",
@@ -333,7 +333,7 @@ export const boatModels: BoatModel[] = [
       es: {
         Eslora: "5.50 m",
         Manga: "1.80 m",
-        Motorización: "YAMAHA ENDURO TUNA/ 115CV",
+        Motorización: "YAMAHA ENDURO TUNA/ 115 CV",
         Propulsión: "Fueraborda",
         "Depósito combustible": "90 l",
         Desplazamiento: "800 Kg",
@@ -341,7 +341,7 @@ export const boatModels: BoatModel[] = [
       en: {
         Length: "5.50 m",
         Beam: "1.80 m",
-        Engine: "YAMAHA ENDURO TUNA/ 115HP",
+        Engine: "YAMAHA ENDURO TUNA/ 115 HP",
         Propulsion: "Outboard",
         "Fuel tank": "90 l",
         Displacement: "800 Kg",
@@ -349,7 +349,7 @@ export const boatModels: BoatModel[] = [
       fr: {
         Longueur: "5,50 m",
         Largeur: "1,80 m",
-        Moteur: "YAMAHA ENDURO TUNA/ 115CH",
+        Moteur: "YAMAHA ENDURO TUNA/ 115 CH",
         Propulsion: "Hors-bord",
         "Réservoir carburant": "90 l",
         Déplacement: "800 Kg",
@@ -409,7 +409,7 @@ export const boatModels: BoatModel[] = [
       es: {
         Eslora: "6.00 m",
         Manga: "2.60 m",
-        Motorización: "VOLVO PENTA D7C TA 250CV / CATERPILAR 3056 205CV",
+        Motorización: "VOLVO PENTA D7C TA 250 CV / CATERPILAR 3056 205 CV",
         Propulsión: "Línea de eje",
         Hélice: "35''",
         "Depósito combustible": "270 l (+90l reserva opcional)",
@@ -419,7 +419,7 @@ export const boatModels: BoatModel[] = [
       en: {
         Length: "6.00 m",
         Beam: "2.60 m",
-        Engine: "VOLVO PENTA D7C TA 250HP / CATERPILAR 3056 205HP",
+        Engine: "VOLVO PENTA D7C TA 250 HP / CATERPILAR 3056 205 HP",
         Propulsion: "Shaft line",
         Propeller: "35''",
         "Fuel tank": "270 l (+90l optional reserve)",
@@ -429,7 +429,7 @@ export const boatModels: BoatModel[] = [
       fr: {
         Longueur: "6,00 m",
         Largeur: "2,60 m",
-        Moteur: "VOLVO PENTA D7C TA 250CH / CATERPILAR 3056 205CH",
+        Moteur: "VOLVO PENTA D7C TA 250 CH / CATERPILAR 3056 205 CH",
         Propulsion: "Ligne d'arbre",
         Hélice: "35''",
         "Réservoir carburant": "270 l (+90l réserve optionnelle)",
@@ -494,7 +494,7 @@ export const boatModels: BoatModel[] = [
       es: {
         Eslora: "5.75 m",
         Manga: "2.00 m",
-        Motorización: "YANMAR 4LHA-HTP 160cv / KMH50A",
+        Motorización: "YANMAR 4LHA-HTP 160 CV / KMH50A",
         Propulsión: "Línea de eje",
         Hélice: "22''",
         "Depósito combustible": "84 l",
@@ -504,7 +504,7 @@ export const boatModels: BoatModel[] = [
       en: {
         Length: "5.75 m",
         Beam: "2.00 m",
-        Engine: "YANMAR 4LHA-HTP 160hp / KMH50A",
+        Engine: "YANMAR 4LHA-HTP 160 HP / KMH50A",
         Propulsion: "Shaft line",
         Propeller: "22''",
         "Fuel tank": "84 l",
@@ -514,7 +514,7 @@ export const boatModels: BoatModel[] = [
       fr: {
         Longueur: "5,75 m",
         Largeur: "2,00 m",
-        Moteur: "YANMAR 4LHA-HTP 160ch / KMH50A",
+        Moteur: "YANMAR 4LHA-HTP 160 CH / KMH50A",
         Propulsion: "Ligne d'arbre",
         Hélice: "22''",
         "Réservoir carburant": "84 l",
@@ -1022,7 +1022,7 @@ export const boatModels: BoatModel[] = [
     },
   },*/
   {
-    id: 9,
+    id: 8,
     name: {
       es: "Barco de pesca",
       en: "Fishing boat",
@@ -1134,7 +1134,7 @@ export const boatModels: BoatModel[] = [
         },
         {
           icon: "Zap",
-          es: "Motor SOLE DIESEL MINI-74 (65.1 HP)",
+          es: "Motor SOLE DIESEL MINI-74 (65.1 CV)",
           en: "SOLE DIESEL MINI-74 Engine (65.1 HP)",
           fr: "Moteur SOLE DIESEL MINI-74 (65.1 CH)",
         },
@@ -1171,7 +1171,7 @@ export const boatModels: BoatModel[] = [
     },
   },*/
   {
-    id: 14,
+    id: 9,
     name: {
       es: "Patrullera",
       en: "Patrol boat",
@@ -1202,7 +1202,7 @@ export const boatModels: BoatModel[] = [
       items: [
         {
           icon: "Zap",
-          es: "Motores gemelos Yanmar 6HYM-WET (700 HP)",
+          es: "Motores gemelos Yanmar 6HYM-WET (700 CV)",
           en: "Twin Yanmar 6HYM-WET engines (700 HP)",
           fr: "Moteurs jumeaux Yanmar 6HYM-WET (700 CH)",
         },
@@ -1248,7 +1248,7 @@ export const boatModels: BoatModel[] = [
     },
   },
   {
-    id: 15,
+    id: 10,
     name: {
       es: "Bote de rescate y salvamento",
       en: "Rescue and salvage boat",
@@ -1325,7 +1325,7 @@ export const boatModels: BoatModel[] = [
     },
   },
   {
-    id: 16,
+    id: 11,
     name: {
       es: "Ambulancia marítima",
       en: "Maritime ambulance",
@@ -1355,7 +1355,7 @@ export const boatModels: BoatModel[] = [
         },
         {
           icon: "Zap",
-          es: "Motores gemelos Yanmar 6LPA-STP2 (315 HP)",
+          es: "Motores gemelos Yanmar 6LPA-STP2 (315 CV)",
           en: "Twin Yanmar 6LPA-STP2 Engines (315 HP)",
           fr: "Moteurs jumeaux Yanmar 6LPA-STP2 (315 CH)",
         },
@@ -1371,7 +1371,7 @@ export const boatModels: BoatModel[] = [
       es: {
         "Eslora total": "12.50 m",
         Manga: "3.50 m",
-        Motorización: "2xYANMAR 6LPA-STP2(315 HP)",
+        Motorización: "2xYANMAR 6LPA-STP2(315 CV)",
         "Velocidad máxima": "25 nudos",
         Casco: "Polietileno- HWU",
       },
@@ -1391,7 +1391,7 @@ export const boatModels: BoatModel[] = [
       },
     },
   },
-  {
+ /* {
     id: 17,
     name: {
       es: "AT 105 L",
@@ -1530,9 +1530,9 @@ export const boatModels: BoatModel[] = [
         "Stockage des déchets": "500 Kg",
       },
     },
-  },
+  },*/
   {
-    id: 19,
+    id: 12,
     name: {
       es: "Embarcación de limpieza portuaria",
       en: "Port cleaning boat",
@@ -1562,9 +1562,9 @@ export const boatModels: BoatModel[] = [
         },
         {
           icon: "Zap",
-          es: "Motorización fueraborda de 200 Hp",
-          en: "200 Hp outboard engine",
-          fr: "Motorisation hors-bord de 200 Ch",
+          es: "Motorización fueraborda de 200 CV",
+          en: "200 HP outboard engine",
+          fr: "Motorisation hors-bord de 200 CH",
         },
         {
           icon: "Droplet",
@@ -1580,7 +1580,7 @@ export const boatModels: BoatModel[] = [
         Manga: "2,5 m",
         Puntal: "0,80 m",
         Motorización: "Fueraborda",
-        Potencia: "200 Hp",
+        Potencia: "200 CV",
         "Carga útil": "950 kg",
         Equipo: "Hidráulico de limpieza",
       },
@@ -1589,7 +1589,7 @@ export const boatModels: BoatModel[] = [
         Beam: "2.5 m",
         Depth: "0.80 m",
         Engine: "Outboard",
-        Power: "200 Hp",
+        Power: "200 HP",
         Payload: "950 kg",
         Equipment: "Hydraulic cleaning",
       },
@@ -1598,7 +1598,7 @@ export const boatModels: BoatModel[] = [
         Largeur: "2,5 m",
         Profondeur: "0,80 m",
         Motorisation: "Hors-bord",
-        Puissance: "200 Ch",
+        Puissance: "200 CH",
         "Charge utile": "950 kg",
         Équipement: "Hydraulique de nettoyage",
       },
@@ -1720,7 +1720,7 @@ export const boatModels: BoatModel[] = [
         },
         {
           icon: "Zap",
-          es: "Motor SOLE DIESEL MINI-74 (65.1 HP)",
+          es: "Motor SOLE DIESEL MINI-74 (65.1 CV)",
           en: "SOLE DIESEL MINI-74 Engine (65.1 HP)",
           fr: "Moteur SOLE DIESEL MINI-74 (65.1 CH)"
         }
@@ -1733,7 +1733,7 @@ export const boatModels: BoatModel[] = [
         "Capacidad Pasaje": "48 Pa/ 2Tri",
         "Desplazamiento": "12.55 T.M.",
         "Velocidad máxima": "20 nudos",
-        "Motorización": "SOLE DIESEL MINI-74(65.1 HP)"
+        "Motorización": "SOLE DIESEL MINI-74(65.1 CV)"
       },
       en: {
         "Total Length": "13.95 m",
