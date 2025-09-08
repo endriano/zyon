@@ -686,7 +686,7 @@ export const boatModels: BoatModel[] = [
       },
     },
   },
-  {
+  /*{
     id: 8,
     name: {
       es: "S500",
@@ -1020,9 +1020,9 @@ export const boatModels: BoatModel[] = [
         "Vitesse maximale": "400/ 200 CH",
       },
     },
-  },
+  },*/
   {
-    id: 13,
+    id: 9,
     name: {
       es: "Barco de pesca",
       en: "Fishing boat",
